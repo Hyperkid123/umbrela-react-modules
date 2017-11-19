@@ -37,6 +37,12 @@ module.exports = {
       require.resolve('./polyfills'),
       require.resolve('react-error-overlay'),
       paths.researchEditorJs,
+    ],
+    dataReview:[
+      require.resolve('react-dev-utils/webpackHotDevClient'),
+      require.resolve('./polyfills'),
+      require.resolve('react-error-overlay'),
+      paths.dataReviewModuleJs,
     ]
   },
   output: {
@@ -155,6 +161,12 @@ module.exports = {
         chunks: ["researchEditor"],
         template: paths.researchEditorHtml,
         filename: 'researchEditor.html',
+      }),
+      new HtmlWebpackPlugin({
+        inject: true,
+        chunks: ["dataReview"],
+        template: paths.dataReviewModuleHtml,
+        filename: 'dataReviewModule.html',
       }),
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin(env.stringified),

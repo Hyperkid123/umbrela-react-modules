@@ -52,6 +52,8 @@ module.exports = {
   servedPath: getServedPath(resolveApp('package.json')),
   umbrelaFillModule: resolveApp('src/fillModule.js'),
   umbrelaFillModuleHtml: resolveApp('public/fillModule.html'),
-  researchEditorJs: resolveApp('src/researchEditor.js'),
+  researchEditorJs: resolveApp('src/researchEditorModule.js'),
   researchEditorHtml: resolveApp('public/researchEditor.html'),
+  dataReviewModuleJs: resolveApp('src/dataReviewModule.js'),
+  dataReviewModuleHtml: resolveApp('public/dataReviewModule.html'),
 };

@@ -62,6 +62,10 @@ module.exports = {
     researchEditor:[
       require.resolve('./polyfills'),
       paths.researchEditorJs,
+    ],
+    dataReview:[
+      require.resolve('./polyfills'),
+      paths.dataReviewModuleJs,
     ]
   },
   output: {
@@ -287,6 +291,24 @@ module.exports = {
         chunks: ["researchEditor"],
         template: paths.researchEditorHtml,
         filename: 'researchEditor.html',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        inject: true,
+        chunks: ["dataReview"],
+        template: paths.dataReviewModuleHtml,
+        filename: 'dataReviewModule.html',
         minify: {
           removeComments: true,
           collapseWhitespace: true,

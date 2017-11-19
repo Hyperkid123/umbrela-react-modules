@@ -83,7 +83,8 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
       rewrites: [
         { from: /^\/researchEditor.html/, to: '/build/researchEditor.html' },
-          { from: /^\/fillModue.html/, to: '/build/fillModue.html' },
+        { from: /^\/fillModue.html/, to: '/build/fillModue.html' },
+        { from: /^\/dataReviewModule.html/, to: '/build/dataReviewModule.html' },
       ]
     },
     public: allowedHost,
