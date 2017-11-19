@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FillModue from './pages/fillModule';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {Provider} from 'react-redux';
 
-const MuiFillModule = () => (
-  <MuiThemeProvider>
-    <FillModue/>
-  </MuiThemeProvider>
+import configureStore from './redux/configureStore';
+const store = configureStore();
+
+const FillModuleWrapper = () => (
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <FillModue/>
+    </MuiThemeProvider>
+  </Provider>
 )
 
-ReactDOM.render(<MuiFillModule />, document.getElementById('umbrelaFillModule'));
+ReactDOM.render(<FillModuleWrapper />, document.getElementById('umbrelaFillModule'));

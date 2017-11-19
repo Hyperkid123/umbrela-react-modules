@@ -1,8 +1,23 @@
 import React,{Component} from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {
+  testAction,
+} from '../../redux/actions';
 
-export default class FillModule extends Component {
-
+class FillModule extends Component {
+    componentWillMount() {
+      this.props.testAction();
+    }
     render() {
+        if(this.props.research.msg) {
+          return (
+            <div>
+              <h1>Fill module component</h1>
+              <h2>{this.props.research.msg}</h2>
+            </div>
+          )
+        }
         return (
             <div className="class-name">
               <h1>Fill module component</h1>
@@ -10,3 +25,17 @@ export default class FillModule extends Component {
         );
     }
 }
+
+function mapStateToProps({research}) {
+  return {
+    research,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    testAction
+  },dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FillModule);
