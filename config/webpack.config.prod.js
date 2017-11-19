@@ -398,6 +398,10 @@ module.exports = {
       name: 'vendor',
       minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      minChunks: module => module.context && module.context.indexOf('common') !== -1
+    }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

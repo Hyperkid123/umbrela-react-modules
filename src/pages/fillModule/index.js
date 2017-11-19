@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {testUtil} from '../../common/utils';
 import {
   testAction,
 } from '../../redux/actions';
@@ -15,6 +16,7 @@ class FillModule extends Component {
             <div>
               <h1>Fill module component</h1>
               <h2>{this.props.research.msg}</h2>
+              <h3>{testUtil()}</h3>
             </div>
           )
         }
