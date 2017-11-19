@@ -52,4 +52,8 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  umbrelaFillModule: resolveApp('src/fillModule.js'),
+  umbrelaFillModuleHtml: resolveApp('public/fillModule.html'),
+  demoJs: resolveApp('src/index.js'),
+  demoHtml: resolveApp('public/demo.html'),
 };
