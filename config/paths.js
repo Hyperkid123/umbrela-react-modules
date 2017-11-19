@@ -38,13 +38,11 @@ function getServedPath(appPackageJson) {
   return ensureSlash(servedUrl, true);
 }
 
-// config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),
@@ -54,6 +52,6 @@ module.exports = {
   servedPath: getServedPath(resolveApp('package.json')),
   umbrelaFillModule: resolveApp('src/fillModule.js'),
   umbrelaFillModuleHtml: resolveApp('public/fillModule.html'),
-  demoJs: resolveApp('src/index.js'),
-  demoHtml: resolveApp('public/demo.html'),
+  researchEditorJs: resolveApp('src/researchEditor.js'),
+  researchEditorHtml: resolveApp('public/researchEditor.html'),
 };

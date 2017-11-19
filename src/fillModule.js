@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import FillModue from './pages/fillModule';
 
-ReactDOM.render(<App />, document.getElementById('umbrelaFillModule'));
+ReactDOM.render(<FillModue />, document.getElementById('umbrelaFillModule'));

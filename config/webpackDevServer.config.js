@@ -82,7 +82,7 @@ module.exports = function(proxy, allowedHost) {
     historyApiFallback: {
       disableDotRule: true,
       rewrites: [
-        { from: /^\/demo.html/, to: '/build/demo.html' },
+        { from: /^\/researchEditor.html/, to: '/build/researchEditor.html' },
           { from: /^\/fillModue.html/, to: '/build/fillModue.html' },
       ]
     },

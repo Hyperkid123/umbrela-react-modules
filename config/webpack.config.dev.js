@@ -28,23 +28,17 @@ const env = getClientEnvironment(publicUrl);
 module.exports = {
   devtool: 'eval',
   entry: {
-    index: [
-      require.resolve('react-dev-utils/webpackHotDevClient'),
-      require.resolve('./polyfills'),
-      require.resolve('react-error-overlay'),
-      paths.appIndexJs,
-    ],
     fillModule:[
       require.resolve('react-dev-utils/webpackHotDevClient'),
       require.resolve('./polyfills'),
       require.resolve('react-error-overlay'),
       paths.umbrelaFillModule,
     ],
-    demo:[
+    researchEditor:[
       require.resolve('react-dev-utils/webpackHotDevClient'),
       require.resolve('./polyfills'),
       require.resolve('react-error-overlay'),
-      paths.demoJs,
+      paths.researchEditorJs,
     ]
   },
   output: {
@@ -160,9 +154,9 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
         inject: true,
-        chunks: ["demo"],
-        template: paths.demoHtml,
-        filename: 'demo.html',
+        chunks: ["researchEditor"],
+        template: paths.researchEditorHtml,
+        filename: 'researchEditor.html',
       }),
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin(env.stringified),
