@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   deepOrange500,
   grey800,
+  black,
 } from 'material-ui/styles/colors';
 
 const BaseHeading = styled.h2`
@@ -22,4 +23,9 @@ export const SmallHeading = BaseHeading.extend`
   font-size: 24px;
   margin-top: 5px;
   margin-bottom: 5px;
+`
+
+export const DefaultLink = styled.a`
+  color: ${black};
+  text-decoration: none;
 `

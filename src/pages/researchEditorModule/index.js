@@ -5,10 +5,13 @@ import {
   MenuContainer,
   Flex,
   FlexSection,
-  MenuList
+  MenuList,
+  MenuItem,
+  MenuListLabel
 } from '../../common/styledComponents/containers';
 import {BigHeading, MediumHeading, SmallHeading} from '../../common/styledComponents/typography';
 import Paper from 'material-ui/Paper';
+import {MenuListIconsWrapper, MenuListItem} from '../../common/components/menuListIcons';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 export default class ResearchEditorModule extends Component {
@@ -25,26 +28,10 @@ export default class ResearchEditorModule extends Component {
                         style={{height: 'calc(100vh - 2em - 60px)'}}
                       >
                         <MenuList>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
-                          <li>test</li>
+                          <MenuListItem link='#' label='test test test test test test test test test test test test'/>
+                          <MenuItem>test</MenuItem>
+                          <MenuItem>test</MenuItem>
+                          <MenuItem>test</MenuItem>
                         </MenuList>
                       </Scrollbars>
                     </MenuContainer>

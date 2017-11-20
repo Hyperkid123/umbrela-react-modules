@@ -400,7 +400,6 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
-      minChunks: module => module.context && module.context.indexOf('common') !== -1
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.

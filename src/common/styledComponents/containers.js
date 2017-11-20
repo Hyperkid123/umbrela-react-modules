@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {
   white,
+  grey300,
 } from 'material-ui/styles/colors';
 
 export const Flex = styled.div`
@@ -35,4 +36,34 @@ export const MenuList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-right: 8px;
+`
+export const MenuItem = styled.li`
+  padding: 0 .5em 0 .5em;
+  font-size: 1.2em;
+  height: 48px;
+  cursor: pointer;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  &:hover {
+    background-color: ${grey300}
+  }
+  &:hover > div > div:last-child {
+    display: flex;
+  }
+  > div {
+    height: 100%;
+  }
+`
+
+export const MenuListIconsContainer = Flex.extend`
+  display: none;
+  margin-left: auto;
+  width: auto;
+`
+
+export const MenuListLabel = styled.div`
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `
