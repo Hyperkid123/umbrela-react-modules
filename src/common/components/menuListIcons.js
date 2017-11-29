@@ -29,13 +29,12 @@ export const MenuListIconsWrapper = ({tooltipUp, tooltipDown}) => (
   </MenuListIconsContainer>
 )
 
-export const MenuListItem = ({link, label}) => (
-    <MenuItem>
+export const MenuListItem = ({link, label, onClick, sheetId, active, tooltipLabel, dragging}) => (
+    <MenuItem dragging={dragging} data-tip={tooltipLabel} active={active} onClick={() => onClick(sheetId)}>
       <Flex verticalCenter>
         <MenuListLabel>
           <DefaultLink href={link}>{label}</DefaultLink>
         </MenuListLabel>
-        <MenuListIconsWrapper tooltipUp='Up' tooltipDown='Down'/>
       </Flex>
     </MenuItem>
 )

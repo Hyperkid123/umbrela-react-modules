@@ -10,6 +10,7 @@ export const Flex = styled.div`
   display: flex;
   flex-direction: ${props => props.column ? 'column' : 'row'};
   align-items:  ${props => props.verticalCenter ? 'center' : 'null'};
+  align-items: ${props => props.baseline ? 'baseline' : 'null'};
   justify-content: ${props => props.horizintalCenter ? 'center' : 'null'};
   flex-grow: ${props => props.grow ? 1 : 0};
 `
@@ -29,7 +30,9 @@ export const MenuContainer = styled.div`
 
 export const FlexSection = styled.section`
   margin: 10px;
+  min-width: ${props => props.minWidth ? `${props.minWidth}px` : `0px`};
   height: calc(100vh - 2em - 20px);
+  width: ${props => props.fullWidth ? '100%' : 'auto'};
 `
 
 export const MenuList = styled.ul`
@@ -38,17 +41,15 @@ export const MenuList = styled.ul`
   padding: 0;
   margin-right: 8px;
 `
-export const MenuItem = styled.li`
+export const MenuItem = styled.div`
   padding: 0 .5em 0 .5em;
   font-size: 1.2em;
   height: 48px;
   cursor: pointer;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  background-color: ${props => props.active ? grey300 : white};
   &:hover {
-    background-color: ${grey300}
-  }
-  &:hover > div > div:last-child {
-    display: flex;
+    background-color: ${props => !props.dragging ? grey300 : white};
   }
   > div {
     height: 100%;
