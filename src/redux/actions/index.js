@@ -11,6 +11,16 @@ export {
 } from './researchActions';
 
 export {
+  getQuestions,
+  createNewQuestion,
+  selectEditorQuestion,
+  getQuestionStructure,
+  deleteQuestion,
+  changeQuestionTitle,
+  updateQuetionsInformation
+} from './questionActions';
+
+export {
   dragEnd
 } from './uiActions';
 

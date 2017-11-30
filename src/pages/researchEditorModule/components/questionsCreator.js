@@ -7,7 +7,21 @@ import {
   Flex
 } from '../../../common/styledComponents/containers';
 
-export default class QuestionsCreator extends Component {
+import {
+  BaseTypes,
+  QuestionTypes,
+} from '../../../common/questionTypes';
+
+
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {
+  createNewQuestion,
+} from '../../../redux/actions';
+
+import QuestionMenu from './questionMenu';
+
+class QuestionsCreator extends Component {
 
     constructor(props){
     	super(props);
@@ -38,10 +52,26 @@ export default class QuestionsCreator extends Component {
       });
     };
 
+    renderBaseQuestionTypes = () => {
+      return BaseTypes.map((type, i) => {
+        return <MenuItem
+          primaryText={QuestionTypes[type]}
+          key={i}
+          onClick={() => this.handleCreateNewQuestion(type)}
+        />
+      })
+    }
+
+    handleCreateNewQuestion = (type) => {
+      this.props.createNewQuestion(this.props.researchId, this.props.activeSheetId, type);
+      this.handleRequestClose();
+    }
+
 
     render() {
         return (
-            <Flex>
+            <Flex column>
+              <Flex>
                 <FlatButton onClick={this.handleClick} icon={<ActionAdd/>}label='Přidat otázku'/>
                 <Popover
                   open={this.state.open}
@@ -49,17 +79,31 @@ export default class QuestionsCreator extends Component {
                   anchorOrigin={this.state.anchorOrigin}
                   targetOrigin={this.state.targetOrigin}
                   onRequestClose={this.handleRequestClose}
-                >
-                  <Menu>
-                    <MenuItem primaryText="Otevřená"/>
-                    <MenuItem primaryText="Uzavřená"/>
-                    <MenuItem primaryText="Uzavřená s obrázek v zadání"/>
-                    <MenuItem primaryText="Maticová"/>
-                    <MenuItem primaryText="Seřazovací"/>
-                    <MenuItem primaryText="Rozdělovací"/>
-                  </Menu>
-                </Popover>
+                  >
+                    <Menu>
+                      {this.renderBaseQuestionTypes()}
+                    </Menu>
+                  </Popover>
+              </Flex>
+                <Flex column>
+                  <QuestionMenu/>
+                </Flex>
             </Flex>
         );
     }
 }
+
+function mapStateToProps({editor}) {
+  return {
+    activeSheetId: editor.activeSheet ? editor.activeSheet.sheetId : null,
+    researchId: editor.researchId,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    createNewQuestion,
+  },dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionsCreator)

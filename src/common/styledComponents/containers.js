@@ -24,7 +24,7 @@ export const ViewContainer = styled.div`
 `
 
 export const MenuContainer = styled.div`
-  max-width: 400px;
+  max-width: ${props => props.fullWidth ? '100&' : '400px'};
   background-color: ${white};
   padding: 10px;
 `
@@ -32,7 +32,7 @@ export const MenuContainer = styled.div`
 export const FlexSection = styled.section`
   margin: 10px;
   min-width: ${props => props.minWidth ? `${props.minWidth}px` : `0px`};
-  height: calc(100vh - 2em - 20px);
+  height: ${props => props.autoHeight ? 'auto' :  'calc(100vh - 2em - 20px)'};
   width: ${props => props.fullWidth ? '100%' : 'auto'};
 `
 
