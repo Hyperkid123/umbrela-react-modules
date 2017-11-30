@@ -8,7 +8,9 @@ import {
   DRAG_SHEET_CARD,
 } from './actionTypes';
 
+import {sheetInfoValidator} from '../../common/validator';
 import {dragEnd} from './';
+import lodash from 'lodash';
 
 export function getSheets(researchId){
   return dispatch => {
@@ -94,16 +96,21 @@ export function changeSheetTitle(title) {
 }
 
 export function updateSheetInformation(sheet, researchId) {
-  return dispatch => {
-    dispatch(requestSheets());
-    return fetch(`${window.base}${researchId}/update-sheet`, {
-      method: 'POST',
-      body: JSON.stringify({sheet}),
-    }).then(response => response.json())
-    .then((json) => {
-      dispatch(getSheets(researchId))
-    })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+  return (dispatch, getState) => {
+    let originalSheet = lodash.find(getState().editor.sheets, (item) => {
+      return item.sheetId === sheet.sheetId;
+    });
+    if(originalSheet && sheet.title !== originalSheet.title && sheetInfoValidator(sheet)){
+      dispatch(requestSheets());
+      return fetch(`${window.base}${researchId}/update-sheet`, {
+        method: 'POST',
+        body: JSON.stringify({sheet}),
+      }).then(response => response.json())
+      .then((json) => {
+        dispatch(getSheets(researchId))
+      })
+      .catch((err) => {console.log('failed to fetch: ', err)});
+    }
   }
 }
 

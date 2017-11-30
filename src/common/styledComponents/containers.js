@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import {
   white,
-  grey300,
+  grey300, grey500,
+  red500,
 } from 'material-ui/styles/colors';
 
 export const Flex = styled.div`
@@ -67,4 +68,11 @@ export const MenuListLabel = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+`
+export const LabelContainer = styled.div`
+  margin-left: ${props => props.alignRight ? 'auto' : 0};
+  padding-left: 0;
+  padding-right: 15px;
+  font-size: 0.8em;
+  color: ${props => props.error ? red500 : grey500};
 `

@@ -1,8 +1,16 @@
 import React,{Component} from 'react';
+
+import {
+  LABEL_LENGTH,
+} from '../../../common/constants';
+
 import {
   Flex,
   FlexSection
 } from '../../../common/styledComponents/containers';
+import {
+  TextFieldComent
+} from '../../../common/components/labels';
 
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -18,6 +26,8 @@ import {
   changeSheetTitle,
   updateSheetInformation,
 } from '../../../redux/actions';
+
+import QuestionsCreator from './questionsCreator';
 
 class SheetView extends Component {
     constructor(props){
@@ -72,22 +82,32 @@ class SheetView extends Component {
       />,
     ];
       if(this.props.activeSheet) {
+        console.log(this.props.activeSheet.title.length >= LABEL_LENGTH, 'test');
         return (
           <Flex>
             <FlexSection fullWidth>
               <Paper rounded={false} style={{padding: 10}}>
-                <Flex baseline>
+                <Flex grow baseline>
+                  <Flex column grow>
                     <TextField
                       ref={(input) => { this.sheetTitleInput = input; }}
                       name="sheetTitleInput"
-                      style={{flex: 2, marginRight: 15}}
-                      underlineStyle={{height: 1}}
+                      style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeSheet.title}
-                      onChange={(event, newValue) => this.props.changeSheetTitle(newValue)}
+                      onChange={(event, newValue) => {
+                        this.props.changeSheetTitle(newValue)
+                      }}
                       onBlur={this.handleUpdateSheetTitle}
                     />
+                    <TextFieldComent
+                      error={this.props.activeSheet.title.length >= LABEL_LENGTH}
+                      label={`${this.props.activeSheet.title.length} z ${LABEL_LENGTH} znaků`}
+                      alignRight
+                    />
+                  </Flex>
                     <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat arch'/>
                 </Flex>
+                <QuestionsCreator/>
               </Paper>
             </FlexSection>
             <Dialog
