@@ -20,6 +20,8 @@ import {
   getQuestions,
   selectEditorQuestion,
   getQuestionStructure,
+  dragQuestionCard,
+  remapQuestions,
 } from '../../../redux/actions';
 
 class QuestionMenu extends Component {
@@ -33,13 +35,18 @@ class QuestionMenu extends Component {
     }
 
     moveCard = (dragIndex, hoverIndex) => {
-      console.log(`moving questions ${dragIndex}, ${hoverIndex}`);
+      this.props.dragQuestionCard(dragIndex, hoverIndex);
     };
 
     renderQuestions = () => {
       return this.props.questions.map((question, i) => {
         return (
-          <li key={question.questionId}>
+          <SheetDraggableCard
+              index={i}
+              key={question.questionId}
+              moveCard={this.moveCard}
+              onDragEnd={this.props.remapQuestions}
+              researchId={this.props.activeSheetId}>
             <MenuListItem
               key={question.questionId}
               sheetId={question.questionId}
@@ -49,7 +56,7 @@ class QuestionMenu extends Component {
               dragging={this.props.draggingElement}
               tooltipLabel="Tažením můžete změnit pořadí otázky"
             />
-          </li>
+          </SheetDraggableCard>
         )
       });
     }
@@ -90,6 +97,8 @@ function mapDispatchToProps(dispatch) {
     getQuestions,
     selectEditorQuestion,
     getQuestionStructure,
+    dragQuestionCard,
+    remapQuestions,
   },dispatch)
 }
 

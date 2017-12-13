@@ -5,6 +5,7 @@ import {
   SELECT_EDITOR_QUESTION,
   SYNCHORNIZE_ACTIVE_QUESTION,
   CHANGE_QUESTION_TITLE,
+  DRAG_QUESTION_CARD,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -36,6 +37,13 @@ export default function questionsReducer(state = initialState, action) {
       return {...state, activeQuestion: action.question}
     case CHANGE_QUESTION_TITLE:
       return {...state, activeQuestion: {...state.activeQuestion, title: action.title, newQuestion: false}};
+    case DRAG_QUESTION_CARD:
+      let questions = state.questions;
+      const draggedQuestion = questions[action.dragIndex];
+      const swapQuestion = questions[action.hoverIndex];
+      questions[action.hoverIndex] = draggedQuestion;
+      questions[action.dragIndex] = swapQuestion;
+      return {...state, questions: [...questions]};
     default:
       return state;
   }

@@ -17,7 +17,9 @@ export {
   getQuestionStructure,
   deleteQuestion,
   changeQuestionTitle,
-  updateQuetionsInformation
+  updateQuetionsInformation,
+  dragQuestionCard,
+  remapQuestions
 } from './questionActions';
 
 export {

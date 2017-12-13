@@ -6,9 +6,11 @@ import {
   SYNCHORNIZE_ACTIVE_QUESTION,
   DESELECT_QUESTION,
   CHANGE_QUESTION_TITLE,
+  DRAG_QUESTION_CARD,
 } from './actionTypes';
 
 import lodash from 'lodash';
+import {dragEnd} from './';
 
 function requestQuestions(){
   return {
@@ -129,9 +131,6 @@ export function updateQuetionsInformation(question) {
     let originalQuestion = lodash.find(questions.questions, (item) => {
       return item.questionId === question.questionId;
     });
-    console.log(
-      'question: ', question
-    );
     if(originalQuestion && question.title !== originalQuestion.title){
       dispatch(requestQuestions());
       return fetch(`${window.base}${editor.researchId}/synchronize-question`, {
@@ -143,5 +142,32 @@ export function updateQuetionsInformation(question) {
       })
       .catch((err) => {console.log('failed to fetch: ', err)});
     }
+  }
+}
+
+export function dragQuestionCard(dragIndex, hoverIndex) {
+  return {
+    type: DRAG_QUESTION_CARD,
+    dragIndex,
+    hoverIndex
+  }
+}
+
+export function remapQuestions(sheetId) {
+  return (dispatch, getState) => {
+    const {editor, questions} = getState();
+    dispatch(requestQuestions());
+    return fetch(`${window.base}${editor.researchId}/remap-questions`, {
+      method: 'POST',
+      body: JSON.stringify({
+        sheetId,
+        questions: questions.questions
+      }),
+    }).then(response => response.json())
+    .then((json) => {
+      dispatch(getQuestions(sheetId));
+      dispatch(dragEnd());
+    })
+    .catch((err) => {console.log('failed to fetch: ', err)});
   }
 }

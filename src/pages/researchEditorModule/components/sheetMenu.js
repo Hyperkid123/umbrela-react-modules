@@ -98,4 +98,4 @@ function mapDispatchToProps(dispatch) {
   },dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DragDropContext(HTML5Backend)(SheetMenu));
+export default connect(mapStateToProps, mapDispatchToProps)(SheetMenu);

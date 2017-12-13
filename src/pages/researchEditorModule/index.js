@@ -4,6 +4,7 @@ import {
   ViewContainer,
   Flex,
 } from '../../common/styledComponents/containers';
+import DNDContext from '../../common/components/dndContext';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,13 +23,13 @@ class ResearchEditorModule extends Component {
     render() {
         return (
             <ViewContainer>
-              <Flex grow>
+              <DNDContext>
                 <SheetMenu sheets={this.props.sheets}/>
                 <Flex grow column>
                   <QuestionView/>
                   <SheetView/>
                 </Flex>
-              </Flex>
+              </DNDContext>
             </ViewContainer>
         );
     }
