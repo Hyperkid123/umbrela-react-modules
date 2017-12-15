@@ -7,9 +7,13 @@ import {
   DESELECT_QUESTION,
   CHANGE_QUESTION_TITLE,
   DRAG_QUESTION_CARD,
+  CHANGE_MANDATORY_QUESTION,
+  CHANGE_CUSTOM_HELP,
+  SET_CUSTOM_HELP,
+  CHANGE_QUESTION_TYPE,
+  CHANGE_QUESTION_IMAGE_URL,
 } from './actionTypes';
 
-import lodash from 'lodash';
 import {dragEnd} from './';
 
 function requestQuestions(){
@@ -127,21 +131,17 @@ export function changeQuestionTitle(title) {
 
 export function updateQuetionsInformation(question) {
   return (dispatch, getState) => {
-    const {editor, questions} = getState();
-    let originalQuestion = lodash.find(questions.questions, (item) => {
-      return item.questionId === question.questionId;
-    });
-    if(originalQuestion && question.title !== originalQuestion.title){
+    const {editor} = getState();
       dispatch(requestQuestions());
       return fetch(`${window.base}${editor.researchId}/synchronize-question`, {
         method: 'POST',
         body: JSON.stringify({question: {...question}}),
       }).then(response => response.json())
       .then((json) => {
-        dispatch(getQuestions(editor.activeSheet.sheetId))
-      })
+        dispatch(synchronizeActiveQuestion(json));
+        return json;
+      }).then((json) => dispatch(getQuestions(editor.activeSheet.sheetId)))
       .catch((err) => {console.log('failed to fetch: ', err)});
-    }
   }
 }
 
@@ -169,5 +169,49 @@ export function remapQuestions(sheetId) {
       dispatch(dragEnd());
     })
     .catch((err) => {console.log('failed to fetch: ', err)});
+  }
+}
+
+export function changeMandatoryQuestion(mandatory) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: CHANGE_MANDATORY_QUESTION,
+      mandatory
+    });
+    dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
+  }
+}
+
+export function changeCustomHelp(customHelp){
+  return {
+      type: CHANGE_CUSTOM_HELP,
+      customHelp
+  }
+}
+
+export function setCustomHelp(hasCustomHelp){
+  return (dispatch, getState) => {
+    dispatch({
+      type: SET_CUSTOM_HELP,
+      hasCustomHelp
+    });
+    dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
+  }
+}
+
+export function changeQuestionType(questionType) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: CHANGE_QUESTION_TYPE,
+      questionType
+    });
+    dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
+  }
+}
+
+export function chnageQuestionUrl(url) {
+  return {
+    type: CHANGE_QUESTION_IMAGE_URL,
+    url,
   }
 }

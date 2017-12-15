@@ -27,6 +27,8 @@ import {
   updateQuetionsInformation,
 } from '../../../redux/actions';
 
+import QuestionBody from './questions/questionBody';
+
 class QuestionView extends Component {
     constructor(props){
     	super(props);
@@ -78,6 +80,7 @@ class QuestionView extends Component {
       if(this.props.activeQuestion) {
         return (
           <FlexSection autoHeight>
+              <Flex column>
               <Paper rounded={false} style={{padding: 10}}>
                 <Flex grow baseline>
                   <Flex column grow>
@@ -95,9 +98,11 @@ class QuestionView extends Component {
                       alignRight
                     />
                   </Flex>
-                    <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat otázku'/>
+                  <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat otázku'/>
                 </Flex>
+                <QuestionBody questionType={this.props.activeQuestion.questionType}/>
               </Paper>
+            </Flex>
             <Dialog
               actions={deleteAction}
               modal={false}

@@ -6,6 +6,11 @@ import {
   SYNCHORNIZE_ACTIVE_QUESTION,
   CHANGE_QUESTION_TITLE,
   DRAG_QUESTION_CARD,
+  CHANGE_MANDATORY_QUESTION,
+  CHANGE_CUSTOM_HELP,
+  SET_CUSTOM_HELP,
+  CHANGE_QUESTION_TYPE,
+  CHANGE_QUESTION_IMAGE_URL,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -44,6 +49,20 @@ export default function questionsReducer(state = initialState, action) {
       questions[action.hoverIndex] = draggedQuestion;
       questions[action.dragIndex] = swapQuestion;
       return {...state, questions: [...questions]};
+    case CHANGE_MANDATORY_QUESTION:
+      return {...state, activeQuestion: {...state.activeQuestion, mandatory: action.mandatory}}
+    case CHANGE_CUSTOM_HELP:
+      return {...state, activeQuestion: {...state.activeQuestion, customHelp: action.customHelp}}
+    case SET_CUSTOM_HELP:
+      return {...state, activeQuestion: {
+        ...state.activeQuestion,
+        hasCustomHelp: action.hasCustomHelp,
+        customHelp: state.activeQuestion.customHelp || '(Zadejte vlastní nápovědu)'}
+      }
+    case CHANGE_QUESTION_TYPE:
+      return {...state, activeQuestion: {...state.activeQuestion, questionType: action.questionType}};
+    case CHANGE_QUESTION_IMAGE_URL:
+      return {...state, activeQuestion: {...state.activeQuestion, url: action.url}};
     default:
       return state;
   }

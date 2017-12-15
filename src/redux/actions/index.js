@@ -19,7 +19,12 @@ export {
   changeQuestionTitle,
   updateQuetionsInformation,
   dragQuestionCard,
-  remapQuestions
+  remapQuestions,
+  changeMandatoryQuestion,
+  changeCustomHelp,
+  setCustomHelp,
+  changeQuestionType,
+  chnageQuestionUrl,
 } from './questionActions';
 
 export {

@@ -14,6 +14,7 @@ export const Flex = styled.div`
   align-items: ${props => props.baseline ? 'baseline' : 'null'};
   justify-content: ${props => props.horizintalCenter ? 'center' : 'null'};
   flex-grow: ${props => props.grow ? 1 : 0};
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'no-wrap'};
 `
 
 export const ViewContainer = styled.div`

@@ -11,8 +11,6 @@ import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
 import ActionAdd from 'material-ui/svg-icons/content/add';
 import SheetDraggableCard from './sheetDraggableCard';
-import {DragDropContext} from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 import ReactTooltip from 'react-tooltip';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
