@@ -77,3 +77,9 @@ export const LabelContainer = styled.div`
   font-size: 0.8em;
   color: ${props => props.error ? red500 : grey500};
 `
+
+export const PreviewImage = styled.img`
+  max-width: 600px;
+  height: auto;
+  border-radius: 5px;
+`

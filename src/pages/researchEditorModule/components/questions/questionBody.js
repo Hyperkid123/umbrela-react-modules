@@ -12,7 +12,7 @@ import {
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 
-import {QuestionTypes, HasImagePreview} from '../../../../common/questionTypes';
+import {QuestionTypes, HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
 import QuestionTypeChanger from './questionTypeChanger';
 import {
   TextFieldComent
@@ -21,6 +21,8 @@ import {
 import {
   validateUrl
 } from '../../../../common/validator';
+
+import QuestionPreview from './questionPreview';
 
 class QuestionBody extends Component {
 
@@ -75,6 +77,9 @@ class QuestionBody extends Component {
                   />
                 </Flex>
                  : null}
+                {HasNotOptions(questionType) ?
+                    <QuestionPreview/>
+                   : null}
             </Flex>
         );
     }

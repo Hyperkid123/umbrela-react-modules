@@ -3,6 +3,7 @@ import {
   deepOrange500,
   grey800,
   black,
+  white
 } from 'material-ui/styles/colors';
 
 const BaseHeading = styled.h2`
@@ -28,4 +29,27 @@ export const SmallHeading = BaseHeading.extend`
 export const DefaultLink = styled.a`
   color: ${black};
   text-decoration: none;
+`
+
+export const FillQuestionheading = SmallHeading.extend`
+  border: none;
+  font-weight: 500;
+  ::before {
+    content: counter(step-increment);
+    font-weight: bold;
+    padding: 3px 8px;
+    margin-right: 3px;
+    float: left;
+    background-color: ${deepOrange500};
+    color: ${white};
+    border-radius: 2px;
+    font-size: 0.8em;
+  }
+`
+
+export const CustomHelp = styled.span`
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: ${grey800}
 `
