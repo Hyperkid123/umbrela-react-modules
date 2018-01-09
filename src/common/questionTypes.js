@@ -146,6 +146,24 @@ export const HasOptionsAsImage = (questionType) => {
 
 };
 
+export const CanHaveOptionAsImage = (questionType) => {
+    return [
+        'CloseQuestion',
+        'CloseWithOpenQuestion',
+        'CloseMultiQuestion',
+        'CloseMultiWithOpenQuestion',
+        'MatrixSingleQuestion',
+        'MatrixMultiQuestion',
+        'ImageOptionsQuestion',
+        'ImageOptionsMultiQuestion',
+        'ImageOptionsWithOpenQuestion',
+        'ImageOptionsMultiWithOpenQuestion',
+        'MatrixSingleImageQuestion',
+        'MatrixMultiImageQuestion',
+
+    ].includes(questionType);
+};
+
 export const HasScalePoints = (questionType) => {
     return questionType === 'DivideQuestion';
 };

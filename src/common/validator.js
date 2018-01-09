@@ -1,12 +1,13 @@
 import {
   LABEL_LENGTH
 } from './constants';
+import {HasOptionsAsImage} from './questionTypes';
 
 export function sheetInfoValidator(sheet) {
   return sheet.title.length <= LABEL_LENGTH && sheet.title.length > 0;
 }
 
-export function validateUrl(url) {  
+export function validateUrl(url) {
   if (!url) return false;
   return isStringUrl(url)[0];
 }
@@ -21,4 +22,12 @@ function isStringUrl(url) {
     }
     let regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?\.(jpeg|jpg|gif|png)$/;
     return [regexp.test(filteredUrl), filteredUrl];
+}
+
+export function ValideOption(optionText, questionType) {
+  let valid = optionText.length > 0 && optionText.length <= LABEL_LENGTH;
+  if(HasOptionsAsImage(questionType)) {
+    valid = isStringUrl(optionText)[0];
+  }
+  return valid;
 }

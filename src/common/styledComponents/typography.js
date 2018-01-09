@@ -9,6 +9,7 @@ import {
 const BaseHeading = styled.h2`
   font-weight: 300;
   border-bottom: 1px solid ${deepOrange500};
+  border: ${props => props.withouthBorder ? 'none' : ''};
   color: ${grey800};
 `;
 

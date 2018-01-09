@@ -14,6 +14,15 @@ import  {
   SwitchToImagePreview,
   CanHaveImagePreview,
   HasImagePreview,
+  CanHaveMultipleAnswers,
+  SwitchQuestionMultipleAnswers,
+  HasMultipleAnswers,
+  CanHaveOpenQuestion,
+  HasOpenQuestion,
+  SwitchQuestionOpenOption,
+  SwitchOptionToImage,
+  HasOptionsAsImage,
+  CanHaveOptionAsImage,
 } from '../../../../common/questionTypes';
 
 class QuestionTypeChanger extends Component {
@@ -33,6 +42,26 @@ class QuestionTypeChanger extends Component {
                     onCheck={() => this.props.changeQuestionType(SwitchToImagePreview[questionType])}
                   />
                    : null}
+                {CanHaveMultipleAnswers(questionType) ?
+                  <Checkbox style={checkBoxStyle}
+                    label='Více možností'
+                    checked={HasMultipleAnswers(questionType)}
+                    onCheck={() => this.props.changeQuestionType(SwitchQuestionMultipleAnswers[questionType])}
+                  /> : null}
+                {CanHaveOpenQuestion(questionType) ?
+                  <Checkbox style={checkBoxStyle}
+                    label='Vlastní opodvěd'
+                    checked={HasOpenQuestion(questionType)}
+                    onCheck={() => this.props.changeQuestionType(SwitchQuestionOpenOption[questionType])}
+                  />
+                   : null}
+                {CanHaveOptionAsImage(questionType) ?
+                  <Checkbox style={checkBoxStyle}
+                    label='Možnosti jsou obrázky'
+                    checked={HasOptionsAsImage(questionType)}
+                    onCheck={() => this.props.changeQuestionType(SwitchOptionToImage[questionType])}
+                  />
+                  : null}
             </Flex>
         );
     }

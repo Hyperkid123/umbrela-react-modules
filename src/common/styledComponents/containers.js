@@ -6,7 +6,7 @@ import {
 } from 'material-ui/styles/colors';
 
 export const Flex = styled.div`
-  width: 100%;
+  width: ${props => props.auto ? 'auto' : '100%'};
   max-height: 100%;
   display: flex;
   flex-direction: ${props => props.column ? 'column' : 'row'};
@@ -82,4 +82,8 @@ export const PreviewImage = styled.img`
   max-width: 600px;
   height: auto;
   border-radius: 5px;
+`
+
+export const OptionsList = styled.ul`
+  list-style: none;
 `

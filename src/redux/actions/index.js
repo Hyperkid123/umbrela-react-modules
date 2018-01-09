@@ -28,6 +28,12 @@ export {
 } from './questionActions';
 
 export {
+  getOptions,
+  synchronizeOption,
+  changeOptionTitle,
+} from './optionsActions';
+
+export {
   dragEnd
 } from './uiActions';
 

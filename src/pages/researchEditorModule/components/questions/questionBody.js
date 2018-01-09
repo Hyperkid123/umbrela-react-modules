@@ -11,6 +11,7 @@ import {
 
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
+import {Tabs, Tab} from 'material-ui/Tabs';
 
 import {QuestionTypes, HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
 import QuestionTypeChanger from './questionTypeChanger';
@@ -23,6 +24,7 @@ import {
 } from '../../../../common/validator';
 
 import QuestionPreview from './questionPreview';
+import OptionsBody from '../options/optionsBody';
 
 class QuestionBody extends Component {
 
@@ -42,44 +44,51 @@ class QuestionBody extends Component {
         const {questionType, customHelp, hasCustomHelp, url} = this.props.activeQuestion;;
         return (
             <Flex column>
-              <Chip>
+              <Chip style={{marginBottom: 5}}>
                 Typ otázky: {QuestionTypes[questionType]}
               </Chip>
               <QuestionTypeChanger/>
-              {hasCustomHelp ?
-                <TextField
-                  ref={(input) => { this.customHelpInput = input; }}
-                  name="customHelpInput"
-                  fullWidth
-                  multiLine
-                  value={customHelp}
-                  onChange={(event, newValue) => this.props.changeCustomHelp(newValue)}
-                  onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
-                  floatingLabelText='Vlastní nápověda'
-                />
-                : null}
-              {HasImagePreview(questionType) ?
-                <Flex column grow>
-                  <TextField
-                    ref={(input) => { this.imagePreviewInput = input; }}
-                    name="imagePreviewInput"
-                    multiLine
-                    value={url || ''}
-                    fullWidth
-                    floatingLabelText='URL adresa k obrázku'
-                    onChange={(event, newValue) => this.props.chnageQuestionUrl(newValue)}
-                    onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
-                  />
-                  <TextFieldComent
-                    error={!validateUrl(url)}
-                    label={validateUrl(url) ? null : 'Toto není validní URL adresa!'}
-                    alignRight
-                  />
-                </Flex>
-                 : null}
-                {HasNotOptions(questionType) ?
-                    <QuestionPreview/>
-                   : null}
+              <Tabs style={{marginTop: 5}}>
+                <Tab label='Editace'>
+                  {hasCustomHelp ?
+                    <TextField
+                      ref={(input) => { this.customHelpInput = input; }}
+                      name="customHelpInput"
+                      fullWidth
+                      multiLine
+                      value={customHelp}
+                      onChange={(event, newValue) => this.props.changeCustomHelp(newValue)}
+                      onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                      floatingLabelText='Vlastní nápověda'
+                    />
+                    : null}
+                  {HasImagePreview(questionType) ?
+                    <Flex column grow>
+                      <TextField
+                        ref={(input) => { this.imagePreviewInput = input; }}
+                        name="imagePreviewInput"
+                        multiLine
+                        value={url || ''}
+                        fullWidth
+                        floatingLabelText='URL adresa k obrázku'
+                        onChange={(event, newValue) => this.props.chnageQuestionUrl(newValue)}
+                        onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                      />
+                      <TextFieldComent
+                        error={!validateUrl(url)}
+                        label={validateUrl(url) ? null : 'Toto není validní URL adresa!'}
+                        alignRight
+                      />
+                    </Flex>
+                     : null}
+                    {HasNotOptions(questionType) ?
+                        <QuestionPreview/>
+                       : <OptionsBody/>}
+                </Tab>
+                {!HasNotOptions(questionType) ?
+                <Tab label='Náhled'>
+                </Tab> : null}
+              </Tabs>
             </Flex>
         );
     }

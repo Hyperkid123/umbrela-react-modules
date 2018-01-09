@@ -1,7 +1,11 @@
 import {
   deepOrange500,
   grey700,
+  white,
+  black
 } from 'material-ui/styles/colors';
+
+import {darken, fade, emphasize, lighten} from 'material-ui/utils/colorManipulator';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 export default getMuiTheme({
@@ -15,5 +19,10 @@ export default getMuiTheme({
     },
     appBar: {
       titleFontWeight: 300
+    },
+    tabs: {
+      backgroundColor: white,
+      textColor: fade(black, 0.7),
+      selectedTextColor: deepOrange500,
     }
 });
