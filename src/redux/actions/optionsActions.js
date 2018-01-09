@@ -3,6 +3,7 @@ import {
   REQUEST_QUESTION_OPTIONS,
   CHANGE_OPTION_TITLE,
   DRAG_OPTION_CARD,
+  DELETE_OPTION,
 } from './actionTypes';
 
 import {dragEnd} from './';
@@ -78,6 +79,20 @@ export function remapOptions(questionId) {
       dispatch(getOptions(questionId));
       dispatch(dragEnd());
     })
+    .catch((err) => {console.log('failed to fetch: ', err)});
+  }
+}
+
+export function deleteOption(option) {
+  return (dispatch, getState) => {
+    const {editor, questions} = getState();
+    dispatch(requestOptions());
+    return fetch(`${window.base}${editor.researchId}/delete-option`, {
+      method: 'POST',
+      body: JSON.stringify({
+        option
+      }),
+    }).then(() => dispatch(getOptions(questions.activeQuestion.questionId)))
     .catch((err) => {console.log('failed to fetch: ', err)});
   }
 }

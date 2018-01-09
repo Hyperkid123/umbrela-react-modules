@@ -89,3 +89,17 @@ export const OptionsList = styled.ul`
   margin: 0;
   padding: 0;
 `
+
+export const OptionItemWrapper = Flex.extend`
+  > div:last-of-type, button:last-of-type{
+    display: none !important;
+  }
+  &:hover{
+    > div:last-of-type{
+      display: block !important;
+    }
+    > button:last-of-type {
+      display: block !important;
+    }
+  }
+`

@@ -5,8 +5,6 @@ import {
   DRAG_OPTION_CARD,
 } from '../actions/actionTypes';
 
-import lodash from 'lodash';
-
 const initialState = {
   options: [],
   isFetching: false,

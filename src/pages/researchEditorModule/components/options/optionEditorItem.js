@@ -14,7 +14,6 @@ class OptionEditorItem extends Component {
 
     render() {
       const {option} = this.props;
-      console.log('reder');
       return (
         <OptionsDraggableCard
           id={option.optionId}
@@ -22,6 +21,7 @@ class OptionEditorItem extends Component {
           key={option.optionId}
           moveCard={this.props.dragOptionCard}
           onDragEnd={() => this.props.remapOptions(this.props.questionId)}
+          deleteOption={this.props.deleteOption}
         >
           <TextField
             name={`optionInput${option.optionId}`}

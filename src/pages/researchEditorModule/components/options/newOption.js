@@ -16,6 +16,7 @@ import {getNewOptionOrder} from '../../../../common/utils';
 import {grey500} from 'material-ui/styles/colors';
 import {ValideOption} from '../../../../common/validator';
 import {synchronizeOption} from '../../../../redux/actions';
+import {HasOpenQuestion} from '../../../../common/questionTypes';
 
 class NewOption extends Component {
     constructor(props){

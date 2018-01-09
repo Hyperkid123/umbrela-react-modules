@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Flex} from '../../../../common/styledComponents/containers';
 import {SmallHeading,} from '../../../../common/styledComponents/typography';
-import {QuestionTypes, HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
 import CloseOptionsEditor from './closeOptionsEditor';
 
 class OptionsBody extends Component {

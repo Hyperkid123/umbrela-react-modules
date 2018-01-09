@@ -89,6 +89,7 @@ class QuestionBody extends Component {
                 </Tab>
                 {!HasNotOptions(questionType) ?
                 <Tab label='Náhled' icon={<PreviewIcon/>}>
+                  <QuestionPreview/>
                 </Tab> : null}
               </Tabs>
             </Flex>

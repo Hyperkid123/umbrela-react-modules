@@ -2,16 +2,12 @@ import React,{Component} from 'react';
 import {DragSource, DropTarget} from 'react-dnd';
 import flow from 'lodash/flow';
 import {findDOMNode} from 'react-dom';
-import {Flex} from '../../../../common/styledComponents/containers';
-
-const handleStyle = {
-	backgroundColor: 'green',
-	width: '1rem',
-	height: '1rem',
-	display: 'inline-block',
-	marginRight: '0.75rem',
-	cursor: 'move',
-}
+import {OptionItemWrapper} from '../../../../common/styledComponents/containers';
+import DragHandle from 'material-ui/svg-icons/editor/drag-handle';
+import DeleteIcon from 'material-ui/svg-icons/action/delete-forever';
+import IconButton from 'material-ui/IconButton';
+import ReactTooltip from 'react-tooltip';
+import {red500} from 'material-ui/styles/colors';
 
 const cardSource = {
     beginDrag(props){
@@ -21,7 +17,7 @@ const cardSource = {
         };
     },
     endDrag(props, monitor, component) {
-      props.onDragEnd(props.questionId);      
+      props.onDragEnd(props.questionId);
     }
 };
 
@@ -52,14 +48,23 @@ class OptionsDraggableCard extends Component {
   render() {
      const { isDragging, connectDragSource, connectDropTarget, connectDragPreview} = this.props;
      const opacity = isDragging ? 0.5 : 1;
-     return connectDragSource(connectDropTarget(connectDragPreview(
+     return connectDragSource(connectDropTarget(
        <li style={{opacity}}>
-        <Flex row grow>
-         {this.props.children}
-			   {connectDragPreview(<div style={handleStyle} />)}
-        </Flex>
+        <OptionItemWrapper row grow >
+          {this.props.children}
+			   {connectDragPreview(
+           <div data-tip='tažením můžete změnit pořadí možností' data-for={`option-tooltip-${this.props.index}`}>
+             <DragHandle style={{cursor: 'move', height: 44}}/>
+           </div>)}
+           <IconButton onClick={this.props.deleteOption}>
+             <DeleteIcon color={red500} style={{height: 44}}/>
+           </IconButton>
+        </OptionItemWrapper>
+        {!this.props.draggingElement ?
+          <ReactTooltip id={`option-tooltip-${this.props.index}`} place="top" effect="solid" type="info" delayShow={300}/>
+          : null}
        </li>
-     )));
+     ));
  }
 }
 

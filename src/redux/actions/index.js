@@ -33,6 +33,7 @@ export {
   changeOptionTitle,
   dragOptionCard,
   remapOptions,
+  deleteOption,
 } from './optionsActions';
 
 export {

@@ -82,7 +82,6 @@ class SheetView extends Component {
       />,
     ];
       if(this.props.activeSheet) {
-        console.log(this.props.activeSheet.title.length >= LABEL_LENGTH, 'test');
         return (
           <Flex>
             <FlexSection fullWidth>

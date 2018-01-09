@@ -14,7 +14,10 @@ import {
   CHANGE_QUESTION_IMAGE_URL,
 } from './actionTypes';
 
+import {HasOpenQuestion} from '../../common/questionTypes';
+import {findOpenOption} from '../../common/utils';
 import {dragEnd} from './';
+import {synchronizeOption, deleteOption} from './';
 
 function requestQuestions(){
   return {
@@ -205,7 +208,23 @@ export function changeQuestionType(questionType) {
       type: CHANGE_QUESTION_TYPE,
       questionType
     });
-    dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
+    dispatch(updateQuetionsInformation(getState().questions.activeQuestion))
+    .then(() => {
+      const activeQuestion = getState().questions.activeQuestion;
+      const openOption = findOpenOption(activeQuestion.options)
+      if(HasOpenQuestion(questionType) && !openOption) {
+        const newOption = {
+          title: 'Vlastní odpověď',
+          optionOrder: activeQuestion.options.length,
+          optionType: 'OpenOption',
+          questionId: activeQuestion.questionId,
+          new: true,
+        }
+        dispatch(synchronizeOption(newOption));
+      } else if(!HasOpenQuestion(questionType) && openOption) {
+        dispatch(deleteOption(openOption));
+      }
+    })
   }
 }
 
