@@ -2,7 +2,16 @@ import React,{Component} from 'react';
 import {DragSource, DropTarget} from 'react-dnd';
 import flow from 'lodash/flow';
 import {findDOMNode} from 'react-dom';
+import {Flex} from '../../../../common/styledComponents/containers';
 
+const handleStyle = {
+	backgroundColor: 'green',
+	width: '1rem',
+	height: '1rem',
+	display: 'inline-block',
+	marginRight: '0.75rem',
+	cursor: 'move',
+}
 
 const cardSource = {
     beginDrag(props){
@@ -12,7 +21,7 @@ const cardSource = {
         };
     },
     endDrag(props, monitor, component) {
-      props.onDragEnd(props.researchId);
+      props.onDragEnd(props.questionId);      
     }
 };
 
@@ -39,15 +48,18 @@ const cardTarget = {
 };
 
 
-class SheetDraggableCard extends Component {
+class OptionsDraggableCard extends Component {
   render() {
-     const { isDragging, connectDragSource, connectDropTarget } = this.props;
+     const { isDragging, connectDragSource, connectDropTarget, connectDragPreview} = this.props;
      const opacity = isDragging ? 0.5 : 1;
-     return connectDragSource(connectDropTarget(
-         <li style={{opacity}}>
-           {this.props.children}
-         </li>
-     ));
+     return connectDragSource(connectDropTarget(connectDragPreview(
+       <li style={{opacity}}>
+        <Flex row grow>
+         {this.props.children}
+			   {connectDragPreview(<div style={handleStyle} />)}
+        </Flex>
+       </li>
+     )));
  }
 }
 
@@ -55,5 +67,6 @@ export default flow(DropTarget('CARD', cardTarget, connect => ({
     connectDropTarget: connect.dropTarget(),
 })), DragSource('CARD', cardSource, (connect, monitor) => ({
     connectDragSource: connect.dragSource(),
+    connectDragPreview: connect.dragPreview(),
     isDragging: monitor.isDragging(),
-})))(SheetDraggableCard);
+})))(OptionsDraggableCard);

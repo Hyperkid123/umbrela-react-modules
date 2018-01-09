@@ -19,8 +19,8 @@ class CloseOptionsEditor extends Component {
     }
 
     renderOptions = (options) => {
-      return this.props.options.map((option) => {
-        return <OptionEditorItem key={option.optionId} optionOrder={option.optionOrder}/>;
+      return this.props.options.map((option, index) => {
+        return <OptionEditorItem option={option} index={index} key={option.optionId} optionOrder={option.optionOrder}/>;
       })
     }
 

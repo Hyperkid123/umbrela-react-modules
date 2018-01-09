@@ -31,6 +31,8 @@ export {
   getOptions,
   synchronizeOption,
   changeOptionTitle,
+  dragOptionCard,
+  remapOptions,
 } from './optionsActions';
 
 export {

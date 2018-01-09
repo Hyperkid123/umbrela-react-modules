@@ -2,7 +2,10 @@ import {
   GET_QUESTION_OPTIONS,
   REQUEST_QUESTION_OPTIONS,
   CHANGE_OPTION_TITLE,
+  DRAG_OPTION_CARD,
 } from './actionTypes';
+
+import {dragEnd} from './';
 
 function requestOptions(){
   return {
@@ -49,5 +52,32 @@ export function changeOptionTitle(title, optionOrder){
       title,
       optionOrder
     }
+  }
+}
+
+export function dragOptionCard(dragIndex, hoverIndex) {
+  return {
+    type: DRAG_OPTION_CARD,
+    dragIndex,
+    hoverIndex
+  }
+}
+
+export function remapOptions(questionId) {
+  return (dispatch, getState) => {
+    const {editor, options} = getState();
+    dispatch(requestOptions());
+    return fetch(`${window.base}${editor.researchId}/remap-options`, {
+      method: 'POST',
+      body: JSON.stringify({
+        questionId,
+        options: options.options
+      }),
+    }).then(response => response.json())
+    .then((json) => {
+      dispatch(getOptions(questionId));
+      dispatch(dragEnd());
+    })
+    .catch((err) => {console.log('failed to fetch: ', err)});
   }
 }
