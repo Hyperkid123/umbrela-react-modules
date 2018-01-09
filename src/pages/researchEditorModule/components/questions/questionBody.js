@@ -12,6 +12,8 @@ import {
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 import {Tabs, Tab} from 'material-ui/Tabs';
+import ModeEditIcon from 'material-ui/svg-icons/editor/mode-edit';
+import PreviewIcon from 'material-ui/svg-icons/image/remove-red-eye';
 
 import {QuestionTypes, HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
 import QuestionTypeChanger from './questionTypeChanger';
@@ -41,7 +43,7 @@ class QuestionBody extends Component {
     }
 
     render() {
-        const {questionType, customHelp, hasCustomHelp, url} = this.props.activeQuestion;;
+        const {questionType, customHelp, hasCustomHelp, url} = this.props.activeQuestion;
         return (
             <Flex column>
               <Chip style={{marginBottom: 5}}>
@@ -49,7 +51,7 @@ class QuestionBody extends Component {
               </Chip>
               <QuestionTypeChanger/>
               <Tabs style={{marginTop: 5}}>
-                <Tab label='Editace'>
+                <Tab label='Editace' icon={<ModeEditIcon/>}>
                   {hasCustomHelp ?
                     <TextField
                       ref={(input) => { this.customHelpInput = input; }}
@@ -86,7 +88,7 @@ class QuestionBody extends Component {
                        : <OptionsBody/>}
                 </Tab>
                 {!HasNotOptions(questionType) ?
-                <Tab label='Náhled'>
+                <Tab label='Náhled' icon={<PreviewIcon/>}>
                 </Tab> : null}
               </Tabs>
             </Flex>

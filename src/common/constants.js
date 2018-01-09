@@ -1,6 +1,6 @@
 import {
   deepOrange500,
-  grey700,
+  grey500,
   grey100,
 } from 'material-ui/styles/colors';
 
@@ -15,4 +15,18 @@ export const TEXT_FIELD_UNDERLINE = {
 
 export const TEXT_FIELD_FOCUS = {
   borderColor: deepOrange500,
+}
+
+export const MEDIM_ICON_BUTTON_FIX = {
+  mediumIcon: {
+    width: 48,
+    height: 48,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+  },
+  medium: {
+    width: 96,
+    height: 96,
+  },
 }

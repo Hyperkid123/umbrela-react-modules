@@ -1,6 +1,7 @@
 import {
   deepOrange500,
   grey700,
+  grey200,
   white,
   black
 } from 'material-ui/styles/colors';
@@ -21,8 +22,8 @@ export default getMuiTheme({
       titleFontWeight: 300
     },
     tabs: {
-      backgroundColor: white,
+      backgroundColor: grey200,
       textColor: fade(black, 0.7),
-      selectedTextColor: deepOrange500,
+      selectedTextColor: fade(black, 0.7),
     }
 });

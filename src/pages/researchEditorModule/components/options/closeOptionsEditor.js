@@ -6,6 +6,7 @@ import NewOption from './newOption';
 import {getOptions, changeOptionTitle, synchronizeOption} from '../../../../redux/actions';
 import TextField from 'material-ui/TextField';
 import {ValideOption} from '../../../../common/validator';
+import OptionEditorItem from './optionEditorItem';
 
 class CloseOptionsEditor extends Component {
 
@@ -13,21 +14,13 @@ class CloseOptionsEditor extends Component {
       this.props.getOptions(this.props.activeQuestion.questionId);
     }
 
+    updateOption = (option) => {
+      if(ValideOption(option.title, this.props.activeQuestion.questionType)) this.props.synchronizeOption(option)
+    }
+
     renderOptions = (options) => {
       return this.props.options.map((option) => {
-        return (
-          <li key={option.optionId}>
-            <TextField
-              name={`optionInput${option.optionId}`}
-              value={option.title}
-              onChange={(event, value) => this.props.changeOptionTitle(value, option.optionOrder)}
-              onBlur={() => {
-                if(ValideOption(option.title, this.props.activeQuestion.questionType)) this.props.synchronizeOption(option)
-                }
-              }
-            />
-          </li>
-        );
+        return <OptionEditorItem key={option.optionId} optionOrder={option.optionOrder}/>;
       })
     }
 

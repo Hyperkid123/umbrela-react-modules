@@ -8,7 +8,10 @@ import {
 } from '../../../../common/components/labels';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import IconButton from 'material-ui/IconButton';
-import {LABEL_LENGTH} from '../../../../common/constants';
+import {
+  LABEL_LENGTH,
+  MEDIM_ICON_BUTTON_FIX,
+} from '../../../../common/constants';
 import {getNewOptionOrder} from '../../../../common/utils';
 import {grey500} from 'material-ui/styles/colors';
 import {ValideOption} from '../../../../common/validator';
@@ -44,8 +47,8 @@ class NewOption extends Component {
     render() {
         const {optionText} = this.state;
         return (
-            <Flex>
-                <Flex column grow>
+            <Flex grow>
+                <Flex column>
                   <TextField
                     fullWidth
                     hintText='Nová možnost'
@@ -62,16 +65,11 @@ class NewOption extends Component {
                     alignRight
                   />
                 </Flex>
-                <IconButton onClick={this.createOption} style={{
-                  width: 48,
-                  height: 48,
-                  marginRight: 10,
-                }} iconStyle={{
-                  width: 48,
-                  height: 48,
-                  color: grey500,
-                }} tooltip='Přidat možnost'>
-                  <ContentAdd/>
+                <IconButton onClick={this.createOption}
+                  iconStyle={{...MEDIM_ICON_BUTTON_FIX.mediumIcon, color: grey500}}
+                  tooltip='Přidat možnost'
+                  >
+                    <ContentAdd/>
                 </IconButton>
             </Flex>
         );
