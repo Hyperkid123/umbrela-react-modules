@@ -3,17 +3,18 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import TextField from 'material-ui/TextField';
 import {changeOptionTitle, synchronizeOption, dragOptionCard, remapOptions} from '../../../../redux/actions';
-import {ValideOption} from '../../../../common/validator';
+import {ValideOption, getOptionValidationMessage} from '../../../../common/validator';
 import OptionsDraggableCard from './dragByHandle';
 
 class OptionEditorItem extends Component {
 
     updateOption = (option) => {
-      if(ValideOption(option.title, this.props.questionType)) this.props.synchronizeOption(option)
+      if(ValideOption(option.title, this.props.questionType, option.optionType)) this.props.synchronizeOption(option)
     }
 
     render() {
       const {option} = this.props;
+
       return (
         <OptionsDraggableCard
           id={option.optionId}
@@ -30,6 +31,7 @@ class OptionEditorItem extends Component {
             onChange={(event, value) => this.props.changeOptionTitle(value, option.optionOrder)}
             onBlur={() => {this.updateOption(option)}}
             onKeyPress={(event) => {if(event.key === 'Enter') this.updateOption(option)}}
+            errorText={getOptionValidationMessage(option.title, this.props.questionType, option.optionType)}
           />
         </OptionsDraggableCard>
       );

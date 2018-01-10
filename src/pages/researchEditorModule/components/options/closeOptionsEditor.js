@@ -7,7 +7,6 @@ import {getOptions, changeOptionTitle, synchronizeOption, deleteOption} from '..
 import {ValideOption} from '../../../../common/validator';
 import {findOpenOption} from '../../../../common/utils';
 import OptionEditorItem from './optionEditorItem';
-import {HasOpenQuestion} from '../../../../common/questionTypes';
 import TextField from 'material-ui/TextField';
 import {
   TextFieldComent
@@ -23,7 +22,7 @@ class CloseOptionsEditor extends Component {
     }
 
     updateOption = (option) => {
-      if(ValideOption(option.title, this.props.activeQuestion.questionType)) this.props.synchronizeOption(option)
+      if(ValideOption(option.title, this.props.activeQuestion.questionType, option.optionType)) this.props.synchronizeOption(option)
     }
 
     renderOptions = (options) => {

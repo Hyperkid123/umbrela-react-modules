@@ -13,9 +13,9 @@ const initialState = {
 export default function optionsReducer(state = initialState, action) {
   switch (action.type) {
     case REQUEST_QUESTION_OPTIONS:
-        return {...state, isFeting: true};
+        return {...state, isFetching: true};
     case GET_QUESTION_OPTIONS:
-        return {...state, isFeting: false, options: action.options};
+        return {...state, isFetching: false, options: action.options};
     case CHANGE_OPTION_TITLE:
         let newOptions = [...state.options];
         newOptions[action.payload.optionOrder] = {

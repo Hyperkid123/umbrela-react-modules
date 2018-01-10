@@ -17,7 +17,7 @@ import {
 import {HasOpenQuestion} from '../../common/questionTypes';
 import {findOpenOption} from '../../common/utils';
 import {dragEnd} from './';
-import {synchronizeOption, deleteOption} from './';
+import {synchronizeOption, deleteOption, finishFetch} from './';
 
 function requestQuestions(){
   return {
@@ -142,8 +142,9 @@ export function updateQuetionsInformation(question) {
       }).then(response => response.json())
       .then((json) => {
         dispatch(synchronizeActiveQuestion(json));
-        return json;
-      }).then((json) => dispatch(getQuestions(editor.activeSheet.sheetId)))
+      })
+      .then(() => dispatch(getQuestions(editor.activeSheet.sheetId)))
+      .then(() => dispatch(finishFetch()))
       .catch((err) => {console.log('failed to fetch: ', err)});
   }
 }
@@ -224,7 +225,7 @@ export function changeQuestionType(questionType) {
       } else if(!HasOpenQuestion(questionType) && openOption) {
         dispatch(deleteOption(openOption));
       }
-    })
+    }).then(() => dispatch(finishFetch()))
   }
 }
 

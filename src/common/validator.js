@@ -24,10 +24,25 @@ function isStringUrl(url) {
     return [regexp.test(filteredUrl), filteredUrl];
 }
 
-export function ValideOption(optionText, questionType) {
+export function ValideOption(optionText, questionType, optionType) {
   let valid = optionText.length > 0 && optionText.length <= LABEL_LENGTH;
-  if(HasOptionsAsImage(questionType)) {
+  if(HasOptionsAsImage(questionType) && optionType === 'NormalOption') {
     valid = isStringUrl(optionText)[0];
   }
   return valid;
+}
+
+export function getOptionValidationMessage(optionText, questionType, optionType) {
+  if(ValideOption(optionText, questionType, optionType)) {
+    return ''
+  }
+  if(HasOptionsAsImage(questionType)) {
+    return 'Zadaný řetězec není URL obrázku.'
+  }
+  if(optionText.length === 0) {
+    return 'Vyplňte prosím text možnosti.'
+  }
+  if(optionText.length > LABEL_LENGTH) {
+    return `Možnost může mít maxinálně 255 znaků (${optionText.length}).`;
+  }
 }

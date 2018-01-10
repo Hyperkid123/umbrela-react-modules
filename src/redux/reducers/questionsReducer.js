@@ -11,6 +11,7 @@ import {
   SET_CUSTOM_HELP,
   CHANGE_QUESTION_TYPE,
   CHANGE_QUESTION_IMAGE_URL,
+  FINISH_FETCH,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -18,12 +19,14 @@ import lodash from 'lodash';
 const initialState = {
   questions: null,
   activeQuestion: null,
-  isFeting: false,
+  isFetching: false,
   newQuestion: false,
 }
 
 export default function questionsReducer(state = initialState, action) {
   switch (action.type) {
+    case FINISH_FETCH:
+      return {...state, isFetching: false}
     case REQUEST_QUESTION:
       return {...state, isFetching: true}
     case GET_SHEET_QUESTIONS:
@@ -39,7 +42,7 @@ export default function questionsReducer(state = initialState, action) {
       });
       return {...state, isFetching: false, activeQuestion: selected}
     case SYNCHORNIZE_ACTIVE_QUESTION:
-      return {...state, activeQuestion: action.question}
+      return {...state, activeQuestion: action.question, isFetching: false}
     case CHANGE_QUESTION_TITLE:
       return {...state, activeQuestion: {...state.activeQuestion, title: action.title, newQuestion: false}};
     case DRAG_QUESTION_CARD:

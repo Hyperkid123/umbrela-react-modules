@@ -33,30 +33,30 @@ class QuestionTypeChanger extends Component {
         const checkBoxStyle = {width: 'auto', whiteSpace: 'nowrap', marginRight: 10};
         return (
             <Flex row grow wrap='true'>
-                <Checkbox style={checkBoxStyle} label='Povinná' checked={mandatory} onCheck={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
-                <Checkbox style={checkBoxStyle} label='Vlastní nápověda' checked={hasCustomHelp} onCheck={(event, checked) => {this.props.setCustomHelp(checked)}}/>
+                <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} label='Povinná' checked={mandatory} onCheck={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
+                <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} label='Vlastní nápověda' checked={hasCustomHelp} onCheck={(event, checked) => {this.props.setCustomHelp(checked)}}/>
                 {CanHaveImagePreview(questionType) ?
-                  <Checkbox style={checkBoxStyle}
+                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
                     label='Obrázek v zadání'
                     checked={HasImagePreview(questionType)}
                     onCheck={() => this.props.changeQuestionType(SwitchToImagePreview[questionType])}
                   />
                    : null}
                 {CanHaveMultipleAnswers(questionType) ?
-                  <Checkbox style={checkBoxStyle}
+                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
                     label='Více možností'
                     checked={HasMultipleAnswers(questionType)}
                     onCheck={() => this.props.changeQuestionType(SwitchQuestionMultipleAnswers[questionType])}
                   /> : null}
                 {CanHaveOpenQuestion(questionType) ?
-                  <Checkbox style={checkBoxStyle}
+                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
                     label='Vlastní opodvěd'
                     checked={HasOpenQuestion(questionType)}
                     onCheck={() => this.props.changeQuestionType(SwitchQuestionOpenOption[questionType])}
                   />
                    : null}
                 {CanHaveOptionAsImage(questionType) ?
-                  <Checkbox style={checkBoxStyle}
+                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
                     label='Možnosti jsou obrázky'
                     checked={HasOptionsAsImage(questionType)}
                     onCheck={() => this.props.changeQuestionType(SwitchOptionToImage[questionType])}
@@ -78,6 +78,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps({questions}) {
   return{
     activeQuestion: questions.activeQuestion,
+    disableChange: questions.isFetching
   }
 }
 

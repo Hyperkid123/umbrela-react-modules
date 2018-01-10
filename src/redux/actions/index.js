@@ -1,4 +1,4 @@
-import {TEST_ACTION} from './actionTypes';
+import {FINISH_FETCH} from './actionTypes';
 export {
   getSheets,
   createNewSheet,
@@ -40,8 +40,8 @@ export {
   dragEnd
 } from './uiActions';
 
-export function testAction(){
+export function finishFetch() {
   return {
-    type:TEST_ACTION,
+    type: FINISH_FETCH
   }
 }
