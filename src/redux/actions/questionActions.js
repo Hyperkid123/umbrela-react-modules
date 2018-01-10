@@ -66,7 +66,7 @@ export function createNewQuestion(researchId, sheetId, questionType) {
     }).then(response => response.json())
     .then((json) => {
       dispatch(getQuestions(sheetId)).then(() => {
-        dispatch(receiveNewQuestion(json.questionId))
+        dispatch(getQuestionStructure(json.questionId))
       })
     })
     .catch((err) => {console.log('failed to fetch: ', err)});

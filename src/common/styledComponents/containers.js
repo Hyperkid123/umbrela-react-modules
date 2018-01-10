@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   white,
-  grey300, grey500, grey700,
+  grey300, grey500, grey700, grey200,
   red500,
 } from 'material-ui/styles/colors';
 
@@ -127,4 +127,22 @@ export const OptionsFillListWrapper = Flex.extend`
 export const PreviewImageContainer = styled.div`
   display: table;
   margin-right: 1em;
+`
+export const OrderQuestionList = styled.div`
+  width: 100%;
+`
+
+export const OrderQuestionItem = styled.div`
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 1rem;
+  padding-left: .2em;
+  margin-bottom: .5rem;
+  background-color: ${grey200};
+  cursor: move;
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
 `

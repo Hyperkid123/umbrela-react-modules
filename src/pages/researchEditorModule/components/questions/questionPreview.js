@@ -3,14 +3,16 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Flex, PreviewImage, CustomHelpWrapper, CustomHelpLine} from '../../../../common/styledComponents/containers';
 import {FillQuestionheading} from '../../../../common/styledComponents/typography';
-import {HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
+import {HasImagePreview, HasNotOptions, IsOrderQuestion} from '../../../../common/questionTypes';
 import LazyLoad from 'react-lazyload';
 import TextField from 'material-ui/TextField';
 import {
   TextFieldComent
 } from '../../../../common/components/labels';
 import ClosePreview from './closePreview';
+import OrderPreview from './orderPreview';
 import {ANSWER_LENGTH} from '../../../../common/constants';
+
 
 class QuestionPreview extends Component {
 
@@ -56,10 +58,14 @@ class QuestionPreview extends Component {
     }
 
     renderOptionsList = () => {
+      const {questionType, title, options} = this.props.activeQuestion;
+      if(IsOrderQuestion(questionType)){
+        return <OrderPreview title={title} options={options}/>
+      }
       return <ClosePreview
-        title={this.props.activeQuestion.title}
-        options={this.props.options}
-        questionType={this.props.activeQuestion.questionType}/>
+        title={title}
+        options={options}
+        questionType={questionType}/>
     }
 
     render() {
