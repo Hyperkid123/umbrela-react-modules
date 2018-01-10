@@ -3,7 +3,6 @@ import {
   REQUEST_QUESTION_OPTIONS,
   CHANGE_OPTION_TITLE,
   DRAG_OPTION_CARD,
-  DELETE_OPTION,
 } from './actionTypes';
 
 import {dragEnd} from './';

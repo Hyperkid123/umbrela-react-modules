@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   white,
-  grey300, grey500,
+  grey300, grey500, grey700,
   red500,
 } from 'material-ui/styles/colors';
 
@@ -102,4 +102,29 @@ export const OptionItemWrapper = Flex.extend`
       display: block !important;
     }
   }
+`
+
+export const CustomHelpWrapper = styled.div`
+  font-size: .9em;
+  color: ${grey700}
+  margin: 0;
+  padding: 10px;
+`
+
+export const CustomHelpLine = styled.div`
+  margin:0 0 5px 0;
+  padding: 0;
+  &:last-child {
+    margin: 0;
+  }
+`
+export const OptionsFillListWrapper = Flex.extend`
+  padding-left: 20px;
+  padding-right: 20px;
+  width: calc(100% - 40px);
+`
+
+export const PreviewImageContainer = styled.div`
+  display: table;
+  margin-right: 1em;
 `

@@ -2,11 +2,10 @@ import {
   deepOrange500,
   grey700,
   grey200,
-  white,
   black
 } from 'material-ui/styles/colors';
 
-import {darken, fade, emphasize, lighten} from 'material-ui/utils/colorManipulator';
+import {fade} from 'material-ui/utils/colorManipulator';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 export default getMuiTheme({

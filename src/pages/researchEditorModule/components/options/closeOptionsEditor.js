@@ -21,6 +21,13 @@ class CloseOptionsEditor extends Component {
       this.props.getOptions(this.props.activeQuestion.questionId);
     }
 
+    componentWillReceiveProps(nextProps) {
+      if(nextProps.activeQuestion.questionId !== this.props.activeQuestion.questionId) {
+        console.log('should fetch new questions');
+        this.props.getOptions(nextProps.activeQuestion.questionId);
+      }
+    }
+
     updateOption = (option) => {
       if(ValideOption(option.title, this.props.activeQuestion.questionType, option.optionType)) this.props.synchronizeOption(option)
     }

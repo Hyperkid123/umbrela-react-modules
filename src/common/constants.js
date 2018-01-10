@@ -1,6 +1,5 @@
 import {
   deepOrange500,
-  grey500,
   grey100,
 } from 'material-ui/styles/colors';
 
@@ -29,4 +28,14 @@ export const MEDIM_ICON_BUTTON_FIX = {
     width: 96,
     height: 96,
   },
+}
+
+export const PREVIEW_SWITCH_STYLE = {
+  cursor: 'pointer',
+  position: 'relative',
+  overflow: 'visible',
+  display: 'table',
+  height:'auto',
+  width: 'auto',
+  alignSelf: 'center',
 }

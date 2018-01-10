@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {Flex, PreviewImage} from '../../../../common/styledComponents/containers';
-import {SmallHeading, FillQuestionheading, CustomHelp} from '../../../../common/styledComponents/typography';
-import {QuestionTypes, HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
+import {Flex, PreviewImage, CustomHelpWrapper, CustomHelpLine} from '../../../../common/styledComponents/containers';
+import {FillQuestionheading} from '../../../../common/styledComponents/typography';
+import {HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
 import LazyLoad from 'react-lazyload';
 import TextField from 'material-ui/TextField';
 import {
   TextFieldComent
 } from '../../../../common/components/labels';
+import ClosePreview from './closePreview';
 import {ANSWER_LENGTH} from '../../../../common/constants';
 
 class QuestionPreview extends Component {
@@ -33,7 +34,12 @@ class QuestionPreview extends Component {
     }
 
     renderCustomHelp = (customHelp) => {
-      return <CustomHelp>{customHelp}</CustomHelp>;
+      if(!customHelp) return null;
+      return (
+        <CustomHelpWrapper>
+          {customHelp.split("\n").map((line, i) => <CustomHelpLine key={i}>{line}</CustomHelpLine>)}
+        </CustomHelpWrapper>
+      );
     }
 
     renderOpenOption = () => {
@@ -50,16 +56,16 @@ class QuestionPreview extends Component {
     }
 
     renderOptionsList = () => {
-      return null;
+      return <ClosePreview
+        title={this.props.activeQuestion.title}
+        options={this.props.options}
+        questionType={this.props.activeQuestion.questionType}/>
     }
 
     render() {
         const {url, questionType, title, customHelp} = this.props.activeQuestion;
         return (
             <Flex column>
-                <SmallHeading>
-                  Náhled
-                </SmallHeading>
                 <FillQuestionheading>
                   {title}
                 </FillQuestionheading>
@@ -71,9 +77,10 @@ class QuestionPreview extends Component {
     }
 }
 
-function mapStateToProps({questions}) {
+function mapStateToProps({questions, options}) {
   return{
       activeQuestion: questions.activeQuestion,
+      options: options.options
   }
 }
 
