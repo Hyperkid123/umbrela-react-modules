@@ -7,6 +7,7 @@ import {
   changeCustomHelp,
   updateQuetionsInformation,
   chnageQuestionUrl,
+  changeScalePoints,
 } from '../../../../redux/actions';
 
 import Chip from 'material-ui/Chip';
@@ -15,7 +16,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import ModeEditIcon from 'material-ui/svg-icons/editor/mode-edit';
 import PreviewIcon from 'material-ui/svg-icons/image/remove-red-eye';
 
-import {QuestionTypes, HasImagePreview, HasNotOptions} from '../../../../common/questionTypes';
+import {QuestionTypes, HasImagePreview, HasNotOptions, HasScalePoints} from '../../../../common/questionTypes';
 import QuestionTypeChanger from './questionTypeChanger';
 import {
   TextFieldComent
@@ -43,7 +44,7 @@ class QuestionBody extends Component {
     }
 
     render() {
-        const {questionType, customHelp, hasCustomHelp, url} = this.props.activeQuestion;
+        const {questionType, customHelp, hasCustomHelp, url, scalePoints} = this.props.activeQuestion;
         return (
             <Flex column>
               <Chip style={{marginBottom: 5}}>
@@ -62,6 +63,19 @@ class QuestionBody extends Component {
                       onChange={(event, newValue) => this.props.changeCustomHelp(newValue)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
                       floatingLabelText='Vlastní nápověda'
+                    />
+                    : null}
+                  {HasScalePoints(questionType) ?
+                    <TextField
+                      ref={(input) => { this.customHelpInput = input; }}
+                      name="customHelpInput"
+                      fullWidth
+                      type='number'
+                      value={scalePoints}
+                      floatingLabelText='Celkový počet bodů'
+                      onChange={(event, newValue) => this.props.changeScalePoints(newValue)}
+                      onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                      onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
                     />
                     : null}
                   {HasImagePreview(questionType) ?
@@ -108,6 +122,7 @@ function mapDispatchToProps(dispatch) {
     changeCustomHelp,
     updateQuetionsInformation,
     chnageQuestionUrl,
+    changeScalePoints,
   },dispatch)
 }
 

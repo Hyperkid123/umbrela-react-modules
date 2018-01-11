@@ -145,4 +145,10 @@ export const OrderQuestionItem = styled.div`
   align-items: center;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  > svg{
+    opacity: 0;
+  }
+  &:hover > svg {
+    opacity: 1;
+  }
 `

@@ -25,6 +25,7 @@ export {
   setCustomHelp,
   changeQuestionType,
   chnageQuestionUrl,
+  changeScalePoints,
 } from './questionActions';
 
 export {

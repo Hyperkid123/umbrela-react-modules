@@ -13,6 +13,7 @@ import {
   CHANGE_QUESTION_IMAGE_URL,
   FINISH_FETCH,
   DESELECT_QUESTION,
+  CHANGE_SCALE_POINTS,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -26,6 +27,8 @@ const initialState = {
 
 export default function questionsReducer(state = initialState, action) {
   switch (action.type) {
+    case CHANGE_SCALE_POINTS:
+      return {...state, activeQuestion: {...state.activeQuestion, scalePoints: action.scalePoints, newQuestion: false}};
     case DESELECT_QUESTION:
       return {...state, activeQuestion: null}
     case FINISH_FETCH:

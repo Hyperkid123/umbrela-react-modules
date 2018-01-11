@@ -1,7 +1,6 @@
 import {
   REQUEST_QUESTION,
   GET_SHEET_QUESTIONS,
-  RECEIVE_NEW_QUESTION,
   SELECT_EDITOR_QUESTION,
   SYNCHORNIZE_ACTIVE_QUESTION,
   DESELECT_QUESTION,
@@ -12,6 +11,7 @@ import {
   SET_CUSTOM_HELP,
   CHANGE_QUESTION_TYPE,
   CHANGE_QUESTION_IMAGE_URL,
+  CHANGE_SCALE_POINTS,
 } from './actionTypes';
 
 import {HasOpenQuestion} from '../../common/questionTypes';
@@ -41,15 +41,6 @@ export function getQuestions(sheetId){
     }).then(response => response.json())
     .then(json => dispatch(receiveQuestions(json)))
     .catch((err) => {console.log('failed to fetch: ', err);});
-  }
-}
-
-
-
-function receiveNewQuestion(questionId) {
-  return {
-    type: RECEIVE_NEW_QUESTION,
-    questionId,
   }
 }
 
@@ -233,5 +224,12 @@ export function chnageQuestionUrl(url) {
   return {
     type: CHANGE_QUESTION_IMAGE_URL,
     url,
+  }
+}
+
+export function changeScalePoints(scalePoints) {
+  return {
+    type: CHANGE_SCALE_POINTS,
+    scalePoints,
   }
 }
