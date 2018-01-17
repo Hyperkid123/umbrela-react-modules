@@ -23,7 +23,6 @@ class CloseOptionsEditor extends Component {
 
     componentWillReceiveProps(nextProps) {
       if(nextProps.activeQuestion.questionId !== this.props.activeQuestion.questionId) {
-        console.log('should fetch new questions');
         this.props.getOptions(nextProps.activeQuestion.questionId);
       }
     }

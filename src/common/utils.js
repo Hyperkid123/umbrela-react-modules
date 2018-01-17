@@ -20,3 +20,14 @@ export const findOpenOption = (options) => {
 export const getOptionsInputType = (questionType) => {
   return HasMultipleAnswers(questionType) ? 'checkBox' : 'redioButton'
 }
+
+export const divideMatrixOptions = (options) => {
+  const rows = [];
+  const columns = [];
+  options.map((option) => {
+    if(option.optionType === 'ColumnOption') columns.push(option);
+    if(option.optionType === 'RowOption') rows.push(option);
+  });
+
+  return {rows, columns};
+}

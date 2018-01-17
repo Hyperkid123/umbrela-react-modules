@@ -39,3 +39,9 @@ export const PREVIEW_SWITCH_STYLE = {
   width: 'auto',
   alignSelf: 'center',
 }
+
+export const MATRIX_INPUT_FIX = {
+    width: 40,
+    margin: 'auto',
+    borderLeft: '16px solid transparent',
+}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   white,
-  grey300, grey500, grey700, grey200,
+  grey300, grey500, grey700, grey200, grey100,
   red500,
 } from 'material-ui/styles/colors';
 
@@ -83,6 +83,12 @@ export const PreviewImage = styled.img`
   height: auto;
   border-radius: 5px;
 `
+export const FullImage = PreviewImage.extend`
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+`
 
 export const OptionsList = styled.ul`
   list-style: none;
@@ -150,5 +156,31 @@ export const OrderQuestionItem = styled.div`
   }
   &:hover > svg {
     opacity: 1;
+  }
+`
+export const ListColumn = styled.div`
+  padding-left: 20px;
+  padding-right: 20px;
+`
+export const MatrixTable = styled.table`
+  border-collapse:collapse;
+`
+export const MatrixTableHeader = styled.thead`
+  text-align: center;
+`
+export const MatrixtableCell = styled.td`
+  padding: .4em;
+  text-align: center;
+`
+export const MatrixTableBody = styled.tbody`
+
+`
+
+export const MatrixTableRow = styled.tr`
+  &:nth-child(odd) > td:not(:first-of-type){
+    background-color: ${props => props.filler ? grey200 : white}
+  }
+  > td:not(:first-of-type){
+    background-color: ${props => props.filler ? grey100 : white}
   }
 `

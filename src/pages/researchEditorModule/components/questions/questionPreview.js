@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Flex, PreviewImage, CustomHelpWrapper, CustomHelpLine} from '../../../../common/styledComponents/containers';
 import {FillQuestionheading} from '../../../../common/styledComponents/typography';
-import {HasImagePreview, HasNotOptions, IsOrderQuestion, HasScalePoints} from '../../../../common/questionTypes';
+import {HasImagePreview, HasNotOptions, IsOrderQuestion, HasScalePoints, IsMatrixQuestion} from '../../../../common/questionTypes';
 import LazyLoad from 'react-lazyload';
 import TextField from 'material-ui/TextField';
 import {
@@ -12,6 +12,7 @@ import {
 import ClosePreview from './closePreview';
 import OrderPreview from './orderPreview';
 import DividePreview from './dividePreview';
+import MatrixPreview from './matrixPreview';
 import {ANSWER_LENGTH} from '../../../../common/constants';
 
 
@@ -59,12 +60,16 @@ class QuestionPreview extends Component {
     }
 
     renderOptionsList = () => {
-      const {questionType, title, options, scalePoints} = this.props.activeQuestion;
+      const {questionType, title, scalePoints} = this.props.activeQuestion;
+      const options = this.props.options;
       if(IsOrderQuestion(questionType)){
         return <OrderPreview title={title} options={options}/>
       }
       if(HasScalePoints(questionType)){
          return <DividePreview title={title} options={options} scalePoints={scalePoints}/>
+      }
+      if(IsMatrixQuestion(questionType)) {
+        return <MatrixPreview title={title} options={options} questionType={questionType}/>
       }
       return <ClosePreview
         title={title}

@@ -51,7 +51,7 @@ class NewOption extends Component {
                 <Flex column>
                   <TextField
                     fullWidth
-                    hintText='Nová možnost'
+                    hintText={this.props.hintText || 'Nová možnost'}
                     value={optionText}
                     onChange={(event, newValue) => this.setOptionText(newValue)}
                     onBlur={this.createOption}

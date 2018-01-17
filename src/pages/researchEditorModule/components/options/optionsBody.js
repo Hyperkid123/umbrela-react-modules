@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Flex} from '../../../../common/styledComponents/containers';
 import {SmallHeading,} from '../../../../common/styledComponents/typography';
+import {IsMatrixQuestion} from '../../../../common/questionTypes';
 import CloseOptionsEditor from './closeOptionsEditor';
+import MatrixOptionsEditor from './matrixOptionsEditor';
 
 class OptionsBody extends Component {
 
@@ -11,7 +13,7 @@ class OptionsBody extends Component {
         return (
             <Flex column>
                 <SmallHeading withouthBorder>Možnosti</SmallHeading>
-                <CloseOptionsEditor/>
+                {IsMatrixQuestion(this.props.questionType) ? <MatrixOptionsEditor/> : <CloseOptionsEditor/>}
             </Flex>
         );
     }
@@ -19,7 +21,7 @@ class OptionsBody extends Component {
 
 function mapStateToProps({questions}) {
   return{
-    activeQuestion: questions.activeQuestion,
+    questionType: questions.activeQuestion.questionType,
   }
 }
 
