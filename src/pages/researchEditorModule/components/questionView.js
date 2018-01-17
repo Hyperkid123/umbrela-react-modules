@@ -26,6 +26,7 @@ import {
   changeQuestionTitle,
   updateQuetionsInformation,
 } from '../../../redux/actions';
+import {DeleteNotification} from '../../../common/styledComponents/typography';
 
 import QuestionBody from './questions/questionBody';
 
@@ -109,7 +110,7 @@ class QuestionView extends Component {
               open={this.state.showDelete}
               onRequestClose={this.handleDeleteClose}
             >
-              Smazat otázku?
+              Smazat otázku <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
             </Dialog>
           </FlexSection>
         );

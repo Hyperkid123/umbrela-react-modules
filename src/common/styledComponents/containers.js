@@ -13,6 +13,7 @@ export const Flex = styled.div`
   align-items:  ${props => props.verticalCenter ? 'center' : 'null'};
   align-items: ${props => props.baseline ? 'baseline' : 'null'};
   justify-content: ${props => props.horizintalCenter ? 'center' : 'null'};
+  justify-content: ${props => props.end ? 'flex-end' : 'null'};
   flex-grow: ${props => props.grow ? 1 : 0};
   flex-wrap: ${props => props.wrap ? 'wrap' : 'no-wrap'};
 `

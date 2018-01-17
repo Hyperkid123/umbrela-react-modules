@@ -26,7 +26,7 @@ function isStringUrl(url) {
 
 export function ValideOption(optionText, questionType, optionType) {
   let valid = optionText.length > 0 && optionText.length <= LABEL_LENGTH;
-  if(HasOptionsAsImage(questionType) && optionType === 'NormalOption') {
+  if(HasOptionsAsImage(questionType) && optionType !== 'ColumnOption') {
     valid = isStringUrl(optionText)[0];
   }
   return valid;
@@ -36,7 +36,7 @@ export function getOptionValidationMessage(optionText, questionType, optionType)
   if(ValideOption(optionText, questionType, optionType)) {
     return ''
   }
-  if(HasOptionsAsImage(questionType)) {
+  if(HasOptionsAsImage(questionType) && optionType !== 'ColumnOption') {
     return 'Zadaný řetězec není URL obrázku.'
   }
   if(optionText.length === 0) {

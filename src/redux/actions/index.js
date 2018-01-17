@@ -46,3 +46,9 @@ export function finishFetch() {
     type: FINISH_FETCH
   }
 }
+
+export function fetchFailed(type) {
+  return {
+    type
+  }
+}

@@ -14,6 +14,9 @@ import {
   FINISH_FETCH,
   DESELECT_QUESTION,
   CHANGE_SCALE_POINTS,
+  SELECT_EDITOR_SHEET,
+  RECEIVE_NEW_SHEET,
+  QUESTION_FETCH_FAILED,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -23,6 +26,7 @@ const initialState = {
   activeQuestion: null,
   isFetching: false,
   newQuestion: false,
+  failed: false,
 }
 
 export default function questionsReducer(state = initialState, action) {
@@ -30,25 +34,27 @@ export default function questionsReducer(state = initialState, action) {
     case CHANGE_SCALE_POINTS:
       return {...state, activeQuestion: {...state.activeQuestion, scalePoints: action.scalePoints, newQuestion: false}};
     case DESELECT_QUESTION:
+    case SELECT_EDITOR_SHEET:
+    case RECEIVE_NEW_SHEET:
       return {...state, activeQuestion: null}
     case FINISH_FETCH:
       return {...state, isFetching: false}
     case REQUEST_QUESTION:
       return {...state, isFetching: true}
     case GET_SHEET_QUESTIONS:
-      return {...state, questions: action.questions}
+      return {...state, questions: action.questions, failed: false}
     case RECEIVE_NEW_QUESTION:
       const activeQuestion = lodash.find(state.questions, (question) => {
         return question.questionId === action.questionId;
       });
-      return {...state, isFetching: false, activeQuestion: {...activeQuestion, newQuestion: true}}
+      return {...state, isFetching: false, activeQuestion: {...activeQuestion, newQuestion: true}, failed: false}
     case SELECT_EDITOR_QUESTION:
       const selected = lodash.find(state.questions, (question) => {
         return question.questionId === action.questionId;
       });
       return {...state, isFetching: false, activeQuestion: selected}
     case SYNCHORNIZE_ACTIVE_QUESTION:
-      return {...state, activeQuestion: action.question, isFetching: false}
+      return {...state, activeQuestion: action.question, isFetching: false, failed: false}
     case CHANGE_QUESTION_TITLE:
       return {...state, activeQuestion: {...state.activeQuestion, title: action.title, newQuestion: false}};
     case DRAG_QUESTION_CARD:
@@ -69,9 +75,11 @@ export default function questionsReducer(state = initialState, action) {
         customHelp: state.activeQuestion.customHelp || '(Zadejte vlastní nápovědu)'}
       }
     case CHANGE_QUESTION_TYPE:
-      return {...state, activeQuestion: {...state.activeQuestion, questionType: action.questionType}};
+      return {...state, activeQuestion: {...state.activeQuestion, questionType: action.questionType}, failed: false};
     case CHANGE_QUESTION_IMAGE_URL:
-      return {...state, activeQuestion: {...state.activeQuestion, url: action.url}};
+      return {...state, activeQuestion: {...state.activeQuestion, url: action.url}, failed: false};
+    case QUESTION_FETCH_FAILED:
+      return {...state, failed: true}
     default:
       return state;
   }

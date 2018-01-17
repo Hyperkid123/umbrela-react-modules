@@ -12,12 +12,13 @@ import {
   CHANGE_QUESTION_TYPE,
   CHANGE_QUESTION_IMAGE_URL,
   CHANGE_SCALE_POINTS,
+  QUESTION_FETCH_FAILED
 } from './actionTypes';
 
 import {HasOpenQuestion} from '../../common/questionTypes';
 import {findOpenOption} from '../../common/utils';
 import {dragEnd} from './';
-import {synchronizeOption, deleteOption, finishFetch} from './';
+import {synchronizeOption, deleteOption, finishFetch, fetchFailed} from './';
 
 function requestQuestions(){
   return {
@@ -40,7 +41,11 @@ export function getQuestions(sheetId){
       body: JSON.stringify({sheetId}),
     }).then(response => response.json())
     .then(json => dispatch(receiveQuestions(json)))
-    .catch((err) => {console.log('failed to fetch: ', err);});
+    .then(() => dispatch(finishFetch()))
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
   }
 }
 
@@ -60,7 +65,10 @@ export function createNewQuestion(researchId, sheetId, questionType) {
         dispatch(getQuestionStructure(json.questionId))
       })
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
   }
 }
 
@@ -82,7 +90,10 @@ export function getQuestionStructure(questionId) {
       }),
     }).then(response => response.json())
     .then((json) => dispatch(synchronizeActiveQuestion(json.question)))
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
   }
 }
 
@@ -106,7 +117,10 @@ export function deleteQuestion(questionId) {
     }).then(() => {
       dispatch(getQuestions(editor.activeSheet.sheetId))
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
   }
 }
 
@@ -136,7 +150,10 @@ export function updateQuetionsInformation(question) {
       })
       .then(() => dispatch(getQuestions(editor.activeSheet.sheetId)))
       .then(() => dispatch(finishFetch()))
-      .catch((err) => {console.log('failed to fetch: ', err)});
+      .catch((err) => {
+        console.log('failed to fetch: ', err);
+        dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+      });
   }
 }
 
@@ -163,7 +180,10 @@ export function remapQuestions(sheetId) {
       dispatch(getQuestions(sheetId));
       dispatch(dragEnd());
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
   }
 }
 

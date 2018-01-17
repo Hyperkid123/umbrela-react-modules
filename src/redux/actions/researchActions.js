@@ -6,10 +6,11 @@ import {
   DESELECT_ACTIVE_SHEET,
   CHANGE_SHEET_TITLE,
   DRAG_SHEET_CARD,
+  RESEARCH_FETCH_FAILED
 } from './actionTypes';
 
 import {sheetInfoValidator} from '../../common/validator';
-import {dragEnd} from './';
+import {dragEnd, finishFetch, fetchFailed} from './';
 import lodash from 'lodash';
 
 export function getSheets(researchId){
@@ -19,7 +20,10 @@ export function getSheets(researchId){
       method: 'POST',
     }).then(response => response.json())
     .then(json => dispatch(receiveSheets(json)))
-    .catch((err) => {console.log('failed to fetch: ', err);});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(RESEARCH_FETCH_FAILED))
+    });
   }
 }
 
@@ -48,7 +52,11 @@ export function createNewSheet(researchId) {
         dispatch(receiveNewSheet(json.sheetId))
       })
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .then(() => dispatch(finishFetch()))
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(RESEARCH_FETCH_FAILED))
+    });
   }
 }
 
@@ -78,7 +86,10 @@ export function deleteSheet(sheetId, researchId) {
     }).then(() => {
       dispatch(getSheets(researchId))
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(RESEARCH_FETCH_FAILED))
+    });
   }
 }
 
@@ -109,7 +120,10 @@ export function updateSheetInformation(sheet, researchId) {
       .then((json) => {
         dispatch(getSheets(researchId))
       })
-      .catch((err) => {console.log('failed to fetch: ', err)});
+      .catch((err) => {
+        console.log('failed to fetch: ', err);
+        dispatch(fetchFailed(RESEARCH_FETCH_FAILED))
+      });
     }
   }
 }
@@ -133,6 +147,9 @@ export function remapSheets(researchId) {
       dispatch(getSheets(researchId));
       dispatch(dragEnd());
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(RESEARCH_FETCH_FAILED))
+    });
   }
 }

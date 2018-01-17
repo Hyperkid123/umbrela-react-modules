@@ -3,11 +3,13 @@ import {
   REQUEST_QUESTION_OPTIONS,
   CHANGE_OPTION_TITLE,
   DRAG_OPTION_CARD,
+  OPTION_FETCH_FAILED,
 } from '../actions/actionTypes';
 
 const initialState = {
   options: [],
   isFetching: false,
+  failed: false,
 }
 
 export default function optionsReducer(state = initialState, action) {
@@ -15,7 +17,7 @@ export default function optionsReducer(state = initialState, action) {
     case REQUEST_QUESTION_OPTIONS:
         return {...state, isFetching: true};
     case GET_QUESTION_OPTIONS:
-        return {...state, isFetching: false, options: action.options};
+        return {...state, isFetching: false, options: action.options, failed: false,};
     case CHANGE_OPTION_TITLE:
         let newOptions = [...state.options];
         newOptions[action.payload.optionOrder] = {
@@ -30,6 +32,8 @@ export default function optionsReducer(state = initialState, action) {
         options[action.hoverIndex] = draggedOption;
         options[action.dragIndex] = swapOptions;
         return {...state, options: [...options]};
+    case OPTION_FETCH_FAILED:
+      return {...state, failed: true}
     default:
       return state;
   }

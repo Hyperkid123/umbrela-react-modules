@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   deepOrange500,
-  grey800,
+  grey800, grey900,
   black,
   white
 } from 'material-ui/styles/colors';
@@ -53,4 +53,12 @@ export const CustomHelp = styled.span`
   margin-top: 5px;
   margin-bottom: 5px;
   color: ${grey800}
+`
+export const DeleteNotification = styled.span`
+  font-style:italic;
+  color: ${grey900}
+`
+export const StatusMessage = styled.span`
+  position: relative;
+  bottom: 5px;
 `

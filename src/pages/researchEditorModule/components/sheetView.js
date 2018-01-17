@@ -8,6 +8,7 @@ import {
   Flex,
   FlexSection
 } from '../../../common/styledComponents/containers';
+import {DeleteNotification} from '../../../common/styledComponents/typography';
 import {
   TextFieldComent
 } from '../../../common/components/labels';
@@ -84,7 +85,7 @@ class SheetView extends Component {
       if(this.props.activeSheet) {
         return (
           <Flex>
-            <FlexSection fullWidth>
+            <FlexSection fullWidth autoHeight>
               <Paper rounded={false} style={{padding: 10}}>
                 <Flex grow baseline>
                   <Flex column grow>
@@ -115,7 +116,7 @@ class SheetView extends Component {
               open={this.state.showDelete}
               onRequestClose={this.handleDeleteClose}
             >
-              Smazat arch?
+              Smazat arch <DeleteNotification>{this.props.activeSheet.title}</DeleteNotification>?
             </Dialog>
           </Flex>
         );

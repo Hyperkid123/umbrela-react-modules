@@ -15,6 +15,7 @@ import {
 import SheetMenu from './components/sheetMenu';
 import SheetView from './components/sheetView';
 import QuestionView from './components/questionView';
+import StatusBar from './components/statusBar';
 
 class ResearchEditorModule extends Component {
     componentWillMount() {
@@ -23,13 +24,16 @@ class ResearchEditorModule extends Component {
     render() {
         return (
             <ViewContainer>
-              <DNDContext>
-                <SheetMenu sheets={this.props.sheets}/>
-                <Flex grow column>
-                  <QuestionView/>
-                  <SheetView/>
-                </Flex>
-              </DNDContext>
+              <Flex grow column>
+                <StatusBar/>
+                <DNDContext>
+                  <SheetMenu sheets={this.props.sheets}/>
+                  <Flex grow column>
+                    <QuestionView/>
+                    <SheetView/>
+                  </Flex>
+                </DNDContext>
+              </Flex>
             </ViewContainer>
         );
     }

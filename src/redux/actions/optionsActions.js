@@ -3,9 +3,10 @@ import {
   REQUEST_QUESTION_OPTIONS,
   CHANGE_OPTION_TITLE,
   DRAG_OPTION_CARD,
+  OPTION_FETCH_FAILED
 } from './actionTypes';
 
-import {dragEnd} from './';
+import {dragEnd, fetchFailed} from './';
 
 function requestOptions(){
   return {
@@ -28,7 +29,10 @@ export function getOptions(questionId){
       body: JSON.stringify({questionId}),
     }).then(response => response.json())
     .then(json => dispatch(receiveOptions(json.options)))
-    .catch((err) => {console.log('failed to fetch: ', err);});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      fetchFailed(OPTION_FETCH_FAILED)
+    });
   }
 }
 
@@ -40,7 +44,10 @@ export function synchronizeOption(option) {
       body: JSON.stringify({option}),
     }).then(() => {
       dispatch(getOptions(option.questionId));
-    }).catch((err) => {console.log('failed to fetch: ', err);})
+    }).catch((err) => {
+      console.log('failed to fetch: ', err);
+      fetchFailed(OPTION_FETCH_FAILED)
+    })
   }
 }
 
@@ -78,7 +85,10 @@ export function remapOptions(questionId) {
       dispatch(getOptions(questionId));
       dispatch(dragEnd());
     })
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      fetchFailed(OPTION_FETCH_FAILED)
+    });
   }
 }
 
@@ -92,6 +102,9 @@ export function deleteOption(option) {
         option
       }),
     }).then(() => dispatch(getOptions(questions.activeQuestion.questionId)))
-    .catch((err) => {console.log('failed to fetch: ', err)});
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      fetchFailed(OPTION_FETCH_FAILED)
+    });
   }
 }
