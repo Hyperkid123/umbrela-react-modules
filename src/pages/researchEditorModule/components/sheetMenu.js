@@ -61,7 +61,7 @@ class SheetMenu extends Component {
               <MenuContainer>
                 <SmallHeading>Arhy</SmallHeading>
                 <Scrollbars
-                  style={{height: 'calc(100vh - 2em - 60px)'}}
+                  style={{height: 'calc(100vh - 2em - 60px - 28px)'}}
                 >
                   <FlatButton onClick={() => this.props.createNewSheet(window.researchId)} primary icon={<ActionAdd/>} label='Nový arch'/>
                   <MenuList>

@@ -20,9 +20,9 @@ export const Flex = styled.div`
 
 export const ViewContainer = styled.div`
   width: calc(100% - 2em);
-  min-height: calc(100vh - 2em);
+  min-height: calc(100vh - 1em - 28px);
   margin: 0;
-  padding: 1em;
+  padding: 0 1em;
 `
 
 export const MenuContainer = styled.div`
@@ -34,7 +34,7 @@ export const MenuContainer = styled.div`
 export const FlexSection = styled.section`
   margin: 10px;
   min-width: ${props => props.minWidth ? `${props.minWidth}px` : `0px`};
-  height: ${props => props.autoHeight ? 'auto' :  'calc(100vh - 2em - 20px)'};
+  height: ${props => props.autoHeight ? 'auto' :  'calc(100vh - 2em - 20px - 28px)'};
   width: ${props => props.fullWidth ? '100%' : 'auto'};
 `
 
