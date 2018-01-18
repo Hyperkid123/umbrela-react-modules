@@ -19,7 +19,7 @@ const ResearchEditorModuleWrapper = () => (
       <Router>
         <div>
           <StatusBar/>
-          <Route path='/' component={ResearchEditor}/>
+          <Route exact path='/' component={ResearchEditor}/>
           <Route path='/filtrations' component={Filtrations}/>
         </div>
       </Router>

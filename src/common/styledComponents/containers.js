@@ -185,3 +185,18 @@ export const MatrixTableRow = styled.tr`
     background-color: ${props => props.filler ? grey100 : white}
   }
 `
+
+export const SectionBody = styled.div`
+  max-height: ${props => props.open ? '1500px' : 0};
+  transition: max-height .5s ease-in;
+  overflow: hidden;
+  height:auto;
+  >div{
+    padding: 5px;
+  }
+`;
+
+export const Sectionhead = styled.div`
+  cursor: pointer;
+  padding: 10px;
+`;

@@ -7,6 +7,7 @@ import {
 } from '../../redux/actions';
 import DNDContext from '../../common/components/dndContext';
 import SheetMenu from './components/sheetMenu';
+import FiltrationView from './components/filtrationView';
 
 class Filtrations extends Component {
     componentWillMount() {
@@ -19,6 +20,8 @@ class Filtrations extends Component {
               <DNDContext>
                 <SheetMenu sheets={this.props.sheets}/>
                 <Flex grow column>
+                  {this.props.activeSheet ?
+                  <FiltrationView/> : null }
                 </Flex>
               </DNDContext>
             </Flex>
