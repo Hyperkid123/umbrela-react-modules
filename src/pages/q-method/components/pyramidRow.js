@@ -14,6 +14,7 @@ const PyramidRow = ({blocks, changeTiles, rowIndex}) => (
     <AddPyramidTile>
       <Tooltip title='Přidat blok'>
         <IconButton
+          id={`increase-blocks-${rowIndex}`}
           onClick={() => changeTiles(blocks + 1, rowIndex)}
         >
           <Add/>
@@ -22,6 +23,7 @@ const PyramidRow = ({blocks, changeTiles, rowIndex}) => (
       <Tooltip title='Odebrat blok'>
         <div>
           <IconButton
+            id={`decrease-blocks-${rowIndex}`}
             disabled={blocks === 1}
             onClick={() => changeTiles(blocks - 1, rowIndex)}
           >

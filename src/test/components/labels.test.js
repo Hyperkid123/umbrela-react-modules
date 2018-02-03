@@ -1,16 +1,12 @@
 import React from 'react'
-import CollapsibleSection from '../../common/components/collapsibleSection';
+import {TextFieldComent} from '../../common/components/labels';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 describe('collapsibleSection component' , () => {
   it('should match snapshot', () => {
     const tree = shallow(
-      <CollapsibleSection sectionTitle='foo'>
-        <div>
-          <p>Some copomnent body</p>
-        </div>
-      </CollapsibleSection>
+      <TextFieldComent label='foo'/>
     );
     expect(toJson(tree)).toMatchSnapshot();
   })

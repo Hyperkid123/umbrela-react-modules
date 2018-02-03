@@ -28,4 +28,12 @@ describe('actions', () => {
     }
     expect(actions.removePyramidRow()).toEqual(expectedAction)
   })
+
+  it('should create correct action to drop images', () => {
+    const expectedAction = {
+      type: types.DROP_IMAGES,
+      images: [{}, {}],
+    }
+    expect(actions.dropImages([{}, {}])).toEqual(expectedAction);
+  })
 })

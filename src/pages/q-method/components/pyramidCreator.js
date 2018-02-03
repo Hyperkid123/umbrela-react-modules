@@ -8,7 +8,7 @@ import RowHandler from './rowHandler';
 import {changeRowBlocks, addPyramidRow, removePyramidRow} from '../../../redux/actions';
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 
-class PyramidCreator extends Component {
+export class PyramidCreator extends Component {
     renderRows = () => this.props.rows.map((row, iterator) => (
       <PyramidRow key={iterator} blocks={row.blocks} changeTiles={this.props.changeRowBlocks} rowIndex={iterator}/>
     ));

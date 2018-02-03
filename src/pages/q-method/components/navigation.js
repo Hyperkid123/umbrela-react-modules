@@ -8,7 +8,7 @@ import Button from 'material-ui/Button';
 import { withRouter } from 'react-router'
 import {Flex} from '../../../common/styledComponents/containers';
 
-class Navigation extends Component {
+export class Navigation extends Component {
 
     render() {
         return (

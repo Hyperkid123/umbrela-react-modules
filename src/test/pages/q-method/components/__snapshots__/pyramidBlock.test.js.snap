@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method navigation component should render correclty 1`] = `
+<Paper
+  classes={
+    Object {
+      "root": "MuiPaper-root-1",
+      "rounded": "MuiPaper-rounded-2",
+      "shadow0": "MuiPaper-shadow0-3",
+      "shadow1": "MuiPaper-shadow1-4",
+      "shadow10": "MuiPaper-shadow10-13",
+      "shadow11": "MuiPaper-shadow11-14",
+      "shadow12": "MuiPaper-shadow12-15",
+      "shadow13": "MuiPaper-shadow13-16",
+      "shadow14": "MuiPaper-shadow14-17",
+      "shadow15": "MuiPaper-shadow15-18",
+      "shadow16": "MuiPaper-shadow16-19",
+      "shadow17": "MuiPaper-shadow17-20",
+      "shadow18": "MuiPaper-shadow18-21",
+      "shadow19": "MuiPaper-shadow19-22",
+      "shadow2": "MuiPaper-shadow2-5",
+      "shadow20": "MuiPaper-shadow20-23",
+      "shadow21": "MuiPaper-shadow21-24",
+      "shadow22": "MuiPaper-shadow22-25",
+      "shadow23": "MuiPaper-shadow23-26",
+      "shadow24": "MuiPaper-shadow24-27",
+      "shadow3": "MuiPaper-shadow3-6",
+      "shadow4": "MuiPaper-shadow4-7",
+      "shadow5": "MuiPaper-shadow5-8",
+      "shadow6": "MuiPaper-shadow6-9",
+      "shadow7": "MuiPaper-shadow7-10",
+      "shadow8": "MuiPaper-shadow8-11",
+      "shadow9": "MuiPaper-shadow9-12",
+    }
+  }
+  component="div"
+  elevation={2}
+  square={true}
+  style={
+    Object {
+      "margin": 5,
+    }
+  }
+>
+  <styled.div />
+</Paper>
+`;

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method navigation component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <styled.div
+    grow={true}
+    horizintalCenter={true}
+  >
+    <PyramidBlock
+      key="0"
+    />
+    <PyramidBlock
+      key="1"
+    />
+    <PyramidBlock
+      key="2"
+    />
+    <PyramidBlock
+      key="3"
+    />
+    <PyramidBlock
+      key="4"
+    />
+  </styled.div>
+  <styled.div>
+    <WithStyles(Tooltip)
+      title="Přidat blok"
+    >
+      <WithStyles(IconButton)
+        id="increase-blocks-1"
+        onClick={[Function]}
+      >
+        <pure(AddCircle) />
+      </WithStyles(IconButton)>
+    </WithStyles(Tooltip)>
+    <WithStyles(Tooltip)
+      title="Odebrat blok"
+    >
+      <div>
+        <WithStyles(IconButton)
+          disabled={false}
+          id="decrease-blocks-1"
+          onClick={[Function]}
+        >
+          <pure(RemoveCircle) />
+        </WithStyles(IconButton)>
+      </div>
+    </WithStyles(Tooltip)>
+  </styled.div>
+</div>
+`;

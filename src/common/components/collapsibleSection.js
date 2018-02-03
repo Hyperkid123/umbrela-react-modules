@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ExpansionPanel, {
   ExpansionPanelSummary,
@@ -8,17 +8,6 @@ import Typography from 'material-ui/Typography';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
 export default class CollapsibleSection extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      open: false,
-    };
-  }
-
-  handleClick = () => {
-    this.setState({open: !this.state.open});
-  }
-
   render() {
     return (
       <ExpansionPanel>

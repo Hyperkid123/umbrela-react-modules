@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collapsibleSection component should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+      "margin": 5,
+    }
+  }
+>
+  <styled.img
+    alt="foo"
+    src="foo.png"
+  />
+</div>
+`;

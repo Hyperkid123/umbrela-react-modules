@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collapsibleSection component should match snapshot 1`] = `
+<DNDContext
+  sectionTitle="foo"
+>
+  <div>
+    <p>
+      Some copomnent body
+    </p>
+  </div>
+</DNDContext>
+`;

@@ -34,17 +34,7 @@ const dropZoneStyle = {
 
 }
 
-class ImageDropZone extends Component {
-    constructor(props){
-    	super(props);
-    	this.state = {
-        images: []
-      };
-    }
-
-    onDrop = (files) => {
-      this.setState({images: [...this.state.images, ...files]});
-    }
+export class ImageDropZone extends Component {
 
     render() {
         return (
