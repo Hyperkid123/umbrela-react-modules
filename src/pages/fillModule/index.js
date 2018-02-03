@@ -1,10 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {testUtil} from '../../common/utils';
-import {
-  testAction,
-} from '../../redux/actions';
 import {Flex} from '../../common/styledComponents/containers';
 
 import AppBar from 'material-ui/AppBar';
@@ -26,10 +22,8 @@ const paperStyle = {
 
 class FillModule extends Component {
     componentWillMount() {
-      this.props.testAction();
     }
     render() {
-        if(this.props.research.msg) {
           return (
             <div>
               <AppBar
@@ -55,10 +49,10 @@ class FillModule extends Component {
               </Paper>
               <Card>
                 <CardHeader
-                  title={this.props.research.msg}
-                  subtitle={testUtil()}
+                  title={`this.props.research.msg`}
+                  subtitle={`testUtil`}
                 />
-                <CardTitle title={this.props.research.msg} subtitle={testUtil()} />
+                <CardTitle title={`this.props.research.msg`} subtitle={`testUtil`} />
                 <CardText>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -70,7 +64,7 @@ class FillModule extends Component {
                   <FlatButton label="Action2" />
                 </CardActions>
               </Card>
-              <h3>{testUtil()}</h3>
+              <h3>{`testUtil()`}</h3>
               <Paper rounded={false} style={paperStyle}>
                 <Flex row>
                   <RaisedButton label={'Button'} primary/>
@@ -93,14 +87,8 @@ class FillModule extends Component {
               </Paper>
             </div>
           )
-        }
-        return (
-            <div className="class-name">
-              <h1>Fill module component</h1>
-            </div>
-        );
-    }
-}
+      }
+  }
 
 function mapStateToProps({research}) {
   return {
@@ -110,7 +98,6 @@ function mapStateToProps({research}) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    testAction
   },dispatch)
 }
 

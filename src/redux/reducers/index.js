@@ -4,6 +4,7 @@ import researchEditorReducer from './researchEditorReducer';
 import uiReducer from './uiReducer';
 import questionsReducer from './questionsReducer';
 import optionsReducer from './optionsReducer';
+import qMethodReducer from './qMethodReducer';
 
 const rootReducer = combineReducers({
   research: researchReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   ui: uiReducer,
   questions: questionsReducer,
   options: optionsReducer,
+  qMethodBuilder: qMethodReducer,
 });
 
 export default rootReducer;

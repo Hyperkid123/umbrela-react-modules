@@ -200,3 +200,18 @@ export const Sectionhead = styled.div`
   cursor: pointer;
   padding: 10px;
 `;
+
+export const PyramidTile = styled.div`
+  width: 96px;
+  height: 96px;
+  margin: 2px
+`
+
+export const AddPyramidTile = styled.div`
+  display: flex;
+  flex-shrink: 10;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+`
