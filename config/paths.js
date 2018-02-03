@@ -56,4 +56,6 @@ module.exports = {
   researchEditorHtml: resolveApp('public/researchEditor.html'),
   dataReviewModuleJs: resolveApp('src/dataReviewModule.js'),
   dataReviewModuleHtml: resolveApp('public/dataReviewModule.html'),
+  qMethodModuleJs: resolveApp('src/qMethodModule.js'),
+  qMethodModuleHtml: resolveApp('public/qMethod.html'),
 };

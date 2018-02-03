@@ -43,6 +43,12 @@ module.exports = {
       require.resolve('./polyfills'),
       require.resolve('react-error-overlay'),
       paths.dataReviewModuleJs,
+    ],
+    qMethod:[
+      require.resolve('react-dev-utils/webpackHotDevClient'),
+      require.resolve('./polyfills'),
+      require.resolve('react-error-overlay'),
+      paths.qMethodModuleJs,
     ]
   },
   output: {
@@ -167,6 +173,12 @@ module.exports = {
         chunks: ["dataReview"],
         template: paths.dataReviewModuleHtml,
         filename: 'dataReviewModule.html',
+      }),
+      new HtmlWebpackPlugin({
+        inject: true,
+        chunks: ["qMethod"],
+        template: paths.qMethodModuleHtml,
+        filename: 'qMethodModule.html',
       }),
     new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin(env.stringified),
