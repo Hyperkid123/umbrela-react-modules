@@ -13,8 +13,8 @@ import {
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import ModeEditIcon from 'material-ui/svg-icons/editor/mode-edit';
-import PreviewIcon from 'material-ui/svg-icons/image/remove-red-eye';
+import ModeEditIcon from 'material-ui-icons/ModeEdit';
+import PreviewIcon from 'material-ui-icons/RemoveRedEye';
 
 import {QuestionTypes, HasImagePreview, HasNotOptions, HasScalePoints} from '../../../../common/questionTypes';
 import QuestionTypeChanger from './questionTypeChanger';

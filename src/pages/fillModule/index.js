@@ -4,16 +4,17 @@ import { bindActionCreators } from 'redux';
 import {Flex} from '../../common/styledComponents/containers';
 
 import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 import Badge from 'material-ui/Badge';
 import IconButton from 'material-ui/IconButton';
-import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
+import NotificationsIcon from 'material-ui-icons/Notifications';
+import ContentAdd from 'material-ui-icons/Add';
 import Paper from 'material-ui/Paper';
-import CircularProgress from 'material-ui/CircularProgress';
-import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { CircularProgress } from 'material-ui/Progress';
+import Card, { CardActions, CardContent } from 'material-ui/Card';
+import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 
 const paperStyle = {
   margin: 20,
@@ -26,63 +27,69 @@ class FillModule extends Component {
     render() {
           return (
             <div>
-              <AppBar
-                title="Material ui components theming"
-                iconClassNameRight="muidocs-icon-navigation-expand-more"
-              />
-              <Paper rounded={false} style={paperStyle}>
+              <TextField/>
+              <AppBar position="static" color="default">
+                <Toolbar>
+                  <Typography type="title" color="inherit">
+                    Title
+                  </Typography>
+                </Toolbar>
+              </AppBar>
+              <Paper square style={paperStyle}>
                 <Badge
                   badgeContent={4}
-                  primary={true}
+                  color='primary'
                 >
                   <NotificationsIcon />
                 </Badge>
                 <Badge
                   badgeContent={10}
-                  secondary={true}
-                  badgeStyle={{top: 12, right: 12}}
+                  color='secondary'
                 >
-                  <IconButton tooltip="Notifications">
+                  <IconButton aria-label="Notifications">
                     <NotificationsIcon />
                   </IconButton>
                 </Badge>
               </Paper>
               <Card>
-                <CardHeader
-                  title={`this.props.research.msg`}
-                  subtitle={`testUtil`}
-                />
-                <CardTitle title={`this.props.research.msg`} subtitle={`testUtil`} />
-                <CardText>
+                <CardContent>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
                   Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
                   Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                </CardText>
+                </CardContent>
                 <CardActions>
-                  <FlatButton label="Action1" />
-                  <FlatButton label="Action2" />
+                  <Button>
+                    Action1
+                  </Button>
+                  <Button>
+                    Action2
+                  </Button>
                 </CardActions>
               </Card>
               <h3>{`testUtil()`}</h3>
-              <Paper rounded={false} style={paperStyle}>
+              <Paper square style={paperStyle}>
                 <Flex row>
-                  <RaisedButton label={'Button'} primary/>
-                  <RaisedButton label={'Button'} secondary  style={{marginRight: 'auto'}}/>
+                  <Button raised color='primary'>
+                    Button1
+                  </Button>
+                  <Button raised color='secondary'  style={{marginRight: 'auto'}}>
+                    Button2
+                  </Button>
                 </Flex>
               </Paper>
-              <Paper rounded={false} style={paperStyle}>
-                <FloatingActionButton>
+              <Paper square style={paperStyle}>
+                <Button fab>
                   <ContentAdd />
-                </FloatingActionButton>
-                <FloatingActionButton mini={true}>
+                </Button>
+                <Button mini={true} fab>
                   <ContentAdd />
-                </FloatingActionButton>
-                <FloatingActionButton secondary>
+                </Button>
+                <Button color='secondary' fab>
                   <ContentAdd />
-                </FloatingActionButton>
+                </Button>
               </Paper>
-              <Paper style={paperStyle} rounded={false}>
+              <Paper style={paperStyle} square>
                 <CircularProgress size={80} thickness={5} />
               </Paper>
             </div>

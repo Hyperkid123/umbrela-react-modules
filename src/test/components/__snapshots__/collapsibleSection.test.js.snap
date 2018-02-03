@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collapsibleSection component should match snapshot 1`] = `
+<WithStyles(ExpansionPanel)>
+  <WithStyles(ExpansionPanelSummary)
+    expandIcon={<pure(ExpandMore) />}
+  >
+    <WithStyles(Typography)>
+      Expansion Panel 1
+    </WithStyles(Typography)>
+  </WithStyles(ExpansionPanelSummary)>
+  <WithStyles(ExpansionPanelDetails)>
+    <WithStyles(Typography)>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+    </WithStyles(Typography)>
+  </WithStyles(ExpansionPanelDetails)>
+</WithStyles(ExpansionPanel)>
+`;

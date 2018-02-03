@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 import {Flex, OptionsFillListWrapper,PreviewImageContainer, PreviewImage} from '../../../../common/styledComponents/containers';
 import {HasMultipleAnswers, HasOptionsAsImage} from '../../../../common/questionTypes';
-import RadioChecked from 'material-ui/svg-icons/toggle/radio-button-checked';
-import RadioUnchecked from 'material-ui/svg-icons/toggle/radio-button-unchecked';
-import CheckBoxChecked from 'material-ui/svg-icons/toggle/check-box';
-import CheckBoxUncheck from 'material-ui/svg-icons/toggle/check-box-outline-blank';
+import RadioChecked from 'material-ui-icons/RadioButtonChecked';
+import RadioUnchecked from 'material-ui-icons/RadioButtonUnchecked';
+import CheckBoxChecked from 'material-ui-icons/CheckBox';
+import CheckBoxUncheck from 'material-ui-icons/CheckBoxOutlineBlank';
 import Checkbox from 'material-ui/Checkbox';
 import {findOpenOption} from '../../../../common/utils';
 import TextField from 'material-ui/TextField';

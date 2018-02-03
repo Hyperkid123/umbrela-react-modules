@@ -3,8 +3,8 @@ import {Flex} from '../../../common/styledComponents/containers';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Dropzone from 'react-dropzone';
-import {grey600, grey200, grey300} from 'material-ui/styles/colors';
-import Upload from 'material-ui/svg-icons/file/cloud-upload';
+import grey from 'material-ui/colors/grey';
+import Upload from 'material-ui-icons/CloudUpload';
 import StimulPreview from './stimulPreview';
 import {dropImages} from '../../../redux/actions/'
 
@@ -14,7 +14,7 @@ const dropZoneStyle = {
     minHeight: 200,
     borderRadius: 5,
     borderStyle: 'dashed',
-    borderColor: grey600,
+    borderColor: grey[600],
     padding: 5,
     display: 'flex',
     justifyContent: 'center',
@@ -25,10 +25,10 @@ const dropZoneStyle = {
   active: {
     background: `repeating-linear-gradient(
       45deg,
-      ${grey200},
-      ${grey200} 10px,
-      ${grey300} 10px,
-      ${grey300} 20px
+      ${grey[200]},
+      ${grey[200]} 10px,
+      ${grey[300]} 10px,
+      ${grey[300]} 20px
     )`
   }
 

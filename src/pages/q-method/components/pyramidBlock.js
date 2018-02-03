@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 import {PyramidTile} from '../../../common/styledComponents/containers';
 
 const PyramidBlock = () => (
-    <Paper rounded={false} style={{margin: 5}}>
+    <Paper square style={{margin: 5}}>
       <PyramidTile>
       </PyramidTile>
     </Paper>

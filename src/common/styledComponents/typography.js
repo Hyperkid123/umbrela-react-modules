@@ -1,16 +1,12 @@
 import styled from 'styled-components';
-import {
-  deepOrange500,
-  grey800, grey900,
-  black,
-  white
-} from 'material-ui/styles/colors';
+import deepOrange from 'material-ui/colors/deepOrange';
+import grey from 'material-ui/colors/grey';
 
 const BaseHeading = styled.h2`
   font-weight: 300;
-  border-bottom: 1px solid ${deepOrange500};
+  border-bottom: 1px solid ${deepOrange[500]};
   border: ${props => props.withouthBorder ? 'none' : ''};
-  color: ${grey800};
+  color: ${grey[800]};
 `;
 
 export const BigHeading = BaseHeading.extend`
@@ -28,7 +24,7 @@ export const SmallHeading = BaseHeading.extend`
 `
 
 export const DefaultLink = styled.a`
-  color: ${black};
+  color: black;
   text-decoration: none;
 `
 
@@ -41,8 +37,8 @@ export const FillQuestionheading = SmallHeading.extend`
     padding: 3px 8px;
     margin-right: 3px;
     float: left;
-    background-color: ${deepOrange500};
-    color: ${white};
+    background-color: ${deepOrange[500]};
+    color: white;
     border-radius: 2px;
     font-size: 0.8em;
   }
@@ -52,11 +48,11 @@ export const CustomHelp = styled.span`
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 5px;
-  color: ${grey800}
+  color: ${grey[800]}
 `
 export const DeleteNotification = styled.span`
   font-style:italic;
-  color: ${grey900}
+  color: ${grey[900]}
 `
 export const StatusMessage = styled.span`
   position: relative;

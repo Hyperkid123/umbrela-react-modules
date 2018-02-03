@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover/Popover';
 import {Menu, MenuItem} from 'material-ui/Menu';
-import ActionAdd from 'material-ui/svg-icons/content/add';
+import ActionAdd from 'material-ui-icons/Add';
 import {
   Flex
 } from '../../../common/styledComponents/containers';
@@ -72,7 +72,7 @@ class QuestionsCreator extends Component {
         return (
             <Flex column>
               <Flex>
-                <FlatButton onClick={this.handleClick} icon={<ActionAdd/>}label='Přidat otázku'/>
+                <Button onClick={this.handleClick} icon={<ActionAdd/>}label='Přidat otázku'/>
                 <Popover
                   open={this.state.open}
                   anchorEl={this.state.anchorEl}

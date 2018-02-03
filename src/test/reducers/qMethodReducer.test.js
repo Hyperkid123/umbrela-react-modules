@@ -5,6 +5,7 @@ describe('qMethod reducer', () => {
   const initialState = {
     past: [],
     present: {
+      images: [],
       rows: [
         {
           blocks: 1
@@ -15,6 +16,7 @@ describe('qMethod reducer', () => {
     history: {
       past: [],
       present: {
+        images: [],
         rows: [
           {
             blocks: 1

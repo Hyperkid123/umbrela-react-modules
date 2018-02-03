@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+  import React,{Component} from 'react';
 
 import {
   LABEL_LENGTH,
@@ -14,11 +14,10 @@ import {
 } from '../../../common/components/labels';
 
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import ActionDelete from 'material-ui/svg-icons/action/delete-forever';
+import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -70,23 +69,26 @@ class SheetView extends Component {
 
     render() {
       const deleteAction = [
-      <FlatButton
-        label="Smazat"
-        secondary
-        icon={<ActionDelete/>}
+      <Button
+        color='secondary'
         onClick={this.handleDeleteSheet}
-      />,
-      <RaisedButton
-        label="Zpět"
-        primary={true}
+      >
+        <ActionDelete/>
+        Smazat
+      </Button>,
+      <Button
+        raised
+        color='primary'
         onClick={this.handleDeleteClose}
-      />,
+      >
+        Zpět
+      </Button>,
     ];
       if(this.props.activeSheet) {
         return (
           <Flex>
             <FlexSection fullWidth autoHeight>
-              <Paper rounded={false} style={{padding: 10}}>
+              <Paper square style={{padding: 10}}>
                 <Flex grow baseline>
                   <Flex column grow>
                     <TextField
@@ -105,7 +107,7 @@ class SheetView extends Component {
                       alignRight
                     />
                   </Flex>
-                    <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat arch'/>
+                  <Button raised onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat arch'/>
                 </Flex>
                 <QuestionsCreator/>
               </Paper>

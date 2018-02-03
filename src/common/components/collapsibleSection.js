@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
-import {SectionBody, Sectionhead} from '../styledComponents/containers';
 import PropTypes from 'prop-types';
-import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
-import IconButton from 'material-ui/IconButton';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
-import NavigationExpandLessIcon from 'material-ui/svg-icons/navigation/expand-less';
+import ExpansionPanel, {
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+} from 'material-ui/ExpansionPanel';
+import Typography from 'material-ui/Typography';
+import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
 export default class CollapsibleSection extends Component {
   constructor(props){
@@ -20,25 +21,17 @@ export default class CollapsibleSection extends Component {
 
   render() {
     return (
-            <div className="class-name">
-                <Sectionhead onClick={this.handleClick}>
-                  <Toolbar>
-                    <ToolbarGroup>
-                      <ToolbarTitle text={this.props.sectionTitle}/>
-                    </ToolbarGroup>
-                    <ToolbarGroup>
-                      <IconButton tooltip={this.state.open ? 'close' : 'expand'}>
-                        {this.state.open ? <NavigationExpandLessIcon/> : <NavigationExpandMoreIcon/>}
-                      </IconButton>
-                    </ToolbarGroup>
-                  </Toolbar>
-                </Sectionhead>
-                <SectionBody open={this.state.open}>
-                <div>
-                  {this.props.children}
-                </div>
-                </SectionBody>
-            </div>
+      <ExpansionPanel>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>Expansion Panel 1</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Flex} from '../../../../common/styledComponents/containers';
 import TextField from 'material-ui/TextField';
-import LinearProgress from 'material-ui/LinearProgress';
+import { LinearProgress } from 'material-ui/Progress';
 
 export default class DividePreview extends Component {
 

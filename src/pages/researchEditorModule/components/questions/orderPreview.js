@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Flex, OptionsFillListWrapper, OrderQuestionItem, OrderQuestionList} from '../../../../common/styledComponents/containers';
-import DragHandle from 'material-ui/svg-icons/editor/drag-handle';
+import DragHandle from 'material-ui-icons/DragHandle';
 
 export default class OrderPreview extends Component {
 

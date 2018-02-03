@@ -1,4 +1,7 @@
 'use strict';
+import raf from './rafPolyfill';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
@@ -18,5 +21,5 @@ Object.assign = require('object-assign');
 // In tests, polyfill requestAnimationFrame since jsdom doesn't provide it yet.
 // We don't polyfill it in the browser--this is user's responsibility.
 if (process.env.NODE_ENV === 'test') {
-  require('raf').polyfill(global);
+  Enzyme.configure({ adapter: new Adapter() });
 }

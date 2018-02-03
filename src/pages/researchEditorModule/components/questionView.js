@@ -13,11 +13,10 @@ import {
 } from '../../../common/components/labels';
 
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import ActionDelete from 'material-ui/svg-icons/action/delete-forever';
+import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -66,13 +65,14 @@ class QuestionView extends Component {
 
     render() {
       const deleteAction = [
-      <FlatButton
+      <Button
         label="Smazat"
         secondary
         icon={<ActionDelete/>}
         onClick={this.handleDeleteQuestion}
       />,
-      <RaisedButton
+      <Button
+        raised
         label="Zpět"
         primary={true}
         onClick={this.handleDeleteClose}
@@ -81,8 +81,8 @@ class QuestionView extends Component {
       if(this.props.activeQuestion) {
         return (
           <FlexSection autoHeight>
-              <Flex column>
-              <Paper rounded={false} style={{padding: 10}}>
+            <Flex column>
+              <Paper square style={{padding: 10}}>
                 <Flex grow baseline>
                   <Flex column grow>
                     <TextField
@@ -99,7 +99,7 @@ class QuestionView extends Component {
                       alignRight
                     />
                   </Flex>
-                  <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat otázku'/>
+                  <Button raised onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat otázku'/>
                 </Flex>
                 <QuestionBody questionType={this.props.activeQuestion.questionType}/>
               </Paper>

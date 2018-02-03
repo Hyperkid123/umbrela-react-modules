@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import {
-  white,
-  grey300, grey500, grey700, grey200, grey100,
-  red500,
-} from 'material-ui/styles/colors';
+import deepOrange from 'material-ui/colors/deepOrange';
+import grey from 'material-ui/colors/grey';
+import red from 'material-ui/colors/red';
 
 export const Flex = styled.div`
   width: ${props => props.auto ? 'auto' : '100%'};
@@ -27,7 +25,7 @@ export const ViewContainer = styled.div`
 
 export const MenuContainer = styled.div`
   max-width: ${props => props.fullWidth ? '100&' : '400px'};
-  background-color: ${white};
+  background-color: white;
   padding: 10px;
 `
 
@@ -50,9 +48,9 @@ export const MenuItem = styled.div`
   height: 48px;
   cursor: pointer;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-  background-color: ${props => props.active ? grey300 : white};
+  background-color: ${props => props.active ? grey[300] : 'white'};
   &:hover {
-    background-color: ${props => !props.dragging ? grey300 : white};
+    background-color: ${props => !props.dragging ? grey[300] : 'white'};
   }
   > div {
     height: 100%;
@@ -76,7 +74,7 @@ export const LabelContainer = styled.div`
   padding-left: 0;
   padding-right: 15px;
   font-size: 0.8em;
-  color: ${props => props.error ? red500 : grey500};
+  color: ${props => props.error ? red[500] : grey[500]};
 `
 
 export const PreviewImage = styled.img`
@@ -113,7 +111,7 @@ export const OptionItemWrapper = Flex.extend`
 
 export const CustomHelpWrapper = styled.div`
   font-size: .9em;
-  color: ${grey700}
+  color: ${grey[700]}
   margin: 0;
   padding: 10px;
 `
@@ -146,7 +144,7 @@ export const OrderQuestionItem = styled.div`
   padding: 1em 1rem;
   padding-left: .2em;
   margin-bottom: .5rem;
-  background-color: ${grey200};
+  background-color: ${grey[200]};
   cursor: move;
   display: flex;
   align-items: center;
@@ -179,10 +177,10 @@ export const MatrixTableBody = styled.tbody`
 
 export const MatrixTableRow = styled.tr`
   &:nth-child(odd) > td:not(:first-of-type){
-    background-color: ${props => props.filler ? grey200 : white}
+    background-color: ${props => props.filler ? grey[200] : 'white'}
   }
   > td:not(:first-of-type){
-    background-color: ${props => props.filler ? grey100 : white}
+    background-color: ${props => props.filler ? grey[100] : 'white'}
   }
 `
 
