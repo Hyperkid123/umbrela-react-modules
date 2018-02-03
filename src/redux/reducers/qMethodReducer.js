@@ -4,12 +4,14 @@ import {
   CHANGE_ROW_BLOCKS,
   REMOVE_PYRAMID_ROW,
   ADD_PYRAMID_ROW,
+  DROP_IMAGES,
 } from '../actions/actionTypes';
 
 const initialState = {
   rows: [{
     blocks: 1
-  }]
+  }],
+  images: []
 }
 
 const qMethodReducer = (state = initialState, action) => {
@@ -24,6 +26,8 @@ const qMethodReducer = (state = initialState, action) => {
     case REMOVE_PYRAMID_ROW:
       state.rows.pop();
       return {...state, rows: [...state.rows]}
+    case DROP_IMAGES:
+      return {...state, images: [...state.images, ...action.images]}
     default:
       return {...state};
   }

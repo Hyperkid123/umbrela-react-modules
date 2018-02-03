@@ -14,11 +14,6 @@ import FlatButton from 'material-ui/FlatButton';
 import { withRouter } from 'react-router'
 
 class StatusBar extends Component {
-
-    isActive = (match, location) => {
-
-    }
-
     render() {
         const {isFetching, failed} = this.props;
 

@@ -41,6 +41,7 @@ export {
   changeRowBlocks,
   addPyramidRow,
   removePyramidRow,
+  dropImages,
 } from './qMethodActions';
 
 export {

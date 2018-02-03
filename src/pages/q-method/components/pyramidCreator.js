@@ -16,7 +16,11 @@ class PyramidCreator extends Component {
         return (
             <Flex column horizintalCenter>
               <PyramidDescription/>
-              {this.renderRows()}
+              <Flex>
+                <Flex column>
+                  {this.renderRows()}
+                </Flex>
+              </Flex>
               <RowHandler addRow={this.props.addPyramidRow} removeRow={this.props.removePyramidRow} rows={this.props.rows.length}/>
             </Flex>
         );

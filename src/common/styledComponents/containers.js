@@ -215,3 +215,12 @@ export const AddPyramidTile = styled.div`
   align-items: center;
   min-width: 100px;
 `
+export const ThumbNail = styled.img`
+  width: auto;
+  height: 150px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+`

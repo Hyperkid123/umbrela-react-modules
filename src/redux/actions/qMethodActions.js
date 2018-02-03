@@ -1,7 +1,8 @@
 import {
   CHANGE_ROW_BLOCKS,
   ADD_PYRAMID_ROW,
-  REMOVE_PYRAMID_ROW
+  REMOVE_PYRAMID_ROW,
+  DROP_IMAGES,
 } from './actionTypes';
 
 export function changeRowBlocks(blocks, rowIndex){
@@ -23,5 +24,12 @@ export function addPyramidRow(){
 export function removePyramidRow(){
   return {
     type:REMOVE_PYRAMID_ROW,
+  }
+}
+
+export function dropImages(images){
+  return {
+    type: DROP_IMAGES,
+    images
   }
 }
