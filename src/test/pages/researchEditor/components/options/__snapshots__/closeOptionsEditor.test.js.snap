@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options editor component should render correclty with open option 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.ul />
+  <styled.div
+    column={true}
+  >
+    <TextField
+      fullWidth={true}
+      hintText="Vlastní opověď"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      required={false}
+      select={false}
+      value="foo"
+    />
+    <TextFieldComent
+      alignRight={true}
+      error={false}
+      label="3 z 255 znaků"
+    />
+  </styled.div>
+  <Connect(NewOption)
+    optionType="NormalOption"
+  />
+</div>
+`;
+
+exports[`Options editor component should render correclty without open option 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.ul>
+    <Connect(OptionEditorItem)
+      deleteOption={[Function]}
+      index={1}
+      key="1"
+      option={
+        Object {
+          "optionId": 1,
+          "optionOrder": 1,
+          "optionType": "NormalOption",
+          "title": "foo",
+        }
+      }
+      optionOrder={1}
+    />
+  </styled.ul>
+  <Connect(NewOption)
+    optionType="NormalOption"
+  />
+</div>
+`;

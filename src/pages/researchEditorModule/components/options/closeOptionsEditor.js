@@ -15,7 +15,7 @@ import {
   LABEL_LENGTH,
 } from '../../../../common/constants';
 
-class CloseOptionsEditor extends Component {
+export class CloseOptionsEditor extends Component {
 
     componentWillMount() {
       this.props.getOptions(this.props.activeQuestion.questionId);
