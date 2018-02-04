@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pyramid row handler should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <styled.div
+    horizintalCenter={true}
+  >
+    <styled.div>
+      <WithStyles(Tooltip)
+        title="Přidat řádedek"
+      >
+        <WithStyles(IconButton)
+          onClick={[Function]}
+        >
+          <pure(AddCircle) />
+        </WithStyles(IconButton)>
+      </WithStyles(Tooltip)>
+      <WithStyles(Tooltip)
+        title="Odebrat poslední řádek"
+      >
+        <div>
+          <WithStyles(IconButton)
+            disabled={false}
+            onClick={[Function]}
+          >
+            <pure(RemoveCircle) />
+          </WithStyles(IconButton)>
+        </div>
+      </WithStyles(Tooltip)>
+    </styled.div>
+  </styled.div>
+  <styled.div />
+</div>
+`;
