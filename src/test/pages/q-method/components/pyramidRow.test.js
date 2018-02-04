@@ -15,9 +15,12 @@ describe('Pyramid row component', () => {
   it('should call functions on click', () => {
     const changeTiles = jest.fn();
     const muiTheme = createMuiTheme()
-    const renderer = shallow(<PyramidRow blocks={5} changeTiles={changeTiles} rowIndex={1}/>, {context: {muiTheme}});
-    // NOTE: mui-broke full dom renderinf, fix after mui update
-    //renderer.find('#increase-blocks-0').simulate('click');
-    //expect(changeTiles.mock.calls.length).toEqual(1);
+    const renderer = mount(<PyramidRow blocks={5} changeTiles={changeTiles} rowIndex={0}/>, {context: {muiTheme}});
+    let button = renderer.find('button').first();
+    button.simulate('click');
+    expect(changeTiles.mock.calls.length).toEqual(1);
+    button = renderer.find('button').last();
+    button.simulate('click');
+    expect(changeTiles.mock.calls.length).toEqual(2);
   })
 });

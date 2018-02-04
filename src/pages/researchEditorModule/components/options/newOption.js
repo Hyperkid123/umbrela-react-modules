@@ -17,7 +17,7 @@ import grey from 'material-ui/colors/grey';
 import {ValideOption} from '../../../../common/validator';
 import {synchronizeOption} from '../../../../redux/actions';
 
-class NewOption extends Component {
+export class NewOption extends Component {
     constructor(props){
     	super(props);
     	this.state = {

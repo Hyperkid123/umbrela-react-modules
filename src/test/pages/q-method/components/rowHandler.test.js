@@ -13,9 +13,10 @@ describe('Pyramid row handler', () => {
 
   it('should call functions on click', () => {
     const changeRows = jest.fn();
-    const renderer = shallow(<RowHandler rows={5} addRow={changeRows} removeRow={changeRows}/>);
-    // NOTE: mui-broke full dom renderinf, fix after mui update
-    //renderer.find('#increase-blocks-0').simulate('click');
-    //expect(changeTiles.mock.calls.length).toEqual(1);
+    const renderer = mount(<RowHandler rows={5} addRow={changeRows} removeRow={changeRows}/>);
+    renderer.find('button').first().simulate('click');
+    expect(changeRows.mock.calls.length).toEqual(1);
+    renderer.find('button').last().simulate('click');
+    expect(changeRows.mock.calls.length).toEqual(2);
   })
 });

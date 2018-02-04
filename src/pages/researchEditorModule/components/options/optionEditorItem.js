@@ -6,7 +6,7 @@ import {changeOptionTitle, synchronizeOption, dragOptionCard, remapOptions} from
 import {ValideOption, getOptionValidationMessage} from '../../../../common/validator';
 import OptionsDraggableCard from './dragByHandle';
 
-class OptionEditorItem extends Component {
+export class OptionEditorItem extends Component {
 
     updateOption = (option) => {
       if(ValideOption(option.title, this.props.questionType, option.optionType)) this.props.synchronizeOption(option)
@@ -39,7 +39,7 @@ class OptionEditorItem extends Component {
 }
 
 const mapStateToProps = (_, initialProps) => ({questions, options}) => {
-  return{
+  return {
     questionType: questions.activeQuestion.questionType,
     questionId: questions.activeQuestion.questionId,
   }

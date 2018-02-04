@@ -57,7 +57,7 @@ class OptionsDraggableCard extends Component {
                <DragHandle style={{cursor: 'move', height: 44}}/>
              </div>)}
            <IconButton onClick={this.props.deleteOption}>
-             <DeleteIcon color={red[500]} style={{height: 44}}/>
+             <DeleteIcon color='error' style={{height: 44}}/>
            </IconButton>
         </OptionItemWrapper>
         {!this.props.draggingElement ?

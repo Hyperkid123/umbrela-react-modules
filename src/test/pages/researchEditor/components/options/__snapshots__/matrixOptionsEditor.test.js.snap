@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matrix options editor component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <styled.div
+    column={true}
+  >
+    <styled.div>
+      <styled.h2>
+        Sloupce
+      </styled.h2>
+      <styled.ul>
+        <Connect(OptionEditorItem)
+          deleteOption={[Function]}
+          index={1}
+          key="1"
+          option={
+            Object {
+              "optionId": 1,
+              "optionOrder": 1,
+              "optionType": "ColumnOption",
+            }
+          }
+          optionOrder={1}
+        />
+      </styled.ul>
+      <Connect(NewOption)
+        hintText="Nový sloupec"
+        optionType="ColumnOption"
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    column={true}
+  >
+    <styled.div>
+      <styled.h2>
+        Řádky
+      </styled.h2>
+      <styled.ul>
+        <Connect(OptionEditorItem)
+          deleteOption={[Function]}
+          index={10}
+          key="10"
+          option={
+            Object {
+              "optionId": 10,
+              "optionOrder": 10,
+              "optionType": "RowOption",
+            }
+          }
+          optionOrder={10}
+        />
+      </styled.ul>
+      <Connect(NewOption)
+        hintText="Nový řádek"
+        optionType="RowOption"
+      />
+    </styled.div>
+  </styled.div>
+</div>
+`;

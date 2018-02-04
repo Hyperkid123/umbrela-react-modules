@@ -8,7 +8,7 @@ import {getOptions, deleteOption} from '../../../../redux/actions';
 import OptionEditorItem from './optionEditorItem';
 import {divideMatrixOptions} from '../../../../common/utils';
 
-class MatrixOptionsEditor extends Component {
+export class MatrixOptionsEditor extends Component {
     componentWillMount() {
       this.props.getOptions(this.props.activeQuestion.questionId);
     }
@@ -23,12 +23,12 @@ class MatrixOptionsEditor extends Component {
       return list.map((option, index) => {
         return (
            <OptionEditorItem
-            draggingElement={this.props.draggingElement}
-            option={option}
-            index={option.optionOrder}
-            key={option.optionId}
-            optionOrder={option.optionOrder}
-            deleteOption={() => this.props.deleteOption(option)}
+             draggingElement={this.props.draggingElement}
+             option={option}
+             index={option.optionOrder}
+             key={option.optionId}
+             optionOrder={option.optionOrder}
+             deleteOption={() => this.props.deleteOption(option)}
           />
         )
       })

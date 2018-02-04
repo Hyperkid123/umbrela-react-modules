@@ -4584,7 +4584,7 @@ material-ui-icons@^1.0.0-beta.17:
   dependencies:
     recompose "^0.26.0"
 
-material-ui@next@^0.19.4:
+material-ui@^1.0.0-beta.31:
   version "1.0.0-beta.31"
   resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.31.tgz#5d832d0c4d9eceea2cbf1647dc7f57a4031f0243"
   dependencies:
@@ -5848,6 +5848,12 @@ react-dnd-html5-backend@^2.5.4:
   resolved "https://registry.yarnpkg.com/react-dnd-html5-backend/-/react-dnd-html5-backend-2.5.4.tgz#974ad083f67b12d56977a5b171f5ffeb29d78352"
   dependencies:
     lodash "^4.2.0"
+
+react-dnd-test-backend@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/react-dnd-test-backend/-/react-dnd-test-backend-2.5.4.tgz#148b8227df773fe97d9a1fd32e537c3c354dac36"
+  dependencies:
+    dnd-core "^2.5.4"
 
 react-dnd@^2.5.4:
   version "2.5.4"
