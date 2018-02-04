@@ -51,7 +51,7 @@ export class NewOption extends Component {
               <Flex column>
                 <TextField
                   fullWidth
-                  hintText={this.props.hintText || 'Nová možnost'}
+                  placeholder={this.props.hintText || 'Nová možnost'}
                   value={optionText}
                   onChange={(event, newValue) => this.setOptionText(newValue)}
                   onBlur={this.createOption}
@@ -66,7 +66,6 @@ export class NewOption extends Component {
                 />
               </Flex>
               <IconButton onClick={this.createOption}
-                iconStyle={{...MEDIM_ICON_BUTTON_FIX.mediumIcon, color: grey[500]}}
                   tooltip='Přidat možnost'
                   >
                     <ContentAdd/>

@@ -54,7 +54,7 @@ export class CloseOptionsEditor extends Component {
           <Flex column>
             <TextField
               fullWidth
-              hintText='Vlastní opověď'
+              placeholder='Vlastní opověď'
               value={option.title}
               onChange={(event, newValue) => this.props.changeOptionTitle(newValue, option.optionOrder)}
               onBlur={() => {this.updateOption(option)}}
