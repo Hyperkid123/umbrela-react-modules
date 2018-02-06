@@ -93,10 +93,11 @@ class QuestionBody extends Component {
                     <TextField
                       name="customHelpInput"
                       fullWidth
+                      margin='normal'
                       type='number'
                       value={scalePoints}
-                      floatingLabelText='Celkový počet bodů'
-                      onChange={(event, newValue) => this.props.changeScalePoints(newValue)}
+                      label='Celkový počet bodů'
+                      onChange={(event) => this.props.changeScalePoints(event.target.value)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
                       onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
                     />
@@ -104,13 +105,13 @@ class QuestionBody extends Component {
                   {HasImagePreview(questionType) ?
                     <Flex column grow>
                       <TextField
+                        margin='normal'
                         inputRef={(input) => { this.imagePreviewInput = input; }}
                         name="imagePreviewInput"
-                        multiLine
                         value={url || ''}
                         fullWidth
-                        floatingLabelText='URL adresa k obrázku'
-                        onChange={(event, newValue) => this.props.chnageQuestionUrl(newValue)}
+                        label='URL adresa k obrázku'
+                        onChange={(event) => this.props.chnageQuestionUrl(event.target.value)}
                         onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
                       />
                       <TextFieldComent

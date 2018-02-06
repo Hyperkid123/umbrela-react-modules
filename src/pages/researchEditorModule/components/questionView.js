@@ -39,14 +39,14 @@ class QuestionView extends Component {
 
     componentDidMount() {
       if(this.props.activeQuestion && this.props.activeQuestion.newQuestion){
-          //this.questionTitle.focus();
-          //this.questionTitle.select();
+          this.questionTitle.focus();
+          this.questionTitle.select();
       }
     }
     componentDidUpdate(prevProps, prevState) {
       if(this.props.activeQuestion && this.props.activeQuestion.newQuestion){
-          //this.questionTitle.focus();
-          //this.questionTitle.select();
+          this.questionTitle.focus();
+          this.questionTitle.select();
       }
     }
 
@@ -90,8 +90,10 @@ class QuestionView extends Component {
                       name="questionTitleInput"
                       style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeQuestion.title}
-                      onChange={(event, newValue) => this.props.changeQuestionTitle(newValue)}
+                      onChange={(event) => this.props.changeQuestionTitle(event.target.value)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                      inputRef={(input) => this.questionTitle = input}
+                      onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
                     />
                     <TextFieldComent
                       error={this.props.activeQuestion.title.length >= LABEL_LENGTH}

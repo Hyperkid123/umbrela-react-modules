@@ -14,6 +14,8 @@ export class OptionEditorItem extends Component {
 
     render() {
       const {option} = this.props;
+      const valid = ValideOption(option.title, this.props.questionType, option.optionType);
+      const validMessage = getOptionValidationMessage(option.title, this.props.questionType, option.optionType)
 
       return (
         <OptionsDraggableCard
@@ -33,6 +35,8 @@ export class OptionEditorItem extends Component {
             onBlur={() => {this.updateOption(option)}}
             onKeyPress={(event) => {if(event.key === 'Enter') this.updateOption(option)}}
             margin="normal"
+            label={validMessage}
+            error={!valid}
           />
         </OptionsDraggableCard>
       );

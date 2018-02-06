@@ -44,7 +44,7 @@ export class MatrixOptionsEditor extends Component {
                 <OptionsList>
                   {this.renderOptionsList(columns)}
                 </OptionsList>
-                <NewOption hintText='Nový sloupec' optionType='ColumnOption'/>
+                <NewOption placeholder='Nový sloupec' optionType='ColumnOption'/>
               </ListColumn>
             </Flex>
             <Flex column>
@@ -53,7 +53,7 @@ export class MatrixOptionsEditor extends Component {
                 <OptionsList>
                   {this.renderOptionsList(rows)}
                 </OptionsList>
-                <NewOption hintText='Nový řádek' optionType='RowOption'/>
+                <NewOption placeholder='Nový řádek' optionType='RowOption'/>
               </ListColumn>
             </Flex>
           </Flex>
