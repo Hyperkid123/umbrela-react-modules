@@ -66,6 +66,10 @@ module.exports = {
     dataReview:[
       require.resolve('./polyfills'),
       paths.dataReviewModuleJs,
+    ],
+    qMethod:[
+      require.resolve('./polyfills'),
+      paths.qMethodModuleJs,
     ]
   },
   output: {
@@ -309,6 +313,24 @@ module.exports = {
         chunks: ["dataReview"],
         template: paths.dataReviewModuleHtml,
         filename: 'dataReviewModule.html',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        inject: true,
+        chunks: ["qMethod"],
+        template: paths.qMethodModuleHtml,
+        filename: 'qMethodModule.html',
         minify: {
           removeComments: true,
           collapseWhitespace: true,

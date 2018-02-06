@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Flex} from '../../../../common/styledComponents/containers';
 import Checkbox from 'material-ui/Checkbox';
+import { FormGroup, FormControlLabel } from 'material-ui/Form';
 
 import {
   changeMandatoryQuestion,
@@ -33,35 +34,63 @@ class QuestionTypeChanger extends Component {
         const checkBoxStyle = {width: 'auto', whiteSpace: 'nowrap', marginRight: 10};
         return (
             <Flex row grow wrap='true'>
-                <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} label='Povinná' checked={mandatory} onCheck={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
-                <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} label='Vlastní nápověda' checked={hasCustomHelp} onCheck={(event, checked) => {this.props.setCustomHelp(checked)}}/>
+              <FormGroup row style={{paddingLeft: 14}}>
+              <FormControlLabel
+                control={
+                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={mandatory} onChange={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
+                }
+                label='Povinná'
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={hasCustomHelp} onChange={(event, checked) => {this.props.setCustomHelp(checked)}}/>
+                }
+                label='Vlastní nápověda'
+              />
                 {CanHaveImagePreview(questionType) ?
-                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                  <FormControlLabel
+                    control={
+                      <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                        checked={HasImagePreview(questionType)}
+                        onChange={() => this.props.changeQuestionType(SwitchToImagePreview[questionType])}
+                      />
+                    }
                     label='Obrázek v zadání'
-                    checked={HasImagePreview(questionType)}
-                    onCheck={() => this.props.changeQuestionType(SwitchToImagePreview[questionType])}
                   />
                    : null}
                 {CanHaveMultipleAnswers(questionType) ?
-                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                  <FormControlLabel
+                    control={
+                      <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                        checked={HasMultipleAnswers(questionType)}
+                        onChange={() => this.props.changeQuestionType(SwitchQuestionMultipleAnswers[questionType])}
+                      />
+                    }
                     label='Více možností'
-                    checked={HasMultipleAnswers(questionType)}
-                    onCheck={() => this.props.changeQuestionType(SwitchQuestionMultipleAnswers[questionType])}
                   /> : null}
                 {CanHaveOpenQuestion(questionType) ?
-                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                  <FormControlLabel
+                    control={
+                      <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                        checked={HasOpenQuestion(questionType)}
+                        onChange={() => this.props.changeQuestionType(SwitchQuestionOpenOption[questionType])}
+                      />
+                    }
                     label='Vlastní opodvěd'
-                    checked={HasOpenQuestion(questionType)}
-                    onCheck={() => this.props.changeQuestionType(SwitchQuestionOpenOption[questionType])}
                   />
                    : null}
                 {CanHaveOptionAsImage(questionType) ?
-                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                  <FormControlLabel
+                    control={
+                      <Checkbox disabled={this.props.disableChange} style={checkBoxStyle}
+                        checked={HasOptionsAsImage(questionType)}
+                        onChange={() => this.props.changeQuestionType(SwitchOptionToImage[questionType])}
+                      />
+                    }
                     label='Možnosti jsou obrázky'
-                    checked={HasOptionsAsImage(questionType)}
-                    onCheck={() => this.props.changeQuestionType(SwitchOptionToImage[questionType])}
                   />
                   : null}
+                </FormGroup>
             </Flex>
         );
     }

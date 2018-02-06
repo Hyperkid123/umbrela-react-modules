@@ -38,6 +38,13 @@ export {
 } from './optionsActions';
 
 export {
+  changeRowBlocks,
+  addPyramidRow,
+  removePyramidRow,
+  dropImages,
+} from './qMethodActions';
+
+export {
   dragEnd
 } from './uiActions';
 

@@ -13,7 +13,7 @@ class FiltrationView extends Component {
         return (
             <Flex>
               <FlexSection fullWidth autoHeight>
-                <Paper rounded={false} style={{padding: 10}}>
+                <Paper square style={{padding: 10}}>
                   <Flex column>
                     <SmallHeading>{title}</SmallHeading>
                     <CollapsibleSection sectionTitle='test'>

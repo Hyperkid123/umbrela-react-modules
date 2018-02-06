@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method navigation component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa bOSErT"
+>
+  <PyramidDescription />
+  <styled.div>
+    <styled.div
+      column={true}
+    >
+      <PyramidRow
+        blocks={2}
+        key="0"
+        rowIndex={0}
+      />
+      <PyramidRow
+        blocks={5}
+        key="1"
+        rowIndex={1}
+      />
+    </styled.div>
+  </styled.div>
+  <RowHandler
+    rows={2}
+  />
+</div>
+`;

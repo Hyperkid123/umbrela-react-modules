@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Research editor landing component should render correclty 1`] = `
+<div
+  className="sc-bwzfXH bAwxlR"
+>
+  <styled.div
+    column={true}
+    grow={true}
+  >
+    <DragDropContext(DNDContext)>
+      <Connect(SheetMenu) />
+      <styled.div
+        column={true}
+        grow={true}
+      >
+        <Connect(QuestionView) />
+        <Connect(SheetView) />
+      </styled.div>
+    </DragDropContext(DNDContext)>
+  </styled.div>
+</div>
+`;

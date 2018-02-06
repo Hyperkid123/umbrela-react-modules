@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method landing component should render correclty 1`] = `
+<div
+  className="sc-bwzfXH bAwxlR"
+>
+  <styled.div
+    column={true}
+  >
+    <Connect(PyramidCreator) />
+  </styled.div>
+</div>
+`;

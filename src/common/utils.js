@@ -18,13 +18,13 @@ export const findOpenOption = (options) => {
 }
 
 export const getOptionsInputType = (questionType) => {
-  return HasMultipleAnswers(questionType) ? 'checkBox' : 'redioButton'
+  return HasMultipleAnswers(questionType) ? 'checkBox' : 'radioButton'
 }
 
 export const divideMatrixOptions = (options) => {
   const rows = [];
   const columns = [];
-  options.map((option) => {
+  options.forEach((option) => {
     if(option.optionType === 'ColumnOption') columns.push(option);
     if(option.optionType === 'RowOption') rows.push(option);
   });

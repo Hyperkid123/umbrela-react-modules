@@ -1,15 +1,19 @@
 import {injectGlobal} from 'styled-components';
-import {grey200, deepOrange500} from 'material-ui/styles/colors';
+import deepOrange from 'material-ui/colors/deepOrange';
+import grey from 'material-ui/colors/grey';
 
 injectGlobal`
   body{
     margin: 0;
     padding: 0;
-    background-color: ${grey200};
+    background-color: ${grey[200]};
     font-family: 'Roboto', sans-serif;
   }
   .active-link > button, .active-link svg {
-    color: ${deepOrange500} !important;
-    fill: ${deepOrange500} !important
+    color: ${deepOrange[500]} !important;
+    fill: ${deepOrange[500]} !important
+  }
+  a {
+    text-decoration: none;
   }
 `;

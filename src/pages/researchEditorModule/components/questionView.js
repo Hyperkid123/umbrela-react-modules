@@ -13,11 +13,10 @@ import {
 } from '../../../common/components/labels';
 
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import ActionDelete from 'material-ui/svg-icons/action/delete-forever';
+import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -66,13 +65,15 @@ class QuestionView extends Component {
 
     render() {
       const deleteAction = [
-      <FlatButton
-        label="Smazat"
-        secondary
-        icon={<ActionDelete/>}
+      <Button
+        color="secondary"
         onClick={this.handleDeleteQuestion}
-      />,
-      <RaisedButton
+      >
+        <ActionDelete/>
+        Smazat
+      </Button>,
+      <Button
+        raised
         label="Zpět"
         primary={true}
         onClick={this.handleDeleteClose}
@@ -81,17 +82,18 @@ class QuestionView extends Component {
       if(this.props.activeQuestion) {
         return (
           <FlexSection autoHeight>
-              <Flex column>
-              <Paper rounded={false} style={{padding: 10}}>
+            <Flex column>
+              <Paper square style={{padding: 10}}>
                 <Flex grow baseline>
                   <Flex column grow>
                     <TextField
-                      ref={(input) => { this.questionTitle = input; }}
-                      name="sheetTitleInput"
+                      name="questionTitleInput"
                       style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeQuestion.title}
-                      onChange={(event, newValue) => this.props.changeQuestionTitle(newValue)}
+                      onChange={(event) => this.props.changeQuestionTitle(event.target.value)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                      inputRef={(input) => this.questionTitle = input}
+                      onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
                     />
                     <TextFieldComent
                       error={this.props.activeQuestion.title.length >= LABEL_LENGTH}
@@ -99,18 +101,33 @@ class QuestionView extends Component {
                       alignRight
                     />
                   </Flex>
-                  <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat otázku'/>
+                  <Button raised onClick={this.handleDeleteOpen}>
+                    <ActionDelete/>
+                    Smazat otázku
+                  </Button>
                 </Flex>
                 <QuestionBody questionType={this.props.activeQuestion.questionType}/>
               </Paper>
             </Flex>
             <Dialog
-              actions={deleteAction}
-              modal={false}
               open={this.state.showDelete}
-              onRequestClose={this.handleDeleteClose}
+              onClose={this.handleDeleteClose}
             >
-              Smazat otázku <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
+              Smazat arch <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
+              <Button
+                color='secondary'
+                onClick={this.handleDeleteQuestion}
+              >
+                <ActionDelete/>
+                Smazat
+              </Button>
+              <Button
+                raised
+                color='primary'
+                onClick={this.handleDeleteClose}
+              >
+                Zpět
+              </Button>
             </Dialog>
           </FlexSection>
         );

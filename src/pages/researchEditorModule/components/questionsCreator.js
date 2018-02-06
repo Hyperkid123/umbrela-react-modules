@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover/Popover';
-import {Menu, MenuItem} from 'material-ui/Menu';
-import ActionAdd from 'material-ui/svg-icons/content/add';
+import Menu, {MenuItem} from 'material-ui/Menu';
+import ActionAdd from 'material-ui-icons/Add';
 import {
   Flex
 } from '../../../common/styledComponents/containers';
@@ -55,10 +55,11 @@ class QuestionsCreator extends Component {
     renderBaseQuestionTypes = () => {
       return BaseTypes.map((type, i) => {
         return <MenuItem
-          primaryText={QuestionTypes[type]}
           key={i}
           onClick={() => this.handleCreateNewQuestion(type)}
-        />
+        >
+          {QuestionTypes[type]}
+        </MenuItem>
       })
     }
 
@@ -72,18 +73,17 @@ class QuestionsCreator extends Component {
         return (
             <Flex column>
               <Flex>
-                <FlatButton onClick={this.handleClick} icon={<ActionAdd/>}label='Přidat otázku'/>
-                <Popover
-                  open={this.state.open}
-                  anchorEl={this.state.anchorEl}
-                  anchorOrigin={this.state.anchorOrigin}
-                  targetOrigin={this.state.targetOrigin}
-                  onRequestClose={this.handleRequestClose}
-                  >
-                    <Menu>
-                      {this.renderBaseQuestionTypes()}
-                    </Menu>
-                  </Popover>
+                <Button onClick={this.handleClick}>
+                  <ActionAdd/>
+                  Přidat otázku
+                </Button>
+                  <Menu
+                    open={this.state.open}
+                    anchorEl={this.state.anchorEl}
+                    onClose={this.handleRequestClose}
+                    >
+                    {this.renderBaseQuestionTypes()}
+                  </Menu>
               </Flex>
                 <Flex column>
                   <QuestionMenu/>

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method navigation component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <styled.div
+    grow={true}
+    horizintalCenter={true}
+    verticalCenter={true}
+  >
+    <span>
+      Náhled rozdělení stimulů
+    </span>
+  </styled.div>
+  <styled.div>
+    <span>
+      Přidat nebo odebrat pole
+    </span>
+  </styled.div>
+</div>
+`;

@@ -49,7 +49,13 @@ class QuestionPreview extends Component {
     renderOpenOption = () => {
       return (
         <Flex column grow>
-          <TextField value={this.state.openAnswer} onChange={(event, newValue) => this.setOpenAnswer(newValue)} fullWidth hintText='Napište odpověď'/>
+          <TextField
+            value={this.state.openAnswer}
+            onChange={(event) => this.setOpenAnswer(event.target.value)}
+            fullWidth
+            placeholder='Napište odpověď'
+            margin='normal'
+          />
           <TextFieldComent
             error={this.state.openAnswer.length > ANSWER_LENGTH}
             label={`${this.state.openAnswer.length} z ${ANSWER_LENGTH} znaků`}

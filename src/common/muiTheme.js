@@ -1,18 +1,14 @@
-import {
-  deepOrange500,
-  grey700,
-  grey200,
-  black
-} from 'material-ui/styles/colors';
+import deepOrange from 'material-ui/colors/deepOrange';
+import grey from 'material-ui/colors/grey';
 
-import {fade} from 'material-ui/utils/colorManipulator';
-
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-export default getMuiTheme({
+import { createMuiTheme } from 'material-ui/styles';
+export default createMuiTheme({
     fontFamily: 'Roboto, sans-serif',
     palette: {
-        primary1Color: deepOrange500,
-        accent1Color: grey700,
+      primary: {
+        main: deepOrange[500],
+        dark: deepOrange[500],
+      },
     },
     raisedButton: {
       fontWeight: 300
@@ -20,9 +16,4 @@ export default getMuiTheme({
     appBar: {
       titleFontWeight: 300
     },
-    tabs: {
-      backgroundColor: grey200,
-      textColor: fade(black, 0.7),
-      selectedTextColor: fade(black, 0.7),
-    }
 });

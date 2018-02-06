@@ -6,7 +6,7 @@ import {changeOptionTitle, synchronizeOption, dragOptionCard, remapOptions} from
 import {ValideOption, getOptionValidationMessage} from '../../../../common/validator';
 import OptionsDraggableCard from './dragByHandle';
 
-class OptionEditorItem extends Component {
+export class OptionEditorItem extends Component {
 
     updateOption = (option) => {
       if(ValideOption(option.title, this.props.questionType, option.optionType)) this.props.synchronizeOption(option)
@@ -14,6 +14,8 @@ class OptionEditorItem extends Component {
 
     render() {
       const {option} = this.props;
+      const valid = ValideOption(option.title, this.props.questionType, option.optionType);
+      const validMessage = getOptionValidationMessage(option.title, this.props.questionType, option.optionType)
 
       return (
         <OptionsDraggableCard
@@ -27,11 +29,14 @@ class OptionEditorItem extends Component {
           <TextField
             name={`optionInput${option.optionId}`}
             value={option.title}
+            placeholder='Text možnosti'
             fullWidth
-            onChange={(event, value) => this.props.changeOptionTitle(value, option.optionOrder)}
+            onChange={(event) => this.props.changeOptionTitle(event.target.value, option.optionOrder)}
             onBlur={() => {this.updateOption(option)}}
             onKeyPress={(event) => {if(event.key === 'Enter') this.updateOption(option)}}
-            errorText={getOptionValidationMessage(option.title, this.props.questionType, option.optionType)}
+            margin="normal"
+            label={validMessage}
+            error={!valid}
           />
         </OptionsDraggableCard>
       );
@@ -39,7 +44,7 @@ class OptionEditorItem extends Component {
 }
 
 const mapStateToProps = (_, initialProps) => ({questions, options}) => {
-  return{
+  return {
     questionType: questions.activeQuestion.questionType,
     questionId: questions.activeQuestion.questionId,
   }

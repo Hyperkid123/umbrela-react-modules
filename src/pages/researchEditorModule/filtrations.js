@@ -9,7 +9,7 @@ import DNDContext from '../../common/components/dndContext';
 import SheetMenu from './components/sheetMenu';
 import FiltrationView from './components/filtrationView';
 
-class Filtrations extends Component {
+export class Filtrations extends Component {
     componentWillMount() {
       this.props.getSheets(window.researchId)
     }

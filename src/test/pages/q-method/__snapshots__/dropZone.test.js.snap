@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method dropZone component should render correclty 1`] = `
+<div
+  className="sc-bwzfXH bAwxlR"
+>
+  <Connect(ImageDropZone) />
+</div>
+`;

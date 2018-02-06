@@ -8,7 +8,7 @@ import {getOptions, deleteOption} from '../../../../redux/actions';
 import OptionEditorItem from './optionEditorItem';
 import {divideMatrixOptions} from '../../../../common/utils';
 
-class MatrixOptionsEditor extends Component {
+export class MatrixOptionsEditor extends Component {
     componentWillMount() {
       this.props.getOptions(this.props.activeQuestion.questionId);
     }
@@ -23,12 +23,12 @@ class MatrixOptionsEditor extends Component {
       return list.map((option, index) => {
         return (
            <OptionEditorItem
-            draggingElement={this.props.draggingElement}
-            option={option}
-            index={option.optionOrder}
-            key={option.optionId}
-            optionOrder={option.optionOrder}
-            deleteOption={() => this.props.deleteOption(option)}
+             draggingElement={this.props.draggingElement}
+             option={option}
+             index={option.optionOrder}
+             key={option.optionId}
+             optionOrder={option.optionOrder}
+             deleteOption={() => this.props.deleteOption(option)}
           />
         )
       })
@@ -44,7 +44,7 @@ class MatrixOptionsEditor extends Component {
                 <OptionsList>
                   {this.renderOptionsList(columns)}
                 </OptionsList>
-                <NewOption hintText='Nový sloupec' optionType='ColumnOption'/>
+                <NewOption placeholder='Nový sloupec' optionType='ColumnOption'/>
               </ListColumn>
             </Flex>
             <Flex column>
@@ -53,7 +53,7 @@ class MatrixOptionsEditor extends Component {
                 <OptionsList>
                   {this.renderOptionsList(rows)}
                 </OptionsList>
-                <NewOption hintText='Nový řádek' optionType='RowOption'/>
+                <NewOption placeholder='Nový řádek' optionType='RowOption'/>
               </ListColumn>
             </Flex>
           </Flex>

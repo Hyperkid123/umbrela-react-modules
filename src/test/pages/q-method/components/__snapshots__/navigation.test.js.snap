@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Q-method navigation component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <NavLink
+    activeClassName="active-link"
+    ariaCurrent="true"
+    exact={true}
+    strict={true}
+    to="/"
+  >
+    <WithStyles(Button)>
+      <pure(ModeEdit) />
+        Editor
+    </WithStyles(Button)>
+  </NavLink>
+  <NavLink
+    activeClassName="active-link"
+    ariaCurrent="true"
+    exact={true}
+    strict={true}
+    to="/upload"
+  >
+    <WithStyles(Button)>
+      <pure(CloudUpload) />
+        Nahrát stimuly
+    </WithStyles(Button)>
+  </NavLink>
+</div>
+`;

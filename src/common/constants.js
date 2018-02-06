@@ -1,7 +1,6 @@
-import {
-  deepOrange500,
-  grey100,
-} from 'material-ui/styles/colors';
+
+import deepOrange from 'material-ui/colors/deepOrange';
+import grey from 'material-ui/colors/grey';
 
 export const LABEL_LENGTH = 255;
 export const ANSWER_LENGTH = 1500;
@@ -9,11 +8,11 @@ export const LABEL_ERROR_STYLE = {
   textAlign: 'end',
 }
 export const TEXT_FIELD_UNDERLINE = {
-  borderColor: grey100,
+  borderColor: grey[100],
 }
 
 export const TEXT_FIELD_FOCUS = {
-  borderColor: deepOrange500,
+  borderColor: deepOrange[500],
 }
 
 export const MEDIM_ICON_BUTTON_FIX = {

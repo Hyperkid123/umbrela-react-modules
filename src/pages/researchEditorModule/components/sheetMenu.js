@@ -8,8 +8,8 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import {SmallHeading} from '../../../common/styledComponents/typography';
 import {MenuListItem} from '../../../common/components/menuListIcons';
 import Paper from 'material-ui/Paper';
-import FlatButton from 'material-ui/FlatButton';
-import ActionAdd from 'material-ui/svg-icons/content/add';
+import Button from 'material-ui/Button';
+import ActionAdd from 'material-ui-icons/Add';
 import SheetDraggableCard from './sheetDraggableCard';
 import ReactTooltip from 'react-tooltip';
 import {connect} from 'react-redux';
@@ -57,13 +57,16 @@ class SheetMenu extends Component {
         }
         return (
           <FlexSection minWidth={300}>
-            <Paper rounded={false}>
+            <Paper square>
               <MenuContainer>
                 <SmallHeading>Arhy</SmallHeading>
                 <Scrollbars
                   style={{height: 'calc(100vh - 2em - 60px - 28px)'}}
                 >
-                  <FlatButton onClick={() => this.props.createNewSheet(window.researchId)} primary icon={<ActionAdd/>} label='Nový arch'/>
+                  <Button color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
+                    <ActionAdd/>
+                    Nový arch
+                  </Button>
                   <MenuList>
                     {this.renderSheets()}
                   </MenuList>

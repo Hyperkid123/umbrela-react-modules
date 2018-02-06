@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stimul preview component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <h2>
+    Náhled
+  </h2>
+  <div>
+    <LazyLoad
+      key="foo0"
+      offset={0}
+      once={false}
+      overflow={false}
+      resize={false}
+      scroll={true}
+      unmountIfInvisible={false}
+    >
+      <ImageThumbNail
+        alt="foo"
+        src="foo"
+      />
+    </LazyLoad>
+  </div>
+</div>
+`;

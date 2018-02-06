@@ -15,7 +15,7 @@ import configureStore from './redux/configureStore';
 const store = configureStore();
 const ResearchEditorModuleWrapper = () => (
   <Provider store={store}>
-    <MuiThemeProvider muiTheme={orangeTheme}>
+    <MuiThemeProvider theme={orangeTheme}>
       <Router>
         <div>
           <StatusBar/>

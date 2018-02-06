@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`New option component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fQfuvz"
+>
+  <styled.div
+    column={true}
+  >
+    <TextField
+      fullWidth={true}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Nová možnost"
+      required={false}
+      select={false}
+      value=""
+    />
+    <TextFieldComent
+      alignRight={true}
+      error={false}
+      label="0 z 255 znaků"
+    />
+  </styled.div>
+  <WithStyles(IconButton)
+    onClick={[Function]}
+    tooltip="Přidat možnost"
+  >
+    <pure(Add) />
+  </WithStyles(IconButton)>
+</div>
+`;

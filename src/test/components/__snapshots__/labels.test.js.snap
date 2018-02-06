@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collapsibleSection component should match snapshot 1`] = `
+<styled.div
+  alignRight={true}
+>
+  foo
+</styled.div>
+`;

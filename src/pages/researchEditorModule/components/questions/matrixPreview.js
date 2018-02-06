@@ -3,10 +3,10 @@ import {Flex, MatrixTable, MatrixTableHeader, MatrixtableCell, MatrixTableBody, 
 import {divideMatrixOptions} from '../../../../common/utils';
 import {HasOptionsAsImage, HasMultipleAnswers} from '../../../../common/questionTypes';
 import Checkbox from 'material-ui/Checkbox';
-import RadioUncheckedIcon from 'material-ui/svg-icons/toggle/radio-button-unchecked';
-import RadioCheckedIcon from 'material-ui/svg-icons/toggle/radio-button-checked';
+import RadioUncheckedIcon from 'material-ui-icons/RadioButtonUnchecked';
+import RadioCheckedIcon from 'material-ui-icons/RadioButtonChecked';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import LazyLoad from 'react-lazyload';
 import {MATRIX_INPUT_FIX} from '../../../../common/constants';
 
@@ -37,7 +37,7 @@ export default class MatrixPreview extends Component {
 
     renderTableHeader = (columns) => {
       const header = [<MatrixtableCell key='empty'></MatrixtableCell>]
-      columns.map((column) => {
+      columns.forEach((column) => {
         header.push(<MatrixtableCell filler key={column.optionId}><span>{column.title}</span></MatrixtableCell>)
       })
       return header;
@@ -59,7 +59,7 @@ export default class MatrixPreview extends Component {
       }
       return (
         <Checkbox
-          uncheckedIcon={<RadioUncheckedIcon/>}
+          icon={<RadioUncheckedIcon/>}
           style={MATRIX_INPUT_FIX}
           checkedIcon={<RadioCheckedIcon/>}
         />
@@ -89,7 +89,7 @@ export default class MatrixPreview extends Component {
     render() {
         const {rows, columns} = divideMatrixOptions(this.props.options);
         const modalActions = [
-               <FlatButton
+               <Button
                  label="Zavřít"
                  key='closeAction'
                  primary={true}

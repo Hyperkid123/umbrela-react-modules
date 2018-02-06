@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+  import React,{Component} from 'react';
 
 import {
   LABEL_LENGTH,
@@ -14,11 +14,10 @@ import {
 } from '../../../common/components/labels';
 
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import ActionDelete from 'material-ui/svg-icons/action/delete-forever';
+import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -70,34 +69,25 @@ class SheetView extends Component {
 
     render() {
       const deleteAction = [
-      <FlatButton
-        label="Smazat"
-        secondary
-        icon={<ActionDelete/>}
-        onClick={this.handleDeleteSheet}
-      />,
-      <RaisedButton
-        label="Zpět"
-        primary={true}
-        onClick={this.handleDeleteClose}
-      />,
+
     ];
       if(this.props.activeSheet) {
         return (
           <Flex>
             <FlexSection fullWidth autoHeight>
-              <Paper rounded={false} style={{padding: 10}}>
+              <Paper square style={{padding: 10}}>
                 <Flex grow baseline>
                   <Flex column grow>
                     <TextField
-                      ref={(input) => { this.sheetTitleInput = input; }}
                       name="sheetTitleInput"
                       style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeSheet.title}
-                      onChange={(event, newValue) => {
-                        this.props.changeSheetTitle(newValue)
+                      onChange={(event) => {
+                        this.props.changeSheetTitle(event.target.value)
                       }}
                       onBlur={this.handleUpdateSheetTitle}
+                      onKeyPress={(event) => {if(event.key === 'Enter') this.handleUpdateSheetTitle()}}
+                      inputRef={(input) => { this.sheetTitleInput = input; }}
                     />
                     <TextFieldComent
                       error={this.props.activeSheet.title.length >= LABEL_LENGTH}
@@ -105,18 +95,33 @@ class SheetView extends Component {
                       alignRight
                     />
                   </Flex>
-                    <RaisedButton onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat arch'/>
+                  <Button raised onClick={this.handleDeleteOpen}>
+                    <ActionDelete/>
+                    Smazat
+                  </Button>
                 </Flex>
                 <QuestionsCreator/>
               </Paper>
             </FlexSection>
             <Dialog
-              actions={deleteAction}
-              modal={false}
               open={this.state.showDelete}
-              onRequestClose={this.handleDeleteClose}
+              onClose={this.handleDeleteClose}
             >
               Smazat arch <DeleteNotification>{this.props.activeSheet.title}</DeleteNotification>?
+              <Button
+                color='secondary'
+                onClick={this.handleDeleteSheet}
+              >
+                <ActionDelete/>
+                Smazat
+              </Button>
+              <Button
+                raised
+                color='primary'
+                onClick={this.handleDeleteClose}
+              >
+                Zpět
+              </Button>
             </Dialog>
           </Flex>
         );

@@ -6,18 +6,18 @@ import TextField from 'material-ui/TextField';
 import {
   TextFieldComent
 } from '../../../../common/components/labels';
-import ContentAdd from 'material-ui/svg-icons/content/add';
+import ContentAdd from 'material-ui-icons/Add';
 import IconButton from 'material-ui/IconButton';
 import {
   LABEL_LENGTH,
   MEDIM_ICON_BUTTON_FIX,
 } from '../../../../common/constants';
 import {getNewOptionOrder} from '../../../../common/utils';
-import {grey500} from 'material-ui/styles/colors';
+import grey from 'material-ui/colors/grey';
 import {ValideOption} from '../../../../common/validator';
 import {synchronizeOption} from '../../../../redux/actions';
 
-class NewOption extends Component {
+export class NewOption extends Component {
     constructor(props){
     	super(props);
     	this.state = {
@@ -31,7 +31,7 @@ class NewOption extends Component {
 
     createOption = () => {
       const {optionText} = this.state;
-      if(ValideOption(optionText, this.props.activeQuestion.questionType)){
+      if(ValideOption(optionText, this.props.activeQuestion.questionType, this.props.optionType)){
         const option = {
           title: optionText,
           questionId: this.props.activeQuestion.questionId,
@@ -48,29 +48,30 @@ class NewOption extends Component {
         const {optionText} = this.state;
         return (
             <Flex grow>
-                <Flex column>
-                  <TextField
-                    fullWidth
-                    hintText={this.props.hintText || 'Nová možnost'}
-                    value={optionText}
-                    onChange={(event, newValue) => this.setOptionText(newValue)}
-                    onBlur={this.createOption}
-                    onKeyPress={(event) => {
-                      if(event.key === 'Enter') this.createOption()
-                    }}
-                  />
-                  <TextFieldComent
-                    error={optionText.length > LABEL_LENGTH}
-                    label={`${optionText.length} z ${LABEL_LENGTH} znaků`}
-                    alignRight
-                  />
-                </Flex>
-                <IconButton onClick={this.createOption}
-                  iconStyle={{...MEDIM_ICON_BUTTON_FIX.mediumIcon, color: grey500}}
-                  tooltip='Přidat možnost'
-                  >
-                    <ContentAdd/>
-                </IconButton>
+              <Flex column>
+                <TextField
+                  fullWidth
+                  placeholder={this.props.placeholder || 'Nová možnost'}
+                  value={optionText}
+                  onChange={(event) => this.setOptionText(event.target.value)}
+                  onBlur={this.createOption}
+                  onKeyPress={(event) => {
+                    if(event.key === 'Enter') this.createOption()
+                  }}
+                  margin='normal'
+                />
+                <TextFieldComent
+                  error={optionText.length > LABEL_LENGTH}
+                  label={`${optionText.length} z ${LABEL_LENGTH} znaků`}
+                  alignRight
+                />
+              </Flex>
+              <IconButton
+                onClick={this.createOption}
+                tooltip='Přidat možnost'
+              >
+                <ContentAdd/>
+              </IconButton>
             </Flex>
         );
     }

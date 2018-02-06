@@ -3,11 +3,11 @@ import {DragSource, DropTarget} from 'react-dnd';
 import flow from 'lodash/flow';
 import {findDOMNode} from 'react-dom';
 import {OptionItemWrapper} from '../../../../common/styledComponents/containers';
-import DragHandle from 'material-ui/svg-icons/editor/drag-handle';
-import DeleteIcon from 'material-ui/svg-icons/action/delete-forever';
+import DragHandle from 'material-ui-icons/DragHandle';
+import DeleteIcon from 'material-ui-icons/DeleteForever';
 import IconButton from 'material-ui/IconButton';
 import ReactTooltip from 'react-tooltip';
-import {red500} from 'material-ui/styles/colors';
+import red from 'material-ui/colors/red';
 
 const cardSource = {
     beginDrag(props){
@@ -50,14 +50,14 @@ class OptionsDraggableCard extends Component {
      const opacity = isDragging ? 0.5 : 1;
      return connectDragSource(connectDropTarget(
        <li style={{opacity}}>
-        <OptionItemWrapper row grow >
-          {this.props.children}
-			   {connectDragPreview(
-           <div data-tip='tažením můžete změnit pořadí možností' data-for={`option-tooltip-${this.props.index}`}>
-             <DragHandle style={{cursor: 'move', height: 44}}/>
-           </div>)}
+         <OptionItemWrapper row grow >
+           {this.props.children}
+           {connectDragPreview(
+             <div data-tip='tažením můžete změnit pořadí možností' data-for={`option-tooltip-${this.props.index}`}>
+               <DragHandle style={{cursor: 'move', height: 48, marginLeft: 5}}/>
+             </div>)}
            <IconButton onClick={this.props.deleteOption}>
-             <DeleteIcon color={red500} style={{height: 44}}/>
+             <DeleteIcon color='error' style={{height: 48}}/>
            </IconButton>
         </OptionItemWrapper>
         {!this.props.draggingElement ?

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Flex} from '../../../../common/styledComponents/containers';
 import TextField from 'material-ui/TextField';
-import LinearProgress from 'material-ui/LinearProgress';
+import { LinearProgress } from 'material-ui/Progress';
 
 export default class DividePreview extends Component {
 
@@ -47,7 +47,7 @@ export default class DividePreview extends Component {
     };
 
     remainingPoints = () => {
-        return parseInt(this.state.scalePoints) - this.state.optionsValues.reduce((a, b) => a + b, 0);
+        return parseInt(this.state.scalePoints, 10) - this.state.optionsValues.reduce((a, b) => a + b, 0);
     };
 
     handleSelectInput = (event) => {
@@ -56,13 +56,13 @@ export default class DividePreview extends Component {
 
     handleDivideValue = (index, value) => {
       value = value || 0;
-      if(this.remainingPoints() + this.state.optionsValues[index] - parseInt(value) >= 0) {
+      if(this.remainingPoints() + this.state.optionsValues[index] - parseInt(value, 10) >= 0) {
         const optionsValues = this.state.optionsValues;
-        optionsValues[index] = parseInt(value);
+        optionsValues[index] = parseInt(value, 10);
         this.setState({optionsValues});
-      } else if(this.remainingPoints() < this.remainingPoints() - parseInt(value) || isNaN(this.remainingPoints())) {
+      } else if(this.remainingPoints() < this.remainingPoints() - parseInt(value, 10) || isNaN(this.remainingPoints())) {
         const optionsValues = this.state.optionsValues;
-        optionsValues[index] = parseInt(value);
+        optionsValues[index] = parseInt(value, 10);
         this.setState({optionsValues});
       }else {
         console.log('not enought points', console.log(this.remainingPoints()));
@@ -80,11 +80,11 @@ export default class DividePreview extends Component {
               value={this.state.optionsValues[index]}
               name={`divide_input_${option.optionId}`}
               min={0}
-              onChange={(event, newValue) => this.handleDivideValue(index, newValue)}
+              onChange={(event) => this.handleDivideValue(index, event.target.value)}
             />
-            <Flex column grow style={{marginLeft: 10, paddingTop: 17}}>
+            <Flex column grow style={{marginLeft: 10, paddingTop: 10}}>
               {option.title}
-              <LinearProgress mode='determinate' min={0} max={this.props.scalePoints} value={this.state.optionsValues[index]}/>
+              <LinearProgress mode='determinate' value={(this.state.optionsValues[index] / this.state.scalePoints) * 100}/>
             </Flex>
           </Flex>
         )

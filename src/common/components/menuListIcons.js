@@ -1,6 +1,6 @@
 import React from 'react';
-import ExpandLess from 'material-ui/svg-icons/navigation/expand-less';
-import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
+import ExpandLess from 'material-ui-icons/ExpandLess';
+import ExpandMore from 'material-ui-icons/ExpandMore';
 import IconButton from 'material-ui/IconButton';
 import {
   MenuListIconsContainer,

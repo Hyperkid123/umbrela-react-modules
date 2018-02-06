@@ -15,7 +15,7 @@ import {
   LABEL_LENGTH,
 } from '../../../../common/constants';
 
-class CloseOptionsEditor extends Component {
+export class CloseOptionsEditor extends Component {
 
     componentWillMount() {
       this.props.getOptions(this.props.activeQuestion.questionId);
@@ -54,11 +54,12 @@ class CloseOptionsEditor extends Component {
           <Flex column>
             <TextField
               fullWidth
-              hintText='Vlastní opověď'
+              placeholder='Vlastní opověď'
               value={option.title}
-              onChange={(event, newValue) => this.props.changeOptionTitle(newValue, option.optionOrder)}
+              onChange={(event) => this.props.changeOptionTitle(event.target.value, option.optionOrder)}
               onBlur={() => {this.updateOption(option)}}
               onKeyPress={(event) => {if(event.key === 'Enter') this.updateOption(option)}}
+              margin='normal'
             />
             <TextFieldComent
               error={option.title.length > LABEL_LENGTH}
