@@ -14,12 +14,6 @@ class FilterableQuestionsList extends Component {
     this.props.loadQuestions(this.props.sheetId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.sheetId !== this.props.sheetId) {
-      this.props.loadQuestions(nextProps.sheetId);
-    }
-  }
-
   renderSelectableList = () => {
     const list = [];
     this.props.questions.forEach((question) => {
@@ -48,7 +42,6 @@ class FilterableQuestionsList extends Component {
     if (!this.props.questions || this.props.questions.length === 0) return null;
     const renderableList = this.props.questions ? this.renderSelectableList() : [];
     if(renderableList.length === 0) return null;
-    console.log('re render');
     return (
       <List style={{margin: 5}}>
         <ListItem>

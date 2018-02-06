@@ -35,18 +35,22 @@ function receiveQuestions(questions) {
 }
 
 export function getQuestions(sheetId){
-  return dispatch => {
-    dispatch(requestQuestions());
-    return fetch(`${window.base}${window.researchId}/get-questions`, {
-      method: 'POST',
-      body: JSON.stringify({sheetId}),
-    }).then(response => response.json())
-    .then(json => dispatch(receiveQuestions(json)))
-    .then(() => dispatch(finishFetch()))
-    .catch((err) => {
-      console.log('failed to fetch: ', err);
-      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
-    });
+  return (dispatch, getState) => {
+    const {questions} = getState();
+    console.log('questions reducer: ', questions);
+    if(!questions.isFetching) {
+      dispatch(requestQuestions());
+      return fetch(`${window.base}${window.researchId}/get-questions`, {
+        method: 'POST',
+        body: JSON.stringify({sheetId}),
+      }).then(response => response.json())
+      .then(json => dispatch(receiveQuestions(json)))
+      .then(() => dispatch(finishFetch()))
+      .catch((err) => {
+        console.log('failed to fetch: ', err);
+        dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+      });
+    }
   }
 }
 

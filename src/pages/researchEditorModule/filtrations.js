@@ -18,7 +18,7 @@ export class Filtrations extends Component {
         return (  <ViewContainer>
             <Flex grow column>
               <DNDContext>
-                <SheetMenu sheets={this.props.sheets}/>
+                <SheetMenu hideNewSheet sheets={this.props.sheets}/>
                 <Flex grow column>
                   {this.props.activeSheet ?
                   <FiltrationView/> : null }

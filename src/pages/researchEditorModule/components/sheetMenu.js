@@ -63,7 +63,7 @@ class SheetMenu extends Component {
                 <Scrollbars
                   style={{height: 'calc(100vh - 2em - 60px - 28px)'}}
                 >
-                  <Button color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
+                  <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
                     <ActionAdd/>
                     Nový arch
                   </Button>
