@@ -27,10 +27,12 @@ export class OptionEditorItem extends Component {
           <TextField
             name={`optionInput${option.optionId}`}
             value={option.title}
+            placeholder='Text možnosti'
             fullWidth
-            onChange={(event, value) => this.props.changeOptionTitle(value, option.optionOrder)}
+            onChange={(event) => this.props.changeOptionTitle(event.target.value, option.optionOrder)}
             onBlur={() => {this.updateOption(option)}}
             onKeyPress={(event) => {if(event.key === 'Enter') this.updateOption(option)}}
+            margin="normal"
           />
         </OptionsDraggableCard>
       );

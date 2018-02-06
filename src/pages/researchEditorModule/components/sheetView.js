@@ -39,14 +39,14 @@ class SheetView extends Component {
 
     componentDidMount() {
       if(this.props.activeSheet && this.props.activeSheet.newSheet){
-          this.sheetTitleInput.focus();
-          this.sheetTitleInput.select();
+          //this.sheetTitleInput.focus();
+          //this.sheetTitleInput.select();
       }
     }
     componentDidUpdate(prevProps, prevState) {
       if(this.props.activeSheet && this.props.activeSheet.newSheet){
-          this.sheetTitleInput.focus();
-          this.sheetTitleInput.select();
+          //this.sheetTitleInput.focus();
+          //this.sheetTitleInput.select();
       }
     }
 
@@ -69,20 +69,7 @@ class SheetView extends Component {
 
     render() {
       const deleteAction = [
-      <Button
-        color='secondary'
-        onClick={this.handleDeleteSheet}
-      >
-        <ActionDelete/>
-        Smazat
-      </Button>,
-      <Button
-        raised
-        color='primary'
-        onClick={this.handleDeleteClose}
-      >
-        Zpět
-      </Button>,
+
     ];
       if(this.props.activeSheet) {
         return (
@@ -92,7 +79,6 @@ class SheetView extends Component {
                 <Flex grow baseline>
                   <Flex column grow>
                     <TextField
-                      ref={(input) => { this.sheetTitleInput = input; }}
                       name="sheetTitleInput"
                       style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeSheet.title}
@@ -107,18 +93,33 @@ class SheetView extends Component {
                       alignRight
                     />
                   </Flex>
-                  <Button raised onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat arch'/>
+                  <Button raised onClick={this.handleDeleteOpen}>
+                    <ActionDelete/>
+                    Smazat
+                  </Button>
                 </Flex>
                 <QuestionsCreator/>
               </Paper>
             </FlexSection>
             <Dialog
-              actions={deleteAction}
-              modal={false}
               open={this.state.showDelete}
-              onRequestClose={this.handleDeleteClose}
+              onClose={this.handleDeleteClose}
             >
               Smazat arch <DeleteNotification>{this.props.activeSheet.title}</DeleteNotification>?
+              <Button
+                color='secondary'
+                onClick={this.handleDeleteSheet}
+              >
+                <ActionDelete/>
+                Smazat
+              </Button>
+              <Button
+                raised
+                color='primary'
+                onClick={this.handleDeleteClose}
+              >
+                Zpět
+              </Button>
             </Dialog>
           </Flex>
         );

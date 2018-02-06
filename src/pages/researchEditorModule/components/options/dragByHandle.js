@@ -54,10 +54,10 @@ class OptionsDraggableCard extends Component {
            {this.props.children}
            {connectDragPreview(
              <div data-tip='tažením můžete změnit pořadí možností' data-for={`option-tooltip-${this.props.index}`}>
-               <DragHandle style={{cursor: 'move', height: 44}}/>
+               <DragHandle style={{cursor: 'move', height: 48, marginLeft: 5, paddingTop: 4}}/>
              </div>)}
            <IconButton onClick={this.props.deleteOption}>
-             <DeleteIcon color='error' style={{height: 44}}/>
+             <DeleteIcon color='error' style={{height: 55}}/>
            </IconButton>
         </OptionItemWrapper>
         {!this.props.draggingElement ?

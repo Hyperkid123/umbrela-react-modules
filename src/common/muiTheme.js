@@ -5,8 +5,10 @@ import { createMuiTheme } from 'material-ui/styles';
 export default createMuiTheme({
     fontFamily: 'Roboto, sans-serif',
     palette: {
-        primary1Color: deepOrange[500],
-        accent1Color: grey[700],
+      primary: {
+        main: deepOrange[500],
+        dark: deepOrange[500],
+      },
     },
     raisedButton: {
       fontWeight: 300
@@ -14,9 +16,4 @@ export default createMuiTheme({
     appBar: {
       titleFontWeight: 300
     },
-    tabs: {
-      backgroundColor: grey[200],
-      textColor: grey[900],
-      selectedTextColor: grey[900],
-    }
 });

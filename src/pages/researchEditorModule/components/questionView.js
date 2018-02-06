@@ -39,14 +39,14 @@ class QuestionView extends Component {
 
     componentDidMount() {
       if(this.props.activeQuestion && this.props.activeQuestion.newQuestion){
-          this.questionTitle.focus();
-          this.questionTitle.select();
+          //this.questionTitle.focus();
+          //this.questionTitle.select();
       }
     }
     componentDidUpdate(prevProps, prevState) {
       if(this.props.activeQuestion && this.props.activeQuestion.newQuestion){
-          this.questionTitle.focus();
-          this.questionTitle.select();
+          //this.questionTitle.focus();
+          //this.questionTitle.select();
       }
     }
 
@@ -66,11 +66,12 @@ class QuestionView extends Component {
     render() {
       const deleteAction = [
       <Button
-        label="Smazat"
-        secondary
-        icon={<ActionDelete/>}
+        color="secondary"
         onClick={this.handleDeleteQuestion}
-      />,
+      >
+        <ActionDelete/>
+        Smazat
+      </Button>,
       <Button
         raised
         label="Zpět"
@@ -86,8 +87,7 @@ class QuestionView extends Component {
                 <Flex grow baseline>
                   <Flex column grow>
                     <TextField
-                      ref={(input) => { this.questionTitle = input; }}
-                      name="sheetTitleInput"
+                      name="questionTitleInput"
                       style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeQuestion.title}
                       onChange={(event, newValue) => this.props.changeQuestionTitle(newValue)}
@@ -99,18 +99,33 @@ class QuestionView extends Component {
                       alignRight
                     />
                   </Flex>
-                  <Button raised onClick={this.handleDeleteOpen} secondary icon={<ActionDelete/>} label='Smazat otázku'/>
+                  <Button raised onClick={this.handleDeleteOpen}>
+                    <ActionDelete/>
+                    Smazat otázku
+                  </Button>
                 </Flex>
                 <QuestionBody questionType={this.props.activeQuestion.questionType}/>
               </Paper>
             </Flex>
             <Dialog
-              actions={deleteAction}
-              modal={false}
               open={this.state.showDelete}
-              onRequestClose={this.handleDeleteClose}
+              onClose={this.handleDeleteClose}
             >
-              Smazat otázku <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
+              Smazat arch <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
+              <Button
+                color='secondary'
+                onClick={this.handleDeleteQuestion}
+              >
+                <ActionDelete/>
+                Smazat
+              </Button>
+              <Button
+                raised
+                color='primary'
+                onClick={this.handleDeleteClose}
+              >
+                Zpět
+              </Button>
             </Dialog>
           </FlexSection>
         );

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Flex} from '../../../../common/styledComponents/containers';
+import AppBar from 'material-ui/AppBar';
 
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -12,7 +13,7 @@ import {
 
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import Tabs, {Tab} from 'material-ui/Tabs';
 import ModeEditIcon from 'material-ui-icons/ModeEdit';
 import PreviewIcon from 'material-ui-icons/RemoveRedEye';
 
@@ -31,6 +32,17 @@ import OptionsBody from '../options/optionsBody';
 
 class QuestionBody extends Component {
 
+    constructor(props){
+    	super(props);
+    	this.state = {
+        tab: 0
+      };
+    }
+
+    handleTabChange = (value) => {
+      this.setState({tab: value});
+    }
+
     componentDidUpdate(prevProps, prevState) {
       const {activeQuestion} = this.props;
         if(activeQuestion.hasCustomHelp && activeQuestion.hasCustomHelp !== prevProps.activeQuestion.hasCustomHelp){
@@ -45,29 +57,40 @@ class QuestionBody extends Component {
 
     render() {
         const {questionType, customHelp, hasCustomHelp, url, scalePoints} = this.props.activeQuestion;
+        const {tab} = this.state;
         return (
             <Flex column>
-              <Chip style={{marginBottom: 5}}>
-                Typ otázky: {QuestionTypes[questionType]}
-              </Chip>
+              <Chip style={{marginBottom: 5}} label={`Typ otázky: ${QuestionTypes[questionType]}`}/>
               <QuestionTypeChanger/>
-              <Tabs style={{marginTop: 5}}>
-                <Tab label='Editace' icon={<ModeEditIcon/>}>
-                  {hasCustomHelp ?
+              <AppBar color='default' position='static'>
+                <Tabs
+                  style={{marginTop: 5}}
+                  value={tab}
+                  onChange={(event, value) => this.handleTabChange(value)}
+                  fullWidth
+                  centered
+                  indicatorColor='primary'
+                  >
+                    <Tab color='secondary' fullWidth label='Editace' icon={<ModeEditIcon/>}/>
+                    {!HasNotOptions(questionType) ? <Tab fullWidth label='Náhled' icon={<PreviewIcon/>}/> : null}
+                  </Tabs>
+              </AppBar>
+              {tab === 0 &&
+                <Flex column> {hasCustomHelp ?
                     <TextField
-                      ref={(input) => { this.customHelpInput = input; }}
                       name="customHelpInput"
                       fullWidth
-                      multiLine
+                      multiline
                       value={customHelp}
-                      onChange={(event, newValue) => this.props.changeCustomHelp(newValue)}
+                      onChange={(event) => this.props.changeCustomHelp(event.target.value)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
-                      floatingLabelText='Vlastní nápověda'
+                      label='Vlastní nápověda'
+                      margin='normal'
+                      inputRef={(input) => this.customHelpInput = input}
                     />
                     : null}
                   {HasScalePoints(questionType) ?
                     <TextField
-                      ref={(input) => { this.customHelpInput = input; }}
                       name="customHelpInput"
                       fullWidth
                       type='number'
@@ -81,7 +104,7 @@ class QuestionBody extends Component {
                   {HasImagePreview(questionType) ?
                     <Flex column grow>
                       <TextField
-                        ref={(input) => { this.imagePreviewInput = input; }}
+                        inputRef={(input) => { this.imagePreviewInput = input; }}
                         name="imagePreviewInput"
                         multiLine
                         value={url || ''}
@@ -100,12 +123,9 @@ class QuestionBody extends Component {
                     {HasNotOptions(questionType) ?
                         <QuestionPreview/>
                        : <OptionsBody/>}
-                </Tab>
-                {!HasNotOptions(questionType) ?
-                <Tab label='Náhled' icon={<PreviewIcon/>}>
-                  <QuestionPreview/>
-                </Tab> : null}
-              </Tabs>
+                     </Flex>
+              }
+              {tab === 1 && <QuestionPreview/>}
             </Flex>
         );
     }

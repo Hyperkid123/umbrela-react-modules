@@ -26,12 +26,13 @@ export class NewOption extends Component {
     }
 
     setOptionText = (optionText) => {
+      console.log(optionText);
       this.setState({optionText});
     }
 
     createOption = () => {
       const {optionText} = this.state;
-      if(ValideOption(optionText, this.props.activeQuestion.questionType)){
+      if(ValideOption(optionText, this.props.activeQuestion.questionType, this.props.optionType)){
         const option = {
           title: optionText,
           questionId: this.props.activeQuestion.questionId,
@@ -53,11 +54,12 @@ export class NewOption extends Component {
                   fullWidth
                   placeholder={this.props.hintText || 'Nová možnost'}
                   value={optionText}
-                  onChange={(event, newValue) => this.setOptionText(newValue)}
+                  onChange={(event) => this.setOptionText(event.target.value)}
                   onBlur={this.createOption}
                   onKeyPress={(event) => {
                     if(event.key === 'Enter') this.createOption()
                   }}
+                  margin='normal'
                 />
                 <TextFieldComent
                   error={optionText.length > LABEL_LENGTH}

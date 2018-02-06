@@ -37,7 +37,7 @@ export default class MatrixPreview extends Component {
 
     renderTableHeader = (columns) => {
       const header = [<MatrixtableCell key='empty'></MatrixtableCell>]
-      columns.map((column) => {
+      columns.forEach((column) => {
         header.push(<MatrixtableCell filler key={column.optionId}><span>{column.title}</span></MatrixtableCell>)
       })
       return header;
@@ -59,7 +59,7 @@ export default class MatrixPreview extends Component {
       }
       return (
         <Checkbox
-          uncheckedIcon={<RadioUncheckedIcon/>}
+          icon={<RadioUncheckedIcon/>}
           style={MATRIX_INPUT_FIX}
           checkedIcon={<RadioCheckedIcon/>}
         />
