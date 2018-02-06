@@ -26,7 +26,6 @@ export class NewOption extends Component {
     }
 
     setOptionText = (optionText) => {
-      console.log(optionText);
       this.setState({optionText});
     }
 
@@ -67,11 +66,12 @@ export class NewOption extends Component {
                   alignRight
                 />
               </Flex>
-              <IconButton onClick={this.createOption}
-                  tooltip='Přidat možnost'
-                  >
-                    <ContentAdd/>
-                </IconButton>
+              <IconButton
+                onClick={this.createOption}
+                tooltip='Přidat možnost'
+              >
+                <ContentAdd/>
+              </IconButton>
             </Flex>
         );
     }

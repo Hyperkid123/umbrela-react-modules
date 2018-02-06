@@ -56,9 +56,10 @@ export class CloseOptionsEditor extends Component {
               fullWidth
               placeholder='Vlastní opověď'
               value={option.title}
-              onChange={(event, newValue) => this.props.changeOptionTitle(newValue, option.optionOrder)}
+              onChange={(event) => this.props.changeOptionTitle(event.target.value, option.optionOrder)}
               onBlur={() => {this.updateOption(option)}}
               onKeyPress={(event) => {if(event.key === 'Enter') this.updateOption(option)}}
+              margin='normal'
             />
             <TextFieldComent
               error={option.title.length > LABEL_LENGTH}

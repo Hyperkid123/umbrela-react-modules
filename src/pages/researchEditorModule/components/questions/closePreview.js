@@ -13,6 +13,7 @@ import {
 } from '../../../../common/components/labels';
 import {ANSWER_LENGTH, PREVIEW_SWITCH_STYLE} from '../../../../common/constants';
 import LazyLoad from 'react-lazyload';
+import { FormGroup, FormControlLabel } from 'material-ui/Form';
 
 export default class ClosePreview extends Component {
 
@@ -32,7 +33,15 @@ export default class ClosePreview extends Component {
       if(HasOptionsAsImage(this.props.questionType)) return this.renderImageOptions(checkedIcon, uncheckedIcon);
       return this.props.options.map((option) => {
         if(option.optionType === 'NormalOption'){
-          return <Checkbox key={option.optionId} label={option.title} checkedIcon={checkedIcon} uncheckedIcon={uncheckedIcon}/>
+          return (
+            <FormControlLabel
+              key={option.optionId}
+              control={
+                <Checkbox checkedIcon={checkedIcon} icon={uncheckedIcon}/>
+              }
+              label={option.title}
+            />
+          )
         }
         return null;
       });
@@ -43,7 +52,7 @@ export default class ClosePreview extends Component {
         if(option.optionType === 'NormalOption'){
           return (
             <Flex key={option.optionId}>
-              <Checkbox style={PREVIEW_SWITCH_STYLE} checkedIcon={checkedIcon} uncheckedIcon={uncheckedIcon}/>
+              <Checkbox style={PREVIEW_SWITCH_STYLE} checkedIcon={checkedIcon} icon={uncheckedIcon}/>
               <PreviewImageContainer>
                 <LazyLoad>
                   <PreviewImage src={option.title} alt={option.title}/>
@@ -63,9 +72,9 @@ export default class ClosePreview extends Component {
             <Flex column grow>
               <TextField
                 value={this.state.openAnswer}
-                onChange={(event, newValue) => this.setOpenAnswer(newValue)}
+                onChange={(event) => this.setOpenAnswer(event.target.value)}
                 fullWidth
-                floatingLabelText={openOption.title}
+                label={openOption.title}
               />
               <TextFieldComent
                 error={this.state.openAnswer.length > ANSWER_LENGTH}
@@ -81,7 +90,9 @@ export default class ClosePreview extends Component {
         return (
           <Flex column>
             <OptionsFillListWrapper column>
-              {this.renderOptions()}
+              <FormGroup>
+                {this.renderOptions()}
+              </FormGroup>
               {this.renderOpenOption()}
             </OptionsFillListWrapper>
           </Flex>

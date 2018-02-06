@@ -39,14 +39,14 @@ class SheetView extends Component {
 
     componentDidMount() {
       if(this.props.activeSheet && this.props.activeSheet.newSheet){
-          //this.sheetTitleInput.focus();
-          //this.sheetTitleInput.select();
+          this.sheetTitleInput.focus();
+          this.sheetTitleInput.select();
       }
     }
     componentDidUpdate(prevProps, prevState) {
       if(this.props.activeSheet && this.props.activeSheet.newSheet){
-          //this.sheetTitleInput.focus();
-          //this.sheetTitleInput.select();
+          this.sheetTitleInput.focus();
+          this.sheetTitleInput.select();
       }
     }
 
@@ -82,10 +82,12 @@ class SheetView extends Component {
                       name="sheetTitleInput"
                       style={{width: 'auto', marginRight: 15}}
                       value={this.props.activeSheet.title}
-                      onChange={(event, newValue) => {
-                        this.props.changeSheetTitle(newValue)
+                      onChange={(event) => {
+                        this.props.changeSheetTitle(event.target.value)
                       }}
                       onBlur={this.handleUpdateSheetTitle}
+                      onKeyPress={(event) => {if(event.key === 'Enter') this.handleUpdateSheetTitle()}}
+                      inputRef={(input) => { this.sheetTitleInput = input; }}
                     />
                     <TextFieldComent
                       error={this.props.activeSheet.title.length >= LABEL_LENGTH}
