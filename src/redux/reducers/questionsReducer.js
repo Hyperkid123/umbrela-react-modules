@@ -17,6 +17,7 @@ import {
   SELECT_EDITOR_SHEET,
   RECEIVE_NEW_SHEET,
   QUESTION_FETCH_FAILED,
+  STORE_QUESTIONS,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -27,6 +28,7 @@ const initialState = {
   isFetching: false,
   newQuestion: false,
   failed: false,
+  allQuestions: {}
 }
 
 export default function questionsReducer(state = initialState, action) {
@@ -79,7 +81,11 @@ export default function questionsReducer(state = initialState, action) {
     case CHANGE_QUESTION_IMAGE_URL:
       return {...state, activeQuestion: {...state.activeQuestion, url: action.url}, failed: false};
     case QUESTION_FETCH_FAILED:
-      return {...state, failed: true}
+      return {...state, failed: true, isFetching: false}
+    case STORE_QUESTIONS:
+      const allQuestions = {...state.allQuestions};
+      allQuestions[action.payload.sheetId] = action.payload.questions;
+      return {...state, allQuestions: allQuestions, isFetching: false, failed: false};
     default:
       return state;
   }

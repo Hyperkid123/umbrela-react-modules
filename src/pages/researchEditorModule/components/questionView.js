@@ -64,21 +64,6 @@ class QuestionView extends Component {
     }
 
     render() {
-      const deleteAction = [
-      <Button
-        color="secondary"
-        onClick={this.handleDeleteQuestion}
-      >
-        <ActionDelete/>
-        Smazat
-      </Button>,
-      <Button
-        raised
-        label="Zpět"
-        primary={true}
-        onClick={this.handleDeleteClose}
-      />,
-    ];
       if(this.props.activeQuestion) {
         return (
           <FlexSection autoHeight>

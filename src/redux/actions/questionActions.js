@@ -12,7 +12,8 @@ import {
   CHANGE_QUESTION_TYPE,
   CHANGE_QUESTION_IMAGE_URL,
   CHANGE_SCALE_POINTS,
-  QUESTION_FETCH_FAILED
+  QUESTION_FETCH_FAILED,
+  STORE_QUESTIONS
 } from './actionTypes';
 
 import {HasOpenQuestion} from '../../common/questionTypes';
@@ -41,6 +42,32 @@ export function getQuestions(sheetId){
       body: JSON.stringify({sheetId}),
     }).then(response => response.json())
     .then(json => dispatch(receiveQuestions(json)))
+    .then(() => dispatch(finishFetch()))
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
+  }
+}
+
+function storeQuestions(questions, sheetId) {
+  return {
+    type: STORE_QUESTIONS,
+    payload: {
+      questions,
+      sheetId,
+    }
+  }
+}
+
+export function loadQuestions(sheetId){
+  return dispatch => {
+    dispatch(requestQuestions());
+    return fetch(`${window.base}${window.researchId}/get-questions`, {
+      method: 'POST',
+      body: JSON.stringify({sheetId}),
+    }).then(response => response.json())
+    .then(json => dispatch(storeQuestions(json, sheetId)))
     .then(() => dispatch(finishFetch()))
     .catch((err) => {
       console.log('failed to fetch: ', err);

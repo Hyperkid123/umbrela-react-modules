@@ -26,6 +26,7 @@ export {
   changeQuestionType,
   chnageQuestionUrl,
   changeScalePoints,
+  loadQuestions,
 } from './questionActions';
 
 export {
@@ -35,6 +36,8 @@ export {
   dragOptionCard,
   remapOptions,
   deleteOption,
+  loadOptions,
+  saveFilter
 } from './optionsActions';
 
 export {

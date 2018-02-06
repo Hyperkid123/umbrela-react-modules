@@ -68,9 +68,6 @@ class SheetView extends Component {
     }
 
     render() {
-      const deleteAction = [
-
-    ];
       if(this.props.activeSheet) {
         return (
           <Flex>

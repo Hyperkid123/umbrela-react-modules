@@ -3,7 +3,10 @@ import {
   REQUEST_QUESTION_OPTIONS,
   CHANGE_OPTION_TITLE,
   DRAG_OPTION_CARD,
-  OPTION_FETCH_FAILED
+  OPTION_FETCH_FAILED,
+  STORE_OPTIONS,
+  STORE_OPTIONS_FILTERS,
+  SWITCH_FILTER
 } from './actionTypes';
 
 import {dragEnd, fetchFailed} from './';
@@ -29,6 +32,56 @@ export function getOptions(questionId){
       body: JSON.stringify({questionId}),
     }).then(response => response.json())
     .then(json => dispatch(receiveOptions(json.options)))
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      fetchFailed(OPTION_FETCH_FAILED)
+    });
+  }
+}
+
+function storeOptions(options, questionId) {
+  return {
+    type: STORE_OPTIONS,
+    payload: {
+      options,
+      questionId,
+    }
+  }
+}
+
+function getOptionsFilters(options) {
+  return dispatch => {
+    return fetch(`${window.base}${window.researchId}/get-question-options-filters`, {
+      method: 'POST',
+      body: JSON.stringify({options})
+    })
+    .then(response => response.json())
+    .then(json => dispatch(storeOptionsFilter(json.filters)))
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      fetchFailed(OPTION_FETCH_FAILED)
+    });
+  }
+}
+
+function storeOptionsFilter(filters) {
+  return {
+    type: STORE_OPTIONS_FILTERS,
+    filters
+  }
+}
+
+export function loadOptions(questionId) {
+  return dispatch => {
+    dispatch(requestOptions());
+    return fetch(`${window.base}${window.researchId}/get-question-options`, {
+      method: 'POST',
+      body: JSON.stringify({questionId}),
+    }).then(response => response.json())
+    .then(json => dispatch(storeOptions(json.options, questionId)))
+    .then(action => {
+      dispatch(getOptionsFilters(action.payload.options))
+    })
     .catch((err) => {
       console.log('failed to fetch: ', err);
       fetchFailed(OPTION_FETCH_FAILED)
@@ -106,5 +159,31 @@ export function deleteOption(option) {
       console.log('failed to fetch: ', err);
       fetchFailed(OPTION_FETCH_FAILED)
     });
+  }
+}
+
+export function saveFilter(optionId, questionId, checked) {
+  return (dispatch, getState) => {
+    const {editor} = getState();
+    return fetch(`${window.base}${editor.researchId}/save-filter`, {
+      method: 'POST',
+      body: JSON.stringify({
+        filterType: 'hide_question',
+        optionId,
+        questionId,
+        checked
+      }),
+    }).then(() => dispatch(switchFilter(optionId, questionId, checked)))
+  }
+}
+
+function switchFilter(optionId, questionId, checked) {
+  return {
+    type: SWITCH_FILTER,
+    payload: {
+      optionId,
+      questionId,
+      checked,
+    }
   }
 }

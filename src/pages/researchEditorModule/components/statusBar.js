@@ -44,7 +44,7 @@ class StatusBar extends Component {
                 failed ?
                   <div>
                     <Cross color='error'/><span style={{position: 'relative', bottom: 5, color: grey[700]}}>
-                      &nbsp;Nepodařilo se uložit poslední změnu, zopakujte prosím poslení akci.
+                      &nbsp;Nepodařilo se provést podlení akci, zopakujte ji prosím.
                     </span>
                   </div>
                 :

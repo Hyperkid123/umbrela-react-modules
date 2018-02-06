@@ -12,13 +12,10 @@ export default class CollapsibleSection extends Component {
     return (
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography>Expansion Panel 1</Typography>
+          <Typography>{this.props.sectionTitle}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
+          {this.props.children}
         </ExpansionPanelDetails>
       </ExpansionPanel>
     );
