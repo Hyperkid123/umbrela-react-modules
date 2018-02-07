@@ -6,8 +6,7 @@ import {OptionItemWrapper} from '../../../../common/styledComponents/containers'
 import DragHandle from 'material-ui-icons/DragHandle';
 import DeleteIcon from 'material-ui-icons/DeleteForever';
 import IconButton from 'material-ui/IconButton';
-import ReactTooltip from 'react-tooltip';
-import red from 'material-ui/colors/red';
+import Tooltip from 'material-ui/Tooltip';
 
 const cardSource = {
     beginDrag(props){
@@ -53,16 +52,21 @@ class OptionsDraggableCard extends Component {
          <OptionItemWrapper row grow >
            {this.props.children}
            {connectDragPreview(
-             <div data-tip='tažením můžete změnit pořadí možností' data-for={`option-tooltip-${this.props.index}`}>
-               <DragHandle style={{cursor: 'move', height: 48, marginLeft: 5}}/>
-             </div>)}
-           <IconButton onClick={this.props.deleteOption}>
-             <DeleteIcon color='error' style={{height: 48}}/>
-           </IconButton>
+             <div>
+               <Tooltip
+                 title='Tažením změňte pořadí možnost.'
+                 placement='top'
+                 >
+                   <DragHandle style={{cursor: 'move', height: 48, marginLeft: 5}}/>
+                 </Tooltip>
+             </div>
+             )}
+             <Tooltip title='Smazat možnosti' placement='top'>
+               <IconButton onClick={this.props.deleteOption}>
+                 <DeleteIcon color='error' style={{height: 48}}/>
+               </IconButton>
+             </Tooltip>
         </OptionItemWrapper>
-        {!this.props.draggingElement ?
-          <ReactTooltip id={`option-tooltip-${this.props.index}`} place="top" effect="solid" type="info" delayShow={300}/>
-          : null}
        </li>
      ));
  }

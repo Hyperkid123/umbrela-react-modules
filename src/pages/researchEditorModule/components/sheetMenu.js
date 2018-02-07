@@ -11,7 +11,6 @@ import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import ActionAdd from 'material-ui-icons/Add';
 import SheetDraggableCard from './sheetDraggableCard';
-import ReactTooltip from 'react-tooltip';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -73,7 +72,6 @@ class SheetMenu extends Component {
                 </Scrollbars>
               </MenuContainer>
             </Paper>
-            {!this.props.draggingElement ? <ReactTooltip place="right" effect="solid" type="info" delayShow={800}/> : null}
           </FlexSection>
         );
     }

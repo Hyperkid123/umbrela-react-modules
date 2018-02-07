@@ -9,6 +9,7 @@ import {
   Flex,
 } from '../styledComponents/containers';
 import {DefaultLink} from '../styledComponents/typography';
+import Tooltip from 'material-ui/Tooltip';
 
 export const ChevronUp = ({tooltip}) => (
   <IconButton tooltip={tooltip}>
@@ -30,11 +31,20 @@ export const MenuListIconsWrapper = ({tooltipUp, tooltipDown}) => (
 )
 
 export const MenuListItem = ({link, label, onClick, sheetId, active, tooltipLabel, dragging}) => (
-    <MenuItem dragging={dragging} data-tip={tooltipLabel} active={active} onClick={() => onClick(sheetId)}>
-      <Flex verticalCenter>
-        <MenuListLabel>
-          <DefaultLink href={link}>{label}</DefaultLink>
-        </MenuListLabel>
-      </Flex>
+        <Tooltip
+          title={tooltipLabel}
+          enterDelay={500}
+          disableTriggerFocus={dragging}
+          disableTriggerHover={dragging}
+          disableTriggerTouch={dragging}
+          placement='right-end'
+        >
+          <MenuItem dragging={dragging} data-tip={tooltipLabel} active={active} onClick={() => onClick(sheetId)}>
+          <Flex verticalCenter>
+          <MenuListLabel>
+            <DefaultLink href={link}>{label}</DefaultLink>
+          </MenuListLabel>
+        </Flex>
     </MenuItem>
+  </Tooltip>
 )

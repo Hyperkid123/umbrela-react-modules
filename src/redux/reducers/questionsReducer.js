@@ -18,6 +18,7 @@ import {
   RECEIVE_NEW_SHEET,
   QUESTION_FETCH_FAILED,
   STORE_QUESTIONS,
+  DRAG_END,
 } from '../actions/actionTypes';
 
 import lodash from 'lodash';
@@ -40,6 +41,7 @@ export default function questionsReducer(state = initialState, action) {
     case RECEIVE_NEW_SHEET:
       return {...state, activeQuestion: null}
     case FINISH_FETCH:
+    case DRAG_END:
       return {...state, isFetching: false}
     case REQUEST_QUESTION:
       return {...state, isFetching: true}

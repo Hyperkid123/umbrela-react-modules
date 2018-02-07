@@ -8,7 +8,6 @@ import {
 import {SmallHeading} from '../../../common/styledComponents/typography';
 import {MenuListItem} from '../../../common/components/menuListIcons';
 import SheetDraggableCard from './sheetDraggableCard';
-import ReactTooltip from 'react-tooltip';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -18,6 +17,7 @@ import {
   dragQuestionCard,
   remapQuestions,
 } from '../../../redux/actions';
+import Tooltip from 'material-ui/Tooltip';
 
 class QuestionMenu extends Component {
 
@@ -69,7 +69,6 @@ class QuestionMenu extends Component {
                     {this.renderQuestions()}
                   </MenuList>
                 </MenuContainer>
-              {!this.props.draggingElement ? <ReactTooltip place="right" effect="solid" type="info" delayShow={800}/> : null}
             </Flex>
           </FlexSection>
         );

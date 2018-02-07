@@ -96,14 +96,11 @@ export const OptionsList = styled.ul`
 `
 
 export const OptionItemWrapper = Flex.extend`
-  > div:last-of-type, button:last-of-type{
+  > div:not(:first-of-type){
     display: none !important;
   }
   &:hover{
-    > div:last-of-type{
-      display: block !important;
-    }
-    > button:last-of-type {
+    > div:not(:first-of-type){
       display: block !important;
     }
   }
