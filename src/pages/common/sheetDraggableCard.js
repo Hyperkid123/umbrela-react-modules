@@ -5,6 +5,9 @@ import {findDOMNode} from 'react-dom';
 
 
 const cardSource = {
+    canDrag(props){
+      return true
+    },
     beginDrag(props){
         return {
             id: props.id,

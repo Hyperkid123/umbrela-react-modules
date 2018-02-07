@@ -10,10 +10,8 @@ import ContentAdd from 'material-ui-icons/Add';
 import IconButton from 'material-ui/IconButton';
 import {
   LABEL_LENGTH,
-  MEDIM_ICON_BUTTON_FIX,
 } from '../../../../common/constants';
 import {getNewOptionOrder} from '../../../../common/utils';
-import grey from 'material-ui/colors/grey';
 import {ValideOption} from '../../../../common/validator';
 import {synchronizeOption} from '../../../../redux/actions';
 

@@ -6,7 +6,7 @@ import {
   getSheets,
 } from '../../redux/actions';
 import DNDContext from '../../common/components/dndContext';
-import SheetMenu from './components/sheetMenu';
+import SheetMenu from '../common/sheetMenu';
 import FiltrationView from './components/filtrationView';
 
 export class Filtrations extends Component {

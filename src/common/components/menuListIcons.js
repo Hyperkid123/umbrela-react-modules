@@ -30,13 +30,13 @@ export const MenuListIconsWrapper = ({tooltipUp, tooltipDown}) => (
   </MenuListIconsContainer>
 )
 
-export const MenuListItem = ({link, label, onClick, sheetId, active, tooltipLabel, dragging}) => (
+export const MenuListItem = ({link, label, onClick, sheetId, active, tooltipLabel, dragging, preventDrag}) => (
         <Tooltip
           title={tooltipLabel}
           enterDelay={500}
-          disableTriggerFocus={dragging}
-          disableTriggerHover={dragging}
-          disableTriggerTouch={dragging}
+          disableTriggerFocus={dragging || preventDrag}
+          disableTriggerHover={dragging || preventDrag}
+          disableTriggerTouch={dragging || preventDrag}
           placement='right-end'
         >
           <MenuItem dragging={dragging} data-tip={tooltipLabel} active={active} onClick={() => onClick(sheetId)}>

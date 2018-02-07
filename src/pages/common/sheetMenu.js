@@ -3,10 +3,10 @@ import {
   MenuContainer,
   FlexSection,
   MenuList,
-} from '../../../common/styledComponents/containers';
+} from '../../common/styledComponents/containers';
 import { Scrollbars } from 'react-custom-scrollbars';
-import {SmallHeading} from '../../../common/styledComponents/typography';
-import {MenuListItem} from '../../../common/components/menuListIcons';
+import {SmallHeading} from '../../common/styledComponents/typography';
+import {MenuListItem} from '../../common/components/menuListIcons';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import ActionAdd from 'material-ui-icons/Add';
@@ -18,7 +18,7 @@ import {
   selectEditorSheet,
   dragSheetCard,
   remapSheets,
-} from '../../../redux/actions';
+} from '../../redux/actions';
 
 class SheetMenu extends Component {
 
@@ -35,6 +35,7 @@ class SheetMenu extends Component {
             moveCard={this.moveCard}
             onDragEnd={this.props.remapSheets}
             researchId={this.props.researchId}
+            preventDrag={this.props.preventDrag}
           >
             <MenuListItem
               key={sheet.sheetId}
@@ -44,6 +45,7 @@ class SheetMenu extends Component {
               active={!this.props.draggingElement && this.props.activeSheetId === sheet.sheetId}
               dragging={this.props.draggingElement}
               tooltipLabel="Tažením můžete změnit pořadí archu"
+              preventDrag={this.props.preventDrag}
             />
           </SheetDraggableCard>
         )
@@ -62,10 +64,12 @@ class SheetMenu extends Component {
                 <Scrollbars
                   style={{height: 'calc(100vh - 2em - 60px - 28px)'}}
                 >
-                  <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
-                    <ActionAdd/>
-                    Nový arch
-                  </Button>
+                  {!this.props.hideNewSheet &&
+                    <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
+                      <ActionAdd/>
+                      Nový arch
+                    </Button>
+                  }
                   <MenuList>
                     {this.renderSheets()}
                   </MenuList>

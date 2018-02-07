@@ -13,7 +13,8 @@ import {
   CHANGE_QUESTION_IMAGE_URL,
   CHANGE_SCALE_POINTS,
   QUESTION_FETCH_FAILED,
-  STORE_QUESTIONS
+  STORE_QUESTIONS,
+  RECEIVE_QUESTION_ANSWERS
 } from './actionTypes';
 
 import {HasOpenQuestion} from '../../common/questionTypes';
@@ -37,7 +38,6 @@ function receiveQuestions(questions) {
 export function getQuestions(sheetId){
   return (dispatch, getState) => {
     const {questions} = getState();
-    console.log('questions reducer: ', questions);
     if(!questions.isFetching) {
       dispatch(requestQuestions());
       return fetch(`${window.base}${window.researchId}/get-questions`, {
@@ -283,4 +283,48 @@ export function changeScalePoints(scalePoints) {
     type: CHANGE_SCALE_POINTS,
     scalePoints,
   }
+}
+
+
+function requestQuestion(questionId){
+  return{
+    type: REQUEST_QUESTION,
+    questionId,
+  };
+}
+
+function receiveQuestion(questionId, json){
+  return{
+    type: RECEIVE_QUESTION_ANSWERS,
+    questionId,
+    question: json,
+    receivedAt: Date.now(),
+  };
+}
+
+function fetchQuestion(questionId) {
+  return dispatch => {
+    dispatch(requestQuestion(questionId));
+    return fetch(`${window.base}/${window.researchId}/get-question-answers`,{
+      method: 'post',
+      body: JSON.stringify({questionId: questionId}),
+    }).then(response => response.json())
+      .then(json => dispatch(receiveQuestion(questionId, json)));
+  };
+}
+
+function shouldFetchQuestion(state, questionId) {
+  const question = state.data.questionData.get(questionId);
+  if(question){
+    return false;
+  }
+  return true;
+}
+
+export function fetchQuestionIfNeeded(questionId) {
+  return (dispatch, getState) => {
+    if(shouldFetchQuestion(getState(), questionId)) {
+      return dispatch(fetchQuestion(questionId));
+    }
+  };
 }

@@ -1,5 +1,4 @@
 import deepOrange from 'material-ui/colors/deepOrange';
-import grey from 'material-ui/colors/grey';
 
 import { createMuiTheme } from 'material-ui/styles';
 export default createMuiTheme({

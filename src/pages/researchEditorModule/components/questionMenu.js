@@ -7,7 +7,7 @@ import {
 } from '../../../common/styledComponents/containers';
 import {SmallHeading} from '../../../common/styledComponents/typography';
 import {MenuListItem} from '../../../common/components/menuListIcons';
-import SheetDraggableCard from './sheetDraggableCard';
+import SheetDraggableCard from '../../common/sheetDraggableCard';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -17,7 +17,6 @@ import {
   dragQuestionCard,
   remapQuestions,
 } from '../../../redux/actions';
-import Tooltip from 'material-ui/Tooltip';
 
 class QuestionMenu extends Component {
 

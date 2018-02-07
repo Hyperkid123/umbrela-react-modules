@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import deepOrange from 'material-ui/colors/deepOrange';
 import grey from 'material-ui/colors/grey';
 import red from 'material-ui/colors/red';
 

@@ -12,7 +12,7 @@ import {
   getSheets,
 } from '../../redux/actions';
 
-import SheetMenu from './components/sheetMenu';
+import SheetMenu from '../common/sheetMenu';
 import SheetView from './components/sheetView';
 import QuestionView from './components/questionView';
 

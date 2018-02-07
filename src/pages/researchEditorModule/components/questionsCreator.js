@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import Button from 'material-ui/Button';
-import Popover from 'material-ui/Popover/Popover';
 import Menu, {MenuItem} from 'material-ui/Menu';
 import ActionAdd from 'material-ui-icons/Add';
 import {

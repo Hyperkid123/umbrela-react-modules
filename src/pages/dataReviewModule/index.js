@@ -1,14 +1,25 @@
 import React,{Component} from 'react';
-import {testUtil} from '../../common/utils';
+import '../../common/globalStyles';
+import {
+  ViewContainer,
+  Flex,
+} from '../../common/styledComponents/containers';
+import {
+  HashRouter as Router,
+  Route
+} from 'react-router-dom';
+import ReviewHome from './reviewHome';
 
 export default class DataReviewModule extends Component {
-
-    render() {
-        return (
-            <div className="class-name">
-              <h1>Data review module</h1>
-              <h3>{testUtil()}</h3>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <ViewContainer>
+        <Flex grow column>
+          <Router>
+            <Route path='/' component={ReviewHome}/>
+          </Router>
+        </Flex>
+      </ViewContainer>
+    );
+  }
 }

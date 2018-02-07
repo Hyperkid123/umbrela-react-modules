@@ -27,6 +27,7 @@ export {
   chnageQuestionUrl,
   changeScalePoints,
   loadQuestions,
+  fetchQuestionIfNeeded,
 } from './questionActions';
 
 export {
@@ -48,7 +49,11 @@ export {
 } from './qMethodActions';
 
 export {
-  dragEnd
+  dragEnd,
+  hideQuestions,
+  hideSheets,
+  hideChartlegend,
+  changeChartType
 } from './uiActions';
 
 export function finishFetch() {
