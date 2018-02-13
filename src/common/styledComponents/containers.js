@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import grey from 'material-ui/colors/grey';
 import red from 'material-ui/colors/red';
+import deepOrange from 'material-ui/colors/deepOrange'
 
 export const Flex = styled.div`
   width: ${props => props.auto ? 'auto' : '100%'};
@@ -217,4 +218,24 @@ export const ThumbNail = styled.img`
   font-family: Roboto, sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+`
+export const PaginationsList = styled.ul `
+  list-style: none;
+  li:first-of-type button {
+    border-right: none;
+  }
+  li:last-of-type button {
+    border-right: 1px solid ${grey[300]};
+  }
+`
+export const PaginationsListItem = styled.li`
+  float: left;
+  button {
+    border: 1px solid ${grey[300]};
+    border-right: none;
+    border-radius: 0;
+    background-color: ${props => props.disabled ? 'transparent' : props.active ? deepOrange[500] : 'white'};
+    color ${props => props.active ? 'white' : 'black'};
+    min-width: 48px;
+  }
 `

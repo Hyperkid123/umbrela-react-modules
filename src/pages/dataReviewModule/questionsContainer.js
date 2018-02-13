@@ -6,6 +6,7 @@ import { withRouter } from 'react-router';
 import LoadingScreen from '../../common/components/loadingScreen';
 import {Flex, FlexSection} from '../../common/styledComponents/containers';
 import {SmallHeading} from '../../common/styledComponents/typography';
+import Chart from './components/chart'
 
 export class QuestionsContainer extends Component {
 
@@ -31,6 +32,13 @@ export class QuestionsContainer extends Component {
               <Flex column style={{marginTop: 10}}>
                 <SmallHeading>{question.title}</SmallHeading>
               </Flex>
+              <Chart
+                showLegend={this.props.ui.hideChartlegend}
+                chartType={this.props.ui.chartType}
+                data={Object.assign({}, chartData)}
+                question={question}
+                questionType={question.type}
+              />
             </FlexSection>
           </Flex>
       );
@@ -41,7 +49,8 @@ const mapStateToProps = (state, initialProps) => {
   return{
     isFetching: state.data.isFetching,
     questionData: state.data.questionData,
-    questions: state.data.questions
+    questions: state.data.questions,
+    ui: state.ui
   }
 }
 

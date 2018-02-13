@@ -22,6 +22,7 @@ class QuestionsNavigation extends Component{
       link={`/question/${question.questionId}`}
       label={question.title}
       onClick={() => {}}
+      active={this.props.match.params.questionId === question.questionId}
     />
   ))
 
