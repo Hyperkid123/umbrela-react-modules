@@ -21,7 +21,7 @@ import {
 class QuestionMenu extends Component {
 
     componentDidMount() {
-        this.props.getQuestions(this.props.activeSheetId);
+      this.props.getQuestions(this.props.activeSheetId);
     }
 
     componentWillReceiveProps(nextProps) {

@@ -10,7 +10,7 @@ import Chart from './components/chart'
 
 export class QuestionsContainer extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
       this.props.fetchQuestionIfNeeded(this.props.match.params.questionId);
     }
 

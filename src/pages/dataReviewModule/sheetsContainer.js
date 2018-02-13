@@ -15,7 +15,8 @@ export class SheetsContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-      if(this.props.activeSheet.sheetId !== nextProps.sheetId) {
+      if(this.props.activeSheet.sheetId !== nextProps.activeSheet.sheetId) {
+        console.log(nextProps, this.props);
         nextProps.activeSheet && this.props.getQuestions(nextProps.activeSheet.sheetId)
       }
     }
@@ -24,17 +25,19 @@ export class SheetsContainer extends Component {
       if(!this.props.questions) return null;
         return (
             <Flex className="class-name">
-                <QuestionsNavigation onClick={this.props.fetchQuestionIfNeeded} questions={this.props.questions}/>
+                {!this.props.hideQuestions && <QuestionsNavigation onClick={() => {}} questions={this.props.questions}/>}
                 <Route path={`/question/:questionId`} component={QuestionsContainer}/>
             </Flex>
         );
     }
 }
 
-function mapStateToProps({editor, questions}) {
+function mapStateToProps({editor, questions, ui}) {
   return {
     activeSheet: editor.activeSheet,
     questions: questions.questions,
+    hideQuestions: ui.hideQuestions,
+    isFetching: questions.isFetching,
   }
 }
 

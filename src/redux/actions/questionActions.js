@@ -37,20 +37,17 @@ function receiveQuestions(questions) {
 
 export function getQuestions(sheetId){
   return (dispatch, getState) => {
-    const {questions} = getState();
-    if(!questions.isFetching) {
-      dispatch(requestQuestions());
-      return fetch(`${window.base}${window.researchId}/get-questions`, {
-        method: 'POST',
-        body: JSON.stringify({sheetId}),
-      }).then(response => response.json())
-      .then(json => dispatch(receiveQuestions(json)))
-      .then(() => dispatch(finishFetch()))
-      .catch((err) => {
-        console.log('failed to fetch: ', err);
-        dispatch(fetchFailed(QUESTION_FETCH_FAILED))
-      });
-    }
+    dispatch(requestQuestions());
+    return fetch(`${window.base}${window.researchId}/get-questions`, {
+      method: 'POST',
+      body: JSON.stringify({sheetId}),
+    }).then(response => response.json())
+    .then(json => dispatch(receiveQuestions(json)))
+    .then(() => dispatch(finishFetch()))
+    .catch((err) => {
+      console.log('failed to fetch: ', err);
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+    });
   }
 }
 
@@ -92,10 +89,10 @@ export function createNewQuestion(researchId, sheetId, questionType) {
       }),
     }).then(response => response.json())
     .then((json) => {
-      dispatch(getQuestions(sheetId)).then(() => {
-        dispatch(getQuestionStructure(json.questionId))
-      })
+      dispatch(getQuestions(sheetId))
+      return json
     })
+    .then((json) => dispatch(getQuestionStructure(json.questionId)))
     .catch((err) => {
       console.log('failed to fetch: ', err);
       dispatch(fetchFailed(QUESTION_FETCH_FAILED))
@@ -142,15 +139,15 @@ export function deleteQuestion(questionId) {
     return fetch(`${window.base}${editor.researchId}/delete-question`, {
       method: 'POST',
       body: JSON.stringify({questionId}),
-    }).then(response => response.json())
+    })
+    .then(response => response.json())
     .then((json) => {
-      dispatch(deselectQuestion())
-    }).then(() => {
       dispatch(getQuestions(editor.activeSheet.sheetId))
     })
+    .then(() => dispatch(deselectQuestion()))
     .catch((err) => {
       console.log('failed to fetch: ', err);
-      dispatch(fetchFailed(QUESTION_FETCH_FAILED))
+      dispatch(fetchFailed(QUESTION_FETCH_FAILED));
     });
   }
 }
@@ -314,8 +311,9 @@ function fetchQuestion(questionId) {
 }
 
 function shouldFetchQuestion(state, questionId) {
-  const question = state.data.questionData.get(questionId);
-  if(question){
+  const question = state.data.questionData.has(parseInt(questionId, 10));
+  const isFetching = state.data.questionData.isFetching;
+  if(question || isFetching){
     return false;
   }
   return true;

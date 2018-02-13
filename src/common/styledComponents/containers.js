@@ -30,7 +30,7 @@ export const MenuContainer = styled.div`
 `
 
 export const FlexSection = styled.section`
-  margin: 10px;
+  margin: 10px 10px 0 10px;
   min-width: ${props => props.minWidth ? `${props.minWidth}px` : `0px`};
   height: ${props => props.autoHeight ? 'auto' :  'calc(100vh - 2em - 20px - 28px)'};
   width: ${props => props.fullWidth ? '100%' : 'auto'};
@@ -238,4 +238,7 @@ export const PaginationsListItem = styled.li`
     color ${props => props.active ? 'white' : 'black'};
     min-width: 48px;
   }
+`
+export const ChartContainer = Flex.extend`
+  max-width: ${props => props.pie ? '600px' : 'auto'};
 `

@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
-//import CloseQuestions from './CloseQuestions';
+import CloseQuestions from './closeQuestion';
 import OpenQuestion from './openQuestion';
-//import MatrixQuestion from './MatrixQuestion';
+import MatrixQuestion from './matrixQuestion';
 import PropTypes from 'prop-types';
 import {Flex} from '../../../common/styledComponents/containers';
-//import LegendTable from './LegendTable';
-//import DivideQuestion from './DivideQuestion';
+import LegendTable from './legendTable';
+import DivideQuestion from './divideQuestion';
 
 import {
   OPEN_QUESTION,
@@ -57,7 +57,7 @@ export default class Chart extends Component {
       case MEDIA_MULTI_WITH_OPEN_QUESTION:
         return (
             <Flex>
-              {/**<CloseQuestions
+              <CloseQuestions
                 hasImagePreview={hasImagePreview(this.props.question.type)}
                 showLegend={this.props.showLegend}
                 chartType={this.props.chartType}
@@ -65,7 +65,6 @@ export default class Chart extends Component {
                 url={this.props.question.url}
               />
               <LegendTable isOptionImage={isOptionImage(this.props.question.type)} data={this.props.data}/>
-            */}
             </Flex>
         );
       case  MATRIX_MULTI_IMAGE_QUESTION:
@@ -74,8 +73,6 @@ export default class Chart extends Component {
       case  MATRIX_SINGLE_QUESTION:
         return (
           <Flex>
-            {/**
-
             <MatrixQuestion
               data={this.props.data}
               chartType={this.props.chartType}
@@ -83,13 +80,12 @@ export default class Chart extends Component {
               question={this.props.question}
               isOptionImage={isOptionImage(this.props.question.type)}
             />
-          */}
           </Flex>
         );
       case DIVIDE_QUESTION:
       case ORDER_QUESTION:
         return(
-          {/**<DivideQuestion data={this.props.data}/>*/}
+          <DivideQuestion data={this.props.data}/>
         );
       default:
         return null;
