@@ -14,7 +14,7 @@ export class PyramidCreator extends Component {
     ));
     render() {
         return (
-            <Flex column horizintalCenter>
+            <Flex column horizontalCenter>
               <PyramidDescription/>
               <Flex>
                 <Flex column>

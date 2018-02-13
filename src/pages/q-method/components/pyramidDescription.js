@@ -3,7 +3,7 @@ import {Flex, AddPyramidTile} from '../../../common/styledComponents/containers'
 
 const PyramidDescription = () => (
   <Flex>
-    <Flex grow horizintalCenter verticalCenter>
+    <Flex grow horizontalCenter verticalCenter>
       <span>
         Náhled rozdělení stimulů
       </span>

@@ -29,7 +29,7 @@ export default class CloseQuestions extends Component {
     const globalOptions = {
       responsive: true,
       legend: {
-        display: this.props.showLegend,
+        display: !this.props.showLegend,
       },
 
       tooltips: {
@@ -46,8 +46,6 @@ export default class CloseQuestions extends Component {
       },
     };
 
-    this.props.noAnimation ? globalOptions.animation = false : null;
-
     const charts = {
       PIE_CHART: <Doughnut options={{...globalOptions, cutoutPercentage: 0}} width={400} height={400} data={this.props.data.data} redraw={true}/>,
       BAR_CHART: <Bar options={globalOptions} data={this.props.data.data} redraw={true}/>,
@@ -62,9 +60,10 @@ export default class CloseQuestions extends Component {
     if(this.props.url){
       return(
          <Button
-           variant="fab"
+           fab
            onClick={this.handleShowImage}
-           style={{marginLeft: 15, position: 'absolute', top: 0, left: 0}}
+           color='primary'
+           style={{position: 'absolute'}}
          >
            <ImageIcon />
          </Button>
@@ -74,39 +73,20 @@ export default class CloseQuestions extends Component {
   }
 
   render() {
-    const dialogActions = [
-      <Button
-        key={0}
-        label="Close"
-        primary={true}
-        keyboardFocused={true}
-        onClick={this.handleCloseImage}
-      >
-        Zavřít
-      </Button>,
-    ];
-
     return (
-      <Flex>
-          {this.renderImagePreview()}
-          <ChartContainer horizintalCenter pie={this.props.chartType === PIE_CHART || this.props.chartType === DOUGHNUT_CHART}>
-            {this.renderChart()}
-            <Dialog
-              title="Image preview"
-              actions={dialogActions}
-              modal={false}
-              open={this.state.showImage}
-              onRequestClose={this.handleCloseImage}
-              contentStyle={{
-                width: '90%',
-                maxWidth: 'none',
-              }}
-            >
-              <Flex>
-                <img src={this.props.url}/>
-              </Flex>
-            </Dialog>
-          </ChartContainer>
+      <Flex style={{position: 'relative'}}>
+        <ChartContainer horizontalCenter pie={this.props.chartType === PIE_CHART || this.props.chartType === DOUGHNUT_CHART}>
+          {this.renderChart()}
+        </ChartContainer>
+        {this.renderImagePreview()}
+        <Dialog
+          open={this.state.showImage}
+          onClose={this.handleCloseImage}
+        >
+          <Flex>
+            <img src={this.props.url}/>
+          </Flex>
+        </Dialog>
       </Flex>
 
     );

@@ -23,8 +23,8 @@ export class QuestionsContainer extends Component {
     render() {
       const { questionData, isFetching, questions} = this.props;
       if(isFetching) return <LoadingScreen/>;
-      if(!questionData.has(parseInt(this.props.match.params.questionId, 10))) return <h1>No data</h1>;
-      const chartData = questionData.get(parseInt(this.props.match.params.questionId));
+      if(!questionData.has(parseInt(this.props.match.params.questionId, 10))) return <LoadingScreen/>;
+      const chartData = questionData.get(parseInt(this.props.match.params.questionId, 10));
       const question = questions[this.props.match.params.questionId];
       return (
           <Flex>

@@ -6,7 +6,7 @@ exports[`Q-method navigation component should render correclty 1`] = `
 >
   <styled.div
     grow={true}
-    horizintalCenter={true}
+    horizontalCenter={true}
     verticalCenter={true}
   >
     <span>

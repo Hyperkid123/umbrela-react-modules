@@ -5,7 +5,7 @@ exports[`Pyramid row handler should render correclty 1`] = `
   className="sc-bdVaJa fizmbb"
 >
   <styled.div
-    horizintalCenter={true}
+    horizontalCenter={true}
   >
     <styled.div>
       <WithStyles(Tooltip)

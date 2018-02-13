@@ -101,9 +101,10 @@ export default class OpenQuestion extends Component {
     if(this.props.question.url){
       return(
          <Button
-           variant="fab"
+           color='primary'
+           fab
            onClick={this.handleShowImage}
-           style={{marginLeft: 15, position: 'absolute'}}
+           style={{marginLeft: 'auto'}}
          >
            <ImageIcon />
          </Button>
@@ -116,19 +117,8 @@ export default class OpenQuestion extends Component {
     const lastIndex = this.state.currentPage * this.state.itemsPerPage;
     const firstIndex = lastIndex - this.state.itemsPerPage;
     const currentAnswers = this.state.answers.slice(firstIndex, lastIndex);
-    const dialogActions = [
-      <Button
-        key={0}
-        primary={true}
-        keyboardFocused={true}
-        onClick={this.handleCloseImage}
-      >
-        Zavřít
-      </Button>
-    ];
     return (
       <Flex grow column>
-        {this.renderImagePreview()}
         <Flex style={{marginTop: 5}}>
           <FormControl>
             <InputLabel htmlFor="search">Vyhledat</InputLabel>
@@ -160,26 +150,23 @@ export default class OpenQuestion extends Component {
             </Select>
           </Flex>
         </Flex>
-        <Flex horizintalCenter>
+        <Flex horizontalCenter>
           <Pagination currentPage={this.state.currentPage} pageNumbers={this.pageNumbers()} pageClick={this.handlePageClick}/>
         </Flex>
-        <Flex auto horizintalCenter>
+        <Flex auto horizontalCenter>
           <Paper>
             <List style={{flex: '0 1 auto'}} component='nav'>
               {this.renderCurrentList(currentAnswers)}
             </List>
           </Paper>
         </Flex>
-
-          <Dialog
-            title="Náhled"
-            actions={dialogActions}
-            modal={false}
-            open={this.state.showImage}
-            onRequestClose={this.handleCloseImage}
-          >
-            <img src={this.props.question.url}/>
-          </Dialog>
+        {this.renderImagePreview()}
+        <Dialog
+          open={this.state.showImage}
+          onClose={this.handleCloseImage}
+        >
+          <img src={this.props.question.url}/>
+        </Dialog>
       </Flex>
     );
   }

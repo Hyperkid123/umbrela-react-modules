@@ -8,7 +8,7 @@ import Tooltip from 'material-ui/Tooltip';
 
 const PyramidRow = ({blocks, changeTiles, rowIndex}) => (
   <Flex>
-    <Flex grow horizintalCenter>
+    <Flex grow horizontalCenter>
       {Array(blocks).fill().map((block, iterator) => <PyramidBlock key={iterator}/>)}
     </Flex>
     <AddPyramidTile>

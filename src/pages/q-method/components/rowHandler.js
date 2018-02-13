@@ -7,7 +7,7 @@ import Tooltip from 'material-ui/Tooltip';
 
 const RowHandler = ({addRow, removeRow, rows}) => (
   <Flex>
-    <Flex horizintalCenter>
+    <Flex horizontalCenter>
       <AddPyramidTile>
         <Tooltip title='Přidat řádedek'>
           <IconButton
