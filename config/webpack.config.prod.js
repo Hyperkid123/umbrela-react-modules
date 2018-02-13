@@ -418,10 +418,8 @@ module.exports = {
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
+      minChunks: module => module.context && module.context.indexOf('node_modules') !== -1,
+      Infinity
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
