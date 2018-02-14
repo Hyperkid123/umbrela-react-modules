@@ -242,3 +242,54 @@ export const PaginationsListItem = styled.li`
 export const ChartContainer = Flex.extend`
   max-width: ${props => props.pie ? '600px' : 'auto'};
 `
+export const FillIntroContainer = Flex.extend`
+  height: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+export const FillSheetHeaderContainer = styled.div`
+  border-bottom: 1px solid ${deepOrange[500]};
+  display: flex;
+  width: 100%;
+`
+export const QuestionFillListContainer = styled.ol`
+    list-style-type: none;
+    padding: 0;
+`
+export const QuestionListItem = styled.li`
+  counter-increment: step-counter;
+  background: white;
+  transition: all .3s linear;
+  border-top: 10px ${props => props.error ? deepOrange[500] : 'white'} solid;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  margin-bottom: 15px;
+  display: ${props => props.matrix ? 'table' : 'list-item'};
+  width: ${props => props.matrix ? 'auto' : '780px'};
+  min-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  &::before{
+    font-family: 'Open Sans', sans-serif;
+    content: counter(step-counter);
+    margin-right: 10px;
+    font-size: 1em;
+    font-weight: 100;
+    background-color: ${deepOrange[500]};
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    margin-top: 0px;
+    float: left;
+  }
+`;
+
+export const ModalWrapper = Flex.extend`
+  height: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+`

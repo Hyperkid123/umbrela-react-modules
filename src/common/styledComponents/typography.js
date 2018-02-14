@@ -58,3 +58,22 @@ export const StatusMessage = styled.span`
   position: relative;
   bottom: 5px;
 `
+
+export const IntroTextParagraph = styled.p`
+  padding: 10px;
+`
+export const SheetFillTitle = MediumHeading.extend`
+  border: none
+`
+export const SheetFillCounter = MediumHeading.extend`
+  border-bottom: none;
+  margin-left: auto;
+`
+export const QuestionItemHeading = styled.h3`
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  margin-top: 0;
+  line-height: normal;
+  max-width: 780px;
+`;

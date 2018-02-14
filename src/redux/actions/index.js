@@ -56,6 +56,25 @@ export {
   changeChartType
 } from './uiActions';
 
+export {
+  getResearchStructure,
+  startResearch,
+  updateResearchState
+} from './fillActions'
+
+export {
+  answerCloseOpenQuestion,
+  answerOptionAnswer,
+  answerMultiQuestion,
+  answerOpenQuestion,
+  answerDivideQuestion,
+  dragCard,
+  createCards,
+  answerMatrixSingle,
+  answerMatrixMulti,
+  resetAnswers,
+} from './answerActions'
+
 export function finishFetch() {
   return {
     type: FINISH_FETCH

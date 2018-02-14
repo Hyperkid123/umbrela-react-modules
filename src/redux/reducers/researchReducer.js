@@ -1,9 +1,22 @@
-import {TEST_ACTION} from '../actions/actionTypes';
+import {
+  UPDATE_RESEARCH_STATE
+} from '../actions/actionTypes';
 
-function researchReducer(state = {}, action) {
+let research = {
+    research: false,
+    activeSheet: null,
+    sheets: [],
+    filters: [],
+};
+
+function researchReducer(state = research, action) {
   switch (action.type) {
-    case TEST_ACTION:
-        return {...state, msg: 'action test was executed'}
+    case UPDATE_RESEARCH_STATE:
+      return {
+        ...action.research,
+        activeSheet: null,
+        research: true,
+      }
     default:
       return state;
   }
