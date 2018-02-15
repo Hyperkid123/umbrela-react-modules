@@ -13,18 +13,22 @@ class QuestionsNavigation extends Component{
     super(props);
     this.state = {
       hideQuestions: false,
+      activeQuestion: null,
     };
   }
 
-  renderNavigationItems = () => this.props.questions.map((question) => (
-    <MenuListItem
+  handleItemClick = (questionId) => this.setState({activeQuestion: questionId})
+
+  renderNavigationItems = () => this.props.questions.map((question) => {
+    console.log(this.props.match.params, question.questionId);
+  return  <MenuListItem
       key={question.questionId}
       link={`/question/${question.questionId}`}
       label={question.title}
-      onClick={() => {}}
-      active={this.props.match.params.questionId === question.questionId}
+      onClick={() => this.handleItemClick(question.questionId)}
+      active={this.state.activeQuestion === question.questionId}
     />
-  ))
+  })
 
   render(){
     return(
@@ -36,7 +40,7 @@ class QuestionsNavigation extends Component{
               Otázky
             </SmallHeading>
             <Scrollbars
-              style={{height: 'calc(100vh - 2em - 60px - 28px)'}}
+              style={{height: 'calc(100vh - 250px)'}}
             >
               <MenuList>
                 {this.renderNavigationItems()}

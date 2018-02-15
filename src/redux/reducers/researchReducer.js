@@ -1,5 +1,6 @@
 import {
-  UPDATE_RESEARCH_STATE
+  UPDATE_RESEARCH_STATE,
+  START_RESEARCH
 } from '../actions/actionTypes';
 
 let research = {
@@ -17,6 +18,8 @@ function researchReducer(state = research, action) {
         activeSheet: null,
         research: true,
       }
+    case START_RESEARCH:
+      return {...state, startTime: performance.now()};  
     default:
       return state;
   }

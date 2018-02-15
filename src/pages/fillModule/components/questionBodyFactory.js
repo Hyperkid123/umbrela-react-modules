@@ -13,7 +13,10 @@ import OpenBody from './openBody';
 export default class QuestionBodyFactory {
   static build(question) {
     if(IsMatrixQuestion(question.questionType)) {
-      return <MatrixBody questionId={question.questionId} questionType={question.questionType} options={question.options}/>
+      return <MatrixBody
+        questionId={question.questionId}
+        questionType={question.questionType}
+        options={question.options}/>
     }
     if(HasScalePoints(question.questionType)) {
       return <DivideBody question={question}/>

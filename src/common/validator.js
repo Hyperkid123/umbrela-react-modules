@@ -1,7 +1,8 @@
 import {
   LABEL_LENGTH
 } from './constants';
-import {HasOptionsAsImage} from './questionTypes';
+import {HasOptionsAsImage, IsOrderQuestion, IsMatrixQuestion, HasScalePoints} from './questionTypes';
+import {OptionTypes} from './optionTypes';
 
 export function sheetInfoValidator(sheet) {
   return sheet.title.length <= LABEL_LENGTH && sheet.title.length > 0;
@@ -45,4 +46,57 @@ export function getOptionValidationMessage(optionText, questionType, optionType)
   if(optionText.length > LABEL_LENGTH) {
     return `Možnost může mít maxinálně 255 znaků (${optionText.length}).`;
   }
+}
+
+export function validateAnswers(sheet, answers, filters) {
+  let valid = true;
+  const errors = {};
+  sheet.questions.forEach((question) => {
+      if (question.isMandatory && !(filters[question.questionId] && filters[question.questionId].length > 0)) {
+          if (!IsOrderQuestion(question.questionType)) {
+              if (!answers[question.questionId]) {
+                  valid = false;
+                  errors[question.questionId] = {
+                      question: question,
+                      text: 'this question is mandatory',
+                  };
+              } else {
+                  if (IsMatrixQuestion(question.questionType)) {
+                      valid = validateMatrixAnswer(question, answers[question.questionId]);
+                      if (!valid) {
+                          errors[question.questionId] = {
+                              question: question,
+                              text: 'this question is mandatory',
+                          };
+                      }
+                  }
+                  if (HasScalePoints(question.questionType)) {
+                      if (!validateDivideQuestion(question, answers[question.questionId])) {
+                          valid = false;
+                          errors[question.questionId] = 'Please divide all points';
+                      }
+                  }
+              }
+          }
+      }
+  });
+  return {
+      valid,
+      errors,
+  };
+}
+
+function validateMatrixAnswer(question, answer) {
+    let valid = true;
+    question.options.forEach((option) => {
+        if (option.optionType === OptionTypes.RowOption) {
+            if (!answer[option.optionId]) valid = false;
+        }
+    });
+    return valid;
+}
+
+function validateDivideQuestion(question, answer) {
+    return answer.reduce((a, b) => a + b, 0) >= question.scalePoints;
+
 }

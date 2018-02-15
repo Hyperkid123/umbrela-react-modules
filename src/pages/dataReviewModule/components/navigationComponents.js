@@ -10,7 +10,7 @@ import {
 
 export const MenuListItem = ({link, label, onClick, active}) => (
   <NavLink to={link} style={{color: 'black'}}>
-    <MenuItem active={active ? 1 : 0} onClick={onClick}>
+    <MenuItem active={active} onClick={onClick}>
       <Flex verticalCenter>
         <MenuListLabel>
           <span>{label}</span>

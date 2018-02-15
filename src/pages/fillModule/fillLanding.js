@@ -23,6 +23,7 @@ export class FillLanding extends Component {
 
     render() {
       if(!this.props.isLoaded) return <Loading/>
+      if(!this.props.isLoaded) return <Loading/>
       return (
           <FlexSection style={{marginLeft: 'auto', marginRight: 'auto'}}>
             <FillIntroContainer auto horizontalCenter verticalCenter>
@@ -49,11 +50,12 @@ export class FillLanding extends Component {
     }
 }
 
-function mapStateToProps({research}) {
+function mapStateToProps({research, filters}) {
   return {
     isLoaded: research.research,
     introText: research.introText,
-    title: research.title
+    title: research.title,
+    filters: filters
   }
 }
 

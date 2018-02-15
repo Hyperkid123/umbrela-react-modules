@@ -8,10 +8,14 @@ import {
   CREATE_CARDS,
   MATRIX_SINGLE_ANSWER,
   MATRIX_MULTI_ANSWER,
-  RESET_ANSWERS
+  RESET_ANSWERS,
+  SEND_ANSWERS,
+  ANSWERS_SUBBMITED
 } from '../actions/actionTypes'
 
-const answers = {};
+const answers = {
+  isFetching: false,
+};
 
 export default function (state = answers, action) {
     switch (action.type) {
@@ -28,13 +32,9 @@ export default function (state = answers, action) {
                     optionId: action.payload.optionId,
                 };
                 return {...state, [action.payload.questionId]: question};
-            }else{
+            } else {
                 let question = state[action.payload.questionId];
-                if (question.options.length === 0) {
-                    delete question.options;
-                }else {
-                    question = {...question, openAnswer: null, optionId: null};
-                }
+                question = {...question, openAnswer: action.payload.answer, optionId: null};
                 return {...state, [action.payload.questionId]: question};
             }
         }
@@ -136,7 +136,13 @@ export default function (state = answers, action) {
             }
         }
         case RESET_ANSWERS:
-            return {};
+            return {
+              isFetching: false
+            };
+        case SEND_ANSWERS:
+          return {...state, isFetching: true}
+        case ANSWERS_SUBBMITED:
+          return {...state, isFetching: false}
         default:
             return state;
     }

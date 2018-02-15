@@ -73,6 +73,7 @@ export {
   answerMatrixSingle,
   answerMatrixMulti,
   resetAnswers,
+  submitAnswers,
 } from './answerActions'
 
 export function finishFetch() {

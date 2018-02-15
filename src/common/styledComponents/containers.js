@@ -18,13 +18,13 @@ export const Flex = styled.div`
 
 export const ViewContainer = styled.div`
   width: calc(100% - 2em);
-  min-height: calc(100vh - 1em - 28px);
+  min-height: calc(100vh - 171px);
   margin: 0;
   padding: 0 1em;
 `
 
 export const MenuContainer = styled.div`
-  max-width: ${props => props.fullWidth ? '100&' : '400px'};
+  max-width: ${props => props.fullWidth ? '100%' : '400px'};
   background-color: white;
   padding: 10px;
 `
@@ -32,7 +32,7 @@ export const MenuContainer = styled.div`
 export const FlexSection = styled.section`
   margin: 10px 10px 0 10px;
   min-width: ${props => props.minWidth ? `${props.minWidth}px` : `0px`};
-  height: ${props => props.autoHeight ? 'auto' :  'calc(100vh - 2em - 20px - 28px)'};
+  height: ${props => props.autoHeight ? 'auto' :  'calc(100vh - 190px)'};
   width: ${props => props.fullWidth ? '100%' : 'auto'};
 `
 
@@ -68,6 +68,8 @@ export const MenuListLabel = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  display: table-cell;
+  vertical-align: middle;
 `
 export const LabelContainer = styled.div`
   margin-left: ${props => props.alignRight ? 'auto' : 0};
@@ -81,6 +83,7 @@ export const PreviewImage = styled.img`
   max-width: 600px;
   height: auto;
   border-radius: 5px;
+  cursor: pointer;
 `
 export const FullImage = PreviewImage.extend`
   max-width: 90%;
@@ -160,6 +163,8 @@ export const ListColumn = styled.div`
 `
 export const MatrixTable = styled.table`
   border-collapse:collapse;
+  margin-left: auto;
+  margin-right: auto;
 `
 export const MatrixTableHeader = styled.thead`
   text-align: center;
@@ -241,6 +246,8 @@ export const PaginationsListItem = styled.li`
 `
 export const ChartContainer = Flex.extend`
   max-width: ${props => props.pie ? '600px' : 'auto'};
+  position: relative;
+  min-width: 0;
 `
 export const FillIntroContainer = Flex.extend`
   height: 100%;
@@ -292,4 +299,9 @@ export const ModalWrapper = Flex.extend`
   width: auto;
   margin-left: auto;
   margin-right: auto;
+`
+export const MenuItemEllipsisWrapper = styled.div`
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 `

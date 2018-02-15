@@ -28,6 +28,7 @@ export default class CloseQuestions extends Component {
   renderChart = () => {
     const globalOptions = {
       responsive: true,
+      maintainAspectRatio: true,
       legend: {
         display: !this.props.showLegend,
       },
@@ -74,7 +75,7 @@ export default class CloseQuestions extends Component {
 
   render() {
     return (
-      <Flex style={{position: 'relative'}}>
+      <Flex style={{position: 'relative', minWidth: 0}}>
         <ChartContainer horizontalCenter pie={this.props.chartType === PIE_CHART || this.props.chartType === DOUGHNUT_CHART}>
           {this.renderChart()}
         </ChartContainer>
@@ -84,7 +85,7 @@ export default class CloseQuestions extends Component {
           onClose={this.handleCloseImage}
         >
           <Flex>
-            <img src={this.props.url}/>
+            <img src={this.props.url} alt={this.props.url}/>
           </Flex>
         </Dialog>
       </Flex>

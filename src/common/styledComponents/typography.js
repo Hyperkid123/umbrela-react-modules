@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import deepOrange from 'material-ui/colors/deepOrange';
 import grey from 'material-ui/colors/grey';
+import red from 'material-ui/colors/red';
 
 const BaseHeading = styled.h2`
   font-weight: 300;
@@ -23,7 +24,7 @@ export const SmallHeading = BaseHeading.extend`
   margin-bottom: 5px;
 `
 
-export const DefaultLink = styled.a`
+export const DefaultLink = styled.span`
   color: black;
   text-decoration: none;
 `
@@ -76,4 +77,11 @@ export const QuestionItemHeading = styled.h3`
   margin-top: 0;
   line-height: normal;
   max-width: 780px;
+`;
+
+export const MandatoryIndicator = styled.span`
+  &::after{
+    content: ' *';
+    color: ${red[500]};
+  }
 `;

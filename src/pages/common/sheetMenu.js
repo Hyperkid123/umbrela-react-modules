@@ -62,7 +62,7 @@ class SheetMenu extends Component {
               <MenuContainer>
                 <SmallHeading>Arhy</SmallHeading>
                 <Scrollbars
-                  style={{height: 'calc(100vh - 2em - 60px - 28px)'}}
+                  style={{height: 'calc(100vh - 250px)'}}
                 >
                   {!this.props.hideNewSheet &&
                     <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>

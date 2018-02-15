@@ -3,11 +3,15 @@
  */
 import React, {Component} from 'react';
 import {OptionTypes} from '../../../common/optionTypes';
-import PropTypes from 'prop-types';
-import Modal from 'material-ui/Modal';
-import Paper from 'material-ui/Paper';
 
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from 'material-ui/Dialog';
+import LazyLoad from 'react-lazyload';
 
+import Button from 'material-ui/Button';
 import Checkbox from 'material-ui/Checkbox';
 import RadioUncheckedIcon from 'material-ui-icons/RadioButtonUnchecked';
 import RadioCheckedIcon from 'material-ui-icons/RadioButtonChecked';
@@ -21,7 +25,6 @@ import {
   PreviewImage,
   MatrixTableRow,
   FullImage,
-  ModalWrapper
 } from '../../../common/styledComponents/containers';
 import {
     HasMultipleAnswers,
@@ -150,21 +153,26 @@ class MatrixBody extends Component {
 
 
     render() {
-      console.log(HasMultipleAnswers(this.props.questionType), this.props.questionType);
         return (
             <div>
                 {this.createMatrix(this.props.options)}
-                <Modal
+                <Dialog
+                  fullScreen
                   open={this.state.modalOpen}
                   onClose={this.handleClose}
-                  style={{height: 'auto', marginTop: 20}}
                 >
-                  <ModalWrapper>
-                    <Paper square>
+                  <DialogContent>
+                    <DialogTitle>Náhled</DialogTitle>
+                    <LazyLoad>
                       <FullImage src={this.state.previewImage} alt={this.state.previewImage}/>
-                    </Paper>
-                  </ModalWrapper>
-                </Modal>
+                    </LazyLoad>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={this.handleClose}>
+                      Zavřít
+                    </Button>
+                  </DialogActions>
+                </Dialog>
             </div>
         );
     }

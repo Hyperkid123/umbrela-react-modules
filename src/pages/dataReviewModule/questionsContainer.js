@@ -7,6 +7,7 @@ import LoadingScreen from '../../common/components/loadingScreen';
 import {Flex, FlexSection} from '../../common/styledComponents/containers';
 import {SmallHeading} from '../../common/styledComponents/typography';
 import Chart from './components/chart'
+import { Scrollbars } from 'react-custom-scrollbars';
 
 export class QuestionsContainer extends Component {
 
@@ -29,16 +30,18 @@ export class QuestionsContainer extends Component {
       return (
           <Flex>
             <FlexSection fullWidth autoHeight>
-              <Flex column style={{marginTop: 10}}>
-                <SmallHeading>{question.title}</SmallHeading>
-              </Flex>
-              <Chart
-                showLegend={this.props.ui.hideChartlegend}
-                chartType={this.props.ui.chartType}
-                data={Object.assign({}, chartData)}
-                question={question}
-                questionType={question.type}
-              />
+              <Scrollbars>
+                <Flex column style={{marginTop: 10}}>
+                  <SmallHeading>{question.title}</SmallHeading>
+                </Flex>
+                <Chart
+                  showLegend={this.props.ui.hideChartlegend}
+                  chartType={this.props.ui.chartType}
+                  data={Object.assign({}, chartData)}
+                  question={question}
+                  questionType={question.type}
+                />
+              </Scrollbars>
             </FlexSection>
           </Flex>
       );

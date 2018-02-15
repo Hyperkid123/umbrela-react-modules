@@ -16,7 +16,6 @@ export class SheetsContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
       if(this.props.activeSheet.sheetId !== nextProps.activeSheet.sheetId) {
-        console.log(nextProps, this.props);
         nextProps.activeSheet && this.props.getQuestions(nextProps.activeSheet.sheetId)
       }
     }

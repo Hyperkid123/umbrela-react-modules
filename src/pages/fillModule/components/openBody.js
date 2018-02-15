@@ -22,7 +22,7 @@ export class OpenBody extends Component {
           <Flex column grow>
             <TextField value={answer}
               onChange={(event) => this.props.answerOpenQuestion(this.props.questionId, event.target.value)}
-              placeholder='odpověď'
+              placeholder='Odpověď'
               fullWidth
               multiline
               key={`openOption_${this.props.questionId}`}

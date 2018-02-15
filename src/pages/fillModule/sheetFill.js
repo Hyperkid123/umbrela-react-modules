@@ -12,6 +12,12 @@ import {Link, Redirect} from 'react-router-dom';
 import { withRouter } from 'react-router';
 import Button from 'material-ui/Button';
 import QuestionFillList from './components/questionFillList';
+import {validateAnswers} from '../../common/validator'
+
+const scrollOptions = {
+    block: 'start',
+    behavior: 'smooth',
+};
 
 export class SheetFill extends Component {
 
@@ -32,6 +38,22 @@ export class SheetFill extends Component {
     }
   }
 
+  handleNextSheet = (path) => {
+    const {valid, errors} = validateAnswers(this.props.activeSheet, this.props.answers, this.props.filters);
+    if(valid) {
+      this.setState({errors: null});
+      return this.props.history.push(path)
+    } else {
+      this.setState({errors: errors});
+      this.scrollToErrorElement(errors[Object.keys(errors)[0]].question)
+    }
+  }
+
+  scrollToErrorElement = (question) => {
+    const element = document.getElementById('question_' + question.questionId);
+    element.scrollIntoView(scrollOptions);
+  }
+
   renderPrevButton = () => {
     const sheetId = parseInt(this.props.match.params.sheetId, 10)
     if(sheetId > 0) {
@@ -50,25 +72,21 @@ export class SheetFill extends Component {
     const sheetId = parseInt(this.props.match.params.sheetId, 10);
     if(sheetId < this.props.sheetCount - 1) {
       return (
-        <Link to={`/fill/${sheetId + 1}`}>
-          <Button raised>
-            Další
-          </Button>
-        </Link>
+        <Button onClick={() => this.handleNextSheet(`/fill/${sheetId + 1}`)} raised>
+          Další
+        </Button>
       )
     } else {
       return (
-        <Link>
-          <Button raised color='primary'>
-            Odeslat
-          </Button>
-        </Link>
+        <Button onClick={() => this.handleNextSheet(`/submit`)} raised color='primary'>
+          Odeslat
+        </Button>
       )
     }
   }
 
   render() {
-    if(!this.props.isLoaded) return <Redirect to='/'/>
+    if(!this.props.isLoaded || !this.props.filters) return <Redirect to='/'/>
     const sheetNumber = parseInt(this.props.match.params.sheetId, 10) + 1
       return (
           <Flex horizontalCenter column>
@@ -79,7 +97,7 @@ export class SheetFill extends Component {
                 <SheetFillCounter>{sheetNumber}/{this.props.sheetCount}</SheetFillCounter>
               </FillSheetHeaderContainer>
             </Flex>
-            <QuestionFillList questions={this.props.activeSheet.questions}/>
+            <QuestionFillList errors={this.state.errors} questions={this.props.activeSheet.questions} filters={this.props.filters}/>
             <Flex horizontalCenter style={{marginBottom: 10}}>
               {this.renderPrevButton()}
               {this.renderNextButton()}
@@ -89,12 +107,14 @@ export class SheetFill extends Component {
   }
 }
 
-function mapStateToProps({research}, initialProps) {
+function mapStateToProps({research, filters, answers}, initialProps) {
   const sheetId = parseInt(initialProps.match.params.sheetId, 10);
   return {
     isLoaded: research.research,
     activeSheet: research.sheets[sheetId],
     sheetCount: research.sheets.length,
+    filters: filters ? filters.filters : null,
+    answers: answers
   }
 }
 

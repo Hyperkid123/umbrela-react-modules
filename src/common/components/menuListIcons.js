@@ -7,6 +7,7 @@ import {
   MenuItem,
   MenuListLabel,
   Flex,
+  MenuItemEllipsisWrapper,
 } from '../styledComponents/containers';
 import {DefaultLink} from '../styledComponents/typography';
 import Tooltip from 'material-ui/Tooltip';
@@ -37,14 +38,14 @@ export const MenuListItem = ({link, label, onClick, sheetId, active, tooltipLabe
           disableTriggerFocus={dragging || preventDrag}
           disableTriggerHover={dragging || preventDrag}
           disableTriggerTouch={dragging || preventDrag}
-          placement='right-end'
+          placement='top'
         >
           <MenuItem dragging={dragging} data-tip={tooltipLabel} active={active} onClick={() => onClick(sheetId)}>
-          <Flex verticalCenter>
-          <MenuListLabel>
-            <DefaultLink href={link}>{label}</DefaultLink>
-          </MenuListLabel>
-        </Flex>
+          <MenuItemEllipsisWrapper verticalCenter>
+            <MenuListLabel>
+              <DefaultLink href={link}>{label}</DefaultLink>
+            </MenuListLabel>
+          </MenuItemEllipsisWrapper>
     </MenuItem>
   </Tooltip>
 )

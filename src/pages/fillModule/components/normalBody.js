@@ -10,7 +10,6 @@ import RadioChecked from 'material-ui-icons/RadioButtonChecked';
 import RadioUnchecked from 'material-ui-icons/RadioButtonUnchecked';
 import CheckBoxChecked from 'material-ui-icons/CheckBox';
 import CheckBoxUncheck from 'material-ui-icons/CheckBoxOutlineBlank';
-import Dialog from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 
 import {connect} from 'react-redux';
@@ -19,9 +18,9 @@ import { OptionTypes } from '../../../common/optionTypes';
 import { FormControlLabel } from 'material-ui/Form';
 import {
   Flex,
-  OptionsFillListWrapper,
   PreviewImageContainer,
-  PreviewImage
+  PreviewImage,
+  FullImage
 } from '../../../common/styledComponents/containers';
 import {ANSWER_LENGTH, PREVIEW_SWITCH_STYLE} from '../../../common/constants';
 import LazyLoad from 'react-lazyload';
@@ -40,22 +39,18 @@ import {
     HasOptionsAsImage,
 } from '../../../common/questionTypes';
 
-
-
-const inputWidth = {
-    width: '100%',
-};
-
-const autoWidth = {
-    width: 'auto',
-    alignSelf: 'center',
-};
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from 'material-ui/Dialog';
 
 class NormalBody extends Component {
     constructor(props){
         super(props);
         this.state = {
             modalOpen: false,
+            imageUrl: this.props.option.optionTitle
         };
     }
     handleOpen = () => {
@@ -124,7 +119,7 @@ class NormalBody extends Component {
               />
               <PreviewImageContainer>
                 <LazyLoad>
-                  <PreviewImage src={option.optionTitle} alt={option.optionTitle}/>
+                  <PreviewImage onClick={this.handleOpen} src={option.optionTitle} alt={option.optionTitle}/>
                 </LazyLoad>
               </PreviewImageContainer>
             </Flex>
@@ -203,15 +198,22 @@ class NormalBody extends Component {
           <Flex column>
             {this.renderOptionRow()}
             <Dialog
-              title='{this.props.lang.common.preview}'
-                modal={false}
-                open={this.state.modalOpen}
-                onRequestClose={this.handleClose}
-                contentStyle={{width: '90%', maxWidth: 'none', marginTop: 10, marginBottom: 10}}
-                autoScrollBodyContent={true}
-              >
-                <img big src={this.props.option.optionTitle}/>
-              </Dialog>
+              open={this.state.modalOpen}
+              onClose={this.handleClose}
+              fullScreen
+            >
+              <DialogContent>
+                <DialogTitle>Náhled</DialogTitle>
+                <LazyLoad>
+                  <FullImage src={this.state.imageUrl}/>
+                </LazyLoad>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={this.handleClose}>
+                  Zavřít
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Flex>
 
         );
