@@ -19,7 +19,7 @@ class StatusBar extends Component {
         const {isFetching, failed} = this.props;
 
         return (
-          <Grid item xs={12} spacing={0}>
+          <Grid item xs={12}>
             <StatusBarList>
               <li>
               <NavLink exact strict activeClassName='active-link' to='/'>

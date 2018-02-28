@@ -18,22 +18,27 @@ export class ResearchEditorModule extends Component {
     componentWillMount() {
       this.props.getSheets(window.researchId)
     }
+    renderBody = () => (
+      <Grid container spacing={0}>
+        <Grid item xs={12} sm={12} md={4} lg={4} xl={3}>
+          <SheetMenu sheets={this.props.sheets}/>
+        </Grid>
+        <Grid item xs={12} sm={12} md={8} lg={8} xl={9}>
+          <Grid container spacing={0}>
+            <QuestionView/>
+          </Grid>
+          <Grid container spacing={0}>
+            <SheetView/>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
     render() {
-        return (
-          <DNDContext>
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={3}>
-              <SheetMenu sheets={this.props.sheets}/>
-            </Grid>
-            <Grid item xs={12} sm={12} md={8} lg={8} xl={9}>
-              <Grid container spacing={0}>
-                <QuestionView/>
-              </Grid>
-              <Grid container spacing={0}>
-                <SheetView/>
-              </Grid>
-            </Grid>
-          </DNDContext>
-        );
+      return (
+        <DNDContext>
+          {this.renderBody()}
+        </DNDContext>
+      );
     }
 }
 

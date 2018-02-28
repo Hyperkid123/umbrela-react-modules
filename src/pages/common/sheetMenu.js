@@ -27,17 +27,30 @@ class SheetMenu extends Component {
       this.props.dragSheetCard(dragIndex, hoverIndex);
     };
 
+    renderDraggableSheets = () => this.props.sheets.map((sheet, i) => (
+      <SheetDraggableCard
+        index={i}
+        key={sheet.sheetId}
+        moveCard={this.moveCard}
+        onDragEnd={this.props.remapSheets}
+        researchId={this.props.researchId}
+        preventDrag={this.props.preventDrag}
+      >
+        <MenuListItem
+          key={sheet.sheetId}
+          sheetId={sheet.sheetId}
+          onClick={this.props.selectEditorSheet}
+          label={sheet.title}
+          active={!this.props.draggingElement && this.props.activeSheetId === sheet.sheetId}
+          dragging={this.props.draggingElement}
+          tooltipLabel="Tažením můžete změnit pořadí archu"
+          preventDrag={this.props.preventDrag}
+        />
+      </SheetDraggableCard>
+    ))
     renderSheets = () => {
       return this.props.sheets.map((sheet, i) => {
         return (
-          <SheetDraggableCard
-            index={i}
-            key={sheet.sheetId}
-            moveCard={this.moveCard}
-            onDragEnd={this.props.remapSheets}
-            researchId={this.props.researchId}
-            preventDrag={this.props.preventDrag}
-          >
             <MenuListItem
               key={sheet.sheetId}
               sheetId={sheet.sheetId}
@@ -48,7 +61,6 @@ class SheetMenu extends Component {
               tooltipLabel="Tažením můžete změnit pořadí archu"
               preventDrag={this.props.preventDrag}
             />
-          </SheetDraggableCard>
         )
       });
     }
@@ -70,7 +82,7 @@ class SheetMenu extends Component {
                 </Button>
               }
               <MenuList>
-                {this.renderSheets()}
+                {this.props.preventDrag ? this.renderSheets() : this.renderDraggableSheets()}
               </MenuList>
             </CardBody>
           </CardWrapper>
