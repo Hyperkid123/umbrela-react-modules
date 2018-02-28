@@ -200,7 +200,7 @@ class NormalBody extends Component {
             <Dialog
               open={this.state.modalOpen}
               onClose={this.handleClose}
-              fullScreen
+              maxWidth={false}
             >
               <DialogContent>
                 <DialogTitle>Náhled</DialogTitle>
@@ -209,7 +209,7 @@ class NormalBody extends Component {
                 </LazyLoad>
               </DialogContent>
               <DialogActions>
-                <Button onClick={this.handleClose}>
+                <Button raised color='secondary' onClick={this.handleClose}>
                   Zavřít
                 </Button>
               </DialogActions>

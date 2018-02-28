@@ -157,9 +157,9 @@ class MatrixBody extends Component {
             <div>
                 {this.createMatrix(this.props.options)}
                 <Dialog
-                  fullScreen
                   open={this.state.modalOpen}
                   onClose={this.handleClose}
+                  maxWidth={false}
                 >
                   <DialogContent>
                     <DialogTitle>Náhled</DialogTitle>
@@ -168,7 +168,7 @@ class MatrixBody extends Component {
                     </LazyLoad>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={this.handleClose}>
+                    <Button raised color='secondary' onClick={this.handleClose}>
                       Zavřít
                     </Button>
                   </DialogActions>

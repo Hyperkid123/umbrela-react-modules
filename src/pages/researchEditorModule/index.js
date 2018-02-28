@@ -1,9 +1,5 @@
 import React,{Component} from 'react';
 import '../../common/globalStyles';
-import {
-  ViewContainer,
-  Flex,
-} from '../../common/styledComponents/containers';
 import DNDContext from '../../common/components/dndContext';
 
 import {connect} from 'react-redux';
@@ -15,6 +11,7 @@ import {
 import SheetMenu from '../common/sheetMenu';
 import SheetView from './components/sheetView';
 import QuestionView from './components/questionView';
+import Grid from 'material-ui/Grid';
 
 
 export class ResearchEditorModule extends Component {
@@ -23,17 +20,19 @@ export class ResearchEditorModule extends Component {
     }
     render() {
         return (
-            <ViewContainer>
-              <Flex grow column>
-                <DNDContext>
-                  <SheetMenu sheets={this.props.sheets}/>
-                  <Flex grow column>
-                    <QuestionView/>
-                    <SheetView/>
-                  </Flex>
-                </DNDContext>
-              </Flex>
-            </ViewContainer>
+          <DNDContext>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={3}>
+              <SheetMenu sheets={this.props.sheets}/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={8} lg={8} xl={9}>
+              <Grid container spacing={0}>
+                <QuestionView/>
+              </Grid>
+              <Grid container spacing={0}>
+                <SheetView/>
+              </Grid>
+            </Grid>
+          </DNDContext>
         );
     }
 }

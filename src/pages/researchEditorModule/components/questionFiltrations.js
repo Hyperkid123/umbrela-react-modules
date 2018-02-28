@@ -13,7 +13,7 @@ class QuestionFiltrations extends Component {
     	super(props);
     	this.state = {
         tab: 0,
-        selectedOptionId: this.props.options ? this.props.options[0].optionId : null
+        selectedOptionId: this.props.options && this.props.options[0] ? this.props.options[0].optionId : null
       };
     }
 
@@ -25,7 +25,7 @@ class QuestionFiltrations extends Component {
       if(nextProps.questionId !== this.props.questionId) {
         this.props.loadOptions(nextProps.questionId);
       }
-      if(!this.state.selectedOptionId && !this.props.options && nextProps.options) {
+      if(!this.state.selectedOptionId && !this.props.options && nextProps.options && nextProps.options[0]) {
         this.setState({
           selectedOptionId: nextProps.options[0].optionId
         })
@@ -33,10 +33,12 @@ class QuestionFiltrations extends Component {
     }
 
     setCurrentTab = (tab) => {
-      this.setState({
-        tab,
-        selectedOptionId: this.props.options[tab].optionId
-      })
+      if(this.props.options && this.props.options[tab]){
+        this.setState({
+          tab,
+          selectedOptionId: this.props.options[tab].optionId
+        })
+      }
     };
 
     renderOptionsTabs = () => this.props.options.map((option, i) => <Tab key={option.optionId} label={option.title}/>);

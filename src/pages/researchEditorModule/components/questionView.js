@@ -3,16 +3,17 @@ import React,{Component} from 'react';
 import {
   LABEL_LENGTH,
 } from '../../../common/constants';
-
+import Grid from 'material-ui/Grid';
 import {
-  Flex,
-  FlexSection
-} from '../../../common/styledComponents/containers';
+  CardWrapper,
+  CardControlls,
+  CardBody,
+  InputHeader
+} from '../../../common/styledComponents/card';
 import {
   TextFieldComent
 } from '../../../common/components/labels';
 
-import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
@@ -26,6 +27,9 @@ import {
   updateQuetionsInformation,
 } from '../../../redux/actions';
 import {DeleteNotification} from '../../../common/styledComponents/typography';
+import Input, { InputAdornment } from 'material-ui/Input';
+import { FormControl } from 'material-ui/Form';
+import EditIcon from 'material-ui-icons/ModeEdit';
 
 import QuestionBody from './questions/questionBody';
 
@@ -66,34 +70,41 @@ class QuestionView extends Component {
     render() {
       if(this.props.activeQuestion) {
         return (
-          <FlexSection autoHeight>
-            <Flex column>
-              <Paper square style={{padding: 10}}>
-                <Flex grow baseline>
-                  <Flex column grow>
-                    <TextField
-                      name="questionTitleInput"
-                      style={{width: 'auto', marginRight: 15}}
-                      value={this.props.activeQuestion.title}
-                      onChange={(event) => this.props.changeQuestionTitle(event.target.value)}
-                      onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
-                      inputRef={(input) => this.questionTitle = input}
-                      onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
-                    />
-                    <TextFieldComent
-                      error={this.props.activeQuestion.title.length >= LABEL_LENGTH}
-                      label={`${this.props.activeQuestion.title.length} z ${LABEL_LENGTH} znaků`}
-                      alignRight
-                    />
-                  </Flex>
-                  <Button raised onClick={this.handleDeleteOpen}>
-                    <ActionDelete/>
-                    Smazat otázku
-                  </Button>
-                </Flex>
-                <QuestionBody questionType={this.props.activeQuestion.questionType}/>
-              </Paper>
-            </Flex>
+          <Grid item xs={12}>
+            <CardWrapper>
+              <InputHeader>
+                <FormControl fullWidth>
+                  <Input
+                    name="questionTitleInput"
+                    fullWidth
+                    value={this.props.activeQuestion.title}
+                    onChange={(event) => this.props.changeQuestionTitle(event.target.value)}
+                    onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                    inputRef={(input) => this.questionTitle = input}
+                    onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
+                    startAdornment={<InputAdornment position='start'><EditIcon/></InputAdornment>}
+                  />
+                </FormControl>
+              </InputHeader>
+                <TextFieldComent
+                  error={this.props.activeQuestion.title.length >= LABEL_LENGTH}
+                  label={`${this.props.activeQuestion.title.length} z ${LABEL_LENGTH} znaků`}
+                  alignRight
+                />
+              <CardControlls>
+                <Grid container spacing={0} justify="flex-end" direction="row">
+                  <Grid item>
+                    <Button raised onClick={this.handleDeleteOpen}>
+                      <ActionDelete/>
+                      Smazat otázku
+                    </Button>
+                  </Grid>
+                </Grid>
+              </CardControlls>
+              <CardBody>
+                  <QuestionBody questionType={this.props.activeQuestion.questionType}/>
+              </CardBody>
+            </CardWrapper>
             <Dialog
               open={this.state.showDelete}
               onClose={this.handleDeleteClose}
@@ -114,7 +125,7 @@ class QuestionView extends Component {
                 Zpět
               </Button>
             </Dialog>
-          </FlexSection>
+          </Grid>
         );
       } else {
         return null;

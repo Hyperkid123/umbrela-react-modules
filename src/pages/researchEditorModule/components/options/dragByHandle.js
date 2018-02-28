@@ -50,17 +50,15 @@ class OptionsDraggableCard extends Component {
      return connectDragSource(connectDropTarget(
        <li style={{opacity}}>
          <OptionItemWrapper row grow >
-           {this.props.children}
-           {connectDragPreview(
+           {connectDragPreview(<div style={{width: `100%`}}>{this.props.children}</div>)}
              <div>
                <Tooltip
-                 title='Tažením změňte pořadí možnost.'
+                 title='Tažením změňte pořadí možnosti.'
                  placement='top'
                  >
                    <DragHandle style={{cursor: 'move', height: 48, marginLeft: 5}}/>
                  </Tooltip>
              </div>
-             )}
              <Tooltip title='Smazat možnosti' placement='top'>
                <IconButton onClick={this.props.deleteOption}>
                  <DeleteIcon color='error' style={{height: 48}}/>

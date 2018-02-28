@@ -21,7 +21,7 @@ function isStringUrl(url) {
     if(url.indexOf('#') !== -1){
         filteredUrl = filteredUrl.substring(0, url.indexOf('#'));
     }
-    let regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?\.(jpeg|jpg|gif|png)$/;
+    let regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?\.(jpeg|jpg|gif|png|svg)$/;
     return [regexp.test(filteredUrl), filteredUrl];
 }
 

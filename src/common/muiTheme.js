@@ -1,13 +1,17 @@
-import deepOrange from 'material-ui/colors/deepOrange';
+import blue from 'material-ui/colors/blue';
+import red from 'material-ui/colors/red';
+
 
 import { createMuiTheme } from 'material-ui/styles';
 export default createMuiTheme({
     fontFamily: 'Roboto, sans-serif',
     palette: {
       primary: {
-        main: deepOrange[500],
-        dark: deepOrange[500],
+        main: blue[500],
       },
+      secondary: {
+        main: red.A200
+      }
     },
     raisedButton: {
       fontWeight: 300

@@ -7,11 +7,7 @@ import {Flex} from '../styledComponents/containers';
 class DNDContext extends Component {
 
     render() {
-        return (
-            <Flex grow>
-                {this.props.children}
-            </Flex>
-        );
+        return this.props.children
     }
 }
 

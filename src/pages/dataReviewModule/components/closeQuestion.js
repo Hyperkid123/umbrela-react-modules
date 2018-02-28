@@ -85,7 +85,7 @@ export default class CloseQuestions extends Component {
           onClose={this.handleCloseImage}
         >
           <Flex>
-            <img src={this.props.url} alt={this.props.url}/>
+            <img style={{minWidth: 400}} src={this.props.url} alt={this.props.url}/>
           </Flex>
         </Dialog>
       </Flex>

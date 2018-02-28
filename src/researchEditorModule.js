@@ -9,7 +9,8 @@ import Filtrations from './pages/researchEditorModule/filtrations';
 import {
   HashRouter as Router,
   Route,
-} from 'react-router-dom'
+} from 'react-router-dom';
+import Grid from 'material-ui/Grid';
 
 import configureStore from './redux/configureStore';
 const store = configureStore();
@@ -17,11 +18,11 @@ const ResearchEditorModuleWrapper = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={orangeTheme}>
       <Router>
-        <div>
+        <Grid container spacing={0}>
           <StatusBar/>
           <Route exact path='/' component={ResearchEditor}/>
           <Route path='/filtrations' component={Filtrations}/>
-        </div>
+        </Grid>
       </Router>
     </MuiThemeProvider>
   </Provider>

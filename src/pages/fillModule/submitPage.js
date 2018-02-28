@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {submitAnswers} from '../../redux/actions/';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {
   FillIntroContainer,
   FlexSection,
@@ -13,12 +13,18 @@ import {
   MediumHeading,
   IntroTextParagraph
 } from '../../common/styledComponents/typography';
-import deepOrange from 'material-ui/colors/deepOrange';
+import blue from 'material-ui/colors/blue';
 import Loading from '../../common/components/loadingScreen';
+import Grid from 'material-ui/Grid';
+import {
+  CardWrapper,
+  CardHeader,
+  CardBody
+} from '../../common/styledComponents/card';
 
 export class SubmitPage extends Component {
   componentDidMount() {
-    if(this.props.isLoaded && !this.props.isFetching) {
+    if(!window.preview && this.props.isLoaded && !this.props.isFetching) {
       const answers = {...this.props.answers}
       delete answers.isFetching;
       this.props.submitAnswers(answers)
@@ -45,23 +51,24 @@ export class SubmitPage extends Component {
     if(!this.props.isLoaded) return <Redirect to='/'/>
     if(this.props.isFetching) return this.renderFetching();
       return (
-        <FlexSection style={{marginLeft: 'auto', marginRight: 'auto'}}>
-          <FillIntroContainer auto horizontalCenter verticalCenter>
-            <Paper style={{padding: 10}} square>
-              <MediumHeading>
-                Vaše odpovědi byly odeslány.
-              </MediumHeading>
-              <IntroTextParagraph>
-                {this.props.leaveText && this.props.leaveText.split('\n').map((item, key) => (
-                  <span key={key}>{item}<br/></span>
-                ))}
-              </IntroTextParagraph>
-              <IntroTextParagraph>
-                O projektu Umbrela se můžete dozvědět více &nbsp; <a style={{color: deepOrange[500]}} href="http://umbrela.mendelu.cz">zde</a>.
-              </IntroTextParagraph>
-            </Paper>
-          </FillIntroContainer>
-        </FlexSection>
+        <Grid item xs={12} sm={12} md={8} lg={6} xl={6}>
+          <CardWrapper>
+            <CardHeader>
+                <h2>Vaše odpovědi byly odeslány.</h2>
+              </CardHeader>
+              <CardBody>
+                <IntroTextParagraph>
+                  {this.props.leaveText && this.props.leaveText.split('\n').map((item, key) => (
+                    <span key={key}>{item}<br/></span>
+                  ))}
+                </IntroTextParagraph>
+                <IntroTextParagraph>
+                  O projektu Umbrela se můžete dozvědět více &nbsp;<a style={{color: blue[500]}} href="http://umbrela.mendelu.cz">zde</a>.
+                  {window.preview && <p style={{color: 'red'}}>Toto je pouze náhled, odpovědi se do databáze neukládají</p>}
+                </IntroTextParagraph>
+              </CardBody>
+            </CardWrapper>
+          </Grid>
       );
   }
 }

@@ -3,18 +3,10 @@
 import {
   LABEL_LENGTH,
 } from '../../../common/constants';
-
-import {
-  Flex,
-  FlexSection
-} from '../../../common/styledComponents/containers';
 import {DeleteNotification} from '../../../common/styledComponents/typography';
 import {
   TextFieldComent
 } from '../../../common/components/labels';
-
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
@@ -26,6 +18,16 @@ import {
   changeSheetTitle,
   updateSheetInformation,
 } from '../../../redux/actions';
+import Grid from 'material-ui/Grid';
+import {
+  CardWrapper,
+  CardControlls,
+  CardBody,
+  InputHeader
+} from '../../../common/styledComponents/card';
+import Input, { InputAdornment } from 'material-ui/Input';
+import { FormControl } from 'material-ui/Form';
+import EditIcon from 'material-ui-icons/ModeEdit';
 
 import QuestionsCreator from './questionsCreator';
 
@@ -70,36 +72,45 @@ class SheetView extends Component {
     render() {
       if(this.props.activeSheet) {
         return (
-          <Flex>
-            <FlexSection fullWidth autoHeight>
-              <Paper square style={{padding: 10}}>
-                <Flex grow baseline>
-                  <Flex column grow>
-                    <TextField
-                      name="sheetTitleInput"
-                      style={{width: 'auto', marginRight: 15}}
-                      value={this.props.activeSheet.title}
-                      onChange={(event) => {
-                        this.props.changeSheetTitle(event.target.value)
-                      }}
-                      onBlur={this.handleUpdateSheetTitle}
-                      onKeyPress={(event) => {if(event.key === 'Enter') this.handleUpdateSheetTitle()}}
-                      inputRef={(input) => { this.sheetTitleInput = input; }}
-                    />
-                    <TextFieldComent
-                      error={this.props.activeSheet.title.length >= LABEL_LENGTH}
-                      label={`${this.props.activeSheet.title.length} z ${LABEL_LENGTH} znaků`}
-                      alignRight
-                    />
-                  </Flex>
-                  <Button raised onClick={this.handleDeleteOpen}>
-                    <ActionDelete/>
-                    Smazat
-                  </Button>
-                </Flex>
-                <QuestionsCreator/>
-              </Paper>
-            </FlexSection>
+          <Grid item xs={12}>
+            <CardWrapper>
+              <InputHeader>
+                <FormControl fullWidth>
+                  <Input
+                    name="sheetTitleInput"
+                    fullWidth
+                    value={this.props.activeSheet.title}
+                    onChange={(event) => {
+                      this.props.changeSheetTitle(event.target.value)
+                    }}
+                    onBlur={this.handleUpdateSheetTitle}
+                    onKeyPress={(event) => {if(event.key === 'Enter') this.handleUpdateSheetTitle()}}
+                    inputRef={(input) => { this.sheetTitleInput = input; }}
+                    startAdornment={<InputAdornment position='start'><EditIcon/></InputAdornment>}
+                  />
+                </FormControl>
+              </InputHeader>
+                <TextFieldComent
+                  error={this.props.activeSheet.title.length >= LABEL_LENGTH}
+                  label={`${this.props.activeSheet.title.length} z ${LABEL_LENGTH} znaků`}
+                  alignRight
+                />
+              <CardControlls>
+                <Grid container spacing={0} justify="flex-end" direction="row">
+                  <Grid item>
+                    <Button raised onClick={this.handleDeleteOpen}>
+                      <ActionDelete/>
+                      Smazat
+                    </Button>
+                  </Grid>
+                </Grid>
+              </CardControlls>
+              <CardBody>
+                  <Grid item>
+                      <QuestionsCreator/>
+                  </Grid>
+              </CardBody>
+            </CardWrapper>
             <Dialog
               open={this.state.showDelete}
               onClose={this.handleDeleteClose}
@@ -120,7 +131,7 @@ class SheetView extends Component {
                 Zpět
               </Button>
             </Dialog>
-          </Flex>
+          </Grid>
         );
       } else {
         return null;

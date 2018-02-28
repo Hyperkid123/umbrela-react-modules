@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import deepOrange from 'material-ui/colors/deepOrange';
+import blue from 'material-ui/colors/blue';
 import grey from 'material-ui/colors/grey';
 import red from 'material-ui/colors/red';
 
 const BaseHeading = styled.h2`
   font-weight: 300;
-  border-bottom: 1px solid ${deepOrange[500]};
+  border-bottom: 1px solid ${blue[500]};
   border: ${props => props.withouthBorder ? 'none' : ''};
   color: ${grey[800]};
 `;
@@ -38,7 +38,7 @@ export const FillQuestionheading = SmallHeading.extend`
     padding: 3px 8px;
     margin-right: 3px;
     float: left;
-    background-color: ${deepOrange[500]};
+    background-color: ${blue[500]};
     color: white;
     border-radius: 2px;
     font-size: 0.8em;

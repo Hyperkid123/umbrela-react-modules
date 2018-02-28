@@ -59,7 +59,7 @@ class DivideBody extends Component {
         return this.props.question.options.map((option, i) => {
             return (
                 <Flex key={option.optionId}>
-                  <TextField style={{width: 150, flexShrink: 0}} type="number"
+                  <TextField style={{width: 150, flexShrink: 0, alignSelf: 'flex-end'}} type="number"
                        min={0}
                        onFocus={(event) => this.handleSelectInput(event)}
                        onChange={(event) => this.handleDivideChange(this.props.question.questionId, event, this.props.question.options.length, i, scaleValues[i])}

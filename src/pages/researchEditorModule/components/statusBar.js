@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {Flex} from '../../../common/styledComponents/containers';
+import {StatusBarList} from '../../../common/styledComponents/containers';
 import Check from 'material-ui-icons/Check';
 import Cross from 'material-ui-icons/Close';
 import { CircularProgress } from 'material-ui/Progress';
@@ -12,28 +12,32 @@ import FilterIcon from 'material-ui-icons/FilterList';
 import Button from 'material-ui/Button';
 import { withRouter } from 'react-router'
 import grey from 'material-ui/colors/grey';
+import Grid from 'material-ui/Grid';
 
 class StatusBar extends Component {
     render() {
         const {isFetching, failed} = this.props;
 
         return (
-          <Flex style={{paddingRight: 26, paddingLeft: 26}} auto>
-            <div>
+          <Grid item xs={12} spacing={0}>
+            <StatusBarList>
+              <li>
               <NavLink exact strict activeClassName='active-link' to='/'>
                 <Button>
                   <EditIcon/>
                   Editor
                 </Button>
               </NavLink>
+            </li>
+            <li>
               <NavLink exact strict activeClassName='active-link' to='/filtrations'>
                 <Button>
                   <FilterIcon/>
                   Filtrace
                 </Button>
               </NavLink>
-            </div>
-            <div style={{ textAlign: 'center', marginLeft: 'auto', padding: '4px 0 4px 0'}}>
+            </li>
+            <li>
               {isFetching ?
                 <div>
                   <CircularProgress size={24} thickness={1} style={{position: 'relative', bottom: 0}}/>
@@ -54,8 +58,9 @@ class StatusBar extends Component {
                   </span>
                 </div>
             }
-            </div>
-          </Flex>
+          </li>
+          </StatusBarList>
+          </Grid>
         );
     }
 }

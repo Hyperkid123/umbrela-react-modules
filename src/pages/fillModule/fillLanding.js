@@ -1,20 +1,19 @@
 import React,{Component} from 'react';
-import {
-  FillIntroContainer,
-  FlexSection,
-  Flex
-} from '../../common/styledComponents/containers';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getResearchStructure} from '../../redux/actions/';
 import Loading from '../../common/components/loadingScreen';
-import Paper from 'material-ui/Paper';
 import {
-  MediumHeading,
   IntroTextParagraph
 } from '../../common/styledComponents/typography';
 import Button from 'material-ui/Button';
 import {Link} from 'react-router-dom';
+import Grid from 'material-ui/Grid';
+import {
+  CardWrapper,
+  CardHeader,
+  CardBody
+} from '../../common/styledComponents/card';
 
 export class FillLanding extends Component {
     componentDidMount() {
@@ -25,27 +24,29 @@ export class FillLanding extends Component {
       if(!this.props.isLoaded) return <Loading/>
       if(!this.props.isLoaded) return <Loading/>
       return (
-          <FlexSection style={{marginLeft: 'auto', marginRight: 'auto'}}>
-            <FillIntroContainer auto horizontalCenter verticalCenter>
-              <Paper style={{padding: 10}} square>
-                <MediumHeading>
-                  {this.props.title}
-                </MediumHeading>
-                <IntroTextParagraph>
-                  {this.props.introText && this.props.introText.split('\n').map((item, key) => (
-                    <span key={key}>{item}<br/></span>
-                  ))}
-                </IntroTextParagraph>
-                <Flex horizontalCenter>
-                  <Link to='/fill/0'>
-                    <Button raised color='primary'>
-                      Vyplnit dotazník
-                    </Button>
-                  </Link>
-                </Flex>
-              </Paper>
-            </FillIntroContainer>
-          </FlexSection>
+        <Grid item xs={12} sm={12} md={8} lg={6} xl={6}>
+          <CardWrapper>
+            <CardHeader>
+              <h2>{this.props.title}</h2>
+            </CardHeader>
+            <CardBody>
+              <IntroTextParagraph>
+                {this.props.introText && this.props.introText.split('\n').map((item, key) => (
+                  <span key={key}>{item}<br/></span>
+                ))}
+              </IntroTextParagraph>
+              <Grid container spacing={0} justify='center' direction='row' alignItems='center'>
+                <Grid item>
+                    <Link to='/fill/0'>
+                      <Button raised color='primary'>
+                        Vyplnit dotazník
+                      </Button>
+                    </Link>
+                </Grid>
+              </Grid>
+            </CardBody>
+          </CardWrapper>
+        </Grid>
       );
     }
 }

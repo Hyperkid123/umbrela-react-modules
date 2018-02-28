@@ -7,6 +7,7 @@ import QuestionsNavigation from './components/questionsNavigation';
 import {Route} from 'react-router-dom'
 import QuestionsContainer from './questionsContainer';
 import { withRouter } from 'react-router-dom';
+import Grid from 'material-ui/Grid';
 
 export class SheetsContainer extends Component {
 
@@ -22,11 +23,16 @@ export class SheetsContainer extends Component {
 
     render() {
       if(!this.props.questions) return null;
+      const {hideQuestions} = this.props;
         return (
-            <Flex className="class-name">
-                {!this.props.hideQuestions && <QuestionsNavigation onClick={() => {}} questions={this.props.questions}/>}
-                <Route path={`/question/:questionId`} component={QuestionsContainer}/>
-            </Flex>
+          <Grid container spacing={0}>
+            <Grid item xs={hideQuestions ? 0 : 12} sm={hideQuestions ? 0 : 12} md={hideQuestions ? 0 : 5} lg={hideQuestions ? 0 : 4} xl={hideQuestions ? 0 : 3}>
+              {!this.props.hideQuestions && <QuestionsNavigation onClick={() => {}} questions={this.props.questions}/>}
+            </Grid>
+            <Grid xs={12} sm={12} md={hideQuestions ? 12 : 7} lg={hideQuestions ? 12 : 8} xl={hideQuestions ? 12 : 9}>
+              <Route path={`/question/:questionId`} component={QuestionsContainer}/>
+            </Grid>
+          </Grid>
         );
     }
 }

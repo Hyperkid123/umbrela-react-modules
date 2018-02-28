@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import grey from 'material-ui/colors/grey';
 import red from 'material-ui/colors/red';
-import deepOrange from 'material-ui/colors/deepOrange'
+import blue from 'material-ui/colors/blue'
+
+const breakPoints = {
+  sm: `600px`,
+  md: `960px`,
+  lg: `1280px`,
+  xl: `1920px`,
+}
 
 export const Flex = styled.div`
   width: ${props => props.auto ? 'auto' : '100%'};
@@ -99,12 +106,19 @@ export const OptionsList = styled.ul`
 `
 
 export const OptionItemWrapper = Flex.extend`
-  > div:not(:first-of-type){
-    display: none !important;
-  }
-  &:hover{
+  @media (max-width: ${breakPoints.md}) {
     > div:not(:first-of-type){
       display: block !important;
+    }
+  }
+  @media (min-width: ${breakPoints.md}) {
+    > div:not(:first-of-type){
+      display: none !important;
+    }
+    &:hover{
+      > div:not(:first-of-type){
+        display: block !important;
+      }
     }
   }
 `
@@ -150,6 +164,9 @@ export const OrderQuestionItem = styled.div`
   align-items: center;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  span {
+    word-break: break-all;
+  }
   > svg{
     opacity: 0;
   }
@@ -239,7 +256,7 @@ export const PaginationsListItem = styled.li`
     border: 1px solid ${grey[300]};
     border-right: none;
     border-radius: 0;
-    background-color: ${props => props.disabled ? 'transparent' : props.active ? deepOrange[500] : 'white'};
+    background-color: ${props => props.disabled ? 'transparent' : props.active ? blue[500] : 'white'};
     color ${props => props.active ? 'white' : 'black'};
     min-width: 48px;
   }
@@ -257,7 +274,7 @@ export const FillIntroContainer = Flex.extend`
 `
 
 export const FillSheetHeaderContainer = styled.div`
-  border-bottom: 1px solid ${deepOrange[500]};
+  border-bottom: 1px solid ${blue[500]};
   display: flex;
   width: 100%;
 `
@@ -265,11 +282,11 @@ export const QuestionFillListContainer = styled.ol`
     list-style-type: none;
     padding: 0;
 `
-export const QuestionListItem = styled.li`
+export const QuestionListItem = styled.div`
   counter-increment: step-counter;
   background: white;
   transition: all .3s linear;
-  border-top: 10px ${props => props.error ? deepOrange[500] : 'white'} solid;
+  border-top: 10px ${props => props.error ? blue[500] : 'white'} solid;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
   padding: 20px;
   margin-bottom: 15px;
@@ -284,7 +301,7 @@ export const QuestionListItem = styled.li`
     margin-right: 10px;
     font-size: 1em;
     font-weight: 100;
-    background-color: ${deepOrange[500]};
+    background-color: ${blue[500]};
     border-radius: 2px;
     color: white;
     font-weight: bold;
@@ -304,4 +321,14 @@ export const MenuItemEllipsisWrapper = styled.div`
   display: table;
   table-layout: fixed;
   width: 100%;
+`
+export const StatusBarList = styled.ul `
+  list-style: none;
+  li {
+    float: left;
+  }
+  li:last-child {
+    float: right;
+    padding-right: 1em;
+  }
 `

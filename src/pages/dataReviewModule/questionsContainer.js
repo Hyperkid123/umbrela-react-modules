@@ -4,10 +4,12 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import LoadingScreen from '../../common/components/loadingScreen';
-import {Flex, FlexSection} from '../../common/styledComponents/containers';
-import {SmallHeading} from '../../common/styledComponents/typography';
 import Chart from './components/chart'
-import { Scrollbars } from 'react-custom-scrollbars';
+import {
+  CardWrapper,
+  CardHeader,
+  CardBody
+} from '../../common/styledComponents/card';
 
 export class QuestionsContainer extends Component {
 
@@ -28,12 +30,11 @@ export class QuestionsContainer extends Component {
       const chartData = questionData.get(parseInt(this.props.match.params.questionId, 10));
       const question = questions[this.props.match.params.questionId];
       return (
-          <Flex>
-            <FlexSection fullWidth autoHeight>
-              <Scrollbars>
-                <Flex column style={{marginTop: 10}}>
-                  <SmallHeading>{question.title}</SmallHeading>
-                </Flex>
+            <CardWrapper transparent>
+              <CardHeader transparent>
+                {question.title}
+              </CardHeader>
+              <CardBody transparent>
                 <Chart
                   showLegend={this.props.ui.hideChartlegend}
                   chartType={this.props.ui.chartType}
@@ -41,9 +42,8 @@ export class QuestionsContainer extends Component {
                   question={question}
                   questionType={question.type}
                 />
-              </Scrollbars>
-            </FlexSection>
-          </Flex>
+              </CardBody>
+            </CardWrapper>
       );
     }
 }

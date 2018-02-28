@@ -6,6 +6,11 @@ import {Flex, MenuContainer, MenuList, FlexSection} from '../../../common/styled
 import Paper from 'material-ui/Paper'
 import {SmallHeading} from '../../../common/styledComponents/typography';
 import {MenuListItem} from './navigationComponents';
+import {
+  CardWrapper,
+  CardHeader,
+  CardBody
+} from '../../../common/styledComponents/card';
 
 class QuestionsNavigation extends Component{
 
@@ -32,24 +37,16 @@ class QuestionsNavigation extends Component{
 
   render(){
     return(
-      <FlexSection autoHeight minWidth={300}>
-        <Flex grow>
-          <Paper square style={{width: '100%'}}>
-            <MenuContainer>
-            <SmallHeading>
-              Otázky
-            </SmallHeading>
-            <Scrollbars
-              style={{height: 'calc(100vh - 250px)'}}
-            >
-              <MenuList>
-                {this.renderNavigationItems()}
-              </MenuList>
-            </Scrollbars>
-          </MenuContainer>
-          </Paper>
-        </Flex>
-      </FlexSection>
+      <CardWrapper>
+        <CardHeader>
+          Otázky
+        </CardHeader>
+        <CardBody>
+          <MenuList>
+            {this.renderNavigationItems()}
+          </MenuList>
+        </CardBody>
+      </CardWrapper>
     );
   }
 }

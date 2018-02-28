@@ -1,9 +1,6 @@
 import React,{Component} from 'react';
 import '../../common/globalStyles';
-import {
-  ViewContainer,
-  Flex,
-} from '../../common/styledComponents/containers';
+import Grid from 'material-ui/Grid';
 import {
   HashRouter as Router,
   Route
@@ -13,13 +10,11 @@ import ReviewHome from './reviewHome';
 export default class DataReviewModule extends Component {
   render() {
     return (
-      <ViewContainer>
-        <Flex grow column>
-          <Router>
-            <Route path='/' component={ReviewHome}/>
-          </Router>
-        </Flex>
-      </ViewContainer>
+      <Grid item xs={12}>
+        <Router>
+          <Route path='/' component={ReviewHome}/>
+        </Router>
+      </Grid>
     );
   }
 }

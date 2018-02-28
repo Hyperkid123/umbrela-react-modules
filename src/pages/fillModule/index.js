@@ -1,19 +1,12 @@
-import React,{Component} from 'react';
-import {ViewContainer} from '../../common/styledComponents/containers';
+import React from 'react';
 import Routes from './routes';
 import '../../common/globalStyles';
 import DNDContext from '../../common/components/dndContext';
 
-export default class FillModule extends Component {
-    componentWillMount() {
-    }
-    render() {
-          return (
-            <ViewContainer>
-              <DNDContext>
-                <Routes/>
-              </DNDContext>
-            </ViewContainer>
-          )
-      }
-  }
+const FillModule = () => (
+  <DNDContext>
+    <Routes/>
+  </DNDContext>
+)
+
+export default FillModule;

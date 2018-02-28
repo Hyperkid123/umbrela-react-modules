@@ -1,7 +1,5 @@
 import React,{Component} from 'react';
-import ScrollTopOnMount from '../../common/components/scrollTopOnMount';
 import {
-  Flex,
   FillSheetHeaderContainer
 } from '../../common/styledComponents/containers';
 import {SheetFillTitle, SheetFillCounter} from '../../common/styledComponents/typography';
@@ -12,7 +10,8 @@ import {Link, Redirect} from 'react-router-dom';
 import { withRouter } from 'react-router';
 import Button from 'material-ui/Button';
 import QuestionFillList from './components/questionFillList';
-import {validateAnswers} from '../../common/validator'
+import {validateAnswers} from '../../common/validator';
+import Grid from 'material-ui/Grid';
 
 const scrollOptions = {
     block: 'start',
@@ -88,21 +87,32 @@ export class SheetFill extends Component {
   render() {
     if(!this.props.isLoaded || !this.props.filters) return <Redirect to='/'/>
     const sheetNumber = parseInt(this.props.match.params.sheetId, 10) + 1
-      return (
-          <Flex horizontalCenter column>
-            <ScrollTopOnMount/>
-            <Flex>
+    return (
+        <Grid item xs={12}>
+          <Grid container spacing={0} alignItems='center' justify='center'>
+            <Grid item xs={12} sm={12} md={8} lg={8} xl={6}>
               <FillSheetHeaderContainer>
                 <SheetFillTitle>{this.props.activeSheet.sheetTitle}</SheetFillTitle>
                 <SheetFillCounter>{sheetNumber}/{this.props.sheetCount}</SheetFillCounter>
               </FillSheetHeaderContainer>
-            </Flex>
-            <QuestionFillList errors={this.state.errors} questions={this.props.activeSheet.questions} filters={this.props.filters}/>
-            <Flex horizontalCenter style={{marginBottom: 10}}>
-              {this.renderPrevButton()}
-              {this.renderNextButton()}
-            </Flex>
-          </Flex>
+            </Grid>
+          </Grid>
+          <Grid container spacing={0}>
+            <Grid item xs={12}>
+              <QuestionFillList errors={this.state.errors} questions={this.props.activeSheet.questions} filters={this.props.filters}/>
+            </Grid>
+            <Grid item xs={12} style={{marginBottom: 10}}>
+              <Grid container spacing={0} justify='center' direction='row' alignItems='center'>
+                <Grid item>
+                  {this.renderPrevButton()}
+                </Grid>
+                <Grid item>
+                  {this.renderNextButton()}
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       );
   }
 }

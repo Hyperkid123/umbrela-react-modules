@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
 import {
-  MenuContainer,
-  FlexSection,
   MenuList,
 } from '../../common/styledComponents/containers';
-import { Scrollbars } from 'react-custom-scrollbars';
+import {
+  CardWrapper,
+  CardHeader,
+  CardBody
+} from '../../common/styledComponents/card';
 import {SmallHeading} from '../../common/styledComponents/typography';
 import {MenuListItem} from '../../common/components/menuListIcons';
-import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import ActionAdd from 'material-ui-icons/Add';
 import SheetDraggableCard from './sheetDraggableCard';
@@ -57,26 +58,22 @@ class SheetMenu extends Component {
           return <SmallHeading>Loading</SmallHeading>
         }
         return (
-          <FlexSection minWidth={300}>
-            <Paper square>
-              <MenuContainer>
-                <SmallHeading>Arhy</SmallHeading>
-                <Scrollbars
-                  style={{height: 'calc(100vh - 250px)'}}
-                >
-                  {!this.props.hideNewSheet &&
-                    <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
-                      <ActionAdd/>
-                      Nový arch
-                    </Button>
-                  }
-                  <MenuList>
-                    {this.renderSheets()}
-                  </MenuList>
-                </Scrollbars>
-              </MenuContainer>
-            </Paper>
-          </FlexSection>
+          <CardWrapper>
+            <CardHeader>
+              Archy
+            </CardHeader>
+            <CardBody>
+              {!this.props.hideNewSheet &&
+                <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
+                  <ActionAdd/>
+                  Nový arch
+                </Button>
+              }
+              <MenuList>
+                {this.renderSheets()}
+              </MenuList>
+            </CardBody>
+          </CardWrapper>
         );
     }
 }

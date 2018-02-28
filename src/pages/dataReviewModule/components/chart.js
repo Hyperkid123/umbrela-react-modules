@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import {Flex} from '../../../common/styledComponents/containers';
 import LegendTable from './legendTable';
 import DivideQuestion from './divideQuestion';
+import Grid from 'material-ui/Grid';
 
 import {
   OPEN_QUESTION,
@@ -39,9 +40,7 @@ export default class Chart extends Component {
       case OPEN_QUESTION:
       case OPEN_WITH_IMAGE_QUESTIONS:
         return (
-          <Flex>
-            <OpenQuestion question={this.props.question} data={this.props.data}/>
-          </Flex>
+          <OpenQuestion question={this.props.question} data={this.props.data}/>
         );
       case CLOSE_QUESTION:
       case CLOSE_MULTI_QUESTION:
@@ -56,16 +55,20 @@ export default class Chart extends Component {
       case MEDIA_WITH_OPEN_QUESTION:
       case MEDIA_MULTI_WITH_OPEN_QUESTION:
         return (
-            <Flex>
-              <CloseQuestions
-                hasImagePreview={hasImagePreview(this.props.question.type)}
-                showLegend={this.props.showLegend}
-                chartType={this.props.chartType}
-                data={this.props.data.barData}
-                url={this.props.question.url}
-              />
-              <LegendTable isOptionImage={isOptionImage(this.props.question.type)} data={this.props.data}/>
-            </Flex>
+            <Grid container>
+              <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                <CloseQuestions
+                  hasImagePreview={hasImagePreview(this.props.question.type)}
+                  showLegend={this.props.showLegend}
+                  chartType={this.props.chartType}
+                  data={this.props.data.barData}
+                  url={this.props.question.url}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                <LegendTable isOptionImage={isOptionImage(this.props.question.type)} data={this.props.data}/>
+              </Grid>
+            </Grid>
         );
       case  MATRIX_MULTI_IMAGE_QUESTION:
       case  MATRIX_MULTI_QUESTION:
