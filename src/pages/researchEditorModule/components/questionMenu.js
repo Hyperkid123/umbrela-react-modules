@@ -17,6 +17,7 @@ import {
   dragQuestionCard,
   remapQuestions,
 } from '../../../redux/actions';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class QuestionMenu extends Component {
 
@@ -48,7 +49,7 @@ class QuestionMenu extends Component {
               label={question.title}
               active={!this.props.draggingElement && this.props.activeQuestionId === question.questionId}
               dragging={this.props.draggingElement}
-              tooltipLabel="Tažením můžete změnit pořadí otázky"
+              tooltipLabel={this.props.translate('questions.drag')}
             />
           </SheetDraggableCard>
         )
@@ -63,7 +64,7 @@ class QuestionMenu extends Component {
           <FlexSection autoHeight>
             <Flex column grow>
                 <MenuContainer fullWidth>
-                  <SmallHeading>Otázky</SmallHeading>
+                  <SmallHeading>{this.props.translate('questions.questions')}</SmallHeading>
                   <MenuList>
                     {this.renderQuestions()}
                   </MenuList>
@@ -76,12 +77,14 @@ class QuestionMenu extends Component {
 
 
 
-function mapStateToProps({editor, ui, questions}) {
+function mapStateToProps({editor, ui, questions, locale}) {
   return {
     activeSheetId: editor.activeSheet ? editor.activeSheet.sheetId : null,
     draggingElement: ui.dragging,
     questions: questions.questions,
     activeQuestionId: questions.activeQuestion ? questions.activeQuestion.questionId : null,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 
