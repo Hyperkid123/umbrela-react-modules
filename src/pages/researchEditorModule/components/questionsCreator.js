@@ -8,7 +8,6 @@ import {
 
 import {
   BaseTypes,
-  QuestionTypes,
 } from '../../../common/questionTypes';
 
 
@@ -19,6 +18,7 @@ import {
 } from '../../../redux/actions';
 
 import QuestionMenu from './questionMenu';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class QuestionsCreator extends Component {
 
@@ -57,7 +57,7 @@ class QuestionsCreator extends Component {
           key={i}
           onClick={() => this.handleCreateNewQuestion(type)}
         >
-          {QuestionTypes[type]}
+          {this.props.translate(`questions.baseTypes.${type}`)}
         </MenuItem>
       })
     }
@@ -74,7 +74,7 @@ class QuestionsCreator extends Component {
               <Flex>
                 <Button onClick={this.handleClick}>
                   <ActionAdd/>
-                  Přidat otázku
+                  {this.props.translate('questions.addQuestion')}
                 </Button>
                   <Menu
                     open={this.state.open}
@@ -92,10 +92,12 @@ class QuestionsCreator extends Component {
     }
 }
 
-function mapStateToProps({editor}) {
+function mapStateToProps({editor, locale}) {
   return {
     activeSheetId: editor.activeSheet ? editor.activeSheet.sheetId : null,
     researchId: editor.researchId,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

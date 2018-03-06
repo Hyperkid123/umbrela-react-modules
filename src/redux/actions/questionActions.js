@@ -16,11 +16,11 @@ import {
   STORE_QUESTIONS,
   RECEIVE_QUESTION_ANSWERS
 } from './actionTypes';
-
 import {HasOpenQuestion} from '../../common/questionTypes';
 import {findOpenOption} from '../../common/utils';
 import {dragEnd} from './';
 import {synchronizeOption, deleteOption, finishFetch, fetchFailed} from './';
+import { getTranslate } from 'react-localize-redux';
 
 function requestQuestions(){
   return {
@@ -78,12 +78,14 @@ export function loadQuestions(sheetId){
 }
 
 export function createNewQuestion(researchId, sheetId, questionType) {
-  return dispatch => {
+  return (dispatch, getState) => {
     dispatch(requestQuestions());
+    const locale = getState().locale;
+    const translate = getTranslate(locale);
     return fetch(`${window.base}${researchId}/create-question`, {
       method: 'POST',
       body: JSON.stringify({
-        title: '(Prosím zadejte název otázky)',
+        title: translate('questions.titlePlaceholder'),
         questionType: questionType,
         sheetId: sheetId,
       }),
@@ -253,8 +255,10 @@ export function changeQuestionType(questionType) {
       const activeQuestion = getState().questions.activeQuestion;
       const openOption = findOpenOption(activeQuestion.options)
       if(HasOpenQuestion(questionType) && !openOption) {
+        const locale = getState().locale;
+        const translate = getTranslate(locale);
         const newOption = {
-          title: 'Vlastní odpověď',
+          title: translate('questions.customAnswer'),
           optionOrder: activeQuestion.options.length,
           optionType: 'OpenOption',
           questionId: activeQuestion.questionId,

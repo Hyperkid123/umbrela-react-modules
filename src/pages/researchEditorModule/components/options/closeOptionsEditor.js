@@ -14,6 +14,7 @@ import {
 import {
   LABEL_LENGTH,
 } from '../../../../common/constants';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 export class CloseOptionsEditor extends Component {
 
@@ -48,13 +49,14 @@ export class CloseOptionsEditor extends Component {
     }
 
     renderOpenOption = () => {
+      const {translate} = this.props;
       const option = findOpenOption(this.props.options);
       if(option) {
         return (
           <Flex column>
             <TextField
               fullWidth
-              placeholder='Vlastní opověď'
+              placeholder={translate('questions.customAnswer')}
               value={option.title}
               onChange={(event) => this.props.changeOptionTitle(event.target.value, option.optionOrder)}
               onBlur={() => {this.updateOption(option)}}
@@ -63,7 +65,7 @@ export class CloseOptionsEditor extends Component {
             />
             <TextFieldComent
               error={option.title.length > LABEL_LENGTH}
-              label={`${option.title.length} z ${LABEL_LENGTH} znaků`}
+              label={`${option.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
               alignRight
             />
           </Flex>
@@ -86,11 +88,13 @@ export class CloseOptionsEditor extends Component {
     }
 }
 
-function mapStateToProps({questions, options, ui}) {
+function mapStateToProps({questions, options, ui, locale}) {
   return{
     activeQuestion: questions.activeQuestion,
     options: options.options,
     draggingElement: ui.dragging,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {Flex, PreviewImage, CustomHelpWrapper, CustomHelpLine} from '../../../../common/styledComponents/containers';
 import {FillQuestionheading} from '../../../../common/styledComponents/typography';
 import {HasImagePreview, HasNotOptions, IsOrderQuestion, HasScalePoints, IsMatrixQuestion} from '../../../../common/questionTypes';
@@ -14,6 +13,7 @@ import OrderPreview from './orderPreview';
 import DividePreview from './dividePreview';
 import MatrixPreview from './matrixPreview';
 import {ANSWER_LENGTH} from '../../../../common/constants';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 
 class QuestionPreview extends Component {
@@ -47,18 +47,19 @@ class QuestionPreview extends Component {
     }
 
     renderOpenOption = () => {
+      const {translate} = this.props;
       return (
         <Flex column grow>
           <TextField
             value={this.state.openAnswer}
             onChange={(event) => this.setOpenAnswer(event.target.value)}
             fullWidth
-            placeholder='Napište odpověď'
+            placeholder={translate('questions.insertAnswer')}
             margin='normal'
           />
           <TextFieldComent
             error={this.state.openAnswer.length > ANSWER_LENGTH}
-            label={`${this.state.openAnswer.length} z ${ANSWER_LENGTH} znaků`}
+            label={`${this.state.openAnswer.length} ${translate('common.from')} ${ANSWER_LENGTH} ${translate('common.characters')}`}
             alignRight
           />
         </Flex>
@@ -98,17 +99,12 @@ class QuestionPreview extends Component {
     }
 }
 
-function mapStateToProps({questions, options}) {
+function mapStateToProps({questions, options, locale}) {
   return{
       activeQuestion: questions.activeQuestion,
-      options: options.options
+      options: options.options,
+      translate: getTranslate(locale),
+      currentLanguage: getActiveLanguage(locale).code,
   }
 }
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-
-  },dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionPreview)
+export default connect(mapStateToProps)(QuestionPreview)

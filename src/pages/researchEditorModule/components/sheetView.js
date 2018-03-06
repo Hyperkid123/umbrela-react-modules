@@ -30,6 +30,7 @@ import { FormControl } from 'material-ui/Form';
 import EditIcon from 'material-ui-icons/ModeEdit';
 
 import QuestionsCreator from './questionsCreator';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class SheetView extends Component {
     constructor(props){
@@ -71,6 +72,7 @@ class SheetView extends Component {
 
     render() {
       if(this.props.activeSheet) {
+        const {translate} = this.props;
         return (
           <Grid item xs={12}>
             <CardWrapper>
@@ -92,7 +94,7 @@ class SheetView extends Component {
               </InputHeader>
                 <TextFieldComent
                   error={this.props.activeSheet.title.length >= LABEL_LENGTH}
-                  label={`${this.props.activeSheet.title.length} z ${LABEL_LENGTH} znaků`}
+                  label={`${this.props.activeSheet.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
                   alignRight
                 />
               <CardControlls>
@@ -100,7 +102,7 @@ class SheetView extends Component {
                   <Grid item>
                     <Button raised onClick={this.handleDeleteOpen}>
                       <ActionDelete/>
-                      Smazat
+                      {translate('sheets.delete')}
                     </Button>
                   </Grid>
                 </Grid>
@@ -115,21 +117,29 @@ class SheetView extends Component {
               open={this.state.showDelete}
               onClose={this.handleDeleteClose}
             >
-              Smazat arch <DeleteNotification>{this.props.activeSheet.title}</DeleteNotification>?
-              <Button
-                color='secondary'
-                onClick={this.handleDeleteSheet}
-              >
-                <ActionDelete/>
-                Smazat
-              </Button>
-              <Button
-                raised
-                color='primary'
-                onClick={this.handleDeleteClose}
-              >
-                Zpět
-              </Button>
+              <Grid container justify='center' maxWidth={false} style={{padding: 16}}>
+                <Grid item xs={12}>
+                  {translate('sheets.delete')} <DeleteNotification>{this.props.activeSheet.title}</DeleteNotification>?
+                </Grid>
+                <Grid item>
+                  <Button
+                    raised
+                    color='secondary'
+                    onClick={this.handleDeleteSheet}
+                    >
+                      {translate('common.delete')}
+                    </Button>
+                </Grid>
+                <Grid item>
+                  <Button
+                    raised
+                    color='primary'
+                    onClick={this.handleDeleteClose}
+                    >
+                      {translate('common.cancel')}
+                    </Button>
+                </Grid>
+              </Grid>
             </Dialog>
           </Grid>
         );
@@ -140,9 +150,11 @@ class SheetView extends Component {
     }
 }
 
-function mapStateToProps({editor}) {
+function mapStateToProps({editor, locale}) {
   return {
     activeSheet: editor.activeSheet,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

@@ -20,6 +20,7 @@ import {
   dragSheetCard,
   remapSheets,
 } from '../../redux/actions';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class SheetMenu extends Component {
 
@@ -43,12 +44,13 @@ class SheetMenu extends Component {
           label={sheet.title}
           active={!this.props.draggingElement && this.props.activeSheetId === sheet.sheetId}
           dragging={this.props.draggingElement}
-          tooltipLabel="Tažením můžete změnit pořadí archu"
+          tooltipLabel={this.props.translate('sheets.drag')}
           preventDrag={this.props.preventDrag}
         />
       </SheetDraggableCard>
     ))
     renderSheets = () => {
+      const {translate} = this.props;
       return this.props.sheets.map((sheet, i) => {
         return (
             <MenuListItem
@@ -58,7 +60,7 @@ class SheetMenu extends Component {
               label={sheet.title}
               active={!this.props.draggingElement && this.props.activeSheetId === sheet.sheetId}
               dragging={this.props.draggingElement}
-              tooltipLabel="Tažením můžete změnit pořadí archu"
+              tooltipLabel={translate('sheets.drag')}
               preventDrag={this.props.preventDrag}
             />
         )
@@ -66,19 +68,20 @@ class SheetMenu extends Component {
     }
 
     render() {
+      const {translate} = this.props;
         if(!this.props.sheets) {
           return <SmallHeading>Loading</SmallHeading>
         }
         return (
           <CardWrapper>
             <CardHeader>
-              Archy
+              {translate('sheets.sheets')}
             </CardHeader>
             <CardBody>
               {!this.props.hideNewSheet &&
                 <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
                   <ActionAdd/>
-                  Nový arch
+                  {translate('sheets.newSheet')}
                 </Button>
               }
               <MenuList>
@@ -92,12 +95,14 @@ class SheetMenu extends Component {
 
 
 
-function mapStateToProps({editor, ui}) {
+function mapStateToProps({editor, ui, locale}) {
   return {
     sheets: editor.sheets,
     researchId: editor.researchId,
     activeSheetId: editor.activeSheet ? editor.activeSheet.sheetId : null,
     draggingElement: ui.dragging,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

@@ -1,34 +1,32 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {Flex} from '../../../../common/styledComponents/containers';
 import {SmallHeading,} from '../../../../common/styledComponents/typography';
 import {IsMatrixQuestion} from '../../../../common/questionTypes';
 import CloseOptionsEditor from './closeOptionsEditor';
 import MatrixOptionsEditor from './matrixOptionsEditor';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class OptionsBody extends Component {
 
     render() {
         return (
             <Flex column>
-                <SmallHeading withouthBorder>Možnosti</SmallHeading>
+                <SmallHeading withouthBorder>
+                  {this.props.translate('options.options')}
+                </SmallHeading>
                 {IsMatrixQuestion(this.props.questionType) ? <MatrixOptionsEditor/> : <CloseOptionsEditor/>}
             </Flex>
         );
     }
 }
 
-function mapStateToProps({questions}) {
+function mapStateToProps({questions, locale}) {
   return{
     questionType: questions.activeQuestion.questionType,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-
-  },dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(OptionsBody)
+export default connect(mapStateToProps)(OptionsBody)

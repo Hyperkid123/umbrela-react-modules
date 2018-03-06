@@ -25,27 +25,29 @@ import  {
   HasOptionsAsImage,
   CanHaveOptionAsImage,
 } from '../../../../common/questionTypes';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class QuestionTypeChanger extends Component {
 
 
     render() {
-        const {mandatory, hasCustomHelp, questionType} = this.props.activeQuestion;
-        const checkBoxStyle = {width: 'auto', whiteSpace: 'nowrap', marginRight: 10};
-        return (
+      const {translate} = this.props;
+      const {mandatory, hasCustomHelp, questionType} = this.props.activeQuestion;
+      const checkBoxStyle = {width: 'auto', whiteSpace: 'nowrap', marginRight: 10};
+      return (
             <Flex row grow wrap='true'>
               <FormGroup row style={{paddingLeft: 14}}>
               <FormControlLabel
                 control={
                   <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={mandatory} onChange={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
                 }
-                label='Povinná'
+                label={translate('questions.mandatory')}
               />
               <FormControlLabel
                 control={
                   <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={hasCustomHelp} onChange={(event, checked) => {this.props.setCustomHelp(checked)}}/>
                 }
-                label='Vlastní nápověda'
+                label={translate('questions.customHelp')}
               />
                 {CanHaveImagePreview(questionType) ?
                   <FormControlLabel
@@ -55,7 +57,7 @@ class QuestionTypeChanger extends Component {
                         onChange={() => this.props.changeQuestionType(SwitchToImagePreview[questionType])}
                       />
                     }
-                    label='Obrázek v zadání'
+                    label={translate('questions.imageEntry')}
                   />
                    : null}
                 {CanHaveMultipleAnswers(questionType) ?
@@ -66,7 +68,7 @@ class QuestionTypeChanger extends Component {
                         onChange={() => this.props.changeQuestionType(SwitchQuestionMultipleAnswers[questionType])}
                       />
                     }
-                    label='Více možností'
+                    label={translate('questions.multipleChoice')}
                   /> : null}
                 {CanHaveOpenQuestion(questionType) ?
                   <FormControlLabel
@@ -76,7 +78,7 @@ class QuestionTypeChanger extends Component {
                         onChange={() => this.props.changeQuestionType(SwitchQuestionOpenOption[questionType])}
                       />
                     }
-                    label='Vlastní opodvěd'
+                    label={translate('questions.customAnswer')}
                   />
                    : null}
                 {CanHaveOptionAsImage(questionType) ?
@@ -87,7 +89,7 @@ class QuestionTypeChanger extends Component {
                         onChange={() => this.props.changeQuestionType(SwitchOptionToImage[questionType])}
                       />
                     }
-                    label='Možnosti jsou obrázky'
+                    label={translate('questions.optionsImages')}
                   />
                   : null}
                 </FormGroup>
@@ -104,10 +106,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-function mapStateToProps({questions}) {
+function mapStateToProps({questions, locale}) {
   return{
     activeQuestion: questions.activeQuestion,
-    disableChange: questions.isFetching
+    disableChange: questions.isFetching,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

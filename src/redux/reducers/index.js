@@ -7,7 +7,8 @@ import optionsReducer from './optionsReducer';
 import qMethodReducer from './qMethodReducer';
 import dataReviewReducer from './dataReviewReducer';
 import filterReducer from './filterReducer';
-import answersReducer from './answersReducer'
+import answersReducer from './answersReducer';
+import { localeReducer as locale } from 'react-localize-redux';
 
 const rootReducer = combineReducers({
   research: researchReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   data: dataReviewReducer,
   filters: filterReducer,
   answers: answersReducer,
+  locale,
 });
 
 export default rootReducer;

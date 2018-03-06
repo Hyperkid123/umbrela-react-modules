@@ -7,6 +7,7 @@ import NewOption from './newOption';
 import {getOptions, deleteOption} from '../../../../redux/actions';
 import OptionEditorItem from './optionEditorItem';
 import {divideMatrixOptions} from '../../../../common/utils';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 export class MatrixOptionsEditor extends Component {
     componentWillMount() {
@@ -35,25 +36,26 @@ export class MatrixOptionsEditor extends Component {
     }
 
     render() {
+      const {translate} = this.props;
         const {rows, columns} = divideMatrixOptions(this.props.options);
         return (
           <Flex>
             <Flex column>
               <ListColumn>
-                <SmallHeading>Sloupce</SmallHeading>
+                <SmallHeading>{translate('questions.columns')}</SmallHeading>
                 <OptionsList>
                   {this.renderOptionsList(columns)}
                 </OptionsList>
-                <NewOption placeholder='Nový sloupec' optionType='ColumnOption'/>
+                <NewOption placeholder={translate('questions.newColumn')} optionType='ColumnOption'/>
               </ListColumn>
             </Flex>
             <Flex column>
               <ListColumn>
-                <SmallHeading>Řádky</SmallHeading>
+                <SmallHeading>{translate('questions.rows')}</SmallHeading>
                 <OptionsList>
                   {this.renderOptionsList(rows)}
                 </OptionsList>
-                <NewOption placeholder='Nový řádek' optionType='RowOption'/>
+                <NewOption placeholder={translate('questions.newRow')} optionType='RowOption'/>
               </ListColumn>
             </Flex>
           </Flex>
@@ -61,11 +63,13 @@ export class MatrixOptionsEditor extends Component {
     }
 }
 
-function mapStateToProps({questions, options, ui}) {
+function mapStateToProps({questions, options, ui, locale}) {
   return{
     activeQuestion: questions.activeQuestion,
     options: options.options,
-    draggingElement: ui.dragging
+    draggingElement: ui.dragging,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

@@ -14,7 +14,6 @@ import {
   TextFieldComent
 } from '../../../common/components/labels';
 
-import TextField from 'material-ui/TextField';
 import ActionDelete from 'material-ui-icons/DeleteForever';
 import Dialog from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
@@ -32,6 +31,7 @@ import { FormControl } from 'material-ui/Form';
 import EditIcon from 'material-ui-icons/ModeEdit';
 
 import QuestionBody from './questions/questionBody';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class QuestionView extends Component {
     constructor(props){
@@ -68,6 +68,7 @@ class QuestionView extends Component {
     }
 
     render() {
+      const {translate} = this.props;
       if(this.props.activeQuestion) {
         return (
           <Grid item xs={12}>
@@ -88,7 +89,7 @@ class QuestionView extends Component {
               </InputHeader>
                 <TextFieldComent
                   error={this.props.activeQuestion.title.length >= LABEL_LENGTH}
-                  label={`${this.props.activeQuestion.title.length} z ${LABEL_LENGTH} znaků`}
+                  label={`${this.props.activeQuestion.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
                   alignRight
                 />
               <CardControlls>
@@ -96,7 +97,7 @@ class QuestionView extends Component {
                   <Grid item>
                     <Button raised onClick={this.handleDeleteOpen}>
                       <ActionDelete/>
-                      Smazat otázku
+                      {translate('questions.delete')}
                     </Button>
                   </Grid>
                 </Grid>
@@ -109,21 +110,35 @@ class QuestionView extends Component {
               open={this.state.showDelete}
               onClose={this.handleDeleteClose}
             >
-              Smazat arch <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
-              <Button
-                color='secondary'
-                onClick={this.handleDeleteQuestion}
+              <Grid
+                container
+                justify='center'
+                spacing={16}
+                style={{padding: 16}}
               >
-                <ActionDelete/>
-                Smazat
-              </Button>
-              <Button
-                raised
-                color='primary'
-                onClick={this.handleDeleteClose}
-              >
-                Zpět
-              </Button>
+                <Grid item xs={12}>
+                  {translate('questions.delete')} <DeleteNotification>{this.props.activeQuestion.title}</DeleteNotification>?
+                </Grid>
+                <br/>
+                <Grid item>
+                  <Button
+                    raised
+                    color='secondary'
+                    onClick={this.handleDeleteQuestion}
+                    >
+                      {translate('common.delete')}
+                    </Button>
+                </Grid>
+                <Grid item>
+                  <Button
+                    raised
+                    color='primary'
+                    onClick={this.handleDeleteClose}
+                    >
+                      {translate('common.cancel')}
+                    </Button>
+                </Grid>
+              </Grid>
             </Dialog>
           </Grid>
         );
@@ -134,10 +149,12 @@ class QuestionView extends Component {
     }
 }
 
-function mapStateToProps({editor, questions}) {
+function mapStateToProps({editor, questions, locale}) {
   return {
     activeSheet: editor.activeSheet,
-    activeQuestion: questions.activeQuestion
+    activeQuestion: questions.activeQuestion,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

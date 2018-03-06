@@ -29,6 +29,7 @@ import {
 
 import QuestionPreview from './questionPreview';
 import OptionsBody from '../options/optionsBody';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class QuestionBody extends Component {
 
@@ -56,11 +57,12 @@ class QuestionBody extends Component {
     }
 
     render() {
-        const {questionType, customHelp, hasCustomHelp, url, scalePoints} = this.props.activeQuestion;
-        const {tab} = this.state;
-        return (
+      const {translate} = this.props;
+      const {questionType, customHelp, hasCustomHelp, url, scalePoints} = this.props.activeQuestion;
+      const {tab} = this.state;
+      return (
             <Flex column>
-              <Chip style={{marginBottom: 5}} label={`Typ otázky: ${QuestionTypes[questionType]}`}/>
+              <Chip style={{marginBottom: 5}} label={`${translate('questions.questionType')}: ${translate(`questions.questionNames.${questionType}`)}`}/>
               <QuestionTypeChanger/>
               <AppBar color='default' position='static'>
                 <Tabs
@@ -71,8 +73,8 @@ class QuestionBody extends Component {
                   centered
                   indicatorColor='primary'
                   >
-                    <Tab color='secondary' fullWidth label='Editace' icon={<ModeEditIcon/>}/>
-                    {!HasNotOptions(questionType) ? <Tab fullWidth label='Náhled' icon={<PreviewIcon/>}/> : null}
+                    <Tab color='secondary' fullWidth label={translate('common.edit')} icon={<ModeEditIcon/>}/>
+                    {!HasNotOptions(questionType) ? <Tab fullWidth label={translate('common.preview')} icon={<PreviewIcon/>}/> : null}
                   </Tabs>
               </AppBar>
               {tab === 0 &&
@@ -84,7 +86,7 @@ class QuestionBody extends Component {
                       value={customHelp}
                       onChange={(event) => this.props.changeCustomHelp(event.target.value)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
-                      label='Vlastní nápověda'
+                      label={translate('questions.customHelp')}
                       margin='normal'
                       inputRef={(input) => this.customHelpInput = input}
                     />
@@ -96,7 +98,7 @@ class QuestionBody extends Component {
                       margin='normal'
                       type='number'
                       value={scalePoints}
-                      label='Celkový počet bodů'
+                      label={translate('questions.pointsTotal')}
                       onChange={(event) => this.props.changeScalePoints(event.target.value)}
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
                       onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
@@ -110,13 +112,13 @@ class QuestionBody extends Component {
                         name="imagePreviewInput"
                         value={url || ''}
                         fullWidth
-                        label='URL adresa k obrázku'
+                        label={translate('questions.url')}
                         onChange={(event) => this.props.chnageQuestionUrl(event.target.value)}
                         onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
                       />
                       <TextFieldComent
                         error={!validateUrl(url)}
-                        label={validateUrl(url) ? null : 'Toto není validní URL adresa!'}
+                        label={validateUrl(url) ? null : translate('questions.invalidUrl')}
                         alignRight
                       />
                     </Flex>
@@ -132,9 +134,11 @@ class QuestionBody extends Component {
     }
 }
 
-function mapStateToProps({questions}) {
+function mapStateToProps({questions, locale}) {
   return{
-    activeQuestion: questions.activeQuestion
+    activeQuestion: questions.activeQuestion,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 
