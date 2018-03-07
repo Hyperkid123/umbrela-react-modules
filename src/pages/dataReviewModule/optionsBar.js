@@ -25,6 +25,7 @@ import {
    DOUGHNUT_CHART,
 } from '../../common/chartTypes';
 import Fade from 'material-ui/transitions/Fade';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 
 class OptionsBar extends Component {
@@ -41,14 +42,15 @@ class OptionsBar extends Component {
   handleMenuClose = () => this.setState({menuAnchor: null})
 
   render() {
+    const {translate} = this.props;
       return (
           <Flex>
             <Button onClick={this.props.switchSheets}>
-              {this.props.hideSheets ? 'Zobrazit archy' : 'Skrýt archy'}
+              {this.props.hideSheets ? translate('review.showSheets') : translate('review.hideSheets')}
               {this.props.hideSheets ? <ChevronRight/>: <ChevronLeft/>}
             </Button>
             <Button onClick={this.props.switchQuestions}>
-              {this.props.hideQuestions ? 'Zobrazit otázky' : 'Skrýt otázky'}
+              {this.props.hideQuestions ? translate('review.showQuestions') : translate('review.hideQuestions')}
               {this.props.hideQuestions ?  <ChevronRight/> : <ChevronLeft/>}
             </Button>
             <div style={{marginLeft: 'auto'}}>
@@ -59,12 +61,12 @@ class OptionsBar extends Component {
                     onChange={this.props.switchChartLegend}
                   />
                 }
-                label='Skrýt legendu grafu'
+                label={translate('review.hideLegend')}
               />
             </div>
             <Button onClick={this.handleMenuOpen}>
               <InsertChart/>
-              Typ grafu
+              {translate('review.chartType')}
             </Button>
             <Menu
               anchorEl={this.state.menuAnchor}
@@ -73,19 +75,19 @@ class OptionsBar extends Component {
               transition={Fade}
             >
               <MenuItem onClick={() => this.props.changeChartType(PIE_CHART)}>
-                Koláčový graf
+                {translate('review.chartTypes.pie')}
               </MenuItem>
               <MenuItem onClick={() => this.props.changeChartType(BAR_CHART)}>
-                Sloupcový graf
+                {translate('review.chartTypes.bar')}
               </MenuItem>
               <MenuItem onClick={() => this.props.changeChartType(LINE_CHART)}>
-                Čárový graf
+                {translate('review.chartTypes.line')}
               </MenuItem>
               <MenuItem onClick={() => this.props.changeChartType(POLAR_CHART)}>
-                Polar graf
+                {translate('review.chartTypes.polar')}
               </MenuItem>
               <MenuItem onClick={() => this.props.changeChartType(DOUGHNUT_CHART)}>
-                Doughnut graf
+                {translate('review.chartTypes.doughnut')}
               </MenuItem>
             </Menu>
           </Flex>
@@ -93,11 +95,13 @@ class OptionsBar extends Component {
     }
 }
 
-function mapStateToProps({ui}) {
+function mapStateToProps({ui, locale}) {
   return{
     hideSheets: ui.hideSheets,
     hideQuestions: ui.hideQuestions,
-    hideChartlegend: ui.hideChartlegend
+    hideChartlegend: ui.hideChartlegend,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

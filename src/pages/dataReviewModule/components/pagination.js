@@ -1,10 +1,9 @@
 import React,{Component} from 'react';
-import PropTypes from 'prop-types';
 import {PaginationsList, PaginationsListItem} from '../../../common/styledComponents/containers'
 import Button from 'material-ui/Button';
-import grey from 'material-ui/colors/grey';
+import { localize } from 'react-localize-redux';
 
-export default class Pagination extends Component {
+class Pagination extends Component {
 
   renderPageNumbers = () => {
     return this.props.pageNumbers.map((number, index) => {
@@ -24,13 +23,13 @@ export default class Pagination extends Component {
           <PaginationsList>
             <ChangePageButton
               onClick={() => this.props.pageClick(this.props.currentPage - 1)}
-              label='Prev'
+              label={this.props.translate('common.back')}
               disabled={this.props.currentPage === 1}
             />
             {this.renderPageNumbers()}
             <ChangePageButton
               onClick={() => this.props.pageClick(this.props.currentPage + 1)}
-              label='Next'
+              label={this.props.translate('common.next')}
               disabled={this.props.currentPage === this.props.pageNumbers[this.props.pageNumbers.length - 1]}
             />
           </PaginationsList>
@@ -45,3 +44,5 @@ const ChangePageButton = ({onClick, label, disabled, active}) => (
     </Button>
   </PaginationsListItem>
 )
+
+export default localize(Pagination, 'locale');

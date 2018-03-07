@@ -20,7 +20,8 @@ export default {
     "back": "Zpět",
     "cancel": "Zrušit",
     "next": "Další",
-    "submit": "Odeslat"
+    "submit": "Odeslat",
+    "search": "Vyhledat"
   },
   "options": {
     "options": "Možnosti",
@@ -95,5 +96,30 @@ export default {
       "learMore": "O projektu Umbrela se můžete dozvědět více",
       "here": "zde",
     }
+  },
+  "review": {
+    "showSheets": "Ukázat archy",
+    "showQuestions": "Ukázat otázky",
+    "hideSheets": "Skrýt archy",
+    "hideQuestions": "Skrýt otázky",
+    "hideLegend": "Skrýt legendu grafu",
+    "chartType": "Typ grafu",
+    "chartTypes": {
+      pie: "Koláčový graf",
+      bar: "Sloupcový graf",
+      line: "Čárový graf",
+      polar: "Polar graf",
+      doughnut: "Doughnut graf",
+    },
+    divideAttributes: {
+      avg: "Průměr",
+      option: "Možnost",
+      median: "Medián",
+      modus: "Modus"
+    },
+    numberOfResponses: "Počet odpovědí",
+    count: "Počet",
+    respondents: "Respondenti",
+    answersPerPage: "Odpovědi na stránku",
   }
 }

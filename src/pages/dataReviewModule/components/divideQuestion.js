@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import EnhancedTable from './sortableTable/enhancedTable';
 import Paper from 'material-ui/Paper';
+import { localize } from 'react-localize-redux';
 
-export default class DivideQuestion extends Component {
+class DivideQuestion extends Component {
 
   render() {
+    const {translate} = this.props;
     const data = [];
     let answerNumber = 0;
     this.props.data.data.forEach((value) => {
@@ -18,15 +20,17 @@ export default class DivideQuestion extends Component {
     });
     answerNumber = answerNumber / this.props.data.data.size;
     const columnData = [
-      {id: 'name', numeric: false, label: 'Možnost'},
-      {id: 'avg', numeric: true, label: 'Průměr'},
-      {id: 'med', numeric: true, label: 'Medián'},
-      {id: 'mod', numeric: true, label: 'Modus'}
+      {id: 'name', numeric: false, label: translate('review.divideAttributes.option')},
+      {id: 'avg', numeric: true, label: translate('review.divideAttributes.avg')},
+      {id: 'med', numeric: true, label: translate('review.divideAttributes.median')},
+      {id: 'mod', numeric: true, label: translate('review.divideAttributes.modus')}
     ]
     return (
       <Paper square>
-        <EnhancedTable data={data} columnData={columnData} answerCount={answerNumber}/>
+        <EnhancedTable footerTitle={translate('review.numberOfResponses')} data={data} columnData={columnData} answerCount={answerNumber}/>
       </Paper>
     );
   }
 }
+
+export default localize(DivideQuestion, 'locale');

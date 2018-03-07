@@ -20,7 +20,8 @@ export default {
     "back": "Back",
     "cancel": "Cancel",
     "next": "Next",
-    "submit": "Submit"
+    "submit": "Submit",
+    "search": "Search"
   },
   "options": {
     "options": "Options",
@@ -92,5 +93,30 @@ export default {
       "learMore": "You can learn more about the Umbrela project",
       "here": "here",
     }
+  },
+  "review": {
+    "showSheets": "Show sheets",
+    "showQuestions": "Show questions",
+    "hideSheets": "Hide sheets",
+    "hideQuestions": "Hide questions",
+    "hideLegend": "Hide chart legend",
+    "chartType": "Chart type",
+    "chartTypes": {
+      pie: "Pie chart",
+      bar: "Bar chart",
+      line: "Line chart",
+      polar: "Polar chart",
+      doughnut: "Doughnut chart",
+    },
+    divideAttributes: {
+      avg: "Average",
+      option: "Option",
+      median: "Median",
+      modus: "Modus"
+    },
+    numberOfResponses: "Number of responses",
+    count: "Count",
+    respondents: "Respondents",
+    answersPerPage: "Answers per page"
   }
 }

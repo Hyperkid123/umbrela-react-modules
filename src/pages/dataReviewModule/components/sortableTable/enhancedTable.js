@@ -73,7 +73,7 @@ export default class EnhancedTable extends Component {
         <TableFooter>
           <TableRow>
             <TableCell>
-              Počet odpovědí: {this.props.answerCount}
+              {this.props.footerTitle}: {this.props.answerCount}
             </TableCell>
           </TableRow>
         </TableFooter>

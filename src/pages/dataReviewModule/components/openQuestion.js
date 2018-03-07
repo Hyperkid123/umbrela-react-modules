@@ -11,13 +11,14 @@ import SearchIcon from 'material-ui-icons/Search';
 import { FormControl } from 'material-ui/Form';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Paper from 'material-ui/Paper';
+import { localize } from 'react-localize-redux';
 
 
 import {
   Flex
 } from '../../../common/styledComponents/containers';
 
-export default class OpenQuestion extends Component {
+ class OpenQuestion extends Component {
 
   constructor(props){
     super(props);
@@ -114,6 +115,7 @@ export default class OpenQuestion extends Component {
   }
 
   render() {
+    const {translate} = this.props;
     const lastIndex = this.state.currentPage * this.state.itemsPerPage;
     const firstIndex = lastIndex - this.state.itemsPerPage;
     const currentAnswers = this.state.answers.slice(firstIndex, lastIndex);
@@ -121,7 +123,7 @@ export default class OpenQuestion extends Component {
       <Flex grow column>
         <Flex style={{marginTop: 5}}>
           <FormControl>
-            <InputLabel htmlFor="search">Vyhledat</InputLabel>
+            <InputLabel htmlFor="search">{translate('common.search')}</InputLabel>
             <Input
               id="adornment-search"
               type='text'
@@ -136,7 +138,7 @@ export default class OpenQuestion extends Component {
           </FormControl>
           <Flex auto style={{marginLeft: 'auto', alignSelf: 'flex-end'}} verticalCenter>
             <span>
-              Odpovědi na stránku &nbsp;
+              {translate('review.answersPerPage')} &nbsp;
             </span>
             <Select
               value={this.state.itemsPerPage}
@@ -165,7 +167,7 @@ export default class OpenQuestion extends Component {
           open={this.state.showImage}
           onClose={this.handleCloseImage}
         >
-          <img src={this.props.question.url}/>
+          <img src={this.props.question.url} alt={this.props.question.url}/>
         </Dialog>
       </Flex>
     );
@@ -176,3 +178,5 @@ OpenQuestion.propTypes = {
   data: PropTypes.object.isRequired,
   question: PropTypes.object.isRequired,
 };
+
+export default localize(OpenQuestion, 'locale');

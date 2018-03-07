@@ -1,14 +1,12 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
 import Dialog from 'material-ui/Dialog';
 import FiberManualRecord from 'material-ui-icons/FiberManualRecord'
 import Table, { TableBody, TableCell, TableHead, TableRow, TableFooter } from 'material-ui/Table';
-
-
 import {Flex} from '../../../common/styledComponents/containers';
+import { localize } from 'react-localize-redux';
 
-export default class LegendTable extends Component {
+class LegendTable extends Component {
 
   constructor(props){
     super(props);
@@ -54,23 +52,14 @@ export default class LegendTable extends Component {
   }
 
   render() {
-    const actions = [
-      <Button
-        key={0}
-        primary={true}
-        keyboardFocused={true}
-        onClick={this.handleCloseImage}
-      >
-        Zavřít
-      </Button>,
-    ];
+    const {translate} = this.props;
     return (
       <Flex grow>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell colSpan='2'>Možnost</TableCell>
-              <TableCell>Počet</TableCell>
+              <TableCell colSpan='2'>{translate('review.divideAttributes.option')}</TableCell>
+              <TableCell>{translate('review.count')}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -78,28 +67,22 @@ export default class LegendTable extends Component {
           </TableBody>
           <TableFooter>
             <TableRow>
-              <TableCell colSpan='2'>Respondenti: {this.props.data.respondents}</TableCell>
+              <TableCell colSpan='2'>{translate('review.respondents')}: {this.props.data.respondents}</TableCell>
               <TableCell>{this.props.data.answerCount}</TableCell>
             </TableRow>
           </TableFooter>
         </Table>
         <Dialog
           title="Preview"
-          actions={actions}
           modal={false}
           open={this.state.showImage}
-          contentStyle={{
-            width: '90%',
-            maxWidth: 'none',
-          }}
-          onRequestClose={this.handleCloseImage}
+          onClose={this.handleCloseImage}
         >
           <Flex>
-            <img src={this.state.image}/>
+            <img src={this.state.image} alt={this.state.image}/>
           </Flex>
         </Dialog>
       </Flex>
-
     );
   }
 }
@@ -108,3 +91,5 @@ LegendTable.propTypes = {
   data: PropTypes.object.isRequired,
   isOptionImage: PropTypes.bool,
 };
+
+export default localize(LegendTable, 'locale');
