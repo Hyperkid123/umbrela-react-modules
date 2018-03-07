@@ -19,6 +19,8 @@ export default {
     "preview": "Náhled",
     "back": "Zpět",
     "cancel": "Zrušit",
+    "next": "Další",
+    "submit": "Odeslat"
   },
   "options": {
     "options": "Možnosti",
@@ -80,6 +82,18 @@ export default {
     "rows": "Řádky",
     "newColumn": "Nový sloupec",
     "newRow": "Nový řádek",
-    "titlePlaceholder": "Prosím zadejte název otázky"
+    "titlePlaceholder": "Prosím zadejte název otázky",
+    "remainingPoints": "Zbývající body"
+  },
+  "fill": {
+    "start": "Vyplnit dotazník",
+    "submit": {
+      "sending": "Vaše odpovědi se odesílají.",
+      "finished": "Vaše odpovědi byly odeslány.",
+      "finalWord": "Děkujeme za váš čas",
+      "preview": "Toto je pouze náhled, odpovědi se do databáze neukládají",
+      "learMore": "O projektu Umbrela se můžete dozvědět více",
+      "here": "zde",
+    }
   }
 }

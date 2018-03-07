@@ -42,7 +42,7 @@ export default class DividePreview extends Component {
 
     renderScalePoints = () => {
         return (
-            <label>Zbývající body: {this.remainingPoints()}</label>
+            <label>{this.props.pointsLabel}: {this.remainingPoints()}</label>
         );
     };
 

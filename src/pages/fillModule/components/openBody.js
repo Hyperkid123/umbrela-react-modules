@@ -7,7 +7,8 @@ import {Flex} from '../../../common/styledComponents/containers';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {ANSWER_LENGTH} from '../../../common/constants';
-import {answerOpenQuestion} from '../../../redux/actions/'
+import {answerOpenQuestion} from '../../../redux/actions/';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 export class OpenBody extends Component {
 
@@ -17,12 +18,13 @@ export class OpenBody extends Component {
     };
 
     render() {
-      const answer = this.getOpenValue()
+      const answer = this.getOpenValue();
+      const {translate} = this.props;
         return (
           <Flex column grow>
             <TextField value={answer}
               onChange={(event) => this.props.answerOpenQuestion(this.props.questionId, event.target.value)}
-              placeholder='Odpověď'
+              placeholder={translate('questions.customAnswer')}
               fullWidth
               multiline
               key={`openOption_${this.props.questionId}`}
@@ -30,7 +32,7 @@ export class OpenBody extends Component {
             />
             <TextFieldComent
               error={answer.length > ANSWER_LENGTH}
-              label={`${answer.length} z ${ANSWER_LENGTH} znaků`}
+              label={`${answer.length} ${translate('common.from')} ${ANSWER_LENGTH} ${translate('common.characters')}`}
               alignRight
             />
           </Flex>
@@ -38,9 +40,11 @@ export class OpenBody extends Component {
     }
 }
 
-function mapStateToProps({answers}, initialProps) {
+function mapStateToProps({answers, locale}, initialProps) {
   return {
-    answer: answers[initialProps.questionId]
+    answer: answers[initialProps.questionId],
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

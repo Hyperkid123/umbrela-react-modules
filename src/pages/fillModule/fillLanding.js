@@ -14,6 +14,7 @@ import {
   CardHeader,
   CardBody
 } from '../../common/styledComponents/card';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 export class FillLanding extends Component {
     componentDidMount() {
@@ -39,7 +40,7 @@ export class FillLanding extends Component {
                 <Grid item>
                     <Link to='/fill/0'>
                       <Button raised color='primary'>
-                        Vyplnit dotazník
+                        {this.props.translate('fill.start')}
                       </Button>
                     </Link>
                 </Grid>
@@ -51,12 +52,14 @@ export class FillLanding extends Component {
     }
 }
 
-function mapStateToProps({research, filters}) {
+function mapStateToProps({research, filters, locale}) {
   return {
     isLoaded: research.research,
     introText: research.introText,
     title: research.title,
-    filters: filters
+    filters: filters,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

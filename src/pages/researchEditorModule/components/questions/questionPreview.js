@@ -73,7 +73,7 @@ class QuestionPreview extends Component {
         return <OrderPreview title={title} options={options}/>
       }
       if(HasScalePoints(questionType)){
-         return <DividePreview title={title} options={options} scalePoints={scalePoints}/>
+         return <DividePreview title={title} options={options} scalePoints={scalePoints} pointsLabel={this.props.translate('questions.remainingPoints')}/>
       }
       if(IsMatrixQuestion(questionType)) {
         return <MatrixPreview title={title} options={options} questionType={questionType}/>

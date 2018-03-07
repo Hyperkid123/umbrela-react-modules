@@ -19,6 +19,8 @@ export default {
     "preview": "Preview",
     "back": "Back",
     "cancel": "Cancel",
+    "next": "Next",
+    "submit": "Submit"
   },
   "options": {
     "options": "Options",
@@ -77,6 +79,18 @@ export default {
     "rows": "Rows",
     "newColumn": "New column",
     "newRow": "New row",
-    "titlePlaceholder": "Please enter the title of the question"
+    "titlePlaceholder": "Please enter the title of the question",
+    "remainingPoints": "Remaining points",
+  },
+  "fill": {
+    "start": "Start the survey",
+    "submit": {
+      "sending": "Your answers are being sent.",
+      "finished": "Your answers have been sent.",
+      "finalWord": "Thank you for your time.",
+      "preview": "This is just a preview, the answers are not stored in the database",
+      "learMore": "You can learn more about the Umbrela project",
+      "here": "here",
+    }
   }
 }

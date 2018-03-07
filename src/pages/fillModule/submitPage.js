@@ -21,6 +21,7 @@ import {
   CardHeader,
   CardBody
 } from '../../common/styledComponents/card';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 export class SubmitPage extends Component {
   componentDidMount() {
@@ -38,7 +39,7 @@ export class SubmitPage extends Component {
           <Flex horizontalCenter>
             <IntroTextParagraph>
               <MediumHeading>
-                Vaše odpovědi se odesílají.
+                {this.props.translate('fill.submit.sending')}
               </MediumHeading>
             </IntroTextParagraph>
           </Flex>
@@ -50,21 +51,23 @@ export class SubmitPage extends Component {
   render() {
     if(!this.props.isLoaded) return <Redirect to='/'/>
     if(this.props.isFetching) return this.renderFetching();
+    const {translate} = this.props;
       return (
         <Grid item xs={12} sm={12} md={8} lg={6} xl={6}>
           <CardWrapper>
             <CardHeader>
-                <h2>Vaše odpovědi byly odeslány.</h2>
+                <h2>{translate('fill.submit.finished')}</h2>
               </CardHeader>
               <CardBody>
                 <IntroTextParagraph>
                   {this.props.leaveText && this.props.leaveText.split('\n').map((item, key) => (
                     <span key={key}>{item}<br/></span>
                   ))}
+                  {!this.props.leaveText && translate('fill.submit.finalWord')}
                 </IntroTextParagraph>
                 <IntroTextParagraph>
-                  O projektu Umbrela se můžete dozvědět více &nbsp;<a style={{color: blue[500]}} href="http://umbrela.mendelu.cz">zde</a>.
-                  {window.preview && <p style={{color: 'red'}}>Toto je pouze náhled, odpovědi se do databáze neukládají</p>}
+                  {translate('fill.submit.learMore')}&nbsp;<a style={{color: blue[500]}} href="http://umbrela.mendelu.cz">{translate('fill.submit.here')}</a>.
+                  {window.preview && <p style={{color: 'red'}}>{translate('fill.submit.preview')}</p>}
                 </IntroTextParagraph>
               </CardBody>
             </CardWrapper>
@@ -73,13 +76,15 @@ export class SubmitPage extends Component {
   }
 }
 
-function mapStateToProps({research, answers}) {
+function mapStateToProps({research, answers, locale}) {
   return {
     isLoaded: research.research,
     leaveText: research.leaveText,
     title: research.title,
     isFetching: answers.isFetching,
-    answers
+    answers,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 

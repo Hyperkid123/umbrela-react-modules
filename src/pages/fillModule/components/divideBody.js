@@ -2,7 +2,6 @@
  * Created by rela on 27/06/17.
  */
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 
 import {Flex} from '../../../common/styledComponents/containers';
@@ -13,12 +12,13 @@ import {bindActionCreators} from 'redux';
 import {
   answerDivideQuestion
 } from '../../../redux/actions';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 class DivideBody extends Component {
 
     renderScalePoints = () => {
         return (
-            <label>Zbývající body: {this.remainingPoints()}</label>
+            <label>{this.props.translate('questions.remainingPoints')}: {this.remainingPoints()}</label>
         );
     };
 
@@ -87,9 +87,11 @@ class DivideBody extends Component {
     }
 }
 
-function mapStateToProps({answers, research}, initialProps) {
+function mapStateToProps({answers, research, locale}, initialProps) {
   return {
     answer: answers[initialProps.question.questionId],
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 
@@ -98,10 +100,5 @@ function mapDispatchToProps(dispatch) {
     answerDivideQuestion
   },dispatch)
 }
-
-/**DivideBody.propTypes = {
-    question: PropTypes.object.isRequired,
-    answerDivideQuestion: PropTypes.func.isRequired,
-};*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(DivideBody)

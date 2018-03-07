@@ -12,6 +12,7 @@ import Button from 'material-ui/Button';
 import QuestionFillList from './components/questionFillList';
 import {validateAnswers} from '../../common/validator';
 import Grid from 'material-ui/Grid';
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 const scrollOptions = {
     block: 'start',
@@ -59,7 +60,7 @@ export class SheetFill extends Component {
       return (
         <Link to={`/fill/${sheetId - 1}`} style={{marginRight: 10}}>
           <Button raised>
-            Zpět
+            {this.props.translate('common.back')}
           </Button>
         </Link>
       )
@@ -69,16 +70,17 @@ export class SheetFill extends Component {
 
   renderNextButton = () => {
     const sheetId = parseInt(this.props.match.params.sheetId, 10);
+    const {translate} = this.props;
     if(sheetId < this.props.sheetCount - 1) {
       return (
         <Button onClick={() => this.handleNextSheet(`/fill/${sheetId + 1}`)} raised>
-          Další
+          {translate('common.next')}
         </Button>
       )
     } else {
       return (
         <Button onClick={() => this.handleNextSheet(`/submit`)} raised color='primary'>
-          Odeslat
+          {translate('common.submit')}
         </Button>
       )
     }
@@ -117,14 +119,16 @@ export class SheetFill extends Component {
   }
 }
 
-function mapStateToProps({research, filters, answers}, initialProps) {
+function mapStateToProps({research, filters, answers, locale}, initialProps) {
   const sheetId = parseInt(initialProps.match.params.sheetId, 10);
   return {
     isLoaded: research.research,
     activeSheet: research.sheets[sheetId],
     sheetCount: research.sheets.length,
     filters: filters ? filters.filters : null,
-    answers: answers
+    answers: answers,
+    translate: getTranslate(locale),
+    currentLanguage: getActiveLanguage(locale).code,
   }
 }
 
