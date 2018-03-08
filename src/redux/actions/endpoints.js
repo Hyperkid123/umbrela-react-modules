@@ -88,3 +88,28 @@ export const remapQuestionsRequest = (sheetId, questions) => {
 export const questionAnswersRequest = questionId => {
   return fetch(`${base}get-question-answers/${questionId}`);
 }
+
+export const questionOptionsRequest = questionId => {
+  return fetch(`${base}get-question-options/${questionId}`);
+}
+
+export const questionoptionsFilterRequest = questionId => {
+  return fetch(`${base}get-question-options-filter/${questionId}`);
+}
+
+export const synchronizeOptionRequest = option => {
+  return fetch(`${base}synchronize-option`, {
+    method: POST,
+    body: JSON.stringify({option}),
+  })
+}
+
+export const remapOptionsRequest = (questionId, options) => {
+  return fetch(`${base}remap-options`, {
+    method: POST,
+    body: JSON.stringify({
+      questionId,
+      options
+    })
+  })
+}
