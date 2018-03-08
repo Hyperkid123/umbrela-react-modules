@@ -79,7 +79,7 @@ class SheetMenu extends Component {
             </CardHeader>
             <CardBody>
               {!this.props.hideNewSheet &&
-                <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(window.researchId)}>
+                <Button disabled={this.props.hideNewSheet} color='primary' onClick={() => this.props.createNewSheet(translate('sheets.titlePlaceholder'))}>
                   <ActionAdd/>
                   {translate('sheets.newSheet')}
                 </Button>

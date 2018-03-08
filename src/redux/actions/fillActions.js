@@ -1,7 +1,6 @@
 import {
   START_RESEARCH,
   UPDATE_RESEARCH_STATE,
-  LOAD_LANG,
   CREATE_FILTER_STRUCTURE
 } from './actionTypes'
 
@@ -15,13 +14,6 @@ export function updateResearchState(research){
   return {
     type:UPDATE_RESEARCH_STATE,
     research
-  }
-}
-
-export function loadLang(lang){
-  return {
-    type:LOAD_LANG,
-    lang
   }
 }
 

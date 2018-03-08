@@ -4,6 +4,7 @@ export default {
     "newSheet": "New sheet",
     "drag": "Drag to change the order of the sheet.",
     "delete": "Delete sheet",
+    "titlePlaceholder": "(Please enter the title of the sheet)",
   },
   "editor": "Editor",
   "filtrations": "Filtrations",
@@ -80,7 +81,7 @@ export default {
     "rows": "Rows",
     "newColumn": "New column",
     "newRow": "New row",
-    "titlePlaceholder": "Please enter the title of the question",
+    "titlePlaceholder": "(Please enter the title of the question)",
     "remainingPoints": "Remaining points",
   },
   "fill": {

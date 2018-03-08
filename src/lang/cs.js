@@ -1,9 +1,10 @@
 export default {
-    "sheets": {
+  "sheets": {
     "sheets": "Archy",
     "newSheet": "Nový arch",
     "drag": "Tažením změníte pořadí archu.",
     "delete": "Smazat arch",
+    "titlePlaceholder": "(Prosím zadejte název archu)",
   },
   "editor": "Editor",
   "filtrations": "Filtrace",
@@ -83,7 +84,7 @@ export default {
     "rows": "Řádky",
     "newColumn": "Nový sloupec",
     "newRow": "Nový řádek",
-    "titlePlaceholder": "Prosím zadejte název otázky",
+    "titlePlaceholder": "(Prosím zadejte název otázky)",
     "remainingPoints": "Zbývající body"
   },
   "fill": {
