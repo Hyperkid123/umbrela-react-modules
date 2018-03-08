@@ -84,8 +84,10 @@ export const CardControlls = styled.div`
 export const CardListItemheading = styled.h3`
   font-weight: 400;
   margin: .2em 0;
+  font-size: 1.17em !important;
   span:first-child {
     display: inline-block;
+    box-sizing: content-box;
     height: 1.25em;
     width: 1.25em;
     background-color: ${blue[500]};
