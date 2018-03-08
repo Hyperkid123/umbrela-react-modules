@@ -17,7 +17,7 @@ import {
   newSheetRequest,
   deleteSheetRequest,
   updateSheetRequest,
-  remapSheetsRquest,
+  remapSheetsRequest,
 } from './endpoints';
 
 const researchId = window.researchId;
@@ -141,7 +141,7 @@ export function dragSheetCard(dragIndex, hoverIndex) {
 export function remapSheets(researchId) {
   return (dispatch, getState) => {
     dispatch(requestSheets());
-    return remapSheetsRquest(getState().editor.sheets, researchId)
+    return remapSheetsRequest(getState().editor.sheets, researchId)
     .then(response => response.json())
     .then((json) => {
       dispatch(getSheets(researchId));
