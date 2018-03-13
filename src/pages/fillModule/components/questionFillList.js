@@ -55,14 +55,20 @@ export class QuestionFillList extends Component {
     renderList = () => {
       let questionCounter = 0;
       return this.props.questions.map(question => {
+        const gridStyle = {
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          display: IsMatrixQuestion(question.questionType) ? 'block' : 'flex',
+          maxWidth: '100%',
+        };
         if(this.checkFiltered(question.questionId)) return null;
         questionCounter += 1;
         return (
           <Grid item xs={12}
             key={question.questionId}
             id={`question_${question.questionId}`}>
-            <Grid container spacing={0} justify='center' alignItems='center'>
-              <Grid item>
+            <Grid container spacing={0} alignItems='center'>
+              <Grid item style={gridStyle}>
                 <CardWrapper
                   questionList
                   matrix={IsMatrixQuestion(question.questionType)}

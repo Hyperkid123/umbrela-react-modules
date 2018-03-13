@@ -201,6 +201,9 @@ export const MatrixTableRow = styled.tr`
   > td:not(:first-of-type){
     background-color: ${props => props.filler ? grey[100] : 'white'}
   }
+  > td:last-child {
+    padding-right: 16px;
+  }
 `
 
 export const SectionBody = styled.div`
