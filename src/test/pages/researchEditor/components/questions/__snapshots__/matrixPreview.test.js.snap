@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matrix Preview component should render checkboxes 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.table>
+    <styled.thead>
+      <tr>
+        <styled.td
+          key="empty"
+        />
+        <styled.td
+          filler={true}
+          key="0"
+        >
+          <span />
+        </styled.td>
+      </tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
+        filler={true}
+        key="1"
+      >
+        <styled.td>
+          <span />
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          <WithStyles(Checkbox)
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+      </styled.tr>
+    </styled.tbody>
+  </styled.table>
+  <WithStyles(Dialog)
+    actions={
+      Array [
+        <WithStyles(Button)
+          label="Zavřít"
+          onClick={[Function]}
+          primary={true}
+      />,
+      ]
+    }
+    autoScrollBodyContent={true}
+    contentStyle={
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+        "maxWidth": "none",
+        "width": "90%",
+      }
+    }
+    modal={false}
+    onRequestClose={[Function]}
+    open={false}
+    title="Náhled"
+  >
+    <LazyLoad
+      offset={0}
+      once={false}
+      overflow={false}
+      resize={false}
+      scroll={true}
+      unmountIfInvisible={false}
+    >
+      <styled.img
+        alt={null}
+        src={null}
+      />
+    </LazyLoad>
+  </WithStyles(Dialog)>
+</div>
+`;
+
+exports[`Matrix Preview component should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.table>
+    <styled.thead>
+      <tr>
+        <styled.td
+          key="empty"
+        />
+      </tr>
+    </styled.thead>
+    <styled.tbody />
+  </styled.table>
+  <WithStyles(Dialog)
+    actions={
+      Array [
+        <WithStyles(Button)
+          label="Zavřít"
+          onClick={[Function]}
+          primary={true}
+      />,
+      ]
+    }
+    autoScrollBodyContent={true}
+    contentStyle={
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+        "maxWidth": "none",
+        "width": "90%",
+      }
+    }
+    modal={false}
+    onRequestClose={[Function]}
+    open={false}
+    title="Náhled"
+  >
+    <LazyLoad
+      offset={0}
+      once={false}
+      overflow={false}
+      resize={false}
+      scroll={true}
+      unmountIfInvisible={false}
+    >
+      <styled.img
+        alt={null}
+        src={null}
+      />
+    </LazyLoad>
+  </WithStyles(Dialog)>
+</div>
+`;
+
+exports[`Matrix Preview component should render correctly with options 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.table>
+    <styled.thead>
+      <tr>
+        <styled.td
+          key="empty"
+        />
+        <styled.td
+          filler={true}
+          key="0"
+        >
+          <span />
+        </styled.td>
+      </tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
+        filler={true}
+        key="1"
+      >
+        <styled.td>
+          <styled.img
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          <WithStyles(Checkbox)
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+      </styled.tr>
+    </styled.tbody>
+  </styled.table>
+  <WithStyles(Dialog)
+    actions={
+      Array [
+        <WithStyles(Button)
+          label="Zavřít"
+          onClick={[Function]}
+          primary={true}
+      />,
+      ]
+    }
+    autoScrollBodyContent={true}
+    contentStyle={
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+        "maxWidth": "none",
+        "width": "90%",
+      }
+    }
+    modal={false}
+    onRequestClose={[Function]}
+    open={false}
+    title="Náhled"
+  >
+    <LazyLoad
+      offset={0}
+      once={false}
+      overflow={false}
+      resize={false}
+      scroll={true}
+      unmountIfInvisible={false}
+    >
+      <styled.img
+        alt={null}
+        src={null}
+      />
+    </LazyLoad>
+  </WithStyles(Dialog)>
+</div>
+`;
