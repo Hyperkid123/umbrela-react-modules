@@ -16,6 +16,14 @@ describe('Matrix options editor component', () => {
     },
     ui: {
       draggingElement: false
+    },
+    locale: {
+      languages: [{
+        name: "English",
+        code: 'en',
+        active: true,
+      }],
+      translations: {}
     }
   };
 
@@ -34,6 +42,7 @@ describe('Matrix options editor component', () => {
             {optionOrder: 1, optionId: 1, optionType: 'ColumnOption'},
             {optionOrder: 10, optionId: 10, optionType: 'RowOption'}
           ]}
+          translate={jest.fn()}
         />
       ).dive();
       expect(toJson(tree)).toMatchSnapshot();
@@ -49,6 +58,7 @@ describe('Matrix options editor component', () => {
           {optionOrder: 1, optionId: 1, optionType: 'ColumnOption'},
           {optionOrder: 10, optionId: 10, optionType: 'RowOption'}
         ]}
+        translate={jest.fn()}
       />
     );
     expect(getOptions.mock.calls.length).toEqual(1);

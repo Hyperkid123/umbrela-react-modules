@@ -1,20 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DragByHandle component should not render tooltip while dragging 1`] = `
-<styled.div
-  grow={true}
->
-  <DragSource(DropTarget(OptionsDraggableCard))
-    draggingElement={Object {}}
-    index={1}
-  />
-</styled.div>
+<DragSource(DropTarget(OptionsDraggableCard))
+  draggingElement={Object {}}
+  index={1}
+/>
 `;
 
-exports[`DragByHandle component should render correctly 1`] = `
-<styled.div
-  grow={true}
->
-  <DragSource(DropTarget(OptionsDraggableCard)) />
-</styled.div>
-`;
+exports[`DragByHandle component should render correctly 1`] = `<DragSource(DropTarget(OptionsDraggableCard)) />`;

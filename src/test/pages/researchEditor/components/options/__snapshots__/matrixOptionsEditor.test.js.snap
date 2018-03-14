@@ -8,9 +8,7 @@ exports[`Matrix options editor component should render correclty 1`] = `
     column={true}
   >
     <styled.div>
-      <styled.h2>
-        Sloupce
-      </styled.h2>
+      <styled.h2 />
       <styled.ul>
         <Connect(OptionEditorItem)
           deleteOption={[Function]}
@@ -27,7 +25,6 @@ exports[`Matrix options editor component should render correclty 1`] = `
         />
       </styled.ul>
       <Connect(NewOption)
-        hintText="Nový sloupec"
         optionType="ColumnOption"
       />
     </styled.div>
@@ -36,9 +33,7 @@ exports[`Matrix options editor component should render correclty 1`] = `
     column={true}
   >
     <styled.div>
-      <styled.h2>
-        Řádky
-      </styled.h2>
+      <styled.h2 />
       <styled.ul>
         <Connect(OptionEditorItem)
           deleteOption={[Function]}
@@ -55,7 +50,6 @@ exports[`Matrix options editor component should render correclty 1`] = `
         />
       </styled.ul>
       <Connect(NewOption)
-        hintText="Nový řádek"
         optionType="RowOption"
       />
     </styled.div>

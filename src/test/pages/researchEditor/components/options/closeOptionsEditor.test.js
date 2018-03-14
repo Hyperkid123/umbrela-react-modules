@@ -1,10 +1,8 @@
 import React from 'react'
 import CloseOptionsEditor, {CloseOptionsEditor as Snapshot} from '../../../../../pages/researchEditorModule/components/options/closeOptionsEditor';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
-import {Provider} from 'react-redux';
-import DndContext from '../../../../../common/components/dndContext';
 
 describe('Options editor component', () => {
   const initialState  = {
@@ -18,6 +16,14 @@ describe('Options editor component', () => {
     },
     ui: {
       draggingElement: false
+    },
+    locale: {
+      languages: [{
+        name: "English",
+        code: 'en',
+        active: true,
+      }],
+      translations: {}
     }
   };
 
@@ -36,6 +42,7 @@ describe('Options editor component', () => {
             {optionId: 10, optionOrder: 10},
             {optionId: 1, optionOrder: 1, optionType: 'OpenOption', title: 'foo'}
           ]}
+          translate={jest.fn()}
         />
       ).dive();
       expect(toJson(tree)).toMatchSnapshot();
@@ -50,6 +57,7 @@ describe('Options editor component', () => {
             {optionId: 10, optionOrder: 10},
             {optionId: 1, optionOrder: 1, optionType: 'NormalOption', title: 'foo'}
           ]}
+          translate={jest.fn()}
         />
       ).dive();
       expect(toJson(tree)).toMatchSnapshot();
@@ -76,32 +84,5 @@ describe('Options editor component', () => {
     );
     wrapper.instance().updateOption({title: 'foo', optionType: 'NormalOption'});
     expect(synchronizeOption.mock.calls.length).toEqual(1);
-  })
-
-  it('should call callbacks on for open option', () => {
-    const onChange = jest.fn();
-    let store = mockStore(initialState);
-    const renderer = mount(
-      <Provider store={store}>
-        <DndContext>
-          <Snapshot
-            activeQuestion={{questionId: 0, questionType:'CloseQuestion'}}
-            options={[
-              {
-                title: 'f',
-                optionType: 'NormalOption',
-                optionId: 1,
-                optionOrder: 1,
-              }
-            ]}
-            getOptions={jest.fn()}
-            synchronizeOption={jest.fn()}
-            changeOptionTitle={onChange}
-          />
-        </DndContext>
-      </Provider>
-    );
-    //renderer.find('input[type="text"]').last().simulate('change', {}, 'foo');
-    //expect(onChange.mock.calls.length).toEqual(1);
   })
 });

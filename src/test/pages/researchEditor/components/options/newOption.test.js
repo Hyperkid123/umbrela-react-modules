@@ -16,6 +16,14 @@ describe('New option component', () => {
     },
     ui: {
       draggingElement: false
+    },
+    locale: {
+      languages: [{
+        name: "English",
+        code: 'en',
+        active: true,
+      }],
+      translations: {}
     }
   };
 
@@ -33,6 +41,7 @@ describe('New option component', () => {
             {optionOrder: 1, optionId: 1, optionType: 'ColumnOption'},
             {optionOrder: 10, optionId: 10, optionType: 'RowOption'}
           ]}
+          translate={jest.fn()}
         />
       ).dive();
       expect(toJson(tree)).toMatchSnapshot();
@@ -48,6 +57,7 @@ describe('New option component', () => {
           {optionOrder: 10, optionId: 10, optionType: 'RowOption'}
         ]}
         synchronizeOption={synchronizeOption}
+        translate={jest.fn()}
       />
     );
     wrapper.setState({optionText: 'foo'});
@@ -63,6 +73,7 @@ describe('New option component', () => {
           {optionOrder: 1, optionId: 1, optionType: 'ColumnOption'},
           {optionOrder: 10, optionId: 10, optionType: 'RowOption'}
         ]}
+        translate={jest.fn()}
       />
     );
     wrapper.instance().setOptionText('foo');

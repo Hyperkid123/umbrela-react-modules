@@ -10,10 +10,10 @@ exports[`Options editor component should render correclty with open option 1`] =
   >
     <TextField
       fullWidth={true}
+      margin="normal"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      placeholder="Vlastní opověď"
       required={false}
       select={false}
       value="foo"
@@ -21,7 +21,7 @@ exports[`Options editor component should render correclty with open option 1`] =
     <TextFieldComent
       alignRight={true}
       error={false}
-      label="3 z 255 znaků"
+      label="3 undefined 255 undefined"
     />
   </styled.div>
   <Connect(NewOption)
