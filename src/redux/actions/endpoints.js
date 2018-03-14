@@ -113,3 +113,24 @@ export const remapOptionsRequest = (questionId, options) => {
     })
   })
 }
+
+export const deleteOptionRequest = option => {
+  return fetch(`${base}/delete-option`, {
+    method: POST,
+    body: JSON.stringify({
+      option,
+    })
+  })
+}
+
+export const saveFilterRequest = (optionId, questionId, checked) => {
+  return fetch(`${base}/save-filter`, {
+    method: POST,
+    body: JSON.stringify({
+      filterType: 'hide_question',
+      optionId,
+      questionId,
+      checked
+    }),
+  })
+}

@@ -15,6 +15,8 @@ import {
   questionoptionsFilterRequest,
   synchronizeOptionRequest,
   remapOptionsRequest,
+  deleteOptionRequest,
+  saveFilterRequest,
 } from './endpoints';
 
 function requestOptions(){
@@ -139,14 +141,10 @@ export function remapOptions(questionId) {
 
 export function deleteOption(option) {
   return (dispatch, getState) => {
-    const {editor, questions} = getState();
+    const {questions} = getState();
     dispatch(requestOptions());
-    return fetch(`${window.base}${editor.researchId}/delete-option`, {
-      method: 'POST',
-      body: JSON.stringify({
-        option
-      }),
-    }).then(() => dispatch(getOptions(questions.activeQuestion.questionId)))
+    return deleteOptionRequest(option)
+    .then(() => dispatch(getOptions(questions.activeQuestion.questionId)))
     .catch((err) => {
       console.log('failed to fetch: ', err);
       fetchFailed(OPTION_FETCH_FAILED)
@@ -155,17 +153,9 @@ export function deleteOption(option) {
 }
 
 export function saveFilter(optionId, questionId, checked) {
-  return (dispatch, getState) => {
-    const {editor} = getState();
-    return fetch(`${window.base}${editor.researchId}/save-filter`, {
-      method: 'POST',
-      body: JSON.stringify({
-        filterType: 'hide_question',
-        optionId,
-        questionId,
-        checked
-      }),
-    }).then(() => dispatch(switchFilter(optionId, questionId, checked)))
+  return dispatch => {
+    return saveFilterRequest(optionId, questionId, checked)
+    .then(() => dispatch(switchFilter(optionId, questionId, checked)))
   }
 }
 
