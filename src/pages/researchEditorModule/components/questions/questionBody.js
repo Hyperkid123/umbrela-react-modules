@@ -31,7 +31,7 @@ import QuestionPreview from './questionPreview';
 import OptionsBody from '../options/optionsBody';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class QuestionBody extends Component {
+export class QuestionBody extends Component {
 
     constructor(props){
     	super(props);
@@ -72,25 +72,25 @@ class QuestionBody extends Component {
                   fullWidth
                   centered
                   indicatorColor='primary'
-                  >
-                    <Tab color='secondary' fullWidth label={translate('common.edit')} icon={<ModeEditIcon/>}/>
-                    {!HasNotOptions(questionType) ? <Tab fullWidth label={translate('common.preview')} icon={<PreviewIcon/>}/> : null}
-                  </Tabs>
+                >
+                  <Tab color='secondary' fullWidth label={translate('common.edit')} icon={<ModeEditIcon/>}/>
+                  {!HasNotOptions(questionType) ? <Tab fullWidth label={translate('common.preview')} icon={<PreviewIcon/>}/> : null}
+                </Tabs>
               </AppBar>
               {tab === 0 &&
                 <Flex column> {hasCustomHelp ?
-                    <TextField
-                      name="customHelpInput"
-                      fullWidth
-                      multiline
-                      value={customHelp}
-                      onChange={(event) => this.props.changeCustomHelp(event.target.value)}
-                      onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
-                      label={translate('questions.customHelp')}
-                      margin='normal'
-                      inputRef={(input) => this.customHelpInput = input}
-                    />
-                    : null}
+                  <TextField
+                    name="customHelpInput"
+                    fullWidth
+                    multiline
+                    value={customHelp}
+                    onChange={(event) => this.props.changeCustomHelp(event.target.value)}
+                    onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
+                    label={translate('questions.customHelp')}
+                    margin='normal'
+                    inputRef={(input) => this.customHelpInput = input}
+                  />
+                : null}
                   {HasScalePoints(questionType) ?
                     <TextField
                       name="customHelpInput"
@@ -103,7 +103,7 @@ class QuestionBody extends Component {
                       onBlur={() => this.props.updateQuetionsInformation(this.props.activeQuestion)}
                       onKeyPress={(event) => {if(event.key === 'Enter') this.props.updateQuetionsInformation(this.props.activeQuestion)}}
                     />
-                    : null}
+                  : null}
                   {HasImagePreview(questionType) ?
                     <Flex column grow>
                       <TextField

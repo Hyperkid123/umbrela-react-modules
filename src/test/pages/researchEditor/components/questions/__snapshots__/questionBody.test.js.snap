@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question body component should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(Chip)
+    label="undefined: undefined"
+    style={
+      Object {
+        "marginBottom": 5,
+      }
+    }
+  />
+  <Connect(QuestionTypeChanger) />
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+  >
+    <WithStyles(Tabs)
+      centered={true}
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      style={
+        Object {
+          "marginTop": 5,
+        }
+      }
+      value={0}
+    >
+      <WithStyles(Tab)
+        color="secondary"
+        fullWidth={true}
+        icon={<pure(ModeEdit) />}
+      />
+      <WithStyles(Tab)
+        fullWidth={true}
+        icon={<pure(RemoveRedEye) />}
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
+  <styled.div
+    column={true}
+  >
+     
+    <Connect(OptionsBody) />
+  </styled.div>
+</div>
+`;
+
+exports[`Question body component should render correctly with customHelp 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(Chip)
+    label="undefined: undefined"
+    style={
+      Object {
+        "marginBottom": 5,
+      }
+    }
+  />
+  <Connect(QuestionTypeChanger) />
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+  >
+    <WithStyles(Tabs)
+      centered={true}
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      style={
+        Object {
+          "marginTop": 5,
+        }
+      }
+      value={0}
+    >
+      <WithStyles(Tab)
+        color="secondary"
+        fullWidth={true}
+        icon={<pure(ModeEdit) />}
+      />
+      <WithStyles(Tab)
+        fullWidth={true}
+        icon={<pure(RemoveRedEye) />}
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
+  <styled.div
+    column={true}
+  >
+     
+    <TextField
+      fullWidth={true}
+      inputRef={[Function]}
+      margin="normal"
+      multiline={true}
+      name="customHelpInput"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value="foo"
+    />
+    <Connect(OptionsBody) />
+  </styled.div>
+</div>
+`;
+
+exports[`Question body component should render correctly with image preview 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(Chip)
+    label="undefined: undefined"
+    style={
+      Object {
+        "marginBottom": 5,
+      }
+    }
+  />
+  <Connect(QuestionTypeChanger) />
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+  >
+    <WithStyles(Tabs)
+      centered={true}
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      style={
+        Object {
+          "marginTop": 5,
+        }
+      }
+      value={0}
+    >
+      <WithStyles(Tab)
+        color="secondary"
+        fullWidth={true}
+        icon={<pure(ModeEdit) />}
+      />
+      <WithStyles(Tab)
+        fullWidth={true}
+        icon={<pure(RemoveRedEye) />}
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
+  <styled.div
+    column={true}
+  >
+     
+    <styled.div
+      column={true}
+      grow={true}
+    >
+      <TextField
+        fullWidth={true}
+        inputRef={[Function]}
+        margin="normal"
+        name="imagePreviewInput"
+        onBlur={[Function]}
+        onChange={[Function]}
+        required={false}
+        select={false}
+        value="foo.png"
+      />
+      <TextFieldComent
+        alignRight={true}
+        error={true}
+      />
+    </styled.div>
+    <Connect(OptionsBody) />
+  </styled.div>
+</div>
+`;
+
+exports[`Question body component should render correctly with scalePoints 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(Chip)
+    label="undefined: undefined"
+    style={
+      Object {
+        "marginBottom": 5,
+      }
+    }
+  />
+  <Connect(QuestionTypeChanger) />
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+  >
+    <WithStyles(Tabs)
+      centered={true}
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      style={
+        Object {
+          "marginTop": 5,
+        }
+      }
+      value={0}
+    >
+      <WithStyles(Tab)
+        color="secondary"
+        fullWidth={true}
+        icon={<pure(ModeEdit) />}
+      />
+      <WithStyles(Tab)
+        fullWidth={true}
+        icon={<pure(RemoveRedEye) />}
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
+  <styled.div
+    column={true}
+  >
+     
+    <Connect(OptionsBody) />
+  </styled.div>
+</div>
+`;
+
+exports[`Question body component should render only preview 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(Chip)
+    label="undefined: undefined"
+    style={
+      Object {
+        "marginBottom": 5,
+      }
+    }
+  />
+  <Connect(QuestionTypeChanger) />
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+  >
+    <WithStyles(Tabs)
+      centered={true}
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      style={
+        Object {
+          "marginTop": 5,
+        }
+      }
+      value={0}
+    >
+      <WithStyles(Tab)
+        color="secondary"
+        fullWidth={true}
+        icon={<pure(ModeEdit) />}
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
+  <styled.div
+    column={true}
+  >
+     
+    <Connect(QuestionPreview) />
+  </styled.div>
+</div>
+`;
