@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question Preview component should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <ClosePreview
+    options={Array []}
+    questionType="CloseQuestion"
+  />
+</div>
+`;
+
+exports[`Question Preview component should render customHelp 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <styled.div>
+    <styled.div
+      key="0"
+    >
+      foo help
+    </styled.div>
+  </styled.div>
+  <ClosePreview
+    options={Array []}
+    questionType="CloseQuestion"
+  />
+</div>
+`;
+
+exports[`Question Preview component should render divide preview 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <DividePreview
+    options={Array []}
+  />
+</div>
+`;
+
+exports[`Question Preview component should render image preview 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <LazyLoad
+    offset={0}
+    once={false}
+    overflow={false}
+    resize={false}
+    scroll={true}
+    unmountIfInvisible={false}
+  >
+    <styled.img
+      alt="foo.png"
+      src="foo.png"
+    />
+  </LazyLoad>
+  <ClosePreview
+    options={Array []}
+    questionType="MediaQuestion"
+  />
+</div>
+`;
+
+exports[`Question Preview component should render matrix preview 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <MatrixPreview
+    options={Array []}
+    questionType="MatrixSingleQuestion"
+  />
+</div>
+`;
+
+exports[`Question Preview component should render open question 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <styled.div>
+    <styled.div
+      key="0"
+    >
+      foo help
+    </styled.div>
+  </styled.div>
+  <styled.div
+    column={true}
+    grow={true}
+  >
+    <TextField
+      fullWidth={true}
+      margin="normal"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      value=""
+    />
+    <TextFieldComent
+      alignRight={true}
+      error={false}
+      label="0 undefined 1500 undefined"
+    />
+  </styled.div>
+</div>
+`;
+
+exports[`Question Preview component should render order preview 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2 />
+  <OrderPreview
+    options={Array []}
+  />
+</div>
+`;

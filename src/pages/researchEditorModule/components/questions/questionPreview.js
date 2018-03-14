@@ -16,7 +16,7 @@ import {ANSWER_LENGTH} from '../../../../common/constants';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 
-class QuestionPreview extends Component {
+export class QuestionPreview extends Component {
 
     constructor(props){
     	super(props);
