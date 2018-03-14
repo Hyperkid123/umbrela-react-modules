@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options Body component should render matrix question correctly 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2
+    withouthBorder={true}
+  />
+  <Connect(MatrixOptionsEditor) />
+</div>
+`;
+
+exports[`Options Body component should render non matrix question correctly 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.h2
+    withouthBorder={true}
+  />
+  <Connect(CloseOptionsEditor) />
+</div>
+`;
