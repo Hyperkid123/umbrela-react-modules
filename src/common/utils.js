@@ -92,17 +92,14 @@ export function createChartData(questionOptions, questionAnswers, questionType, 
     });
   });
   let empty = 0;
-  let other = 0;
   questionAnswers.forEach((answer) => {
-    options.filter((obj) => {
+    options.forEach((obj) => {
       if (obj.id === answer.optionId) {
         obj.value++;
       }
     });
     if (!answer.optionId) {
-      if(answer.shortAnswer){
-        other ++;
-      } else {
+      if(!answer.shortAnswer){
         empty ++;
       }
     }

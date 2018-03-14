@@ -2,7 +2,6 @@
  * Created by rela on 27/06/17.
  */
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Card from './orderCard';
 
 import {connect} from 'react-redux';

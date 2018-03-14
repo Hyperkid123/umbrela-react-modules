@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {SmallHeading} from '../../../common/styledComponents/typography';
 import CollapsibleSection from '../../../common/components/collapsibleSection';
 import {getQuestions, getOptions} from '../../../redux/actions';
 import QuestionFiltrations from './questionFiltrations';

@@ -6,7 +6,6 @@ import {
   MenuListIconsContainer,
   MenuItem,
   MenuListLabel,
-  Flex,
   MenuItemEllipsisWrapper,
 } from '../styledComponents/containers';
 import {DefaultLink} from '../styledComponents/typography';

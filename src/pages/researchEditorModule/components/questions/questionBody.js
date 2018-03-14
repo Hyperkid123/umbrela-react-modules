@@ -17,7 +17,7 @@ import Tabs, {Tab} from 'material-ui/Tabs';
 import ModeEditIcon from 'material-ui-icons/ModeEdit';
 import PreviewIcon from 'material-ui-icons/RemoveRedEye';
 
-import {QuestionTypes, HasImagePreview, HasNotOptions, HasScalePoints} from '../../../../common/questionTypes';
+import {HasImagePreview, HasNotOptions, HasScalePoints} from '../../../../common/questionTypes';
 import QuestionTypeChanger from './questionTypeChanger';
 import {
   TextFieldComent
