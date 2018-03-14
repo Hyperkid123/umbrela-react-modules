@@ -9,7 +9,6 @@ before_script:
 script:
   - yarn test
   - yarn build
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - codecov
 os:
   - linux
