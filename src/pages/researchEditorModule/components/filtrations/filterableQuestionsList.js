@@ -8,7 +8,7 @@ import ListIcon from 'material-ui-icons/List';
 import Checkbox from 'material-ui/Checkbox';
 import lodash from 'lodash';
 
-class FilterableQuestionsList extends Component {
+export class FilterableQuestionsList extends Component {
 
   componentWillMount() {
     this.props.loadQuestions(this.props.sheetId);
