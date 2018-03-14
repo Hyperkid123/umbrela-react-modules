@@ -1,23 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Research editor landing component should render correclty 1`] = `
-<div
-  className="sc-bwzfXH bAwxlR"
->
-  <styled.div
-    column={true}
-    grow={true}
+<DNDContext>
+  <WithStyles(GridWrapper)
+    container={true}
+    spacing={0}
   >
-    <DragDropContext(DNDContext)>
+    <WithStyles(GridWrapper)
+      item={true}
+      lg={4}
+      md={4}
+      sm={12}
+      xl={3}
+      xs={12}
+    >
       <Connect(SheetMenu) />
-      <styled.div
-        column={true}
-        grow={true}
+    </WithStyles(GridWrapper)>
+    <WithStyles(GridWrapper)
+      item={true}
+      lg={8}
+      md={8}
+      sm={12}
+      xl={9}
+      xs={12}
+    >
+      <WithStyles(GridWrapper)
+        container={true}
+        spacing={0}
       >
         <Connect(QuestionView) />
+      </WithStyles(GridWrapper)>
+      <WithStyles(GridWrapper)
+        container={true}
+        spacing={0}
+      >
         <Connect(SheetView) />
-      </styled.div>
-    </DragDropContext(DNDContext)>
-  </styled.div>
-</div>
+      </WithStyles(GridWrapper)>
+    </WithStyles(GridWrapper)>
+  </WithStyles(GridWrapper)>
+</DNDContext>
 `;

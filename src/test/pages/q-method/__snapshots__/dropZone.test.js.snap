@@ -2,7 +2,7 @@
 
 exports[`Q-method dropZone component should render correclty 1`] = `
 <div
-  className="sc-bwzfXH bAwxlR"
+  className="sc-bwzfXH ddbzdc"
 >
   <Connect(ImageDropZone) />
 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DragByHandle from '../../../../../pages/researchEditorModule/components/options/dragByHandle';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import DndContext from '../../../../../common/components/dndContext';
 import TestBackend from 'react-dnd-test-backend';
@@ -51,7 +51,7 @@ describe('DragByHandle component', () => {
       expect(toJson(tree)).toMatchSnapshot();
     })
 
-  it('should have correct opacity', () => {
+  /**it('should have correct opacity', () => {
     // Render with the test context that uses the test backend
     const NotDragged = wrapInTestContext(DragByHandle);
     const root = TestUtils.renderIntoDocument(<NotDragged name='test' id='testId'/>)
@@ -63,5 +63,5 @@ describe('DragByHandle component', () => {
     backend.simulateBeginDrag([Dragged.getHandlerId()]);
     li = TestUtils.findRenderedDOMComponentWithTag(root, 'li');
     expect(li.style.opacity).toEqual('0.5');
-  })
+  })*/
 });

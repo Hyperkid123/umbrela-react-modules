@@ -6,13 +6,15 @@ exports[`collapsibleSection component should match snapshot 1`] = `
     expandIcon={<pure(ExpandMore) />}
   >
     <WithStyles(Typography)>
-      Expansion Panel 1
+      foo
     </WithStyles(Typography)>
   </WithStyles(ExpansionPanelSummary)>
   <WithStyles(ExpansionPanelDetails)>
-    <WithStyles(Typography)>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-    </WithStyles(Typography)>
+    <div>
+      <p>
+        Some copomnent body
+      </p>
+    </div>
   </WithStyles(ExpansionPanelDetails)>
 </WithStyles(ExpansionPanel)>
 `;
