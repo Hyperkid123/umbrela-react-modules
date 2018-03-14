@@ -1,6 +1,6 @@
 import React from 'react'
 import SheetView, {SheetView as Snapshot} from '../../../../pages/researchEditorModule/components/sheetView';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 
