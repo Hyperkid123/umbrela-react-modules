@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questions Creator component should render correctly 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <styled.div>
+    <WithStyles(Button)
+      onClick={[Function]}
+    >
+      <pure(Add) />
+    </WithStyles(Button)>
+    <WithStyles(Menu)
+      onClose={[Function]}
+      open={false}
+    >
+      <WithStyles(MenuItem)
+        key="0"
+        onClick={[Function]}
+      />
+      <WithStyles(MenuItem)
+        key="1"
+        onClick={[Function]}
+      />
+      <WithStyles(MenuItem)
+        key="2"
+        onClick={[Function]}
+      />
+      <WithStyles(MenuItem)
+        key="3"
+        onClick={[Function]}
+      />
+      <WithStyles(MenuItem)
+        key="4"
+        onClick={[Function]}
+      />
+      <WithStyles(MenuItem)
+        key="5"
+        onClick={[Function]}
+      />
+    </WithStyles(Menu)>
+  </styled.div>
+  <styled.div
+    column={true}
+  >
+    <Connect(QuestionMenu) />
+  </styled.div>
+</div>
+`;
