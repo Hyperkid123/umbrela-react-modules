@@ -1,0 +1,567 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question type changer component should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa gDFFRw"
+  wrap="true"
+>
+  <WithStyles(FormGroup)
+    row={true}
+    style={
+      Object {
+        "paddingLeft": 14,
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+  </WithStyles(FormGroup)>
+</div>
+`;
+
+exports[`Question type changer component should render correctly image preview checkbox 1`] = `
+<div
+  className="sc-bdVaJa gDFFRw"
+  wrap="true"
+>
+  <WithStyles(FormGroup)
+    row={true}
+    style={
+      Object {
+        "paddingLeft": 14,
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+  </WithStyles(FormGroup)>
+</div>
+`;
+
+exports[`Question type changer component should render correctly multiple answers checkbox 1`] = `
+<div
+  className="sc-bdVaJa gDFFRw"
+  wrap="true"
+>
+  <WithStyles(FormGroup)
+    row={true}
+    style={
+      Object {
+        "paddingLeft": 14,
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={true}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+  </WithStyles(FormGroup)>
+</div>
+`;
+
+exports[`Question type changer component should render correctly multiple answers checkbox 2`] = `
+<div
+  className="sc-bdVaJa gDFFRw"
+  wrap="true"
+>
+  <WithStyles(FormGroup)
+    row={true}
+    style={
+      Object {
+        "paddingLeft": 14,
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={true}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+  </WithStyles(FormGroup)>
+</div>
+`;
+
+exports[`Question type changer component should render correctly open option checkbox 1`] = `
+<div
+  className="sc-bdVaJa gDFFRw"
+  wrap="true"
+>
+  <WithStyles(FormGroup)
+    row={true}
+    style={
+      Object {
+        "paddingLeft": 14,
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={true}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+  </WithStyles(FormGroup)>
+</div>
+`;
+
+exports[`Question type changer component should render correctly options as images checkbox 1`] = `
+<div
+  className="sc-bdVaJa gDFFRw"
+  wrap="true"
+>
+  <WithStyles(FormGroup)
+    row={true}
+    style={
+      Object {
+        "paddingLeft": 14,
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={undefined}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Checkbox)
+          checked={false}
+          disabled={undefined}
+          onChange={[Function]}
+          style={
+            Object {
+              "marginRight": 10,
+              "whiteSpace": "nowrap",
+              "width": "auto",
+            }
+          }
+        />
+      }
+    />
+  </WithStyles(FormGroup)>
+</div>
+`;

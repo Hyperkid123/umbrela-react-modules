@@ -27,7 +27,7 @@ import  {
 } from '../../../../common/questionTypes';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class QuestionTypeChanger extends Component {
+export class QuestionTypeChanger extends Component {
 
 
     render() {
@@ -37,18 +37,18 @@ class QuestionTypeChanger extends Component {
       return (
             <Flex row grow wrap='true'>
               <FormGroup row style={{paddingLeft: 14}}>
-              <FormControlLabel
-                control={
-                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={mandatory} onChange={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
-                }
-                label={translate('questions.mandatory')}
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={hasCustomHelp} onChange={(event, checked) => {this.props.setCustomHelp(checked)}}/>
-                }
-                label={translate('questions.customHelp')}
-              />
+                <FormControlLabel
+                  control={
+                    <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={mandatory} onChange={(event, checked) => this.props.changeMandatoryQuestion(checked)}/>
+                  }
+                  label={translate('questions.mandatory')}
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox disabled={this.props.disableChange} style={checkBoxStyle} checked={hasCustomHelp} onChange={(event, checked) => {this.props.setCustomHelp(checked)}}/>
+                  }
+                  label={translate('questions.customHelp')}
+                />
                 {CanHaveImagePreview(questionType) ?
                   <FormControlLabel
                     control={
@@ -59,7 +59,7 @@ class QuestionTypeChanger extends Component {
                     }
                     label={translate('questions.imageEntry')}
                   />
-                   : null}
+                : null}
                 {CanHaveMultipleAnswers(questionType) ?
                   <FormControlLabel
                     control={
@@ -80,7 +80,7 @@ class QuestionTypeChanger extends Component {
                     }
                     label={translate('questions.customAnswer')}
                   />
-                   : null}
+                : null}
                 {CanHaveOptionAsImage(questionType) ?
                   <FormControlLabel
                     control={
@@ -91,8 +91,8 @@ class QuestionTypeChanger extends Component {
                     }
                     label={translate('questions.optionsImages')}
                   />
-                  : null}
-                </FormGroup>
+                : null}
+              </FormGroup>
             </Flex>
         );
     }
