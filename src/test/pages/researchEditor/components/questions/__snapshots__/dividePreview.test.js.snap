@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divide Preview component should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <label>
+    : 
+    NaN
+  </label>
+</div>
+`;
+
+exports[`Divide Preview component should render correctly with options 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <label>
+    : 
+    NaN
+  </label>
+  <styled.div
+    key="1"
+  >
+    <TextField
+      min={0}
+      name="divide_input_1"
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      select={false}
+      style={
+        Object {
+          "flexShrink": 0,
+          "width": 150,
+        }
+      }
+      type="number"
+      value={0}
+    />
+    <styled.div
+      column={true}
+      grow={true}
+      style={
+        Object {
+          "marginLeft": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      foo
+      <WithStyles(LinearProgress)
+        mode="determinate"
+        value={NaN}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    <TextField
+      min={0}
+      name="divide_input_2"
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      select={false}
+      style={
+        Object {
+          "flexShrink": 0,
+          "width": 150,
+        }
+      }
+      type="number"
+      value={0}
+    />
+    <styled.div
+      column={true}
+      grow={true}
+      style={
+        Object {
+          "marginLeft": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      foo2
+      <WithStyles(LinearProgress)
+        mode="determinate"
+        value={NaN}
+      />
+    </styled.div>
+  </styled.div>
+</div>
+`;

@@ -64,7 +64,7 @@ export default class DividePreview extends Component {
         const optionsValues = this.state.optionsValues;
         optionsValues[index] = parseInt(value, 10);
         this.setState({optionsValues});
-      }else {
+      } else {
         console.log('not enought points', this.remainingPoints());
       }
     }
