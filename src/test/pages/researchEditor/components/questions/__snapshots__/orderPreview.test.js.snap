@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order Preview component should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <styled.div>
+    <styled.div />
+  </styled.div>
+</div>
+`;
+
+exports[`Order Preview component should render correctly with options 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <styled.div>
+    <styled.div>
+      <styled.div
+        key="1"
+      >
+        <pure(DragHandle) />
+        <span>
+          foo
+        </span>
+      </styled.div>
+      <styled.div
+        key="2"
+      >
+        <pure(DragHandle) />
+        <span>
+          foo2
+        </span>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</div>
+`;
