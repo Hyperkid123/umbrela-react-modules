@@ -9,10 +9,10 @@ exports[`New option component should render correclty 1`] = `
   >
     <TextField
       fullWidth={true}
+      margin="normal"
       onBlur={[Function]}
       onChange={[Function]}
       onKeyPress={[Function]}
-      placeholder="Nová možnost"
       required={false}
       select={false}
       value=""
@@ -20,12 +20,11 @@ exports[`New option component should render correclty 1`] = `
     <TextFieldComent
       alignRight={true}
       error={false}
-      label="0 z 255 znaků"
+      label="0 undefined 255 undefined"
     />
   </styled.div>
   <WithStyles(IconButton)
     onClick={[Function]}
-    tooltip="Přidat možnost"
   >
     <pure(Add) />
   </WithStyles(IconButton)>
