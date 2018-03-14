@@ -12,7 +12,7 @@ import {
   CardBody
 } from '../../../common/styledComponents/card';
 
-class FiltrationView extends Component {
+export class FiltrationView extends Component {
 
     componentDidMount() {
         this.props.getQuestions(this.props.activeSheetId);
