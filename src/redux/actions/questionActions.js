@@ -21,6 +21,15 @@ import {findOpenOption} from '../../common/utils';
 import {dragEnd} from './';
 import {synchronizeOption, deleteOption, finishFetch, fetchFailed} from './';
 import { getTranslate } from 'react-localize-redux';
+import {
+  getQuestionsRequest,
+  createQuestionRequest,
+  questionStructureRequest,
+  deleteQuestionRequest,
+  synchronizeQuestionRequest,
+  remapQuestionsRequest,
+  questionAnswersRequest
+} from './endpoints';
 
 function requestQuestions(){
   return {
@@ -36,12 +45,10 @@ function receiveQuestions(questions) {
 }
 
 export function getQuestions(sheetId){
-  return (dispatch, getState) => {
+  return dispatch => {
     dispatch(requestQuestions());
-    return fetch(`${window.base}${window.researchId}/get-questions`, {
-      method: 'POST',
-      body: JSON.stringify({sheetId}),
-    }).then(response => response.json())
+    return getQuestionsRequest(sheetId)
+    .then(response => response.json())
     .then(json => dispatch(receiveQuestions(json)))
     .then(() => dispatch(finishFetch()))
     .catch((err) => {
@@ -64,10 +71,8 @@ function storeQuestions(questions, sheetId) {
 export function loadQuestions(sheetId){
   return dispatch => {
     dispatch(requestQuestions());
-    return fetch(`${window.base}${window.researchId}/get-questions`, {
-      method: 'POST',
-      body: JSON.stringify({sheetId}),
-    }).then(response => response.json())
+    return  getQuestionsRequest(sheetId)
+    .then(response => response.json())
     .then(json => dispatch(storeQuestions(json, sheetId)))
     .then(() => dispatch(finishFetch()))
     .catch((err) => {
@@ -82,14 +87,13 @@ export function createNewQuestion(researchId, sheetId, questionType) {
     dispatch(requestQuestions());
     const locale = getState().locale;
     const translate = getTranslate(locale);
-    return fetch(`${window.base}${researchId}/create-question`, {
-      method: 'POST',
-      body: JSON.stringify({
-        title: translate('questions.titlePlaceholder'),
-        questionType: questionType,
-        sheetId: sheetId,
-      }),
-    }).then(response => response.json())
+    const payload = {
+      title: translate('questions.titlePlaceholder'),
+      questionType: questionType,
+      sheetId: sheetId,
+    };
+    return createQuestionRequest(payload)
+    .then(response => response.json())
     .then((json) => {
       dispatch(getQuestions(sheetId))
       return json
@@ -110,15 +114,10 @@ export function selectEditorQuestion(questionId) {
 }
 
 export function getQuestionStructure(questionId) {
-  return (dispatch, getState) => {
+  return dispatch => {
     dispatch(requestQuestions());
-    const {editor} = getState();
-    return fetch(`${window.base}${editor.researchId}/get-question-structure`, {
-      method: 'POST',
-      body: JSON.stringify({
-        questionId
-      }),
-    }).then(response => response.json())
+    return questionStructureRequest(questionId)
+    .then(response => response.json())
     .then((json) => dispatch(synchronizeActiveQuestion(json.question)))
     .catch((err) => {
       console.log('failed to fetch: ', err);
@@ -138,10 +137,7 @@ export function deleteQuestion(questionId) {
   return (dispatch, getState) => {
     dispatch(requestQuestions());
     const {editor} = getState();
-    return fetch(`${window.base}${editor.researchId}/delete-question`, {
-      method: 'POST',
-      body: JSON.stringify({questionId}),
-    })
+    return deleteQuestionRequest(questionId)
     .then(response => response.json())
     .then((json) => {
       dispatch(getQuestions(editor.activeSheet.sheetId))
@@ -171,10 +167,8 @@ export function updateQuetionsInformation(question) {
   return (dispatch, getState) => {
     const {editor} = getState();
       dispatch(requestQuestions());
-      return fetch(`${window.base}${editor.researchId}/synchronize-question`, {
-        method: 'POST',
-        body: JSON.stringify({question: {...question}}),
-      }).then(response => response.json())
+      return synchronizeQuestionRequest(question)
+      .then(response => response.json())
       .then((json) => {
         dispatch(synchronizeActiveQuestion(json));
       })
@@ -197,15 +191,10 @@ export function dragQuestionCard(dragIndex, hoverIndex) {
 
 export function remapQuestions(sheetId) {
   return (dispatch, getState) => {
-    const {editor, questions} = getState();
+    const {questions} = getState();
     dispatch(requestQuestions());
-    return fetch(`${window.base}${editor.researchId}/remap-questions`, {
-      method: 'POST',
-      body: JSON.stringify({
-        sheetId,
-        questions: questions.questions
-      }),
-    }).then(response => response.json())
+    return remapQuestionsRequest(sheetId, questions.questions)
+    .then(response => response.json())
     .then((json) => {
       dispatch(getQuestions(sheetId));
       dispatch(dragEnd());
@@ -306,11 +295,9 @@ function receiveQuestion(questionId, json){
 function fetchQuestion(questionId) {
   return dispatch => {
     dispatch(requestQuestion(questionId));
-    return fetch(`${window.base}/${window.researchId}/get-question-answers`,{
-      method: 'post',
-      body: JSON.stringify({questionId: questionId}),
-    }).then(response => response.json())
-      .then(json => dispatch(receiveQuestion(questionId, json)));
+    return questionAnswersRequest(questionId)
+    .then(response => response.json())
+    .then(json => dispatch(receiveQuestion(questionId, json)));
   };
 }
 

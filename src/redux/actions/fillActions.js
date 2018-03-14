@@ -1,9 +1,12 @@
 import {
   START_RESEARCH,
   UPDATE_RESEARCH_STATE,
-  LOAD_LANG,
   CREATE_FILTER_STRUCTURE
 } from './actionTypes'
+
+import {
+  researchStructureRequest
+} from './endpoints';
 
 export function startResearch(){
   return {
@@ -18,13 +21,6 @@ export function updateResearchState(research){
   }
 }
 
-export function loadLang(lang){
-  return {
-    type:LOAD_LANG,
-    lang
-  }
-}
-
 export function createFilterStructure(research){
   return {
     type:CREATE_FILTER_STRUCTURE,
@@ -34,16 +30,9 @@ export function createFilterStructure(research){
 
 export function getResearchStructure() {
   const researchId = window.researchId;
-  const url = window.base + researchId + '/get-research-structure';
   return (dispatch, getState) => {
-    return fetch(url, {
-      method: 'POST',
-      body: researchId,
-      redirect: 'manual',
-      headers: {
-          'Accept': 'application/json',
-      },
-    }).then((response) => {
+    return researchStructureRequest(researchId)
+    .then((response) => {
         if(!response.ok){
             throw new Error(response);
         }

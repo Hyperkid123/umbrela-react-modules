@@ -13,6 +13,10 @@ import {
   ANSWERS_SUBBMITED,
 } from './actionTypes'
 
+import {
+  submitAnswersRequest
+} from './endpoints';
+
 export function answerCloseOpenQuestion(questionId, optionId, answer = '') {
     return {
         type: CLOSE_OPEN_QUESTION_ANSWER,
@@ -133,20 +137,13 @@ function answersSubbmited() {
 export function submitAnswers(answers) {
   return (dispatch, getState) => {
     dispatch(sendAnswers);
-    const url = window.base + window.researchId + '/save-session';
     const {research} = getState();
     const payload = {
       answers,
       executionTime: (performance.now() - research.startTime)
     }
-    fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(payload),
-        redirect: 'manual',
-        headers: {
-            'Accept': 'application/json, text/plain',
-        },
-    }).then((response) => {
+    submitAnswersRequest(payload, window.researchId)
+    .then((response) => {
         if(!response.ok){
             throw new Error(response);
         }

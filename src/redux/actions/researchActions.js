@@ -12,13 +12,21 @@ import {
 import {sheetInfoValidator} from '../../common/validator';
 import {dragEnd, finishFetch, fetchFailed} from './';
 import lodash from 'lodash';
+import {
+  getSheetsRequest,
+  newSheetRequest,
+  deleteSheetRequest,
+  updateSheetRequest,
+  remapSheetsRequest,
+} from './endpoints';
+
+const researchId = window.researchId;
 
 export function getSheets(researchId){
   return dispatch => {
     dispatch(requestSheets());
-    return fetch(`${window.base}${researchId}/get-sheets`, {
-      method: 'POST',
-    }).then(response => response.json())
+    return getSheetsRequest(researchId)
+    .then(response => response.json())
     .then(json => dispatch(receiveSheets(json)))
     .catch((err) => {
       console.log('failed to fetch: ', err);
@@ -40,13 +48,11 @@ function requestSheets() {
   }
 }
 
-export function createNewSheet(researchId) {
+export function createNewSheet(sheetTitle) {
   return dispatch => {
     dispatch(requestSheets());
-    return fetch(`${window.base}${researchId}/create-sheet`, {
-      method: 'POST',
-      body: JSON.stringify({title: '(Prosím zadejte název archu)'}),
-    }).then(response => response.json())
+    return newSheetRequest(sheetTitle, researchId)
+    .then(response => response.json())
     .then((json) => {
       dispatch(getSheets(researchId)).then(() => {
         dispatch(receiveNewSheet(json.sheetId))
@@ -77,10 +83,8 @@ export function selectEditorSheet(sheetId) {
 export function deleteSheet(sheetId, researchId) {
   return dispatch => {
     dispatch(requestSheets());
-    return fetch(`${window.base}${researchId}/delete-sheet`, {
-      method: 'POST',
-      body: JSON.stringify({sheetId: sheetId}),
-    }).then(response => response.json())
+    return deleteSheetRequest(sheetId, researchId)
+    .then(response => response.json())
     .then((json) => {
       dispatch(deselectSheet(researchId))
     }).then(() => {
@@ -113,10 +117,8 @@ export function updateSheetInformation(sheet, researchId) {
     });
     if(originalSheet && sheet.title !== originalSheet.title && sheetInfoValidator(sheet)){
       dispatch(requestSheets());
-      return fetch(`${window.base}${researchId}/update-sheet`, {
-        method: 'POST',
-        body: JSON.stringify({sheet}),
-      }).then(response => response.json())
+      return updateSheetRequest(sheet)
+      .then(response => response.json())
       .then((json) => {
         dispatch(getSheets(researchId))
       })
@@ -139,10 +141,8 @@ export function dragSheetCard(dragIndex, hoverIndex) {
 export function remapSheets(researchId) {
   return (dispatch, getState) => {
     dispatch(requestSheets());
-    return fetch(`${window.base}${researchId}/remap-sheets`, {
-      method: 'POST',
-      body: JSON.stringify({sheets: getState().editor.sheets}),
-    }).then(response => response.json())
+    return remapSheetsRequest(getState().editor.sheets, researchId)
+    .then(response => response.json())
     .then((json) => {
       dispatch(getSheets(researchId));
       dispatch(dragEnd());
