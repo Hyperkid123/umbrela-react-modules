@@ -1,21 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import OptionEditorItem, {OptionEditorItem as Snapshot} from '../../../../../pages/researchEditorModule/components/options/optionEditorItem';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store'
 import DndContext from '../../../../../common/components/dndContext';
-import TestBackend from 'react-dnd-test-backend';
 import { DragDropContext } from 'react-dnd';
 
-function wrapInTestContext(DecoratedComponent, props) {
-  return DragDropContext(TestBackend)(
-    class TestContextContainer extends Component {
-      render() {
-        return <DecoratedComponent {...props} />;
-      }
-    }
-  );
-}
 
 describe('Option editor item component', () => {
   const initialState  = {

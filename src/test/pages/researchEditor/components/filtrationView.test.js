@@ -36,5 +36,63 @@ describe('Filtration View component', () => {
       />
     ).dive();
     expect(toJson(tree)).toMatchSnapshot();
-  })
+  });
+
+  it('should render correctly with questions', () => {
+    const tree = shallow(
+      <Snapshot
+        activeSheet={{
+          title: 'foo'
+        }}
+        questions={[
+          {
+            questionType: 'CloseQuestion',
+            title: 'foo',
+            questionId: 0,
+            questionOrder: 0,
+          }
+        ]}
+        getQuestions={jest.fn()}
+      />
+    ).dive();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should not render any question', () => {
+    const tree = shallow(
+      <Snapshot
+        activeSheet={{
+          title: 'foo'
+        }}
+        questions={[
+          {
+            questionType: 'OpenQuestion',
+            title: 'foo',
+            questionId: 0,
+            questionOrder: 0,
+          }
+        ]}
+        getQuestions={jest.fn()}
+      />
+    ).dive();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should call question update on sheet change', () => {
+    const getQuestions = jest.fn();
+    const wrapper = shallow(
+      <Snapshot
+        activeSheet={{
+          title: 'foo'
+        }}
+        activeSheetId={0}
+        getQuestions={getQuestions}
+      />
+    );
+    expect(getQuestions.mock.calls.length).toEqual(1);
+    wrapper.setProps({activeSheetId: 1});
+    expect(getQuestions.mock.calls.length).toEqual(2);
+    wrapper.setProps({activeSheetId: 1});
+    expect(getQuestions.mock.calls.length).toEqual(2);
+  });
 });
