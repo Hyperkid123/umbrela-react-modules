@@ -5,7 +5,7 @@ cache: yarn
 before_script:
   - yarn
 script:
-  - yarn test:ci
+  - yarn test
   - yarn build
 os:
   - linux
