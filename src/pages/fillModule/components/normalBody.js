@@ -2,7 +2,6 @@
  * Created by rela on 26/06/17.
  */
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import TextField from 'material-ui/TextField';
 

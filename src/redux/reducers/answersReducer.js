@@ -150,7 +150,7 @@ export default function (state = answers, action) {
 
 function removeSingleOption(options, option) {
     let optionIndex = 0;
-    options.map((item, index) => {
+    options.forEach((item, index) => {
         if (option === item) optionIndex = index;
     });
     return [
@@ -176,7 +176,7 @@ function updateSingleRow(columnId) {
 
 function findColumnIndex(row, columnId) {
     let result = false;
-    row.map((item, i) => {
+    row.forEach((item, i) => {
         if (columnId === item) result = i;
     });
     return result;

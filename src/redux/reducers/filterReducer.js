@@ -29,6 +29,7 @@ export default function (state = null, action) {
                     });
 
                     if (question.filters.length > 0) {
+                      // eslint-disable-next-line
                       questionFilters[question.questionId, Array.from(optionsIndexes)];
                     }
                 });
@@ -45,7 +46,7 @@ export default function (state = null, action) {
             const answer = action.payload.answer ? action.payload.answer : action.payload.checked;
             let source = state.sourceQuestionMap[action.payload.questionId];
             if (answer && state.filteringOptions[action.payload.optionId]) {
-                source.map((targetId) => {
+                source.forEach((targetId) => {
                     state.filters[targetId] = [];
                 });
                 emptyFilters(state.filters, state.filteringOptions, state.questionFilters[action.payload.questionId]);
@@ -56,7 +57,7 @@ export default function (state = null, action) {
             } else {
                 let newFilters = state.filters;
                 if(source) {
-                    source.map((targetId) => {
+                    source.forEach((targetId) => {
                         state.filters[targetId] = [];
                         newFilters = emptyFilters(state.filters, state, state.questionFilters[targetId]);
                     });
@@ -91,7 +92,7 @@ export default function (state = null, action) {
 
 function addCloseFilter(optionId, filters, filteringOptions) {
     const newFilters = {...filters};
-    filteringOptions[optionId].map((question) => {
+    filteringOptions[optionId].forEach((question) => {
         if(filters[question]) {
             newFilters[question] =  [...filters[question], optionId];
         } else {
@@ -105,8 +106,8 @@ function addCloseFilter(optionId, filters, filteringOptions) {
 function emptyFilters(filters, filteringOptions, questionFilters) {
     const newFilters = {...filters};
     if(questionFilters){
-        questionFilters.map((optionId) => {
-            filteringOptions[optionId].map((question) => {
+        questionFilters.forEach((optionId) => {
+            filteringOptions[optionId].forEach((question) => {
                 newFilters[question] = [];
             });
         });
@@ -116,7 +117,7 @@ function emptyFilters(filters, filteringOptions, questionFilters) {
 
 function removeFilteringOption(optionId, filters, filteringOptions) {
     const newFilters = {...filters};
-    filteringOptions[optionId].map((question) => {
+    filteringOptions[optionId].forEach((question) => {
         newFilters[question] = removeFromArray(filters[question], optionId);
     });
     return newFilters;
@@ -124,7 +125,7 @@ function removeFilteringOption(optionId, filters, filteringOptions) {
 
 function removeFromArray(array, item) {
     let index = false;
-    array.map((entry, i) => {
+    array.forEach((entry, i) => {
         if (entry === item) index = i;
     });
     if (index || index === 0) {

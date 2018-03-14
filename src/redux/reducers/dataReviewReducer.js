@@ -1,6 +1,5 @@
 import {
   REQUEST_QUESTION,
-  RECEIVE_QUESTION_ANSWERS,
   INVALIDATE_QUESTION,
 } from '../actions/';
 

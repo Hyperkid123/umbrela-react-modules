@@ -40,7 +40,7 @@ export default class CloseQuestions extends Component {
           },
           label: function (tooltipItem, data) {
             var amount = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-            var total = eval(data.datasets[tooltipItem.datasetIndex].data.join('+'));
+            var total = this.eval(data.datasets[tooltipItem.datasetIndex].data.join('+'));
             return amount + ' / ' + total + ' ( ' + parseFloat(amount * 100 / total).toFixed(2) + '% )';
           },
         },
