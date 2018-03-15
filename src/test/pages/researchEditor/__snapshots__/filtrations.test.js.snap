@@ -2,7 +2,7 @@
 
 exports[`Filtrations component should render correclty 1`] = `
 <DNDContext>
-  <WithStyles(GridWrapper)
+  <WithStyles
     item={true}
     lg={4}
     md={4}
@@ -13,8 +13,8 @@ exports[`Filtrations component should render correclty 1`] = `
     <Connect(SheetMenu)
       hideNewSheet={true}
     />
-  </WithStyles(GridWrapper)>
-  <WithStyles(GridWrapper)
+  </WithStyles>
+  <WithStyles
     item={true}
     lg={8}
     md={8}
@@ -22,10 +22,10 @@ exports[`Filtrations component should render correclty 1`] = `
     xl={9}
     xs={12}
   >
-    <WithStyles(GridWrapper)
+    <WithStyles
       container={true}
       spacing={0}
     />
-  </WithStyles(GridWrapper)>
+  </WithStyles>
 </DNDContext>
 `;

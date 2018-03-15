@@ -29,9 +29,9 @@ exports[`Matrix Preview component should render checkboxes 1`] = `
         <styled.td
           key="0"
         >
-          <WithStyles(Checkbox)
-            checkedIcon={<pure(RadioButtonChecked) />}
-            icon={<pure(RadioButtonUnchecked) />}
+          <WithStyles
+            checkedIcon={<ShouldUpdate />}
+            icon={<ShouldUpdate />}
             style={
               Object {
                 "borderLeft": "16px solid transparent",
@@ -44,10 +44,10 @@ exports[`Matrix Preview component should render checkboxes 1`] = `
       </styled.tr>
     </styled.tbody>
   </styled.table>
-  <WithStyles(Dialog)
+  <WithStyles
     actions={
       Array [
-        <WithStyles(Button)
+        <WithStyles
           label="Zavřít"
           onClick={[Function]}
           primary={true}
@@ -81,7 +81,7 @@ exports[`Matrix Preview component should render checkboxes 1`] = `
         src={null}
       />
     </LazyLoad>
-  </WithStyles(Dialog)>
+  </WithStyles>
 </div>
 `;
 
@@ -99,10 +99,10 @@ exports[`Matrix Preview component should render correctly empty 1`] = `
     </styled.thead>
     <styled.tbody />
   </styled.table>
-  <WithStyles(Dialog)
+  <WithStyles
     actions={
       Array [
-        <WithStyles(Button)
+        <WithStyles
           label="Zavřít"
           onClick={[Function]}
           primary={true}
@@ -136,7 +136,7 @@ exports[`Matrix Preview component should render correctly empty 1`] = `
         src={null}
       />
     </LazyLoad>
-  </WithStyles(Dialog)>
+  </WithStyles>
 </div>
 `;
 
@@ -176,9 +176,9 @@ exports[`Matrix Preview component should render correctly with options 1`] = `
         <styled.td
           key="0"
         >
-          <WithStyles(Checkbox)
-            checkedIcon={<pure(RadioButtonChecked) />}
-            icon={<pure(RadioButtonUnchecked) />}
+          <WithStyles
+            checkedIcon={<ShouldUpdate />}
+            icon={<ShouldUpdate />}
             style={
               Object {
                 "borderLeft": "16px solid transparent",
@@ -191,10 +191,10 @@ exports[`Matrix Preview component should render correctly with options 1`] = `
       </styled.tr>
     </styled.tbody>
   </styled.table>
-  <WithStyles(Dialog)
+  <WithStyles
     actions={
       Array [
-        <WithStyles(Button)
+        <WithStyles
           label="Zavřít"
           onClick={[Function]}
           primary={true}
@@ -228,6 +228,6 @@ exports[`Matrix Preview component should render correctly with options 1`] = `
         src={null}
       />
     </LazyLoad>
-  </WithStyles(Dialog)>
+  </WithStyles>
 </div>
 `;

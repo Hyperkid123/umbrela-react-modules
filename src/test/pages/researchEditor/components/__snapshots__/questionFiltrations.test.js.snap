@@ -4,7 +4,7 @@ exports[`Question filtrations shoud not render question list 1`] = `
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
     style={
@@ -13,7 +13,7 @@ exports[`Question filtrations shoud not render question list 1`] = `
       }
     }
   >
-    <WithStyles(Tabs)
+    <WithStyles
       fullWidth={true}
       indicatorColor="primary"
       onChange={[Function]}
@@ -21,7 +21,7 @@ exports[`Question filtrations shoud not render question list 1`] = `
       scrollable={true}
       value={0}
     />
-  </WithStyles(AppBar)>
+  </WithStyles>
   <styled.div
     horizontalCenter={true}
     wrap="true"
@@ -33,7 +33,7 @@ exports[`Question filtrations should render correctly empty 1`] = `
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
     style={
@@ -42,7 +42,7 @@ exports[`Question filtrations should render correctly empty 1`] = `
       }
     }
   >
-    <WithStyles(Tabs)
+    <WithStyles
       fullWidth={true}
       indicatorColor="primary"
       onChange={[Function]}
@@ -50,7 +50,7 @@ exports[`Question filtrations should render correctly empty 1`] = `
       scrollable={true}
       value={0}
     />
-  </WithStyles(AppBar)>
+  </WithStyles>
   <styled.div
     horizontalCenter={true}
     wrap="true"
@@ -62,7 +62,7 @@ exports[`Question filtrations should render sheets list 1`] = `
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
     style={
@@ -71,7 +71,7 @@ exports[`Question filtrations should render sheets list 1`] = `
       }
     }
   >
-    <WithStyles(Tabs)
+    <WithStyles
       fullWidth={true}
       indicatorColor="primary"
       onChange={[Function]}
@@ -79,7 +79,7 @@ exports[`Question filtrations should render sheets list 1`] = `
       scrollable={true}
       value={0}
     />
-  </WithStyles(AppBar)>
+  </WithStyles>
   <styled.div
     horizontalCenter={true}
     wrap="true"

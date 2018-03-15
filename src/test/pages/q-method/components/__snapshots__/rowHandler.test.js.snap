@@ -8,27 +8,27 @@ exports[`Pyramid row handler should render correclty 1`] = `
     horizontalCenter={true}
   >
     <styled.div>
-      <WithStyles(Tooltip)
+      <WithStyles
         title="Přidat řádedek"
       >
-        <WithStyles(IconButton)
+        <WithStyles
           onClick={[Function]}
         >
-          <pure(AddCircle) />
-        </WithStyles(IconButton)>
-      </WithStyles(Tooltip)>
-      <WithStyles(Tooltip)
+          <ShouldUpdate />
+        </WithStyles>
+      </WithStyles>
+      <WithStyles
         title="Odebrat poslední řádek"
       >
         <div>
-          <WithStyles(IconButton)
+          <WithStyles
             disabled={false}
             onClick={[Function]}
           >
-            <pure(RemoveCircle) />
-          </WithStyles(IconButton)>
+            <ShouldUpdate />
+          </WithStyles>
         </div>
-      </WithStyles(Tooltip)>
+      </WithStyles>
     </styled.div>
   </styled.div>
   <styled.div />

@@ -19,7 +19,7 @@ function researchReducer(state = research, action) {
         research: true,
       }
     case START_RESEARCH:
-      return {...state, startTime: performance.now()};  
+      return {...state, startTime: new Date().getTime()};  
     default:
       return state;
   }

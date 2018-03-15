@@ -140,9 +140,9 @@ export function submitAnswers(answers) {
     const {research} = getState();
     const payload = {
       answers,
-      executionTime: (performance.now() - research.startTime)
+      executionTime: (new Date().getTime() - research.startTime)
     }
-    submitAnswersRequest(payload, window.researchId)
+    return submitAnswersRequest(payload, window.researchId)
     .then((response) => {
         if(!response.ok){
             throw new Error(response);

@@ -43,7 +43,7 @@ exports[`ImageDropZone component should render correclty 1`] = `
     <h2>
       Přetáhněte soubor obrázku zde nebo klikněte.
     </h2>
-    <pure(CloudUpload) />
+    <ShouldUpdate />
   </t>
   <StimulPreview />
 </div>
