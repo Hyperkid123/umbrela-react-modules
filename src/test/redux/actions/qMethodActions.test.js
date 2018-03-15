@@ -1,5 +1,5 @@
-import * as actions from '../../redux/actions/';
-import * as types from '../../redux/actions/actionTypes';
+import * as actions from '../../../redux/actions/';
+import * as types from '../../../redux/actions/actionTypes';
 
 describe('actions', () => {
   it('should create correct action to change row blocks', () => {
