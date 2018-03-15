@@ -1,5 +1,5 @@
-import reducer from '../../redux/reducers/qMethodReducer'
-import * as types from '../../redux/actions/actionTypes';
+import reducer from '../../../redux/reducers/qMethodReducer'
+import * as types from '../../../redux/actions/actionTypes';
 
 describe('qMethod reducer', () => {
   const initialState = {
