@@ -5,40 +5,40 @@ exports[`Questions Creator component should render correctly 1`] = `
   className="sc-bdVaJa eVCzwl"
 >
   <styled.div>
-    <WithStyles
+    <WithStyles(Button)
       onClick={[Function]}
     >
-      <ShouldUpdate />
-    </WithStyles>
-    <WithStyles
+      <pure(Add) />
+    </WithStyles(Button)>
+    <WithStyles(Menu)
       onClose={[Function]}
       open={false}
     >
-      <WithStyles
+      <WithStyles(MenuItem)
         key="0"
         onClick={[Function]}
       />
-      <WithStyles
+      <WithStyles(MenuItem)
         key="1"
         onClick={[Function]}
       />
-      <WithStyles
+      <WithStyles(MenuItem)
         key="2"
         onClick={[Function]}
       />
-      <WithStyles
+      <WithStyles(MenuItem)
         key="3"
         onClick={[Function]}
       />
-      <WithStyles
+      <WithStyles(MenuItem)
         key="4"
         onClick={[Function]}
       />
-      <WithStyles
+      <WithStyles(MenuItem)
         key="5"
         onClick={[Function]}
       />
-    </WithStyles>
+    </WithStyles(Menu)>
   </styled.div>
   <styled.div
     column={true}

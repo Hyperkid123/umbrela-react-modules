@@ -2,11 +2,11 @@
 
 exports[`Research editor landing component should render correclty 1`] = `
 <DNDContext>
-  <WithStyles
+  <WithStyles(GridWrapper)
     container={true}
     spacing={0}
   >
-    <WithStyles
+    <WithStyles(GridWrapper)
       item={true}
       lg={4}
       md={4}
@@ -15,8 +15,8 @@ exports[`Research editor landing component should render correclty 1`] = `
       xs={12}
     >
       <Connect(SheetMenu) />
-    </WithStyles>
-    <WithStyles
+    </WithStyles(GridWrapper)>
+    <WithStyles(GridWrapper)
       item={true}
       lg={8}
       md={8}
@@ -24,19 +24,19 @@ exports[`Research editor landing component should render correclty 1`] = `
       xl={9}
       xs={12}
     >
-      <WithStyles
+      <WithStyles(GridWrapper)
         container={true}
         spacing={0}
       >
         <Connect(QuestionView) />
-      </WithStyles>
-      <WithStyles
+      </WithStyles(GridWrapper)>
+      <WithStyles(GridWrapper)
         container={true}
         spacing={0}
       >
         <Connect(SheetView) />
-      </WithStyles>
-    </WithStyles>
-  </WithStyles>
+      </WithStyles(GridWrapper)>
+    </WithStyles(GridWrapper)>
+  </WithStyles(GridWrapper)>
 </DNDContext>
 `;

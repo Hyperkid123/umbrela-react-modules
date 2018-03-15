@@ -5,7 +5,7 @@ exports[`Question type changer component should render correctly empty 1`] = `
   className="sc-bdVaJa gDFFRw"
   wrap="true"
 >
-  <WithStyles
+  <WithStyles(FormGroup)
     row={true}
     style={
       Object {
@@ -13,9 +13,9 @@ exports[`Question type changer component should render correctly empty 1`] = `
       }
     }
   >
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -29,9 +29,9 @@ exports[`Question type changer component should render correctly empty 1`] = `
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -45,9 +45,9 @@ exports[`Question type changer component should render correctly empty 1`] = `
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -61,9 +61,9 @@ exports[`Question type changer component should render correctly empty 1`] = `
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -77,9 +77,9 @@ exports[`Question type changer component should render correctly empty 1`] = `
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -93,7 +93,7 @@ exports[`Question type changer component should render correctly empty 1`] = `
         />
       }
     />
-  </WithStyles>
+  </WithStyles(FormGroup)>
 </div>
 `;
 
@@ -102,7 +102,7 @@ exports[`Question type changer component should render correctly image preview c
   className="sc-bdVaJa gDFFRw"
   wrap="true"
 >
-  <WithStyles
+  <WithStyles(FormGroup)
     row={true}
     style={
       Object {
@@ -110,9 +110,9 @@ exports[`Question type changer component should render correctly image preview c
       }
     }
   >
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -126,9 +126,9 @@ exports[`Question type changer component should render correctly image preview c
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -142,9 +142,9 @@ exports[`Question type changer component should render correctly image preview c
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -158,9 +158,9 @@ exports[`Question type changer component should render correctly image preview c
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -174,7 +174,7 @@ exports[`Question type changer component should render correctly image preview c
         />
       }
     />
-  </WithStyles>
+  </WithStyles(FormGroup)>
 </div>
 `;
 
@@ -183,7 +183,7 @@ exports[`Question type changer component should render correctly multiple answer
   className="sc-bdVaJa gDFFRw"
   wrap="true"
 >
-  <WithStyles
+  <WithStyles(FormGroup)
     row={true}
     style={
       Object {
@@ -191,9 +191,9 @@ exports[`Question type changer component should render correctly multiple answer
       }
     }
   >
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -207,9 +207,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -223,9 +223,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={true}
           disabled={undefined}
           onChange={[Function]}
@@ -239,9 +239,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -255,9 +255,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -271,7 +271,7 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-  </WithStyles>
+  </WithStyles(FormGroup)>
 </div>
 `;
 
@@ -280,7 +280,7 @@ exports[`Question type changer component should render correctly multiple answer
   className="sc-bdVaJa gDFFRw"
   wrap="true"
 >
-  <WithStyles
+  <WithStyles(FormGroup)
     row={true}
     style={
       Object {
@@ -288,9 +288,9 @@ exports[`Question type changer component should render correctly multiple answer
       }
     }
   >
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -304,9 +304,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -320,9 +320,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={true}
           disabled={undefined}
           onChange={[Function]}
@@ -336,9 +336,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -352,9 +352,9 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -368,7 +368,7 @@ exports[`Question type changer component should render correctly multiple answer
         />
       }
     />
-  </WithStyles>
+  </WithStyles(FormGroup)>
 </div>
 `;
 
@@ -377,7 +377,7 @@ exports[`Question type changer component should render correctly open option che
   className="sc-bdVaJa gDFFRw"
   wrap="true"
 >
-  <WithStyles
+  <WithStyles(FormGroup)
     row={true}
     style={
       Object {
@@ -385,9 +385,9 @@ exports[`Question type changer component should render correctly open option che
       }
     }
   >
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -401,9 +401,9 @@ exports[`Question type changer component should render correctly open option che
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -417,9 +417,9 @@ exports[`Question type changer component should render correctly open option che
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -433,9 +433,9 @@ exports[`Question type changer component should render correctly open option che
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={true}
           disabled={undefined}
           onChange={[Function]}
@@ -449,9 +449,9 @@ exports[`Question type changer component should render correctly open option che
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -465,7 +465,7 @@ exports[`Question type changer component should render correctly open option che
         />
       }
     />
-  </WithStyles>
+  </WithStyles(FormGroup)>
 </div>
 `;
 
@@ -474,7 +474,7 @@ exports[`Question type changer component should render correctly options as imag
   className="sc-bdVaJa gDFFRw"
   wrap="true"
 >
-  <WithStyles
+  <WithStyles(FormGroup)
     row={true}
     style={
       Object {
@@ -482,9 +482,9 @@ exports[`Question type changer component should render correctly options as imag
       }
     }
   >
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -498,9 +498,9 @@ exports[`Question type changer component should render correctly options as imag
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={undefined}
           disabled={undefined}
           onChange={[Function]}
@@ -514,9 +514,9 @@ exports[`Question type changer component should render correctly options as imag
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -530,9 +530,9 @@ exports[`Question type changer component should render correctly options as imag
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -546,9 +546,9 @@ exports[`Question type changer component should render correctly options as imag
         />
       }
     />
-    <WithStyles
+    <WithStyles(FormControlLabel)
       control={
-        <WithStyles
+        <WithStyles(Checkbox)
           checked={false}
           disabled={undefined}
           onChange={[Function]}
@@ -562,6 +562,6 @@ exports[`Question type changer component should render correctly options as imag
         />
       }
     />
-  </WithStyles>
+  </WithStyles(FormGroup)>
 </div>
 `;

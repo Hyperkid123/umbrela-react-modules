@@ -7,7 +7,7 @@ exports[`Close preview component should render correctly empty 1`] = `
   <styled.div
     column={true}
   >
-    <WithStyles />
+    <WithStyles(FormGroup) />
   </styled.div>
 </div>
 `;
@@ -19,13 +19,13 @@ exports[`Close preview component should render correctly image options 1`] = `
   <styled.div
     column={true}
   >
-    <WithStyles>
+    <WithStyles(FormGroup)>
       <styled.div
         key="1"
       >
-        <WithStyles
-          checkedIcon={<ShouldUpdate />}
-          icon={<ShouldUpdate />}
+        <WithStyles(Checkbox)
+          checkedIcon={<pure(RadioButtonChecked) />}
+          icon={<pure(RadioButtonUnchecked) />}
           style={
             Object {
               "alignSelf": "center",
@@ -54,7 +54,7 @@ exports[`Close preview component should render correctly image options 1`] = `
           </LazyLoad>
         </styled.div>
       </styled.div>
-    </WithStyles>
+    </WithStyles(FormGroup)>
     <styled.div
       column={true}
       grow={true}
@@ -83,18 +83,18 @@ exports[`Close preview component should render correctly normal options 1`] = `
   <styled.div
     column={true}
   >
-    <WithStyles>
-      <WithStyles
+    <WithStyles(FormGroup)>
+      <WithStyles(FormControlLabel)
         control={
-          <WithStyles
-            checkedIcon={<ShouldUpdate />}
-            icon={<ShouldUpdate />}
+          <WithStyles(Checkbox)
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
           />
         }
         key="1"
         label="foo"
       />
-    </WithStyles>
+    </WithStyles(FormGroup)>
     <styled.div
       column={true}
       grow={true}
@@ -123,18 +123,18 @@ exports[`Close preview component should render correctly open option 1`] = `
   <styled.div
     column={true}
   >
-    <WithStyles>
-      <WithStyles
+    <WithStyles(FormGroup)>
+      <WithStyles(FormControlLabel)
         control={
-          <WithStyles
-            checkedIcon={<ShouldUpdate />}
-            icon={<ShouldUpdate />}
+          <WithStyles(Checkbox)
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
           />
         }
         key="1"
         label="foo"
       />
-    </WithStyles>
+    </WithStyles(FormGroup)>
     <styled.div
       column={true}
       grow={true}

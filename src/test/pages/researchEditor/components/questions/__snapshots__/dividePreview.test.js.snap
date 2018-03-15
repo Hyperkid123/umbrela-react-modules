@@ -49,7 +49,7 @@ exports[`Divide Preview component should render correctly with options 1`] = `
       }
     >
       foo
-      <WithStyles
+      <WithStyles(LinearProgress)
         mode="determinate"
         value={NaN}
       />
@@ -85,7 +85,7 @@ exports[`Divide Preview component should render correctly with options 1`] = `
       }
     >
       foo2
-      <WithStyles
+      <WithStyles(LinearProgress)
         mode="determinate"
         value={NaN}
       />

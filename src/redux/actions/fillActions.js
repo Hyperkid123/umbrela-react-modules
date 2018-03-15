@@ -21,7 +21,7 @@ export function updateResearchState(research){
   }
 }
 
-export function createFilterStructure(research){
+function createFilterStructure(research){
   return {
     type:CREATE_FILTER_STRUCTURE,
     research

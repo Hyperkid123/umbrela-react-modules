@@ -19,7 +19,7 @@ exports[`Order Preview component should render correctly with options 1`] = `
       <styled.div
         key="1"
       >
-        <ShouldUpdate />
+        <pure(DragHandle) />
         <span>
           foo
         </span>
@@ -27,7 +27,7 @@ exports[`Order Preview component should render correctly with options 1`] = `
       <styled.div
         key="2"
       >
-        <ShouldUpdate />
+        <pure(DragHandle) />
         <span>
           foo2
         </span>
