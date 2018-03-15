@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question filtrations shoud not render question list 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+    style={
+      Object {
+        "maxWidth": "calc(100vw - 400px - 20px)",
+      }
+    }
+  >
+    <WithStyles(Tabs)
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      scrollButtons="auto"
+      scrollable={true}
+      value={0}
+    />
+  </WithStyles(AppBar)>
+  <styled.div
+    horizontalCenter={true}
+    wrap="true"
+  />
+</div>
+`;
+
+exports[`Question filtrations should render correctly empty 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+    style={
+      Object {
+        "maxWidth": "calc(100vw - 400px - 20px)",
+      }
+    }
+  >
+    <WithStyles(Tabs)
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      scrollButtons="auto"
+      scrollable={true}
+      value={0}
+    />
+  </WithStyles(AppBar)>
+  <styled.div
+    horizontalCenter={true}
+    wrap="true"
+  />
+</div>
+`;
+
+exports[`Question filtrations should render sheets list 1`] = `
+<div
+  className="sc-bdVaJa eVCzwl"
+>
+  <WithStyles(AppBar)
+    color="default"
+    position="static"
+    style={
+      Object {
+        "maxWidth": "calc(100vw - 400px - 20px)",
+      }
+    }
+  >
+    <WithStyles(Tabs)
+      fullWidth={true}
+      indicatorColor="primary"
+      onChange={[Function]}
+      scrollButtons="auto"
+      scrollable={true}
+      value={0}
+    />
+  </WithStyles(AppBar)>
+  <styled.div
+    horizontalCenter={true}
+    wrap="true"
+  >
+    <Connect(FilterableQuestionsList)
+      filterOrder={true}
+      key="10"
+      questionId={10}
+      questionOrder={10}
+      selectedOptionId={null}
+      sheetId={10}
+      title="foo"
+    />
+  </styled.div>
+</div>
+`;

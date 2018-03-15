@@ -33,7 +33,7 @@ import EditIcon from 'material-ui-icons/ModeEdit';
 import QuestionBody from './questions/questionBody';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class QuestionView extends Component {
+export class QuestionView extends Component {
     constructor(props){
     	super(props);
     	this.state = {
@@ -87,11 +87,11 @@ class QuestionView extends Component {
                   />
                 </FormControl>
               </InputHeader>
-                <TextFieldComent
-                  error={this.props.activeQuestion.title.length >= LABEL_LENGTH}
-                  label={`${this.props.activeQuestion.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
-                  alignRight
-                />
+              <TextFieldComent
+                error={this.props.activeQuestion.title.length >= LABEL_LENGTH}
+                label={`${this.props.activeQuestion.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
+                alignRight
+              />
               <CardControlls>
                 <Grid container spacing={0} justify="flex-end" direction="row">
                   <Grid item>
@@ -145,7 +145,6 @@ class QuestionView extends Component {
       } else {
         return null;
       }
-
     }
 }
 

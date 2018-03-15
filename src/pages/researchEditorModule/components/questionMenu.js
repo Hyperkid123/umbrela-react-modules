@@ -19,7 +19,7 @@ import {
 } from '../../../redux/actions';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class QuestionMenu extends Component {
+export class QuestionMenu extends Component {
 
     componentDidMount() {
       this.props.getQuestions(this.props.activeSheetId);

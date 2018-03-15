@@ -15,7 +15,7 @@ import grey from 'material-ui/colors/grey';
 import Grid from 'material-ui/Grid';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-const StatusBar = ({isFetching, failed, translate, currentLanguage}) => (
+export const StatusBar = ({isFetching, failed, translate, currentLanguage}) => (
   <Grid item xs={12}>
     <StatusBarList>
       <li>

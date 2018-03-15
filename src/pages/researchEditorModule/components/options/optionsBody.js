@@ -7,15 +7,15 @@ import CloseOptionsEditor from './closeOptionsEditor';
 import MatrixOptionsEditor from './matrixOptionsEditor';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class OptionsBody extends Component {
+export class OptionsBody extends Component {
 
     render() {
         return (
             <Flex column>
-                <SmallHeading withouthBorder>
-                  {this.props.translate('options.options')}
-                </SmallHeading>
-                {IsMatrixQuestion(this.props.questionType) ? <MatrixOptionsEditor/> : <CloseOptionsEditor/>}
+              <SmallHeading withouthBorder>
+                {this.props.translate('options.options')}
+              </SmallHeading>
+              {IsMatrixQuestion(this.props.questionType) ? <MatrixOptionsEditor/> : <CloseOptionsEditor/>}
             </Flex>
         );
     }

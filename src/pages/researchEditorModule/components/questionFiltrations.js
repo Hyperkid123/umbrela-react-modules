@@ -7,7 +7,7 @@ import {loadOptions} from '../../../redux/actions';
 import AppBar from 'material-ui/AppBar';
 import FilterableQuestionsList from './filtrations/filterableQuestionsList';
 
-class QuestionFiltrations extends Component {
+export class QuestionFiltrations extends Component {
 
     constructor(props){
     	super(props);

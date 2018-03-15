@@ -20,7 +20,7 @@ import {
 import QuestionMenu from './questionMenu';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class QuestionsCreator extends Component {
+export class QuestionsCreator extends Component {
 
     constructor(props){
     	super(props);

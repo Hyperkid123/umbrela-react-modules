@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterableQuestionsList component should render correctly with questions 1`] = `
+<List
+  classes={
+    Object {
+      "dense": "MuiList-dense-3",
+      "padding": "MuiList-padding-2",
+      "root": "MuiList-root-1",
+      "subheader": "MuiList-subheader-4",
+    }
+  }
+  component="ul"
+  dense={false}
+  disablePadding={false}
+  style={
+    Object {
+      "margin": 5,
+    }
+  }
+>
+  <WithStyles(ListItem)>
+    <WithStyles(ListItemIcon)>
+      <pure(List) />
+    </WithStyles(ListItemIcon)>
+    <WithStyles(ListItemText) />
+  </WithStyles(ListItem)>
+  <WithStyles(Divider) />
+  <WithStyles(ListItem)
+    button={true}
+    dense={true}
+    key="1"
+    onClick={[Function]}
+  >
+    <WithStyles(Checkbox)
+      checked={false}
+    />
+    <WithStyles(ListItemText)
+      primary="foo"
+    />
+  </WithStyles(ListItem)>
+</List>
+`;

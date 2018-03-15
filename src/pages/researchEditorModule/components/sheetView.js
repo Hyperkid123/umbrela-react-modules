@@ -32,7 +32,7 @@ import EditIcon from 'material-ui-icons/ModeEdit';
 import QuestionsCreator from './questionsCreator';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class SheetView extends Component {
+export class SheetView extends Component {
     constructor(props){
     	super(props);
     	this.state = {
@@ -92,11 +92,11 @@ class SheetView extends Component {
                   />
                 </FormControl>
               </InputHeader>
-                <TextFieldComent
-                  error={this.props.activeSheet.title.length >= LABEL_LENGTH}
-                  label={`${this.props.activeSheet.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
-                  alignRight
-                />
+              <TextFieldComent
+                error={this.props.activeSheet.title.length >= LABEL_LENGTH}
+                label={`${this.props.activeSheet.title.length} ${translate('common.from')} ${LABEL_LENGTH} ${translate('common.characters')}`}
+                alignRight
+              />
               <CardControlls>
                 <Grid container spacing={0} justify="flex-end" direction="row">
                   <Grid item>
@@ -108,9 +108,9 @@ class SheetView extends Component {
                 </Grid>
               </CardControlls>
               <CardBody>
-                  <Grid item>
-                      <QuestionsCreator/>
-                  </Grid>
+                <Grid item>
+                  <QuestionsCreator/>
+                </Grid>
               </CardBody>
             </CardWrapper>
             <Dialog

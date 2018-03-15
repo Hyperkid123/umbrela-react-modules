@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question Menu component should render correctly empty 1`] = `
+<h2
+  className="sc-csuQGl hmEPUJ"
+>
+  Loading
+</h2>
+`;
+
+exports[`Question Menu component should render correctly with questions 1`] = `
+<section
+  className="sc-bxivhb bDsTwg"
+>
+  <styled.div
+    column={true}
+    grow={true}
+  >
+    <styled.div
+      fullWidth={true}
+    >
+      <styled.h2 />
+      <styled.ul>
+        <DragSource(DropTarget(SheetDraggableCard))
+          index={0}
+          key="1"
+          moveCard={[Function]}
+        >
+          <MenuListItem
+            active={false}
+            key="1"
+            sheetId={1}
+          />
+        </DragSource(DropTarget(SheetDraggableCard))>
+        <DragSource(DropTarget(SheetDraggableCard))
+          index={1}
+          key="2"
+          moveCard={[Function]}
+        >
+          <MenuListItem
+            active={false}
+            key="2"
+            sheetId={2}
+          />
+        </DragSource(DropTarget(SheetDraggableCard))>
+      </styled.ul>
+    </styled.div>
+  </styled.div>
+</section>
+`;
