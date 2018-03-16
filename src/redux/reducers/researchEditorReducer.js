@@ -51,5 +51,4 @@ function researchEditorReducer(state = initialState, action) {
       return state;
   }
 }
-
 export default researchEditorReducer;
