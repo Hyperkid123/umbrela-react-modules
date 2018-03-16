@@ -4,7 +4,7 @@ exports[`Question body component should render correctly empty 1`] = `
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(Chip)
+  <WithStyles
     label="undefined: undefined"
     style={
       Object {
@@ -13,11 +13,11 @@ exports[`Question body component should render correctly empty 1`] = `
     }
   />
   <Connect(QuestionTypeChanger) />
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
   >
-    <WithStyles(Tabs)
+    <WithStyles
       centered={true}
       fullWidth={true}
       indicatorColor="primary"
@@ -29,17 +29,17 @@ exports[`Question body component should render correctly empty 1`] = `
       }
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles
         color="secondary"
         fullWidth={true}
-        icon={<pure(ModeEdit) />}
+        icon={<ShouldUpdate />}
       />
-      <WithStyles(Tab)
+      <WithStyles
         fullWidth={true}
-        icon={<pure(RemoveRedEye) />}
+        icon={<ShouldUpdate />}
       />
-    </WithStyles(Tabs)>
-  </WithStyles(AppBar)>
+    </WithStyles>
+  </WithStyles>
   <styled.div
     column={true}
   >
@@ -53,7 +53,7 @@ exports[`Question body component should render correctly with customHelp 1`] = `
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(Chip)
+  <WithStyles
     label="undefined: undefined"
     style={
       Object {
@@ -62,11 +62,11 @@ exports[`Question body component should render correctly with customHelp 1`] = `
     }
   />
   <Connect(QuestionTypeChanger) />
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
   >
-    <WithStyles(Tabs)
+    <WithStyles
       centered={true}
       fullWidth={true}
       indicatorColor="primary"
@@ -78,17 +78,17 @@ exports[`Question body component should render correctly with customHelp 1`] = `
       }
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles
         color="secondary"
         fullWidth={true}
-        icon={<pure(ModeEdit) />}
+        icon={<ShouldUpdate />}
       />
-      <WithStyles(Tab)
+      <WithStyles
         fullWidth={true}
-        icon={<pure(RemoveRedEye) />}
+        icon={<ShouldUpdate />}
       />
-    </WithStyles(Tabs)>
-  </WithStyles(AppBar)>
+    </WithStyles>
+  </WithStyles>
   <styled.div
     column={true}
   >
@@ -114,7 +114,7 @@ exports[`Question body component should render correctly with image preview 1`] 
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(Chip)
+  <WithStyles
     label="undefined: undefined"
     style={
       Object {
@@ -123,11 +123,11 @@ exports[`Question body component should render correctly with image preview 1`] 
     }
   />
   <Connect(QuestionTypeChanger) />
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
   >
-    <WithStyles(Tabs)
+    <WithStyles
       centered={true}
       fullWidth={true}
       indicatorColor="primary"
@@ -139,17 +139,17 @@ exports[`Question body component should render correctly with image preview 1`] 
       }
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles
         color="secondary"
         fullWidth={true}
-        icon={<pure(ModeEdit) />}
+        icon={<ShouldUpdate />}
       />
-      <WithStyles(Tab)
+      <WithStyles
         fullWidth={true}
-        icon={<pure(RemoveRedEye) />}
+        icon={<ShouldUpdate />}
       />
-    </WithStyles(Tabs)>
-  </WithStyles(AppBar)>
+    </WithStyles>
+  </WithStyles>
   <styled.div
     column={true}
   >
@@ -183,7 +183,7 @@ exports[`Question body component should render correctly with scalePoints 1`] = 
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(Chip)
+  <WithStyles
     label="undefined: undefined"
     style={
       Object {
@@ -192,11 +192,11 @@ exports[`Question body component should render correctly with scalePoints 1`] = 
     }
   />
   <Connect(QuestionTypeChanger) />
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
   >
-    <WithStyles(Tabs)
+    <WithStyles
       centered={true}
       fullWidth={true}
       indicatorColor="primary"
@@ -208,17 +208,17 @@ exports[`Question body component should render correctly with scalePoints 1`] = 
       }
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles
         color="secondary"
         fullWidth={true}
-        icon={<pure(ModeEdit) />}
+        icon={<ShouldUpdate />}
       />
-      <WithStyles(Tab)
+      <WithStyles
         fullWidth={true}
-        icon={<pure(RemoveRedEye) />}
+        icon={<ShouldUpdate />}
       />
-    </WithStyles(Tabs)>
-  </WithStyles(AppBar)>
+    </WithStyles>
+  </WithStyles>
   <styled.div
     column={true}
   >
@@ -232,7 +232,7 @@ exports[`Question body component should render only preview 1`] = `
 <div
   className="sc-bdVaJa eVCzwl"
 >
-  <WithStyles(Chip)
+  <WithStyles
     label="undefined: undefined"
     style={
       Object {
@@ -241,11 +241,11 @@ exports[`Question body component should render only preview 1`] = `
     }
   />
   <Connect(QuestionTypeChanger) />
-  <WithStyles(AppBar)
+  <WithStyles
     color="default"
     position="static"
   >
-    <WithStyles(Tabs)
+    <WithStyles
       centered={true}
       fullWidth={true}
       indicatorColor="primary"
@@ -257,13 +257,13 @@ exports[`Question body component should render only preview 1`] = `
       }
       value={0}
     >
-      <WithStyles(Tab)
+      <WithStyles
         color="secondary"
         fullWidth={true}
-        icon={<pure(ModeEdit) />}
+        icon={<ShouldUpdate />}
       />
-    </WithStyles(Tabs)>
-  </WithStyles(AppBar)>
+    </WithStyles>
+  </WithStyles>
   <styled.div
     column={true}
   >
