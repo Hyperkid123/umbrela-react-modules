@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Close question component should render correclty 1`] = `
+<styled.div
+  style={
+    Object {
+      "minWidth": 0,
+      "position": "relative",
+    }
+  }
+>
+  <styled.div
+    horizontalCenter={true}
+    pie={true}
+  >
+    <Doughnut
+      height={400}
+      options={
+        Object {
+          "cutoutPercentage": 0,
+          "legend": Object {
+            "display": false,
+          },
+          "maintainAspectRatio": true,
+          "responsive": true,
+          "tooltips": Object {
+            "callbacks": Object {
+              "label": [Function],
+              "title": [Function],
+            },
+          },
+        }
+      }
+      redraw={true}
+      width={400}
+    />
+  </styled.div>
+  <WithStyles(Dialog)
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.div>
+      <img
+        alt={false}
+        src={false}
+        style={
+          Object {
+            "minWidth": 400,
+          }
+        }
+      />
+    </styled.div>
+  </WithStyles(Dialog)>
+</styled.div>
+`;
+
+exports[`Close question component should render correclty with image 1`] = `
+<styled.div
+  style={
+    Object {
+      "minWidth": 0,
+      "position": "relative",
+    }
+  }
+>
+  <styled.div
+    horizontalCenter={true}
+    pie={true}
+  >
+    <Doughnut
+      height={400}
+      options={
+        Object {
+          "cutoutPercentage": 0,
+          "legend": Object {
+            "display": false,
+          },
+          "maintainAspectRatio": true,
+          "responsive": true,
+          "tooltips": Object {
+            "callbacks": Object {
+              "label": [Function],
+              "title": [Function],
+            },
+          },
+        }
+      }
+      redraw={true}
+      width={400}
+    />
+  </styled.div>
+  <WithStyles(Button)
+    color="primary"
+    fab={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "position": "absolute",
+      }
+    }
+  >
+    <pure(Image) />
+  </WithStyles(Button)>
+  <WithStyles(Dialog)
+    onClose={[Function]}
+    open={false}
+  >
+    <styled.div>
+      <img
+        alt="foo.com"
+        src="foo.com"
+        style={
+          Object {
+            "minWidth": 400,
+          }
+        }
+      />
+    </styled.div>
+  </WithStyles(Dialog)>
+</styled.div>
+`;
