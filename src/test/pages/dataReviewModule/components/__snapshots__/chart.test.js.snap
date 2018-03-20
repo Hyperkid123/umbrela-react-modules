@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart component should render close question 1`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render empty 1`] = `""`;
+
+exports[`Chart component should render matrix question 1`] = `
+<styled.div>
+  <MatrixQuestion
+    chartType="foo"
+    data={
+      Object {
+        "barData": Object {},
+      }
+    }
+    isOptionImage={false}
+    question={Object {}}
+    showLegend={true}
+  />
+</styled.div>
+`;
+
+exports[`Chart component should render open question 1`] = `
+<Connect(OpenQuestion)
+  data={
+    Object {
+      "barData": Object {},
+    }
+  }
+  question={Object {}}
+/>
+`;
+
+exports[`Chart component should render order question 1`] = `
+<Connect(DivideQuestion)
+  data={
+    Object {
+      "barData": Object {},
+    }
+  }
+/>
+`;
