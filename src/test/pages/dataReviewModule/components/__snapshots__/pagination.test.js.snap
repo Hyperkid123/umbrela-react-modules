@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component should render correctly 1`] = `
+<styled.ul>
+  <ChangePageButton
+    disabled={true}
+    onClick={[Function]}
+  />
+  <ChangePageButton
+    active={true}
+    key="0"
+    label={1}
+    onClick={[Function]}
+  />
+  <ChangePageButton
+    active={false}
+    key="1"
+    label={2}
+    onClick={[Function]}
+  />
+  <ChangePageButton
+    active={false}
+    key="2"
+    label={3}
+    onClick={[Function]}
+  />
+  <ChangePageButton
+    disabled={false}
+    onClick={[Function]}
+  />
+</styled.ul>
+`;

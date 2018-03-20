@@ -3,7 +3,7 @@ import {PaginationsList, PaginationsListItem} from '../../../common/styledCompon
 import Button from 'material-ui/Button';
 import { localize } from 'react-localize-redux';
 
-class Pagination extends Component {
+export class Pagination extends Component {
 
   renderPageNumbers = () => {
     return this.props.pageNumbers.map((number, index) => {
