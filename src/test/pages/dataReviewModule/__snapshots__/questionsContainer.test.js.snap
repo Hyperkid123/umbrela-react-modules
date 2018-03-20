@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questions container component should render empty correclty 1`] = `
+<styled.div
+  grow={true}
+  horizontalCenter={true}
+  verticalCenter={true}
+>
+  <WithStyles(CircularProgress)
+    size={80}
+    thickness={5}
+  />
+</styled.div>
+`;
+
+exports[`Questions container component should render with data correclty 1`] = `
+<div
+  className="sc-iRbamj dnSxgw"
+>
+  <styled.div
+    transparent={true}
+  >
+    foo
+  </styled.div>
+  <styled.div
+    transparent={true}
+  >
+    <Chart
+      chartType="PIE_CHART"
+      data={Object {}}
+      question={
+        Object {
+          "title": "foo",
+          "type": "CloseQuestion",
+        }
+      }
+      questionType="CloseQuestion"
+      showLegend={false}
+    />
+  </styled.div>
+</div>
+`;

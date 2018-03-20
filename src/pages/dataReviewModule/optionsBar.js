@@ -28,7 +28,7 @@ import Fade from 'material-ui/transitions/Fade';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 
-class OptionsBar extends Component {
+export class OptionsBar extends Component {
 
   constructor(props){
   	super(props);

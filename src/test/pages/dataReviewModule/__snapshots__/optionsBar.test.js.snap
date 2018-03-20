@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Research editor landing component should render correclty 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  <WithStyles(Button)>
+    <pure(ChevronLeft) />
+  </WithStyles(Button)>
+  <WithStyles(Button)>
+    <pure(ChevronLeft) />
+  </WithStyles(Button)>
+  <div
+    style={
+      Object {
+        "marginLeft": "auto",
+      }
+    }
+  >
+    <WithStyles(FormControlLabel)
+      control={
+        <WithStyles(Switch)
+          checked={undefined}
+          onChange={undefined}
+        />
+      }
+    />
+  </div>
+  <WithStyles(Button)
+    onClick={[Function]}
+  >
+    <pure(InsertChart) />
+  </WithStyles(Button)>
+  <WithStyles(Menu)
+    anchorEl={null}
+    onClose={[Function]}
+    open={false}
+    transition={[Function]}
+  >
+    <WithStyles(MenuItem)
+      onClick={[Function]}
+    />
+    <WithStyles(MenuItem)
+      onClick={[Function]}
+    />
+    <WithStyles(MenuItem)
+      onClick={[Function]}
+    />
+    <WithStyles(MenuItem)
+      onClick={[Function]}
+    />
+    <WithStyles(MenuItem)
+      onClick={[Function]}
+    />
+  </WithStyles(Menu)>
+</div>
+`;
