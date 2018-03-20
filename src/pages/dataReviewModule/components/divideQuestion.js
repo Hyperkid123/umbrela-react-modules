@@ -3,7 +3,7 @@ import EnhancedTable from './sortableTable/enhancedTable';
 import Paper from 'material-ui/Paper';
 import { localize } from 'react-localize-redux';
 
-class DivideQuestion extends Component {
+export class DivideQuestion extends Component {
 
   render() {
     const {translate} = this.props;
