@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Enhanced table head component should render correctly 1`] = `
+<TableHead
+  component="thead"
+>
+  <WithStyles(TableRow)>
+    <WithStyles(TableCell)
+      key="1"
+      numeric={false}
+      sortDirection={false}
+    >
+      <WithStyles(Tooltip)
+        enterDelay={300}
+        placement="bottom-start"
+        title="Seřadit"
+      >
+        <WithStyles(TableSortLabel)
+          active={false}
+          direction="asc"
+          onClick={[Function]}
+        />
+      </WithStyles(Tooltip)>
+    </WithStyles(TableCell)>
+    <WithStyles(TableCell)
+      key="33"
+      numeric={true}
+      sortDirection={false}
+    >
+      <WithStyles(Tooltip)
+        enterDelay={300}
+        placement="bottom-end"
+        title="Seřadit"
+      >
+        <WithStyles(TableSortLabel)
+          active={false}
+          direction="asc"
+          onClick={[Function]}
+        />
+      </WithStyles(Tooltip)>
+    </WithStyles(TableCell)>
+  </WithStyles(TableRow)>
+</TableHead>
+`;

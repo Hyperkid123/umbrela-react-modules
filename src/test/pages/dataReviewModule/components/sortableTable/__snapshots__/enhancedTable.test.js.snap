@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Enhanced table component should render correctly 1`] = `
+<WithStyles(Table)>
+  <EnhancedTableHead
+    columnData={Object {}}
+    onRequestSort={[Function]}
+    order="asc"
+    orderBy="name"
+  />
+  <TableBody
+    component="tbody"
+  >
+    <WithStyles(TableRow)
+      hover={true}
+      key="0"
+    >
+      <WithStyles(TableCell)>
+        row
+      </WithStyles(TableCell)>
+      <WithStyles(TableCell)
+        numeric={true}
+      >
+        11
+      </WithStyles(TableCell)>
+      <WithStyles(TableCell)
+        numeric={true}
+      >
+        3
+      </WithStyles(TableCell)>
+      <WithStyles(TableCell)
+        numeric={true}
+      >
+        13.5
+      </WithStyles(TableCell)>
+    </WithStyles(TableRow)>
+    <WithStyles(TableRow)
+      hover={true}
+      key="1"
+    >
+      <WithStyles(TableCell)>
+        row 2
+      </WithStyles(TableCell)>
+      <WithStyles(TableCell)
+        numeric={true}
+      >
+        111
+      </WithStyles(TableCell)>
+      <WithStyles(TableCell)
+        numeric={true}
+      >
+        33
+      </WithStyles(TableCell)>
+      <WithStyles(TableCell)
+        numeric={true}
+      >
+        130.5
+      </WithStyles(TableCell)>
+    </WithStyles(TableRow)>
+  </TableBody>
+  <TableFooter
+    component="tfoot"
+  >
+    <WithStyles(TableRow)>
+      <WithStyles(TableCell)>
+        foo
+        : 
+        33
+      </WithStyles(TableCell)>
+    </WithStyles(TableRow)>
+  </TableFooter>
+</WithStyles(Table)>
+`;
