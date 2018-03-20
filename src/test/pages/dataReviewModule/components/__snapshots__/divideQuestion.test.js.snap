@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divide question component should render correctly 1`] = `
+<WithStyles(Paper)
+  square={true}
+>
+  <EnhancedTable
+    answerCount={NaN}
+    columnData={
+      Array [
+        Object {
+          "id": "name",
+          "label": undefined,
+          "numeric": false,
+        },
+        Object {
+          "id": "avg",
+          "label": undefined,
+          "numeric": true,
+        },
+        Object {
+          "id": "med",
+          "label": undefined,
+          "numeric": true,
+        },
+        Object {
+          "id": "mod",
+          "label": undefined,
+          "numeric": true,
+        },
+      ]
+    }
+    data={
+      Array [
+        Object {
+          "avg": 77,
+          "med": 15,
+          "mod": 3,
+          "name": "foo",
+        },
+      ]
+    }
+  />
+</WithStyles(Paper)>
+`;

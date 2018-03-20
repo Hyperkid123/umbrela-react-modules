@@ -18,7 +18,7 @@ import {
   Flex
 } from '../../../common/styledComponents/containers';
 
- class OpenQuestion extends Component {
+ export class OpenQuestion extends Component {
 
   constructor(props){
     super(props);

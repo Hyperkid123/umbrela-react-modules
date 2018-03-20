@@ -62,10 +62,10 @@ export default class EnhancedTable extends Component {
     return (
       <Table>
         <EnhancedTableHead
-            order={order}
-            orderBy={orderBy}
-            onRequestSort={this.handleRequestSort}
-            columnData={this.props.columnData}
+          order={order}
+          orderBy={orderBy}
+          onRequestSort={this.handleRequestSort}
+          columnData={this.props.columnData}
         />
         <TableBody>
           {this.renderData()}

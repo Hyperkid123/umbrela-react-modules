@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Open question component should render correctly 1`] = `
+<styled.div
+  column={true}
+  grow={true}
+>
+  <styled.div
+    style={
+      Object {
+        "marginTop": 5,
+      }
+    }
+  >
+    <WithStyles(FormControl)>
+      <WithStyles(InputLabel)
+        htmlFor="search"
+      />
+      <WithStyles(Input)
+        endAdornment={
+          <WithStyles(InputAdornment)
+            position="end"
+            style={
+              Object {
+                "marginTop": 0,
+              }
+            }
+          >
+            <pure(Search)
+              color="disabled"
+            />
+          </WithStyles(InputAdornment)>
+        }
+        id="adornment-search"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </WithStyles(FormControl)>
+    <styled.div
+      auto={true}
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "marginLeft": "auto",
+        }
+      }
+      verticalCenter={true}
+    >
+      <span>
+          
+      </span>
+      <WithStyles(Select)
+        onChange={[Function]}
+        value={10}
+      >
+        <WithStyles(MenuItem)
+          value={5}
+        >
+          5
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={10}
+        >
+          10
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={15}
+        >
+          15
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={20}
+        >
+          20
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={50}
+        >
+          50
+        </WithStyles(MenuItem)>
+      </WithStyles(Select)>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    horizontalCenter={true}
+  >
+    <Connect(Pagination)
+      currentPage={1}
+      pageClick={[Function]}
+      pageNumbers={
+        Array [
+          1,
+        ]
+      }
+    />
+  </styled.div>
+  <styled.div
+    auto={true}
+    horizontalCenter={true}
+  >
+    <WithStyles(Paper)>
+      <WithStyles(List)
+        component="nav"
+        style={
+          Object {
+            "flex": "0 1 auto",
+          }
+        }
+      >
+        <WithStyles(ListItem)
+          button={true}
+          key="0"
+        >
+          <WithStyles(ListItemText)
+            primary="foo"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          key="1"
+        >
+          <WithStyles(ListItemText)
+            primary="foo2"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          key="2"
+        >
+          <WithStyles(ListItemText)
+            primary="foo3"
+          />
+        </WithStyles(ListItem)>
+      </WithStyles(List)>
+    </WithStyles(Paper)>
+  </styled.div>
+  <WithStyles(Dialog)
+    onClose={[Function]}
+    open={false}
+  >
+    <img />
+  </WithStyles(Dialog)>
+</styled.div>
+`;
+
+exports[`Open question component should render with image preview 1`] = `
+<styled.div
+  column={true}
+  grow={true}
+>
+  <styled.div
+    style={
+      Object {
+        "marginTop": 5,
+      }
+    }
+  >
+    <WithStyles(FormControl)>
+      <WithStyles(InputLabel)
+        htmlFor="search"
+      />
+      <WithStyles(Input)
+        endAdornment={
+          <WithStyles(InputAdornment)
+            position="end"
+            style={
+              Object {
+                "marginTop": 0,
+              }
+            }
+          >
+            <pure(Search)
+              color="disabled"
+            />
+          </WithStyles(InputAdornment)>
+        }
+        id="adornment-search"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </WithStyles(FormControl)>
+    <styled.div
+      auto={true}
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "marginLeft": "auto",
+        }
+      }
+      verticalCenter={true}
+    >
+      <span>
+          
+      </span>
+      <WithStyles(Select)
+        onChange={[Function]}
+        value={10}
+      >
+        <WithStyles(MenuItem)
+          value={5}
+        >
+          5
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={10}
+        >
+          10
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={15}
+        >
+          15
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={20}
+        >
+          20
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          value={50}
+        >
+          50
+        </WithStyles(MenuItem)>
+      </WithStyles(Select)>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    horizontalCenter={true}
+  >
+    <Connect(Pagination)
+      currentPage={1}
+      pageClick={[Function]}
+      pageNumbers={
+        Array [
+          1,
+        ]
+      }
+    />
+  </styled.div>
+  <styled.div
+    auto={true}
+    horizontalCenter={true}
+  >
+    <WithStyles(Paper)>
+      <WithStyles(List)
+        component="nav"
+        style={
+          Object {
+            "flex": "0 1 auto",
+          }
+        }
+      >
+        <WithStyles(ListItem)
+          button={true}
+          key="0"
+        >
+          <WithStyles(ListItemText)
+            primary="foo"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          key="1"
+        >
+          <WithStyles(ListItemText)
+            primary="foo2"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          key="2"
+        >
+          <WithStyles(ListItemText)
+            primary="foo3"
+          />
+        </WithStyles(ListItem)>
+      </WithStyles(List)>
+    </WithStyles(Paper)>
+  </styled.div>
+  <WithStyles(Button)
+    color="primary"
+    fab={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "marginLeft": "auto",
+      }
+    }
+  >
+    <pure(Image) />
+  </WithStyles(Button)>
+  <WithStyles(Dialog)
+    onClose={[Function]}
+    open={false}
+  >
+    <img
+      alt="image.com"
+      src="image.com"
+    />
+  </WithStyles(Dialog)>
+</styled.div>
+`;

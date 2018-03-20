@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questions navigation component should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    foo
+  </styled.div>
+  <styled.div>
+    <styled.ul>
+      <MenuListItem
+        active={false}
+        key="1"
+        label="question 1"
+        link="/question/1"
+        onClick={[Function]}
+      />
+      <MenuListItem
+        active={false}
+        key="2"
+        label="question 2"
+        link="/question/2"
+        onClick={[Function]}
+      />
+      <MenuListItem
+        active={false}
+        key="3"
+        label="question 3"
+        link="/question/3"
+        onClick={[Function]}
+      />
+    </styled.ul>
+  </styled.div>
+</styled.div>
+`;

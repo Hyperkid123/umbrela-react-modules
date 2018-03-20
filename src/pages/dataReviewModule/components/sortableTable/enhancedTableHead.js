@@ -10,6 +10,7 @@ import Tooltip from 'material-ui/Tooltip';
 export default class EnhancedTableHead extends Component {
 
     createSortHandler = property => event => {
+      console.log('sem tu');
       this.props.onRequestSort(event, property)
     }
 

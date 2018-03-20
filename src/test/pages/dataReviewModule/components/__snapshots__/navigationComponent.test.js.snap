@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu list item component should render correctly while active 1`] = `
+<NavLink
+  activeClassName="active"
+  ariaCurrent="true"
+  style={
+    Object {
+      "color": "black",
+    }
+  }
+  to="some/link/somwhere"
+>
+  <styled.div
+    active={true}
+    onClick={[Function]}
+  >
+    <styled.div
+      verticalCenter={true}
+    >
+      <styled.div>
+        <span>
+          label
+        </span>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</NavLink>
+`;
+
+exports[`Menu list item component should render correctly while not active 1`] = `
+<NavLink
+  activeClassName="active"
+  ariaCurrent="true"
+  style={
+    Object {
+      "color": "black",
+    }
+  }
+  to="some/link/somwhere"
+>
+  <styled.div
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.div
+      verticalCenter={true}
+    >
+      <styled.div>
+        <span>
+          label
+        </span>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</NavLink>
+`;

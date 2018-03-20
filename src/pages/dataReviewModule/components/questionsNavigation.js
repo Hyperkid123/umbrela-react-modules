@@ -9,7 +9,7 @@ import {
   CardBody
 } from '../../../common/styledComponents/card';
 
-class QuestionsNavigation extends Component{
+export class QuestionsNavigation extends Component{
 
   constructor(props){
     super(props);
@@ -22,13 +22,13 @@ class QuestionsNavigation extends Component{
   handleItemClick = (questionId) => this.setState({activeQuestion: questionId})
 
   renderNavigationItems = () => this.props.questions.map((question) => {
-  return  <MenuListItem
+    return  <MenuListItem
       key={question.questionId}
       link={`/question/${question.questionId}`}
       label={question.title}
       onClick={() => this.handleItemClick(question.questionId)}
       active={this.state.activeQuestion === question.questionId}
-    />
+            />
   })
 
   render(){
