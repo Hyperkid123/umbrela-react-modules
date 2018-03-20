@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`collapsibleSection component should match snapshot 1`] = `
-<WithStyles>
-  <WithStyles
-    expandIcon={<ShouldUpdate />}
+<WithStyles(ExpansionPanel)>
+  <WithStyles(ExpansionPanelSummary)
+    expandIcon={<pure(ExpandMore) />}
   >
-    <WithStyles>
+    <WithStyles(Typography)>
       foo
-    </WithStyles>
-  </WithStyles>
-  <WithStyles>
+    </WithStyles(Typography)>
+  </WithStyles(ExpansionPanelSummary)>
+  <WithStyles(ExpansionPanelDetails)>
     <div>
       <p>
         Some copomnent body
       </p>
     </div>
-  </WithStyles>
-</WithStyles>
+  </WithStyles(ExpansionPanelDetails)>
+</WithStyles(ExpansionPanel)>
 `;

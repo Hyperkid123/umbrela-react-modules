@@ -4,10 +4,10 @@ exports[`FilterableQuestionsList component should render correctly with question
 <List
   classes={
     Object {
-      "dense": "jss3",
-      "padding": "jss2",
-      "root": "jss1",
-      "subheader": "jss4",
+      "dense": "MuiList-dense-3",
+      "padding": "MuiList-padding-2",
+      "root": "MuiList-root-1",
+      "subheader": "MuiList-subheader-4",
     }
   }
   component="ul"
@@ -19,25 +19,25 @@ exports[`FilterableQuestionsList component should render correctly with question
     }
   }
 >
-  <WithStyles>
-    <WithStyles>
-      <ShouldUpdate />
-    </WithStyles>
-    <WithStyles />
-  </WithStyles>
-  <WithStyles />
-  <WithStyles
+  <WithStyles(ListItem)>
+    <WithStyles(ListItemIcon)>
+      <pure(List) />
+    </WithStyles(ListItemIcon)>
+    <WithStyles(ListItemText) />
+  </WithStyles(ListItem)>
+  <WithStyles(Divider) />
+  <WithStyles(ListItem)
     button={true}
     dense={true}
     key="1"
     onClick={[Function]}
   >
-    <WithStyles
+    <WithStyles(Checkbox)
       checked={false}
     />
-    <WithStyles
+    <WithStyles(ListItemText)
       primary="foo"
     />
-  </WithStyles>
+  </WithStyles(ListItem)>
 </List>
 `;
