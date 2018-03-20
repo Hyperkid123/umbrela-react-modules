@@ -1,7 +1,7 @@
-import * as actions from '../../redux/actions/';
-import * as types from '../../redux/actions/actionTypes';
+import * as actions from '../../../redux/actions/';
+import * as types from '../../../redux/actions/actionTypes';
 
-describe('actions', () => {
+describe('q method actions', () => {
   it('should create correct action to change row blocks', () => {
     const blocks = 10;
     const rowIndex = 15;

@@ -212,7 +212,7 @@ export function changeMandatoryQuestion(mandatory) {
       type: CHANGE_MANDATORY_QUESTION,
       mandatory
     });
-    dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
+    return dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
   }
 }
 
@@ -229,7 +229,7 @@ export function setCustomHelp(hasCustomHelp){
       type: SET_CUSTOM_HELP,
       hasCustomHelp
     });
-    dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
+    return dispatch(updateQuetionsInformation(getState().questions.activeQuestion));
   }
 }
 
@@ -239,7 +239,7 @@ export function changeQuestionType(questionType) {
       type: CHANGE_QUESTION_TYPE,
       questionType
     });
-    dispatch(updateQuetionsInformation(getState().questions.activeQuestion))
+    return dispatch(updateQuetionsInformation(getState().questions.activeQuestion))
     .then(() => {
       const activeQuestion = getState().questions.activeQuestion;
       const openOption = findOpenOption(activeQuestion.options)

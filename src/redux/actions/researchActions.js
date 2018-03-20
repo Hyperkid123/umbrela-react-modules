@@ -97,7 +97,7 @@ export function deleteSheet(sheetId, researchId) {
   }
 }
 
-export function deselectSheet() {
+function deselectSheet() {
   return {
     type: DESELECT_ACTIVE_SHEET,
   }

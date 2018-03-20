@@ -11,6 +11,8 @@ global.shallow = shallow;
 global.render = render;
 global.mount = mount;
 global.toJson = toJson;
+global.window.base = 'http://localhost:3000/';
+global.window.researchId = 1;
 
 // Fail tests on any warning
 console.error = message => {
