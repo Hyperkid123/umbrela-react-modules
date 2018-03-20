@@ -288,4 +288,180 @@ describe('answers reducer', () => {
       payload
     })).toEqual(expectedState);
   })
+<<<<<<< HEAD
+=======
+
+  it('should replace answer to matrix signle answer', () => {
+    const questionId = 1
+    const expectedState = {
+      isFetching: false,
+      "1": {"91": [31]},
+    }
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13]}
+    }
+    const payload = {
+      questionId,
+      rowId: 91,
+      columnId: 31
+    }
+    expect(reducer(initialState, {
+      type: types.MATRIX_SINGLE_ANSWER,
+      payload
+    })).toEqual(expectedState);
+  })
+
+  it('should add answer row to matrix signle answer', () => {
+    const questionId = 1
+    const expectedState = {
+      isFetching: false,
+      "1": {
+        "91": [13],
+        "92": [31]
+      },
+    }
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13]}
+    }
+    const payload = {
+      questionId,
+      rowId: 92,
+      columnId: 31
+    }
+    expect(reducer(initialState, {
+      type: types.MATRIX_SINGLE_ANSWER,
+      payload
+    })).toEqual(expectedState);
+  })
+
+  it('should add first matrix multi answer', () => {
+    const questionId = 1
+    const expectedState = {
+      isFetching: false,
+      "1": {"91": [31]},
+    }
+    const payload = {
+      questionId,
+      rowId: 91,
+      columnId: 31,
+      checked: true
+    }
+    expect(reducer(undefined, {
+      type: types.MATRIX_MULTI_ANSWER,
+      payload
+    })).toEqual(expectedState);
+  })
+
+  it('should add answer to matrix multi answer', () => {
+    const questionId = 1
+    const expectedState = {
+      isFetching: false,
+      "1": {"91": [13, 31]},
+    }
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13]}
+    }
+    const payload = {
+      questionId,
+      rowId: 91,
+      columnId: 31,
+      checked: true
+    }
+    expect(reducer(initialState, {
+      type: types.MATRIX_MULTI_ANSWER,
+      payload
+    })).toEqual(expectedState);
+  })
+
+  it('should remove answer from matrix multi answer', () => {
+    const questionId = 1
+    const expectedState = {
+      isFetching: false,
+      "1": {"91": [13]},
+    }
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13, 31]}
+    }
+    const payload = {
+      questionId,
+      rowId: 91,
+      columnId: 31,
+      checked: false
+    }
+    expect(reducer(initialState, {
+      type: types.MATRIX_MULTI_ANSWER,
+      payload
+    })).toEqual(expectedState);
+  })
+
+  it('should add new answers row to matrix multi answer', () => {
+    const questionId = 1
+    const expectedState = {
+      isFetching: false,
+      "1": {
+        "91": [13, 31],
+        "92": [31]
+      },
+    }
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13, 31]}
+    }
+    const payload = {
+      questionId,
+      rowId: 92,
+      columnId: 31,
+      checked: true
+    }
+    expect(reducer(initialState, {
+      type: types.MATRIX_MULTI_ANSWER,
+      payload
+    })).toEqual(expectedState);
+  })
+
+  it('should reset answers', () => {
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13, 31]}
+    }
+    const expectedState = {
+      isFetching: false,
+    }
+    expect(reducer(initialState, {
+      type: types.RESET_ANSWERS
+    })).toEqual(expectedState)
+  })
+
+  it('should set isFetching to true', () => {
+    const initialState = {
+      isFetching: false,
+      "1": {"91": [13, 31]}
+    }
+    const expectedState = {
+      isFetching: true,
+      "1": {"91": [13, 31]}
+    }
+    expect(reducer(initialState, {
+      type: types.SEND_ANSWERS
+    })).toEqual(expectedState);
+  })
+
+  it('should submit answers', () => {
+    const initialState = {
+      isFetching: true,
+      "1": {"91": [13, 31]}
+    }
+    const expectedState = {
+      isFetching: false,
+      "1": {"91": [13, 31]}
+    }
+    expect(reducer(initialState, {
+      type: types.ANSWERS_SUBBMITED
+    })).toEqual(expectedState);
+  })
+>>>>>>> c8e09eeb8f06e0224953ee8b279aa416717f039a
 });

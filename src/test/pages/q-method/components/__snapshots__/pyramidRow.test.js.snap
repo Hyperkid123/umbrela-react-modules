@@ -25,29 +25,29 @@ exports[`Pyramid row component should render correclty 1`] = `
     />
   </styled.div>
   <styled.div>
-    <WithStyles(Tooltip)
+    <WithStyles
       title="Přidat blok"
     >
-      <WithStyles(IconButton)
+      <WithStyles
         id="increase-blocks-1"
         onClick={[Function]}
       >
-        <pure(AddCircle) />
-      </WithStyles(IconButton)>
-    </WithStyles(Tooltip)>
-    <WithStyles(Tooltip)
+        <ShouldUpdate />
+      </WithStyles>
+    </WithStyles>
+    <WithStyles
       title="Odebrat blok"
     >
       <div>
-        <WithStyles(IconButton)
+        <WithStyles
           disabled={false}
           id="decrease-blocks-1"
           onClick={[Function]}
         >
-          <pure(RemoveCircle) />
-        </WithStyles(IconButton)>
+          <ShouldUpdate />
+        </WithStyles>
       </div>
-    </WithStyles(Tooltip)>
+    </WithStyles>
   </styled.div>
 </div>
 `;
