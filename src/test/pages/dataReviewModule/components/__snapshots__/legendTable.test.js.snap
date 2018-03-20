@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Legend table component should render correctly 1`] = `
+<styled.div
+  grow={true}
+>
+  <WithStyles(Table)>
+    <TableHead
+      component="thead"
+    >
+      <WithStyles(TableRow)>
+        <WithStyles(TableCell)
+          colSpan="2"
+        />
+        <WithStyles(TableCell) />
+      </WithStyles(TableRow)>
+    </TableHead>
+    <TableBody
+      component="tbody"
+    >
+      <WithStyles(TableRow)
+        data-for="0_tooltip"
+        data-tip={true}
+        key="0"
+        onClick={[Function]}
+      >
+        <WithStyles(TableCell)>
+          <pure(FiberManualRecord)
+            style={
+              Object {
+                "color": "r",
+              }
+            }
+          />
+        </WithStyles(TableCell)>
+        <WithStyles(TableCell)>
+          label1
+        </WithStyles(TableCell)>
+        <WithStyles(TableCell)>
+          5000
+        </WithStyles(TableCell)>
+      </WithStyles(TableRow)>
+      <WithStyles(TableRow)
+        data-for="1_tooltip"
+        data-tip={true}
+        key="1"
+        onClick={[Function]}
+      >
+        <WithStyles(TableCell)>
+          <pure(FiberManualRecord)
+            style={
+              Object {
+                "color": "e",
+              }
+            }
+          />
+        </WithStyles(TableCell)>
+        <WithStyles(TableCell)>
+          label2
+        </WithStyles(TableCell)>
+        <WithStyles(TableCell)>
+          1
+        </WithStyles(TableCell)>
+      </WithStyles(TableRow)>
+    </TableBody>
+    <TableFooter
+      component="tfoot"
+    >
+      <WithStyles(TableRow)>
+        <WithStyles(TableCell)
+          colSpan="2"
+        >
+          : 
+          3899
+        </WithStyles(TableCell)>
+        <WithStyles(TableCell)>
+          5001
+        </WithStyles(TableCell)>
+      </WithStyles(TableRow)>
+    </TableFooter>
+  </WithStyles(Table)>
+  <WithStyles(Dialog)
+    modal={false}
+    onClose={[Function]}
+    open={false}
+    title="Preview"
+  >
+    <styled.div>
+      <img
+        alt=""
+        src=""
+      />
+    </styled.div>
+  </WithStyles(Dialog)>
+</styled.div>
+`;

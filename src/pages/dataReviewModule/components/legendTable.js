@@ -6,7 +6,7 @@ import Table, { TableBody, TableCell, TableHead, TableRow, TableFooter } from 'm
 import {Flex} from '../../../common/styledComponents/containers';
 import { localize } from 'react-localize-redux';
 
-class LegendTable extends Component {
+export class LegendTable extends Component {
 
   constructor(props){
     super(props);

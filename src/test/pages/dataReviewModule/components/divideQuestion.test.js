@@ -1,5 +1,5 @@
 import React from 'react'
-import DivideQuestion, {DivideQuestion as Snapshot} from '../../../../pages/dataReviewModule/components/divideQuestion';
+import {DivideQuestion as Snapshot} from '../../../../pages/dataReviewModule/components/divideQuestion';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
