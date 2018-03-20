@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matrix question component should render correctly 1`] = `
+<styled.div
+  column={true}
+  grow={true}
+>
+  <CollapsibleSection
+    key="0"
+    sectionTitle="title"
+  >
+    <styled.div>
+      <CloseQuestions
+        chartType="PIE_CHART"
+        data={
+          Object {
+            "answerCount": 33,
+            "questionTitle": "title",
+            "respondents": 100,
+          }
+        }
+        noAnimation={true}
+        showLegend={true}
+        url={false}
+      />
+      <Connect(LegendTable)
+        data={
+          Object {
+            "answerCount": 33,
+            "barData": Object {
+              "answerCount": 33,
+              "questionTitle": "title",
+              "respondents": 100,
+            },
+            "respondents": 100,
+          }
+        }
+      />
+    </styled.div>
+  </CollapsibleSection>
+</styled.div>
+`;
+
+exports[`Matrix question component should render correctly with images as subquestion 1`] = `
+<styled.div
+  column={true}
+  grow={true}
+>
+  <CollapsibleSection
+    key="0"
+    sectionTitle="title"
+  >
+    <styled.div>
+      <CloseQuestions
+        chartType="PIE_CHART"
+        data={
+          Object {
+            "answerCount": 33,
+            "questionTitle": "title",
+            "respondents": 100,
+          }
+        }
+        noAnimation={true}
+        showLegend={true}
+        url="title"
+      />
+      <Connect(LegendTable)
+        data={
+          Object {
+            "answerCount": 33,
+            "barData": Object {
+              "answerCount": 33,
+              "questionTitle": "title",
+              "respondents": 100,
+            },
+            "respondents": 100,
+          }
+        }
+      />
+    </styled.div>
+  </CollapsibleSection>
+</styled.div>
+`;
