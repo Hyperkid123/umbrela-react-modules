@@ -44,7 +44,7 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog';
 
-class NormalBody extends Component {
+export class NormalBody extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -232,16 +232,5 @@ function mapDispatchToProps(dispatch) {
     answerMultiQuestion,
   },dispatch)
 }
-
-/**Option.propTypes = {
-    answer: PropTypes.object,
-    questionId: PropTypes.number.isRequired,
-    option: PropTypes.object.isRequired,
-    questionType: PropTypes.string.isRequired,
-    answerCloseOpenQuestion: PropTypes.func.isRequired,
-    answerMultiQuestion: PropTypes.func.isRequired,
-    answerOptionAnswer: PropTypes.func.isRequired,
-    lang: PropTypes.object.isRequired,
-};*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(NormalBody)
