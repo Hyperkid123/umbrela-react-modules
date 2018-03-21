@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question fill list component should render empty 1`] = `
+<WithStyles(GridWrapper)
+  alignItems="center"
+  container={true}
+  justify="center"
+  spacing={0}
+>
+  <ScrollToTopOnMount />
+  <WithStyles(GridWrapper)
+    container={true}
+    item={true}
+    spacing={0}
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
+  />
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogTitle)
+      id="image-dialog-title"
+    >
+      Náhled
+    </WithStyles(DialogTitle)>
+    <WithStyles(DialogContent)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Question fill list component should render empty with image preview 1`] = `
+<WithStyles(GridWrapper)
+  alignItems="center"
+  container={true}
+  justify="center"
+  spacing={0}
+>
+  <ScrollToTopOnMount />
+  <WithStyles(GridWrapper)
+    container={true}
+    item={true}
+    spacing={0}
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
+  >
+    <WithStyles(GridWrapper)
+      id="question_1"
+      item={true}
+      key="1"
+      xs={12}
+    >
+      <WithStyles(GridWrapper)
+        alignItems="center"
+        container={true}
+        spacing={0}
+      >
+        <WithStyles(GridWrapper)
+          item={true}
+          style={
+            Object {
+              "display": "flex",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "maxWidth": "100%",
+            }
+          }
+        >
+          <styled.div
+            matrix={false}
+            questionList={true}
+          >
+            <styled.div
+              questionList={true}
+            >
+              <styled.h3>
+                <span>
+                  1
+                </span>
+                <span />
+              </styled.h3>
+            </styled.div>
+            <styled.div
+              questionList={true}
+            >
+              <LazyLoad
+                offset={0}
+                once={false}
+                overflow={false}
+                resize={false}
+                scroll={true}
+                unmountIfInvisible={false}
+              >
+                <styled.img
+                  alt="foo.url"
+                  onClick={[Function]}
+                  src="foo.url"
+                />
+              </LazyLoad>
+              <styled.div />
+            </styled.div>
+          </styled.div>
+        </WithStyles(GridWrapper)>
+      </WithStyles(GridWrapper)>
+    </WithStyles(GridWrapper)>
+  </WithStyles(GridWrapper)>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogTitle)
+      id="image-dialog-title"
+    >
+      Náhled
+    </WithStyles(DialogTitle)>
+    <WithStyles(DialogContent)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Question fill list component should render with customHelp 1`] = `
+<WithStyles(GridWrapper)
+  alignItems="center"
+  container={true}
+  justify="center"
+  spacing={0}
+>
+  <ScrollToTopOnMount />
+  <WithStyles(GridWrapper)
+    container={true}
+    item={true}
+    spacing={0}
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
+  >
+    <WithStyles(GridWrapper)
+      id="question_1"
+      item={true}
+      key="1"
+      xs={12}
+    >
+      <WithStyles(GridWrapper)
+        alignItems="center"
+        container={true}
+        spacing={0}
+      >
+        <WithStyles(GridWrapper)
+          item={true}
+          style={
+            Object {
+              "display": "flex",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "maxWidth": "100%",
+            }
+          }
+        >
+          <styled.div
+            matrix={false}
+            questionList={true}
+          >
+            <styled.div
+              questionList={true}
+            >
+              <styled.h3>
+                <span>
+                  1
+                </span>
+                <span />
+              </styled.h3>
+            </styled.div>
+            <styled.div
+              questionList={true}
+            >
+              <styled.div>
+                <span
+                  key="0"
+                >
+                  custom help
+                  <br />
+                </span>
+              </styled.div>
+            </styled.div>
+          </styled.div>
+        </WithStyles(GridWrapper)>
+      </WithStyles(GridWrapper)>
+    </WithStyles(GridWrapper)>
+  </WithStyles(GridWrapper)>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogTitle)
+      id="image-dialog-title"
+    >
+      Náhled
+    </WithStyles(DialogTitle)>
+    <WithStyles(DialogContent)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</WithStyles(GridWrapper)>
+`;
