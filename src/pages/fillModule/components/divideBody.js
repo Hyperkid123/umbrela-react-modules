@@ -14,7 +14,7 @@ import {
 } from '../../../redux/actions';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class DivideBody extends Component {
+export class DivideBody extends Component {
 
     renderScalePoints = () => {
         return (
@@ -87,7 +87,7 @@ class DivideBody extends Component {
     }
 }
 
-function mapStateToProps({answers, research, locale}, initialProps) {
+function mapStateToProps({answers, locale}, initialProps) {
   return {
     answer: answers[initialProps.question.questionId],
     translate: getTranslate(locale),

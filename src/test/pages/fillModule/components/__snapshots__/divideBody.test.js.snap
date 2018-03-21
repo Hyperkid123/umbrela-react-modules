@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divide body component should reder with options 1`] = `
+<styled.div
+  column={true}
+>
+  <label>
+    : 
+    NaN
+  </label>
+  <styled.div
+    column={true}
+  >
+    <styled.div
+      key="0"
+    >
+      <TextField
+        min={0}
+        name="divide_input_0"
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        select={false}
+        style={
+          Object {
+            "alignSelf": "flex-end",
+            "flexShrink": 0,
+            "width": 150,
+          }
+        }
+        type="number"
+        value={0}
+      />
+      <styled.div
+        column={true}
+        grow={true}
+        style={
+          Object {
+            "marginLeft": 10,
+            "paddingTop": 10,
+          }
+        }
+      >
+        option 1
+        <WithStyles(LinearProgress)
+          mode="determinate"
+          value={NaN}
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div
+      key="1"
+    >
+      <TextField
+        min={0}
+        name="divide_input_1"
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        select={false}
+        style={
+          Object {
+            "alignSelf": "flex-end",
+            "flexShrink": 0,
+            "width": 150,
+          }
+        }
+        type="number"
+        value={0}
+      />
+      <styled.div
+        column={true}
+        grow={true}
+        style={
+          Object {
+            "marginLeft": 10,
+            "paddingTop": 10,
+          }
+        }
+      >
+        option 2
+        <WithStyles(LinearProgress)
+          mode="determinate"
+          value={NaN}
+        />
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Divide body component should render correctly empty 1`] = `
+<styled.div
+  column={true}
+>
+  <label>
+    : 
+    100
+  </label>
+  <styled.div
+    column={true}
+  />
+</styled.div>
+`;
