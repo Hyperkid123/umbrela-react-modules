@@ -23,7 +23,6 @@ export class FillLanding extends Component {
 
     render() {
       if(!this.props.isLoaded) return <Loading/>
-      if(!this.props.isLoaded) return <Loading/>
       return (
         <Grid item xs={12} sm={12} md={8} lg={6} xl={6}>
           <CardWrapper>
@@ -52,12 +51,11 @@ export class FillLanding extends Component {
     }
 }
 
-function mapStateToProps({research, filters, locale}) {
+function mapStateToProps({research, locale}) {
   return {
     isLoaded: research.research,
     introText: research.introText,
     title: research.title,
-    filters: filters,
     translate: getTranslate(locale),
     currentLanguage: getActiveLanguage(locale).code,
   }

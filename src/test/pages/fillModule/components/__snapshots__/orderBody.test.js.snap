@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order body component should render correctly empty 1`] = `<styled.div />`;
+
+exports[`Order body component should render options 1`] = `
+<styled.div>
+  <DragSource(DropTarget(Card))
+    id={0}
+    index={0}
+    key="0"
+    moveCard={[Function]}
+    option={
+      Object {
+        "optionId": 0,
+      }
+    }
+  />
+  <DragSource(DropTarget(Card))
+    id={1}
+    index={1}
+    key="1"
+    moveCard={[Function]}
+    option={
+      Object {
+        "optionId": 1,
+      }
+    }
+  />
+  <DragSource(DropTarget(Card))
+    id={2}
+    index={2}
+    key="2"
+    moveCard={[Function]}
+    option={
+      Object {
+        "optionId": 2,
+      }
+    }
+  />
+</styled.div>
+`;

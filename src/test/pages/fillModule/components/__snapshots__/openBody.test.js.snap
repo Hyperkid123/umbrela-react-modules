@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Open body component should render correctly empty 1`] = `
+<styled.div
+  column={true}
+  grow={true}
+>
+  <TextField
+    fullWidth={true}
+    key="openOption_0"
+    multiline={true}
+    onChange={[Function]}
+    required={false}
+    select={false}
+    type="text"
+    value=""
+  />
+  <TextFieldComent
+    alignRight={true}
+    error={false}
+    label="0 undefined 1500 undefined"
+  />
+</styled.div>
+`;

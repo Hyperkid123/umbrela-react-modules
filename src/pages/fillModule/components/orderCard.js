@@ -54,7 +54,7 @@ const previewStyle = {
   display: 'inline-block'
 }
 
-class Card extends Component {
+export class Card extends Component {
     render() {
         const { isDragging, connectDragSource, connectDropTarget, connectDragPreview } = this.props;
         const opacity = isDragging ? 0 : 1;

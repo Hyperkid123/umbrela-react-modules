@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Normal body component should render correctly empty 1`] = `
+<styled.div
+  column={true}
+>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          src="foo"
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</styled.div>
+`;
+
+exports[`Normal body component should render multiple answers 1`] = `
+<styled.div
+  column={true}
+>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          src="foo"
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</styled.div>
+`;
+
+exports[`Normal body component should render open option 1`] = `
+<styled.div
+  column={true}
+>
+  <styled.div
+    column={true}
+    grow={true}
+  >
+    <TextField
+      fullWidth={true}
+      multiline={true}
+      name="open_option_undefined"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      type="text"
+      value=""
+    />
+    <TextFieldComent
+      alignRight={true}
+      error={false}
+      label="0 z 1500 znaků"
+    />
+  </styled.div>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</styled.div>
+`;
+
+exports[`Normal body component should render option as image 1`] = `
+<styled.div
+  column={true}
+>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          src="foo"
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</styled.div>
+`;

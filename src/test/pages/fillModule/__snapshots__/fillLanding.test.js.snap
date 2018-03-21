@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fill module index component should render correctly 1`] = `
+<WithStyles(GridWrapper)
+  item={true}
+  lg={6}
+  md={8}
+  sm={12}
+  xl={6}
+  xs={12}
+>
+  <styled.div>
+    <styled.div>
+      <h2>
+        title
+      </h2>
+    </styled.div>
+    <styled.div>
+      <styled.p>
+        <span
+          key="0"
+        >
+          intro text
+          <br />
+        </span>
+      </styled.p>
+      <WithStyles(GridWrapper)
+        alignItems="center"
+        container={true}
+        direction="row"
+        justify="center"
+        spacing={0}
+      >
+        <WithStyles(GridWrapper)
+          item={true}
+        >
+          <Link
+            replace={false}
+            to="/fill/0"
+          >
+            <WithStyles(Button)
+              color="primary"
+              raised={true}
+            />
+          </Link>
+        </WithStyles(GridWrapper)>
+      </WithStyles(GridWrapper)>
+    </styled.div>
+  </styled.div>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Fill module index component should render loading page 1`] = `<LoadingScreen />`;

@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Submit page component should redirec correctly if research is not loaded 1`] = `
+<Redirect
+  push={false}
+  to="/"
+/>
+`;
+
+exports[`Submit page component should redirec correctly with template leave text 1`] = `
+<WithStyles(GridWrapper)
+  item={true}
+  lg={6}
+  md={8}
+  sm={12}
+  xl={6}
+  xs={12}
+>
+  <styled.div>
+    <styled.div>
+      <h2 />
+    </styled.div>
+    <styled.div>
+      <styled.p />
+      <styled.p>
+         
+        <a
+          href="http://umbrela.mendelu.cz"
+          style={
+            Object {
+              "color": "#2196f3",
+            }
+          }
+        />
+        .
+      </styled.p>
+    </styled.div>
+  </styled.div>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Submit page component should render correctly 1`] = `
+<WithStyles(GridWrapper)
+  item={true}
+  lg={6}
+  md={8}
+  sm={12}
+  xl={6}
+  xs={12}
+>
+  <styled.div>
+    <styled.div>
+      <h2 />
+    </styled.div>
+    <styled.div>
+      <styled.p>
+        <span
+          key="0"
+        >
+          leave text
+          <br />
+        </span>
+      </styled.p>
+      <styled.p>
+         
+        <a
+          href="http://umbrela.mendelu.cz"
+          style={
+            Object {
+              "color": "#2196f3",
+            }
+          }
+        />
+        .
+      </styled.p>
+    </styled.div>
+  </styled.div>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Submit page component should render correctly fetching page 1`] = `
+<styled.section
+  style={
+    Object {
+      "marginLeft": "auto",
+      "marginRight": "auto",
+    }
+  }
+>
+  <styled.div>
+    <WithStyles(Paper)>
+      <styled.div
+        horizontalCenter={true}
+      >
+        <styled.p>
+          <styled.h2 />
+        </styled.p>
+      </styled.div>
+      <LoadingScreen />
+    </WithStyles(Paper)>
+  </styled.div>
+</styled.section>
+`;

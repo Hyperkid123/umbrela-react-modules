@@ -117,13 +117,13 @@ export class QuestionFillList extends Component {
               open={this.state.openDialog}
               onClose={this.handleCloseDialog}
               maxWidth={false}
-              >
-                <DialogTitle id="image-dialog-title">{"Náhled"}</DialogTitle>
-                <DialogContent>
-                  <LazyLoad>
-                    <FullImage src={this.state.dialogImage} alt={this.state.dialogImage}/>
-                  </LazyLoad>
-                </DialogContent>
+            >
+              <DialogTitle id="image-dialog-title">{"Náhled"}</DialogTitle>
+              <DialogContent>
+                <LazyLoad>
+                  <FullImage src={this.state.dialogImage} alt={this.state.dialogImage}/>
+                </LazyLoad>
+              </DialogContent>
                 <DialogActions>
                   <Button raised color='secondary' onClick={this.handleCloseDialog}>
                     Zavřít

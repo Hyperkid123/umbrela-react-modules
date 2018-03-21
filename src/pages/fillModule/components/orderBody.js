@@ -15,46 +15,36 @@ import {
   dragCard,
 } from '../../../redux/actions';
 
+export class OrderBody extends Component {
+  moveCard = (dragIndex, hoverIndex) => {
+      this.props.dragCard(this.props.question.questionId, this.props.question.options, dragIndex, hoverIndex);
+  };
 
-class OrderBody extends Component {
-
-    moveCard = (dragIndex, hoverIndex) => {
-        this.props.dragCard(this.props.question.questionId, this.props.question.options, dragIndex, hoverIndex);
-
-    };
-
-    renderCards = () => {
-        if (!this.props.answer) {
-            this.props.createCards(this.props.question.questionId, this.props.question.options);
-            return [];
-        } else {
-            return this.props.answer.map((option, i) => {
-                return (
-                    <Card index={i}
-                          id={option.optionId}
-                          moveCard={this.moveCard}
-                          key={option.optionId}
-                          option={option}/>
-                );
-            });
-        }
-    };
-
-    render() {
+  renderCards = () => {
+    if (!this.props.answer) {
+      this.props.createCards(this.props.question.questionId, this.props.question.options);
+      return [];
+    } else {
+      return this.props.answer.map((option, i) => {
         return (
-                <OrderQuestionList>
-                  {this.renderCards()}
-                </OrderQuestionList>
+          <Card index={i}
+            id={option.optionId}
+            moveCard={this.moveCard}
+            key={option.optionId}
+            option={option}/>
         );
+      });
     }
-}
+  };
 
-/**OrderQuestion.propTypes = {
-    dragCard: PropTypes.func.isRequired,
-    question: PropTypes.object.isRequired,
-    answer: PropTypes.array,
-    createCards: PropTypes.func.isRequired,
-};*/
+  render() {
+    return (
+      <OrderQuestionList>
+        {this.renderCards()}
+      </OrderQuestionList>
+    );
+  }
+}
 
 function mapStateToProps({answers}, initialProps) {
   return{
