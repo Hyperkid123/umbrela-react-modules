@@ -1,0 +1,460 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matrix body component should render correctly empty 1`] = `
+<div>
+  <styled.table>
+    <styled.thead>
+      <styled.tr>
+        <styled.td
+          key="question"
+        />
+      </styled.tr>
+    </styled.thead>
+    <styled.tbody />
+  </styled.table>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
+`;
+
+exports[`Matrix body component should render correctly with checkboxes 1`] = `
+<div>
+  <styled.table>
+    <styled.thead>
+      <styled.tr>
+        <styled.td
+          key="question"
+        />
+        <styled.td
+          key="0"
+        >
+          option column 0
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          option column 1
+        </styled.td>
+      </styled.tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
+        filler={true}
+        key="2"
+      >
+        <styled.td>
+          <span>
+            option row 0
+          </span>
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+      </styled.tr>
+    </styled.tbody>
+  </styled.table>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
+`;
+
+exports[`Matrix body component should render correctly with options 1`] = `
+<div>
+  <styled.table>
+    <styled.thead>
+      <styled.tr>
+        <styled.td
+          key="question"
+        />
+        <styled.td
+          key="0"
+        >
+          option column 0
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          option column 1
+        </styled.td>
+      </styled.tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
+        filler={true}
+        key="2"
+      >
+        <styled.td>
+          <span>
+            option row 0
+          </span>
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+      </styled.tr>
+    </styled.tbody>
+  </styled.table>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
+`;
+
+exports[`Matrix body component should render correctly with radiobuttons 1`] = `
+<div>
+  <styled.table>
+    <styled.thead>
+      <styled.tr>
+        <styled.td
+          key="question"
+        />
+        <styled.td
+          key="0"
+        >
+          option column 0
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          option column 1
+        </styled.td>
+      </styled.tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
+        filler={true}
+        key="2"
+      >
+        <styled.td>
+          <span>
+            option row 0
+          </span>
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+      </styled.tr>
+    </styled.tbody>
+  </styled.table>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
+`;
+
+exports[`Matrix body component should render correctly with row options as images 1`] = `
+<div>
+  <styled.table>
+    <styled.thead>
+      <styled.tr>
+        <styled.td
+          key="question"
+        />
+        <styled.td
+          key="0"
+        >
+          option column 0
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          option column 1
+        </styled.td>
+      </styled.tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
+        filler={true}
+        key="2"
+      >
+        <styled.td>
+          <div>
+            <styled.img
+              onClick={[Function]}
+              src="option row 0"
+            />
+          </div>
+        </styled.td>
+        <styled.td
+          key="0"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+        <styled.td
+          key="1"
+        >
+          <WithStyles(Checkbox)
+            checked={false}
+            checkedIcon={<pure(RadioButtonChecked) />}
+            icon={<pure(RadioButtonUnchecked) />}
+            onChange={[Function]}
+            style={
+              Object {
+                "borderLeft": "16px solid transparent",
+                "margin": "auto",
+                "width": 40,
+              }
+            }
+          />
+        </styled.td>
+      </styled.tr>
+    </styled.tbody>
+  </styled.table>
+  <WithStyles(Dialog)
+    maxWidth={false}
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogContent)>
+      <WithStyles(DialogTitle)>
+        Náhled
+      </WithStyles(DialogTitle)>
+      <LazyLoad
+        offset={0}
+        once={false}
+        overflow={false}
+        resize={false}
+        scroll={true}
+        unmountIfInvisible={false}
+      >
+        <styled.img
+          alt=""
+          src=""
+        />
+      </LazyLoad>
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        color="secondary"
+        onClick={[Function]}
+        raised={true}
+      >
+        Zavřít
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
+`;

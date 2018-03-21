@@ -43,7 +43,7 @@ const inputWidth = {
     borderLeft: '16px solid transparent',
 };
 
-class MatrixBody extends Component {
+export class MatrixBody extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -190,15 +190,5 @@ function mapDispatchToProps(dispatch) {
     answerMatrixMulti,
   },dispatch)
 }
-
-/**MatrixBody.propTypes = {
-    answer: PropTypes.object,
-    questionId: PropTypes.number.isRequired,
-    questionType: PropTypes.string.isRequired,
-    answerMatrixMulti: PropTypes.func.isRequired,
-    answerMatrixSingle: PropTypes.func.isRequired,
-    options: PropTypes.array.isRequired,
-    lang: PropTypes.object.isRequired,
-};*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(MatrixBody)
