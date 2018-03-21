@@ -3,7 +3,6 @@ import SheetFill, {SheetFill as Snapshot} from '../../../pages/fillModule/sheetF
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
-import {startResearch} from '../../../redux/actions';
 
 describe('Sheet fill component', () => {
   const initialProps = {};
