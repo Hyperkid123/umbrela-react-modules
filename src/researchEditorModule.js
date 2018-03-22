@@ -15,7 +15,7 @@ import Grid from 'material-ui/Grid';
 import configureStore from './redux/configureStore';
 const store = configureStore();
 
-const ResearchEditorModuleWrapper = () => (
+export const ResearchEditorModuleWrapper = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={orangeTheme}>
       <Router>

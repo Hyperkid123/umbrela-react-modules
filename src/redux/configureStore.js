@@ -18,7 +18,7 @@ export default function configureStore(preloadedState) {
     code: 'en',
   }];
   let store;
-  if(process.env.NODE_ENV !== 'production') {
+  if(process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
     store = createStore(
       rootReducer,
       composeEnhacer(
