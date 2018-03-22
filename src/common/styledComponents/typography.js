@@ -10,9 +10,6 @@ const BaseHeading = styled.h2`
   color: ${grey[800]};
 `;
 
-export const BigHeading = BaseHeading.extend`
-  font-size: 56px;
-`
 export const MediumHeading = BaseHeading.extend`
   font-size: 34px;
   margin-top: 10px;

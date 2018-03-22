@@ -2,7 +2,7 @@
 
 exports[`Question Menu component should render correctly empty 1`] = `
 <h2
-  className="sc-gipzik joRElB"
+  className="sc-jlyJG cmMgMB"
 >
   Loading
 </h2>
