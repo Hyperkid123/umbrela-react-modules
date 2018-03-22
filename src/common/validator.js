@@ -99,4 +99,5 @@ function validateMatrixAnswer(question, answer) {
 
 function validateDivideQuestion(question, answer) {
     return answer.reduce((a, b) => a + b, 0) >= question.scalePoints;
+
 }
