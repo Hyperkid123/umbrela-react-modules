@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card style components should render Card body correctly while in uqestion list 1`] = `
+<div
+  className="sc-htpNat elTnaI"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card body correctly with error 1`] = `
+<div
+  className="sc-htpNat fUrEbw"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card header correctly with shadow 1`] = `
+<div
+  className="sc-bwzfXH kLZIht"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card header correctly with shadow 2`] = `
+<div
+  className="sc-bwzfXH iwqMhC"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card header with ellipsis if as question list 1`] = `
+<div
+  className="sc-bwzfXH dsuOGz"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card wrapper in question list 1`] = `
+<div
+  className="sc-bdVaJa gFxbtr"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card wrapper in question list 2`] = `
+<div
+  className="sc-bdVaJa iZAhIX"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
+
+exports[`Card style components should render Card wrapper in transparent version 1`] = `
+<div
+  className="sc-bdVaJa iJQjqG"
+>
+  <p>
+    foo
+  </p>
+</div>
+`;
