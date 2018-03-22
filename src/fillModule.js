@@ -8,7 +8,7 @@ import Grid from 'material-ui/Grid';
 
 import configureStore from './redux/configureStore';
 const store = configureStore();
-const FillModuleWrapper = () => (
+export const FillModuleWrapper = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={orangeTheme}>
       <Grid style={{minHeight: '100vh'}} container spacing={0} justify='center' direction='row' alignItems='center'>

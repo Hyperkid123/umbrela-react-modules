@@ -8,7 +8,7 @@ import Grid from 'material-ui/Grid';
 import configureStore from './redux/configureStore';
 
 const store = configureStore();
-const DataReviewModuleWrapper = () => (
+export const DataReviewModuleWrapper = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={orangeTheme}>
       <Grid container spacing={0}>
