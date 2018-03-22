@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu list item components should render list item 1`] = `
+<WithStyles(Tooltip)
+  disableTriggerFocus={false}
+  disableTriggerHover={false}
+  disableTriggerTouch={false}
+  enterDelay={500}
+  placement="top"
+  title="label"
+>
+  <styled.div
+    active={false}
+    data-tip="label"
+    dragging={false}
+    onClick={[Function]}
+  >
+    <styled.div
+      verticalCenter={true}
+    >
+      <styled.div>
+        <styled.span
+          href="/link"
+        >
+          label
+        </styled.span>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</WithStyles(Tooltip)>
+`;
