@@ -176,14 +176,6 @@ export const HasNotOptions = (questionType) => {
     return ['OpenQuestion','OpenWithImageQuestion', 'OpenLongQuestion', 'OpenWithImageQuestionLong'].includes(questionType);
 };
 
-export const CanBeOpenLong = (questionType) => {
-    return ['OpenQuestion', 'OpenLongQuestion', 'OpenWithImageQuestion', 'OpenWithImageQuestionLong'].includes(questionType);
-};
-
-export const IsLongQuestion = (questionType) => {
-    return ['OpenLongQuestion', 'OpenWithImageQuestionLong'].includes(questionType);
-};
-
 export const SwitchQuestionOpenOption = {
     CloseQuestion: 'CloseWithOpenQuestion',
     CloseWithOpenQuestion: 'CloseQuestion',
