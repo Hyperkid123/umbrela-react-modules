@@ -38,20 +38,20 @@ describe('Status Bar component', () => {
     it('should render correctly with ok message', () => {
       const tree = shallow(
         <Snapshot translate={jest.fn()}/>
-          ).dive();
-          expect(toJson(tree)).toMatchSnapshot();
-        });
+      ).dive();
+      expect(toJson(tree)).toMatchSnapshot();
+    });
 
-        it('should render correctly with ok message', () => {
-          const tree = shallow(
-            <Snapshot isFetching translate={jest.fn()}/>
-              ).dive();
-              expect(toJson(tree)).toMatchSnapshot();
-            });
+    it('should render correctly with ok message', () => {
+      const tree = shallow(
+        <Snapshot isFetching translate={jest.fn()}/>
+      ).dive();
+      expect(toJson(tree)).toMatchSnapshot();
+    });
 
-            it('should render correctly with fail message', () => {
-              const tree = shallow(
-                <Snapshot faile translate={jest.fn()}/>
+    it('should render correctly with fail message', () => {
+      const tree = shallow(
+        <Snapshot failed translate={jest.fn()}/>
       ).dive();
       expect(toJson(tree)).toMatchSnapshot();
     });

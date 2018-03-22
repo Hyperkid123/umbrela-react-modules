@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store'
 
-describe('Filtrations component', () => {
+describe('Filtrations component empty', () => {
   it('should render correclty' , () => {
       const tree = shallow(
         <Snapshot getSheets={jest.fn()}/>
@@ -23,4 +23,11 @@ describe('Filtrations component', () => {
     let wrapper = shallow(<Filtrations store={store}/>);
     expect(wrapper).toBeDefined();
   })
+
+  it('should render correclty with active sheet' , () => {
+      const tree = shallow(
+        <Snapshot getSheets={jest.fn()} activeSheet/>
+      ).dive();
+      expect(toJson(tree)).toMatchSnapshot();
+  });
 });

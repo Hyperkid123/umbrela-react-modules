@@ -39,9 +39,486 @@ exports[`Chart component should render close question 1`] = `
 </WithStyles(GridWrapper)>
 `;
 
+exports[`Chart component should render close question 2`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 3`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 4`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 5`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 6`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 7`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 8`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 9`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 10`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 11`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
+exports[`Chart component should render close question 12`] = `
+<WithStyles(GridWrapper)
+  container={true}
+>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <CloseQuestions
+      chartType="foo"
+      data={Object {}}
+      hasImagePreview={false}
+      showLegend={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={6}
+    md={12}
+    sm={12}
+    xl={6}
+    xs={12}
+  >
+    <Connect(LegendTable)
+      data={
+        Object {
+          "barData": Object {},
+        }
+      }
+      isOptionImage={false}
+    />
+  </WithStyles(GridWrapper)>
+</WithStyles(GridWrapper)>
+`;
+
 exports[`Chart component should render empty 1`] = `""`;
 
 exports[`Chart component should render matrix question 1`] = `
+<styled.div>
+  <MatrixQuestion
+    chartType="foo"
+    data={
+      Object {
+        "barData": Object {},
+      }
+    }
+    isOptionImage={false}
+    question={Object {}}
+    showLegend={true}
+  />
+</styled.div>
+`;
+
+exports[`Chart component should render matrix question 2`] = `
+<styled.div>
+  <MatrixQuestion
+    chartType="foo"
+    data={
+      Object {
+        "barData": Object {},
+      }
+    }
+    isOptionImage={false}
+    question={Object {}}
+    showLegend={true}
+  />
+</styled.div>
+`;
+
+exports[`Chart component should render matrix question 3`] = `
+<styled.div>
+  <MatrixQuestion
+    chartType="foo"
+    data={
+      Object {
+        "barData": Object {},
+      }
+    }
+    isOptionImage={false}
+    question={Object {}}
+    showLegend={true}
+  />
+</styled.div>
+`;
+
+exports[`Chart component should render matrix question 4`] = `
 <styled.div>
   <MatrixQuestion
     chartType="foo"
@@ -68,7 +545,28 @@ exports[`Chart component should render open question 1`] = `
 />
 `;
 
+exports[`Chart component should render open question 2`] = `
+<Connect(OpenQuestion)
+  data={
+    Object {
+      "barData": Object {},
+    }
+  }
+  question={Object {}}
+/>
+`;
+
 exports[`Chart component should render order question 1`] = `
+<Connect(DivideQuestion)
+  data={
+    Object {
+      "barData": Object {},
+    }
+  }
+/>
+`;
+
+exports[`Chart component should render order question 2`] = `
 <Connect(DivideQuestion)
   data={
     Object {
