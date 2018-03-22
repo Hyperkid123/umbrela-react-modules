@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography styled components should render heading withouth border 1`] = `
+<h2
+  className="sc-htpNat dOuKMx"
+>
+  foo
+</h2>
+`;
+
+exports[`Typography styled components should render heading withouth border 2`] = `
+<h2
+  className="sc-htpNat hdEPeJ"
+>
+  foo
+</h2>
+`;

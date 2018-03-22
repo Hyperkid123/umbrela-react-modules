@@ -35,9 +35,10 @@ describe('Enhanced table component', () => {
     )
     wrapper.setState({order: 'desc'})
     wrapper.instance().handleRequestSort({}, 'name');
-
-    console.log(wrapper.state().date);
     expect(wrapper.state().order).toEqual('asc')
+    wrapper.setState({order: 'asc'})
+    wrapper.instance().handleRequestSort({}, 'name');
+    expect(wrapper.state().order).toEqual('desc')
   })
 
   it('should sort table data to desc', () => {

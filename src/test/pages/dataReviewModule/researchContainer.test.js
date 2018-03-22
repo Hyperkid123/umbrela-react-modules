@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 
 describe('Research container component', () => {
-  it('should render empty correclty' , () => {
+  it('should render empty correctly' , () => {
       const tree = shallow(
         <Snapshot
           sheets={[]}
@@ -35,4 +35,31 @@ describe('Research container component', () => {
     let wrapper = shallow(<ResearchContainer store={store}/>);
     expect(wrapper).toBeDefined();
   })
+
+  it('should render correctly with hidden sheets' , () => {
+    const tree = shallow(
+      <Snapshot
+        sheets={[]}
+        activeSheet={{}}
+        hideSheets={true}
+        isFetching={false}
+        getSheets={jest.fn()}
+      />
+    ).dive();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+
+  it('should render correctly while loading sheets' , () => {
+    const tree = shallow(
+      <Snapshot
+        sheets={[]}
+        activeSheet={{}}
+        hideSheets={false}
+        isFetching={true}
+        getSheets={jest.fn()}
+      />
+    ).dive();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
 });

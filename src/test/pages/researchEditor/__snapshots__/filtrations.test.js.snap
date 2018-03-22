@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Filtrations component should render correclty 1`] = `
+exports[`Filtrations component empty should render correclty 1`] = `
 <DNDContext>
   <WithStyles(GridWrapper)
     item={true}
@@ -26,6 +26,38 @@ exports[`Filtrations component should render correclty 1`] = `
       container={true}
       spacing={0}
     />
+  </WithStyles(GridWrapper)>
+</DNDContext>
+`;
+
+exports[`Filtrations component empty should render correclty with active sheet 1`] = `
+<DNDContext>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={4}
+    md={4}
+    sm={12}
+    xl={3}
+    xs={12}
+  >
+    <Connect(SheetMenu)
+      hideNewSheet={true}
+    />
+  </WithStyles(GridWrapper)>
+  <WithStyles(GridWrapper)
+    item={true}
+    lg={8}
+    md={8}
+    sm={12}
+    xl={9}
+    xs={12}
+  >
+    <WithStyles(GridWrapper)
+      container={true}
+      spacing={0}
+    >
+      <Connect(FiltrationView) />
+    </WithStyles(GridWrapper)>
   </WithStyles(GridWrapper)>
 </DNDContext>
 `;

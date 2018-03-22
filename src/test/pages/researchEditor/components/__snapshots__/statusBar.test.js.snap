@@ -128,7 +128,9 @@ exports[`Status Bar component should render correctly with fail message 1`] = `
     </li>
     <li>
       <div>
-        <pure(Check) />
+        <pure(Close)
+          color="error"
+        />
         <span
           style={
             Object {

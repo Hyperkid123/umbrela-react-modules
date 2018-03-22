@@ -23,33 +23,153 @@ describe('Chart component', () => {
   })
 
   it('should render open question', () => {
-    const tree = shallow(
+    const openTree = shallow(
       <Chart
         {...initialProps}
         questionType={chartTypes.OPEN_QUESTION}
       />
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(toJson(openTree)).toMatchSnapshot();
+
+    const openImageTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.OPEN_WITH_IMAGE_QUESTIONS}
+      />
+    );
+    expect(toJson(openImageTree)).toMatchSnapshot();
   })
 
   it('should render close question', () => {
-    const tree = shallow(
+    const closeTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.CLOSE_QUESTION}
+      />
+    );
+    expect(toJson(closeTree)).toMatchSnapshot();
+
+    const closeWithMultiTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.CLOSE_MULTI_QUESTION}
+      />
+    );
+    expect(toJson(closeWithMultiTree)).toMatchSnapshot();
+
+    const closeWithOpenTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.CLOSE_WITH_OPEN_QUESTION}
+      />
+    );
+    expect(toJson(closeWithOpenTree)).toMatchSnapshot();
+
+    const closeMultiWithOpenTree = shallow(
       <Chart
         {...initialProps}
         questionType={chartTypes.CLOSE_MULTI_WITH_OPEN_QUESTION}
       />
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(toJson(closeMultiWithOpenTree)).toMatchSnapshot();
+    //image
+    const imageTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.IMAGE_OPTIONS_QUESTION}
+      />
+    );
+    expect(toJson(imageTree)).toMatchSnapshot();
+
+    const imageMultiTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.IMAGE_OPTIONS_MULTI_QUESTION}
+      />
+    );
+    expect(toJson(imageMultiTree)).toMatchSnapshot();
+
+    const imageWithOpenTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.IMAGE_OPTIONS_WITH_OPEN_QUESTION}
+      />
+    );
+    expect(toJson(imageWithOpenTree)).toMatchSnapshot();
+
+    const imageMultiWithOpenTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.IMAGE_OPTIONS_MULTI_WITH_OPEN_QUESTION}
+      />
+    );
+    expect(toJson(imageMultiWithOpenTree)).toMatchSnapshot();
+    ///media
+    const mediaTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MEDIA_QUESTION}
+      />
+    );
+    expect(toJson(mediaTree)).toMatchSnapshot();
+
+    const mediaMultiTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MEDIA_MULTI_QUESTION}
+      />
+    );
+    expect(toJson(mediaMultiTree)).toMatchSnapshot();
+
+    const mediaWithopenTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MEDIA_WITH_OPEN_QUESTION}
+      />
+    );
+    expect(toJson(mediaWithopenTree)).toMatchSnapshot();
+
+    const mediaMultiWithOpenTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MEDIA_MULTI_WITH_OPEN_QUESTION}
+      />
+    );
+    expect(toJson(mediaMultiWithOpenTree)).toMatchSnapshot();
   })
 
   it('should render matrix question', () => {
-    const tree = shallow(
+    const matrixSingleTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MATRIX_SINGLE_QUESTION}
+      />
+    );
+    expect(toJson(matrixSingleTree)).toMatchSnapshot();
+
+    const matrixMultiTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MATRIX_MULTI_QUESTION}
+      />
+    );
+    expect(toJson(matrixMultiTree)).toMatchSnapshot();
+
+    const matrixSingleImageTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.MATRIX_SINGLE_IMAGE_QUESTION}
+      />
+    );
+    expect(toJson(matrixSingleImageTree)).toMatchSnapshot();
+
+    const matrixMultiImageTree = shallow(
       <Chart
         {...initialProps}
         questionType={chartTypes.MATRIX_MULTI_IMAGE_QUESTION}
       />
     );
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(toJson(matrixMultiImageTree)).toMatchSnapshot();
   })
 
   it('should render order question', () => {
@@ -60,5 +180,13 @@ describe('Chart component', () => {
       />
     );
     expect(toJson(tree)).toMatchSnapshot();
+
+    const orderTree = shallow(
+      <Chart
+        {...initialProps}
+        questionType={chartTypes.ORDER_QUESTION}
+      />
+    );
+    expect(toJson(orderTree)).toMatchSnapshot();
   })
 });

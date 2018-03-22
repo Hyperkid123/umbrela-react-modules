@@ -258,4 +258,30 @@ describe('Async research actions', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   })
+
+  it('should not update sheet information with same title', () => {
+    const researchId = 1;
+    const sheetId = 2
+    const newSheet = {
+      sheetId,
+      title: 'title'
+    }
+    const sheet = {
+      sheetId,
+      title: 'title'
+    }
+    const sheets = [{sheetId: 1}, sheet]
+    let store = mockStore({
+      editor: {
+        sheets
+      }
+    });
+    expect(
+      store.dispatch(
+        actions.updateSheetInformation(
+          newSheet, researchId
+        )
+      )
+    ).toBeUndefined()
+  })
 });
