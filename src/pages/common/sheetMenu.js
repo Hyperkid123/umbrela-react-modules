@@ -22,7 +22,7 @@ import {
 } from '../../redux/actions';
 import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
-class SheetMenu extends Component {
+export class SheetMenu extends Component {
 
     moveCard = (dragIndex, hoverIndex) => {
       this.props.dragSheetCard(dragIndex, hoverIndex);

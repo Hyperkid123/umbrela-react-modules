@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sheet menu component should render correclty empty 1`] = `
+<styled.div>
+  <styled.div />
+  <styled.div>
+    <WithStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      <pure(Add) />
+    </WithStyles(Button)>
+    <styled.ul />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Sheet menu component should render correclty empty withnout new sheet button 1`] = `
+<styled.div>
+  <styled.div />
+  <styled.div>
+    <styled.ul />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Sheet menu component should render correclty with draggable menu 1`] = `
+<styled.div>
+  <styled.div />
+  <styled.div>
+    <WithStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      <pure(Add) />
+    </WithStyles(Button)>
+    <styled.ul>
+      <DragSource(DropTarget(SheetDraggableCard))
+        index={0}
+        key="0"
+        moveCard={[Function]}
+        onDragEnd={[Function]}
+        preventDrag={false}
+        researchId={0}
+      >
+        <MenuListItem
+          active={true}
+          dragging={false}
+          key="0"
+          label="sheet 0"
+          onClick={[Function]}
+          preventDrag={false}
+          sheetId={0}
+        />
+      </DragSource(DropTarget(SheetDraggableCard))>
+      <DragSource(DropTarget(SheetDraggableCard))
+        index={1}
+        key="1"
+        moveCard={[Function]}
+        onDragEnd={[Function]}
+        preventDrag={false}
+        researchId={0}
+      >
+        <MenuListItem
+          active={false}
+          dragging={false}
+          key="1"
+          label="sheet 1"
+          onClick={[Function]}
+          preventDrag={false}
+          sheetId={1}
+        />
+      </DragSource(DropTarget(SheetDraggableCard))>
+    </styled.ul>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Sheet menu component should render correclty with non draggable menu 1`] = `
+<styled.div>
+  <styled.div />
+  <styled.div>
+    <WithStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      <pure(Add) />
+    </WithStyles(Button)>
+    <styled.ul>
+      <MenuListItem
+        active={true}
+        dragging={false}
+        key="0"
+        label="sheet 0"
+        onClick={[Function]}
+        preventDrag={true}
+        sheetId={0}
+      />
+      <MenuListItem
+        active={false}
+        dragging={false}
+        key="1"
+        label="sheet 1"
+        onClick={[Function]}
+        preventDrag={true}
+        sheetId={1}
+      />
+    </styled.ul>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Sheet menu component should render loading heading 1`] = `
+<styled.h2>
+  Loading
+</styled.h2>
+`;
