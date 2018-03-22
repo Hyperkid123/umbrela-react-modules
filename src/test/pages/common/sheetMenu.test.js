@@ -1,8 +1,7 @@
 import React from 'react'
-import SheetMenu, {SheetMenu as Snapshot} from '../../../pages/common/sheetMenu';
+import {SheetMenu as Snapshot} from '../../../pages/common/sheetMenu';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import configureStore from 'redux-mock-store';
 
 describe('Sheet menu component', () => {
   const initialProps = {};

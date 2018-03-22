@@ -19,7 +19,7 @@ const cardSource = {
     }
 };
 
-const cardTarget = {
+export const cardTarget = {
     hover(props, monitor, component){
         const dragIndex = monitor.getItem().index;
         const hoverIndex = props.index;
