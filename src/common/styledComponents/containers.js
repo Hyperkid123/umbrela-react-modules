@@ -204,16 +204,6 @@ export const MatrixTableRow = styled.tr`
   > td:last-child {
     padding-right: 16px;
   }
-`
-
-export const SectionBody = styled.div`
-  max-height: ${props => props.open ? '1500px' : 0};
-  transition: max-height .5s ease-in;
-  overflow: hidden;
-  height:auto;
-  >div{
-    padding: 5px;
-  }
 `;
 
 export const Sectionhead = styled.div`

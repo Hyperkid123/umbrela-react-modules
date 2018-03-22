@@ -15,7 +15,7 @@ exports[`Questions container component should render empty correclty 1`] = `
 
 exports[`Questions container component should render with data correclty 1`] = `
 <div
-  className="sc-iRbamj dnSxgw"
+  className="sc-gPEVay ienmZE"
 >
   <styled.div
     transparent={true}

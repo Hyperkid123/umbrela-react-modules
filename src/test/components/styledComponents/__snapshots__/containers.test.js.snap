@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled containers components it should render Label container component with error 1`] = `
+<div
+  className="sc-htoDjs dwDfmY"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components it should render Label container component with left margin 1`] = `
+<div
+  className="sc-htoDjs hlazrg"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Chart container for pie chart correctly 1`] = `
+<div
+  className="sc-hSdWYo kQuTFZ"
+>
+  <div>
+    foo
+  </div>
+</div>
+`;
+
+exports[`Styled containers components should render Chart container for pie chart correctly 2`] = `
+<div
+  className="sc-hSdWYo gpELlf"
+>
+  <div>
+    foo
+  </div>
+</div>
+`;
+
+exports[`Styled containers components should render Flex component based on props 1`] = `
+<div
+  className="sc-bdVaJa fizmbb"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Flex component based on props 2`] = `
+<div
+  className="sc-bdVaJa jZPlqj"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Flex component based on props 3`] = `
+<div
+  className="sc-bdVaJa bfRLQo"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Flex component based on props 4`] = `
+<div
+  className="sc-bdVaJa jHiMbo"
+  end={true}
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Flex section correctly based on props 1`] = `
+<section
+  className="sc-bxivhb gkWBUZ"
+>
+  foo
+</section>
+`;
+
+exports[`Styled containers components should render Flex section correctly based on props 2`] = `
+<section
+  className="sc-bxivhb eIAtTJ"
+>
+  foo
+</section>
+`;
+
+exports[`Styled containers components should render Flex section correctly based on props 3`] = `
+<section
+  className="sc-bxivhb bDsTwg"
+>
+  foo
+</section>
+`;
+
+exports[`Styled containers components should render Flex section correctly based on props 4`] = `
+<section
+  className="sc-bxivhb hNhWTE"
+>
+  foo
+</section>
+`;
+
+exports[`Styled containers components should render Menu container full width 1`] = `
+<div
+  className="sc-htpNat fuGjHS"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Menu container full width 2`] = `
+<div
+  className="sc-htpNat cEkwiA"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render Paginations list item with correct collors based on active state 1`] = `
+<li
+  className="sc-iAyFgw hWRYFs"
+  disabled={true}
+>
+  <div>
+    foo
+  </div>
+</li>
+`;
+
+exports[`Styled containers components should render Paginations list item with correct collors based on active state 2`] = `
+<li
+  className="sc-iAyFgw dUoMCh"
+>
+  <div>
+    foo
+  </div>
+</li>
+`;
+
+exports[`Styled containers components should render Paginations list item with correct collors based on active state 3`] = `
+<li
+  className="sc-iAyFgw esHeKX"
+>
+  <div>
+    foo
+  </div>
+</li>
+`;
+
+exports[`Styled containers components should render Question list item for matrix question correctly 1`] = `
+<div
+  className="sc-brqgnP jeCayQ"
+>
+  <div>
+    foo
+  </div>
+</div>
+`;
+
+exports[`Styled containers components should render Question list item with answer error correctly 1`] = `
+<div
+  className="sc-brqgnP cdSsxY"
+>
+  <div>
+    foo
+  </div>
+</div>
+`;
+
+exports[`Styled containers components should render matrix table row with filler cells 1`] = `
+<tr
+  className="sc-ckVGcZ jziLBU"
+>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+</tr>
+`;
+
+exports[`Styled containers components should render matrix table row with filler cells 2`] = `
+<tr
+  className="sc-ckVGcZ eMEZbW"
+>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+  <td>
+    foo
+  </td>
+</tr>
+`;
+
+exports[`Styled containers components should render menu item active 1`] = `
+<div
+  className="sc-EHOje kOFXmI"
+>
+  foo
+</div>
+`;
+
+exports[`Styled containers components should render menu item dragging 1`] = `
+<div
+  className="sc-EHOje fRSdlp"
+>
+  foo
+</div>
+`;
